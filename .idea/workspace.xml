@@ -13,6 +13,9 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
@@ -37,6 +40,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1eNYhrstTgaaHgG5yDVDdLgrgbo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -44,6 +48,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -63,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594163639889</updated>
-      <workItem from="1594163641804" duration="988000" />
+      <workItem from="1594163641804" duration="1555000" />
     </task>
     <servers />
   </component>
@@ -75,6 +80,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Stylelint/0.0.1366.728@0.0.1366.728" timestamp="1594164630463" />
+    <state x="459" y="277" key="ComposerInitDialogKey" timestamp="1594165234046">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="459" y="277" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1594165234046" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1594164044215">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
