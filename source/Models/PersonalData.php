@@ -23,10 +23,11 @@ class PersonalData extends User {
         $conn = new Conection();
 
         $results = $conn->select(
-            "CALL sp_dados_pessoais_salvar(:primeiro_nome,:sobrenome,:genero,:cor_raca,:nascimento,:naturalidade,:uf_naturalidade,
+            "CALL sp_dados_pessoais_salvar(:primeiro_nome,:sobrenome,:nome_social,:genero,:cor_raca,:nascimento,:naturalidade,:uf_naturalidade,
             :nacionalidade,:rg,:cpf,:id_usuario)", array(
             ":primeiro_nome" => $this->getprimeiro_nome(),
             ":sobrenome" => $this->getsobrenome(),
+            ":nome_social" =>$this->getnome_social(),
             ":genero" => $this->getgenero(),
             ":cor_raca" => $this->getcor_raca(),
             ":nascimento" => $this->getnascimento(),

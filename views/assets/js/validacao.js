@@ -47,10 +47,10 @@ jQuery(document).ready(function($) {
         let cpf = $('#camp_cpf').val();
 
         if(verifica_cpf(cpf)) {
-            $('#cpf').attr("class"," has-success col-md-6");
+            $('#cpf').attr("class"," has-success col-md-4");
             $('#mescpf').attr("class", "error-disabled");
         } else {
-            $('#cpf').attr("class","has-error col-md-6");
+            $('#cpf').attr("class","has-error col-md-4");
             $('#mescpf').attr("class", "error-enabled");
         }
     });

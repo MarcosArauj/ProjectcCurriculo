@@ -7,3 +7,4 @@ function formatar(mascara,documento) {
         documento.value += texto.substring(0,1);
     }
 }
+

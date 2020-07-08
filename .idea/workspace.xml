@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/source/Models/Curriculum.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/theme/curriculum/academic_formation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/App/CurriculumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/CurriculumController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Models/PersonalData.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/PersonalData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_ personal_data.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_ personal_data.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views-cache/create_contact.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_contact.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_user.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_user.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/footer.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/footer.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views-cache/start.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/start.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/mascara.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/mascara.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/validacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/validacao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_ personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_ personal_data.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/create_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/web/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/start.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/theme/curriculum" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -71,6 +81,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -83,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1594163639889</updated>
       <workItem from="1594163641804" duration="1835000" />
-      <workItem from="1594208671880" duration="3945000" />
+      <workItem from="1594208671880" duration="17428000" />
     </task>
     <servers />
   </component>
@@ -99,6 +114,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1594214818800" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594233493486">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1594233493486" />
     <state x="459" y="277" key="ComposerInitDialogKey" timestamp="1594165234046">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -107,5 +126,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594164044215" />
+    <state x="453" y="178" key="NewPhpClassDialog" timestamp="1594231590738">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="453" y="178" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1594231590738" />
+    <state x="346" y="49" key="search.everywhere.popup" timestamp="1594218167026">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594218167026" />
   </component>
 </project>

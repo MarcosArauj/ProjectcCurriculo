@@ -5,6 +5,7 @@ namespace Source\App;
 
 
 use Source\Models\Contact;
+use Source\Models\Curriculum;
 use Source\Models\PersonalData;
 use Source\Models\Login;
 
@@ -46,13 +47,6 @@ class CurriculumController extends Controller {
     public function personalDataSave($data):void {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
-        if(in_array("", $data)) {
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "Preencha todos os campos para cadastrar!"
-            ]);
-            return;
-        }
 
         try {
 
@@ -65,6 +59,7 @@ class CurriculumController extends Controller {
             }
 
             $personalData = new PersonalData();
+
 
             $personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
 
@@ -98,13 +93,13 @@ class CurriculumController extends Controller {
     public function contactSave($data):void {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
-        if(in_array("", $data)) {
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "Preencha todos os campos para cadastrar!"
-            ]);
-            return;
-        }
+//        if(in_array("", $data)) {
+//            echo $this->ajaxResponse("message", [
+//                "type" => "error",
+//                "message" => "Preencha todos os campos para cadastrar!"
+//            ]);
+//            return;
+//        }
 
         try {
 
@@ -118,7 +113,7 @@ class CurriculumController extends Controller {
             $contact->saveContact();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.contactSave")
+                "url" =>$this->router->route("app.academicFormation")
 
             ]);
             flash("success","Dados Cadastrados Com Sucesso");
@@ -136,6 +131,45 @@ class CurriculumController extends Controller {
 
 
     }
+
+    /**
+     * @param $data
+     * Cadastro de Formação Academica
+     */
+    public function academicFormation($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            $formation = new Curriculum();
+
+            $formation->setid_usuario((INT)$this->user_logado->getid_usuario());
+
+            $formation->setData($data);
+
+            $formation->saveAcademicFormation();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.academicFormation")
+
+            ]);
+            flash("success","Dados Cadastrados Com Sucesso");
+            return;
+
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+
+    }
+
 
 }
 

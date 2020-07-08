@@ -1,8 +1,7 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><footer class="my-5 pt-5 text-muted text-center text-small">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><footer class="pt-5 text-muted text-center text-small">
 
-    <p><strong>Copyright &copy; <?php echo date('Y'); ?> </strong> All rights
+    <p><strong>Copyright &copy; <?php echo date('Y'); ?> </strong> All rights - <b>Version</b> <?php echo site("version"); ?>
         reserved.</p>
-    <p><b>Version</b> <?php echo site("version"); ?></p>
 </footer>
 </main>
 

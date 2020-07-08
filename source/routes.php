@@ -35,8 +35,9 @@ $router->post("/login", "AuthController:login","auth.login");
 
 $router->group("/user");
 $router->get("", "AppController:start","app.start");
-$router->get("/personalData", "AppController:personalDataSave","app.personalDataSave");
+$router->get("/personal_data", "AppController:personalDataSave","app.personalDataSave");
 $router->get("/contact", "AppController:contactSave","app.contactSave");
+$router->get("/formation", "AppController:academicFormation","app.academicFormation");
 $router->get("/logout", "AppController:logout","app.logout");
 
 /**
@@ -44,8 +45,9 @@ $router->get("/logout", "AppController:logout","app.logout");
  */
 
 $router->group("/curriculum");
-$router->post("/personalData", "CurriculumController:personalDataSave","curriculum.personalDataSave");
+$router->post("/personal_data", "CurriculumController:personalDataSave","curriculum.personalDataSave");
 $router->post("/contact", "CurriculumController:contactSave","curriculum.contactSave");
+$router->post("/formation", "CurriculumController:academicFormation","curriculum.academicFormation");
 $router->get("/getCitsStates", "HelpersController:getCitsStates","curriculum.getCitsStates");
 
 

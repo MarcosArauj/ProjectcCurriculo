@@ -72,6 +72,7 @@ class AppController extends Controller {
 
         $page->setTpl("create_ personal_data", array(
             "user" => $this->user_logado->getValues(),
+            "countries"=> Contact::listcountries(),
             "uf" => StatesCity::listuf()
 
         ));
@@ -89,6 +90,19 @@ class AppController extends Controller {
             "user" => $this->user_logado->getValues(),
             "countries"=> Contact::listcountries()
 
+        ));
+
+    }
+
+    /**
+     * Carrega Tela de Cadastro da Formação Acadêmica
+     */
+    public function academicFormation():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("academic_formation", array(
+            "user" => $this->user_logado->getValues()
         ));
 
     }
