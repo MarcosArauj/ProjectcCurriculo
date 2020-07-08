@@ -49,7 +49,12 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label for="pais"><strong class="obrigatorio">*</strong><b>País</b></label>
-                            <input type="text" class="form-control" id="pais" name="pais" placeholder="Ex: País" required>
+                            <select class="form-control" name="pais" id="pais" required>
+                                <option value="">Selecione</option>
+                                <?php $counter1=-1;  if( isset($countries) && ( is_array($countries) || $countries instanceof Traversable ) && sizeof($countries) ) foreach( $countries as $key1 => $value1 ){ $counter1++; ?>
+                                <option value="<?php echo htmlspecialchars( $value1["nome_pais_pt"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["nome_pais_pt"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                                <?php } ?>
+                            </select>
                         </div>
 
                     </div>

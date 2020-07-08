@@ -5,6 +5,7 @@ namespace Source\App;
 
 use Source\App\Pages\PageCurriculum;
 use Source\App\Pages\PageWeb;
+use Source\Models\Contact;
 use Source\Models\Login;
 use Source\Models\StatesCity;
 
@@ -85,7 +86,8 @@ class AppController extends Controller {
         $page = new PageCurriculum();
 
         $page->setTpl("create_contact", array(
-            "user" => $this->user_logado->getValues()
+            "user" => $this->user_logado->getValues(),
+            "countries"=> Contact::listcountries()
 
         ));
 

@@ -66,7 +66,7 @@ class CurriculumController extends Controller {
 
             $personalData = new PersonalData();
 
-            $personalData->setusuario_id((INT)$this->user_logado->getid_usuario());
+            $personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
 
             $personalData->setData($data);
 
@@ -77,9 +77,7 @@ class CurriculumController extends Controller {
                 "url" =>$this->router->route("app.contactSave")
 
             ]);
-            flash("success","Dados Cadastrados Com Sucesso");
             return;
-
 
         } catch (\Exception $e) {
 
@@ -112,12 +110,12 @@ class CurriculumController extends Controller {
 
             $contact = new Contact();
 
-            $contact->setusuario_id((INT)$this->user_logado->getid_usuario());
-            $contact->setemail($this->user_logado->getemail());
+            $contact->setid_usuario((INT)$this->user_logado->getid_usuario());
+            $contact->setc_email($this->user_logado->getemail());
 
             $contact->setData($data);
 
-            $contact->saveUser();
+            $contact->saveContact();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.contactSave")

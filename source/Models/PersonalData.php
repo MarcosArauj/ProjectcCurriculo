@@ -24,7 +24,7 @@ class PersonalData extends User {
 
         $results = $conn->select(
             "CALL sp_dados_pessoais_salvar(:primeiro_nome,:sobrenome,:genero,:cor_raca,:nascimento,:naturalidade,:uf_naturalidade,
-            :nacionalidade,:rg,:cpf,:usuario_id)", array(
+            :nacionalidade,:rg,:cpf,:id_usuario)", array(
             ":primeiro_nome" => $this->getprimeiro_nome(),
             ":sobrenome" => $this->getsobrenome(),
             ":genero" => $this->getgenero(),
@@ -35,7 +35,7 @@ class PersonalData extends User {
             ":nacionalidade" => $this->getnacionalidade(),
             ":rg" => $this->getrg(),
             ":cpf" => $this->getcpf(),
-            ":usuario_id" => $this->getusuario_id()
+            ":id_usuario" => $this->getid_usuario()
 
         ));
 

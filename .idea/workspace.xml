@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="" />
+    <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/CurriculumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/CurriculumController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/PersonalData.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/PersonalData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_contact.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_contact.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/start.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/start.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_ personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_ personal_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/start.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="Git.Settings">
@@ -53,10 +64,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.stylelint" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -68,7 +82,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594163639889</updated>
-      <workItem from="1594163641804" duration="1555000" />
+      <workItem from="1594163641804" duration="1835000" />
+      <workItem from="1594208671880" duration="3945000" />
     </task>
     <servers />
   </component>
@@ -80,6 +95,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Stylelint/0.0.1366.728@0.0.1366.728" timestamp="1594164630463" />
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1594214818800">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1594214818800" />
     <state x="459" y="277" key="ComposerInitDialogKey" timestamp="1594165234046">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
