@@ -47,5 +47,16 @@
     font-size: 80%;
     font-weight: bolder;
     color: #dc3545;
+}
 
+.success-disabled {
+    display: none;
+}
+
+.success-enabled {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    font-weight: bolder;
+    color: green;
 }

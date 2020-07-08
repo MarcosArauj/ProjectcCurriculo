@@ -118,18 +118,23 @@ jQuery(document).ready(function($) {
 // });
 
 $(document).ready(function () {
-    $('input[type=radio]').change(function() {
+    $('input[type=radio]').on('change',function() {
         $('input[type=radio]:checked').not(this).prop('checked', false);
     });
 
     $('#sim').on('click',function () {
         $('#nome_social').attr('disabled', false);
+        $('#mens_social').attr("class", "success-enabled");
+
     });
 
     $('#nao').on('click',function () {
         $('#nome_social').attr('disabled', true);
+        $('#mens_social').attr("class", "success-disabled");
     });
-})
+
+});
+
 
 
 
