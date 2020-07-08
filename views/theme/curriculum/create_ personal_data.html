@@ -23,17 +23,17 @@
                         <div class="form-group col-md-3">
                             <b>Usar Nome Social ?</b> <br>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="sim" name="customRadioInline1" class="custom-control-input">
+                                <input type="radio" id="sim" name="sim" class="custom-control-input">
                                 <label class="custom-control-label" for="sim">Sim</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="nao" name="customRadioInline1" class="custom-control-input">
+                                <input type="radio" id="nao" name="nao" class="custom-control-input">
                                 <label class="custom-control-label" for="nao">Não</label>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="nome_social"><b>Nome Social</b></label>
-                            <input type="text" class="form-control form-control-sm" id="nome_social" name="nome_social" placeholder="Nome social se Houver">
+                            <input type="text" class="form-control form-control-sm" id="nome_social" name="nome_social" placeholder="Nome social se Houver" disabled>
                         </div>
                         <div class="form-group col-md-3">
                             <label  for="genero"><strong class="obrigatorio">*</strong><b>Sexo</b></label>

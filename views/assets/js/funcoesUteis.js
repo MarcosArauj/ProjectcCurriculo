@@ -117,6 +117,20 @@ jQuery(document).ready(function($) {
 //     })
 // });
 
+$(document).ready(function () {
+    $('input[type=radio]').change(function() {
+        $('input[type=radio]:checked').not(this).prop('checked', false);
+    });
+
+    $('#sim').on('click',function () {
+        $('#nome_social').attr('disabled', false);
+    });
+
+    $('#nao').on('click',function () {
+        $('#nome_social').attr('disabled', true);
+    });
+})
+
 
 
 

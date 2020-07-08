@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/Models/Curriculum.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/curriculum/academic_formation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/CurriculumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/CurriculumController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/PersonalData.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/PersonalData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views-cache/create_ personal_data.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_ personal_data.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views-cache/create_contact.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_contact.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/create_user.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_user.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/footer.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/footer.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/start.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/start.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/mascara.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/mascara.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/validacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/validacao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_ personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_ personal_data.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/web/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/create_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/web/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/start.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1594163639889</updated>
       <workItem from="1594163641804" duration="1835000" />
-      <workItem from="1594208671880" duration="17428000" />
+      <workItem from="1594208671880" duration="19027000" />
     </task>
     <servers />
   </component>
