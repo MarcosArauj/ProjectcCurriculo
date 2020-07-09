@@ -32,6 +32,24 @@ function getCitsStates() {
         echo '<option>' . $citys["id_cidade"] . '</option>';
     }
 
+}
+
+function formatDate($data){
+
+    return date('d/m/Y',strtotime($data));
+
+}
+
+function formatCpf($cpf){
+
+    $parte_um     = substr($cpf, 0, 3);
+    $parte_dois   = substr($cpf, 3, 3);
+    $parte_tres   = substr($cpf, 6, 3);
+    $parte_quatro = substr($cpf, 9, 2);
+
+    $cpf = "$parte_um.$parte_dois.$parte_tres-$parte_quatro";
+
+    return $cpf;
 
 }
 
