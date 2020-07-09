@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Config/FuncoesUteis.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/FuncoesUteis.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/other_courses.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +80,7 @@
       <updated>1594163639889</updated>
       <workItem from="1594163641804" duration="1835000" />
       <workItem from="1594208671880" duration="24247000" />
-      <workItem from="1594301016103" duration="15462000" />
+      <workItem from="1594301016103" duration="15850000" />
     </task>
     <servers />
   </component>

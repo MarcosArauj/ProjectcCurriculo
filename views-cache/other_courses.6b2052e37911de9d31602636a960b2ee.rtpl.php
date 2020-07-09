@@ -58,9 +58,7 @@
         <table class="table table-striped border-success">
             <thead>
                 <tr>
-                    <th style="width: 260px">Curso</th>
-                    <th>Carga Horária</th>
-                    <th>Término</th>
+                    <th >Cursos</th>
                     <th>&nbsp;</th>
                 </tr>
             </thead>
@@ -68,8 +66,6 @@
                 <?php $counter1=-1;  if( isset($courses) && ( is_array($courses) || $courses instanceof Traversable ) && sizeof($courses) ) foreach( $courses as $key1 => $value1 ){ $counter1++; ?>
                 <tr>
                     <td><?php echo htmlspecialchars( $value1["nome_curso"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                    <td><?php echo htmlspecialchars( $value1["carga_horaria"], ENT_COMPAT, 'UTF-8', FALSE ); ?>:00 Horas</td>
-                    <td><?php echo formatDate($value1["termino"]); ?></td>
                     <td class="float-right">
                         <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
                         <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
