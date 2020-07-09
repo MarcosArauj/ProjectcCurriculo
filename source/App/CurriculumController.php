@@ -93,13 +93,6 @@ class CurriculumController extends Controller {
     public function contactSave($data):void {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
-//        if(in_array("", $data)) {
-//            echo $this->ajaxResponse("message", [
-//                "type" => "error",
-//                "message" => "Preencha todos os campos para cadastrar!"
-//            ]);
-//            return;
-//        }
 
         try {
 
@@ -151,7 +144,7 @@ class CurriculumController extends Controller {
             $formation->saveAcademicFormation();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.academicFormation")
+                "url" =>$this->router->route("app.otherCourses")
 
             ]);
             flash("success","Dados Cadastrados Com Sucesso");
@@ -170,6 +163,51 @@ class CurriculumController extends Controller {
 
     }
 
+    /**
+     * @param $data
+     * Cadastro de Outros Cursos
+     */
+    public function otherCourses($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        if(in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos para cadastrar!"
+            ]);
+            return;
+        }
+
+        try {
+
+            $courses = new Curriculum();
+
+            $courses->setid_usuario((INT)$this->user_logado->getid_usuario());
+
+            $courses->setData($data);
+
+            $courses->saveOtherCourses();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.otherCourses")
+
+            ]);
+            flash("success","Dados Cadastrados Com Sucesso");
+            return;
+
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+
+    }
 
 }
 

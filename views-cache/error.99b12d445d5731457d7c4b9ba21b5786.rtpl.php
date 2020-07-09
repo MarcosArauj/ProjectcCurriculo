@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo site("name"); ?> | Erro <?php echo htmlspecialchars( $error, ENT_COMPAT, 'UTF-8', FALSE ); ?></title>
+    <!--Icone-->
+    <link rel="shortcut icon" href=<?php echo asset("images/wc.ico"); ?> />
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href=<?php echo asset("bootstrap4/dist/css/bootstrap.min.css"); ?> />
     <!-- Style-->

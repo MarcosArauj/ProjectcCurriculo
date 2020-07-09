@@ -23,7 +23,7 @@
                         <div class="col-md-12">
                             <div id="mens_social" class="success-disabled" >
                                 *Em âmbito federal, o <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/decreto/D8727.htm" target="_blank">Decreto nº 8.727, de 28 de abril de 2016</a>, da Presidência da República normatizou o uso do nome social
-                                pelos órgãos e entidades da administração pública federal direta, autárquica e fundacional
+                                pelos órgãos e entidades da administração pública federal direta, autárquica e fundacional;
                                 <hr>
                             </div>
                         </div>

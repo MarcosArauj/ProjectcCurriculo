@@ -6,6 +6,7 @@ namespace Source\App;
 use Source\App\Pages\PageCurriculum;
 use Source\App\Pages\PageWeb;
 use Source\Models\Contact;
+use Source\Models\Curriculum;
 use Source\Models\Login;
 use Source\Models\StatesCity;
 
@@ -103,6 +104,21 @@ class AppController extends Controller {
 
         $page->setTpl("academic_formation", array(
             "user" => $this->user_logado->getValues()
+        ));
+
+    }
+
+    /**
+     * Carrega Tela de Cadastro da Outros Cursos
+     */
+    public function otherCourses():void {
+
+        $page = new PageCurriculum();
+
+
+        $page->setTpl("other_courses", array(
+            "user" => $this->user_logado->getValues(),
+            "courses"=>Curriculum::getOtherCourses($this->user_logado->getid_usuario())
         ));
 
     }
