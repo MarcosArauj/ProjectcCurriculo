@@ -17,8 +17,6 @@
 
     <script src=<?php echo asset("js/mascara.js"); ?> > </script>
 
-
-
     </head>
     <body>
     <div class="ajax_load">
@@ -27,4 +25,5 @@
         <div class="ajax_load_box_title">Aguarde, carrengando...</div>
     </div>
     </div>
-    <main class="container-fluid">
+<main class="container-fluid">
+    <?php require $this->checkTemplate("navebar");?>

@@ -1,4 +1,5 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><section class="container">
+<?php if(!class_exists('Rain\Tpl')){exit;}?>
+<section class="container">
     <h4 style="text-align: center">
         Registro de Curriculo  de <?php echo htmlspecialchars( $user["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
     </h4>
