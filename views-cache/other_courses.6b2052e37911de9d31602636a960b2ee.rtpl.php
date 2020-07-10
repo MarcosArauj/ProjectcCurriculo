@@ -1,20 +1,14 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?>
-<section class="container">
-    <h4 style="text-align: center">
-        Registro de Curriculo  de <?php echo htmlspecialchars( $user["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
-    </h4>
-
-</section>
-
-<section class="container-fluid col-md-8">
-    <div class="alert">
-        <?php echo flash(); ?>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("navebar");?>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h4 class="h2">Registro - Outros Cursos <?php echo htmlspecialchars( $user["id_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h4>
     </div>
-    <form class="form" action="/curriculum/other_courses" method="post" autocomplete="off">
+
+<div class="alert">
+    <?php echo flash(); ?>
+</div>
+<form class="form" action="/curriculum/other_courses" method="post" autocomplete="off">
     <div  class="card border-success">
-        <div class="card-header text-success">
-            <h4>Outros Cursos</h4>
-        </div>
         <div class="card-body">
             <div class="row">
                 <!-- Coluna 1 -->
@@ -43,47 +37,45 @@
            </div>
         </div>
         <div class="card-footer">
-              <a class="btn btn-danger float-left" href="/user/formation" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a></p>
+              <a class="btn btn-danger float-left" href="/user/formation" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
             <div class="float-right">
                <button class="btn btn-md btn-success">Adionar Curso</button>
-               <a class="btn btn-primary" href="#" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a></p>
+               <a class="btn btn-primary" href="#" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
             </div>
         </div>
 
     </div>
-    </form>
+</form>
 
     <!-- Lista de Cursos -->
         <?php if( $courses ){ ?>
-        <div  class="card border-success">
-        <table class="table table-striped border-success">
-            <thead>
-                <tr>
-                    <th >Cursos</th>
-                    <th>&nbsp;</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $counter1=-1;  if( isset($courses) && ( is_array($courses) || $courses instanceof Traversable ) && sizeof($courses) ) foreach( $courses as $key1 => $value1 ){ $counter1++; ?>
-                <tr>
-                    <td><?php echo htmlspecialchars( $value1["nome_curso"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
-                    <td class="float-right">
-                        <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
-                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
-                        <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
-                    </td>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-        </div>
-        <?php }else{ ?>
-        <div  class="alert alert-danger">
-            <h5>Nenhum curso cadastrato</h5>
-        </div>
+<div  class="card border-success">
+<table class="table table-striped border-success">
+    <thead>
+        <tr>
+            <th >Cursos</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php $counter1=-1;  if( isset($courses) && ( is_array($courses) || $courses instanceof Traversable ) && sizeof($courses) ) foreach( $courses as $key1 => $value1 ){ $counter1++; ?>
+        <tr>
+            <td><?php echo htmlspecialchars( $value1["nome_curso"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+            <td class="float-right">
+                <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
+                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
+            </td>
+        </tr>
         <?php } ?>
-
-</section>
-
+    </tbody>
+</table>
 </div>
+<?php }else{ ?>
+<div  class="alert alert-danger">
+    <h5>Nenhum curso cadastrato</h5>
+</div>
+<?php } ?>
+
+
 

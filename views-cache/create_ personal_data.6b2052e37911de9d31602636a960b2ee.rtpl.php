@@ -1,19 +1,15 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><section class="container">
-    <h4 style="text-align: center">
-        Registro de Curriculo <?php echo htmlspecialchars( $user["id_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
-    </h4>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("navebar");?>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h4 class="h2">Registro - Dados Pessoais <?php echo htmlspecialchars( $user["id_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h4>
 
-</section>
+    </div>
 
-<section class="container col-md-9">
     <div class="alert">
         <?php echo flash(); ?>
     </div>
-    <form class="form" action="/curriculum/personal_data" method="post" autocomplete="off">
+<form class="form" action="/curriculum/personal_data" method="post" autocomplete="off">
     <div class="card border-success ">
-        <div class="card-header text-success">
-            <h4>Dados Pessoais</h4>
-        </div>
         <div class="card-body">
             <div class="row">
                 <!-- Coluna 1 -->
@@ -127,7 +123,6 @@
 
     </div>
     </form>
-</section>
 
-</div>
+
 

@@ -18,7 +18,7 @@ function getNameUser() {
 
         return " - " . saudacao();
     } else {
-        return " - " . $user->getprimeiro_nome();
+        return $user->getprimeiro_nome();
     }
 
 

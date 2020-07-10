@@ -1,4 +1,4 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate(''.htmlspecialchars( $navebar, ENT_COMPAT, 'UTF-8', FALSE ));?>
 <div class="page">
 
     <div style="text-align: center">
@@ -10,7 +10,7 @@
         <br>
         <h4>Vamos iniciar o cadastro do seu Curriculo!</h4>
         <br>
-        <p><a class="btn btn-primary" href="/user/personal_data" id="iniciar" title="Iniciar">Iniciar <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        <p><a class="btn btn-primary" href="/user/create_contact" id="iniciar" title="Iniciar">Iniciar <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
         <br>
         <a class="btn btn-danger" href="/user/logout" title="Voltar"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar </a></p>
     </div>

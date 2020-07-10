@@ -1,9 +1,11 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><section class="container">
+    <div class="align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 id="titulo_home">
         <a href="/">
             <b><?php echo site("name"); ?> - <?php echo site("desc"); ?></b>
         </a>
     </h1>
+    </div>
 </section>
 
 <section class="container col-md-4">
@@ -45,7 +47,7 @@
                         <hr>
                         <div class="form-group col-md-12">
                             <a id="recuperasenha" href="" title="Recuperar Senha">Recuperar Senha</a>
-                            <button class="btn btn-md btn-success float-right" ><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;Entrar&nbsp;&nbsp;</button>
+                            <button class="btn btn-md btn-success float-right" ><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Entrar&nbsp;&nbsp;</button>
                         </div>
                     </div>
                 </div>
