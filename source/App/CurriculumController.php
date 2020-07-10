@@ -209,17 +209,9 @@ class CurriculumController extends Controller {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
-        if(in_array("", $data)) {
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => "Preencha todos os campos para cadastrar!"
-            ]);
-            return;
-        }
-
         try {
 
-            $courses = new Curriculum();
+            $language_user = new Curriculum();
 
             $id_user = $this->user_logado->getid_usuario();
 
@@ -233,17 +225,61 @@ class CurriculumController extends Controller {
 
             }
 
-            $courses->setid_usuario($id_user);
+            $language_user->setid_usuario($id_user);
 
-            $courses->setData($data);
+            $language_user->setData($data);
 
-            $courses->saveLanguages();
+            // Idioma do Usuario
+            $language_user->saveLanguagesCurriculum();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveLanguages")
 
             ]);
             flash("success","Dados Cadastrados Com Sucesso");
+            return;
+
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    public function createLanguage($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            $language = new Curriculum();
+
+
+            if(Curriculum::checkLanguageExists($data["idioma"]) == true) {
+
+                echo $this->ajaxResponse("message", [
+                    "type" => "error",
+                    "message" =>"Idioma Já Cadastrado"
+                ]);
+                return;
+
+            }
+
+            $language->setData($data);
+
+            //Novo Idioma no Sistema
+            $language->saveLanguage();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.saveLanguages")
+
+            ]);
+            flash("success","Idioma Cadastrado Com Sucesso");
             return;
 
 

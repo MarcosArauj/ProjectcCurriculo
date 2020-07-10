@@ -101,20 +101,20 @@ class Curriculum extends User {
      * @throws \Exception
      * Salva Cadastro de Idioma pora o Usuario
      */
-    public function saveLanguages():bool {
+    public function saveLanguagesCurriculum():bool {
 
         $conn = new Conection();
 
         $results = $conn->select(
-            "CALL sp_idiomas_salvar(:id_idiomas,:idioma,:nivel_conhecimento,:id_usuario)", array(
-            ":id_idiomas"=>$this->getid_idiomas(),
+            "CALL sp_idiomas_salvar(:id_idioma_curriculo,:idioma,:nivel_conhecimento,:id_usuario)", array(
+            ":id_idioma_curriculo"=>$this->getid_idioma_curriculo(),
             ":idioma"=>$this->getidioma(),
             ":nivel_conhecimento"=>$this->getnivel_conhecimento(),
             ":id_usuario"=>$this->getid_usuario()
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Salver Cadastro!");
+            throw new \Exception("Erro ao Salvar Cadastro!");
             return false;
         }
 
@@ -134,7 +134,7 @@ class Curriculum extends User {
 
         $conn = new Conection();
 
-        return  $conn->select("SELECT * FROM tb_idiomas
+        return  $conn->select("SELECT * FROM tb_idioma_curriculo
                 WHERE id_usuario = :id_usuario", array(
             ":id_usuario"=>$id_usuario
         ));
@@ -152,7 +152,7 @@ class Curriculum extends User {
 
         $conn = new Conection();
 
-        $results =  $conn->select("SELECT * FROM tb_idiomas  
+        $results =  $conn->select("SELECT * FROM tb_idioma_curriculo 
                 WHERE  id_usuario = :id_usuario AND idioma = :idioma", array(
             ":id_usuario"=>$id_usuario,
             ":idioma"=>$idioma
@@ -160,6 +160,53 @@ class Curriculum extends User {
 
         return (count($results) > 0);
 
+    }
+
+    /**
+     * @param $id_usuario
+     * @param $idioma
+     * @return bool
+     *
+     * Checa  cadastrou o Idioma
+     */
+    public static function checkLanguageExists($idioma_pt):bool {
+
+        $conn = new Conection();
+
+        $results =  $conn->select("SELECT * FROM tb_idiomas 
+                WHERE idioma_pt = :idioma_pt", array(
+            ":idioma_pt"=>$idioma_pt
+        ));
+
+        return (count($results) > 0);
+
+    }
+
+    public function saveLanguage(): bool {
+        $conn = new Conection();
+
+        $results = $conn->select("INSERT INTO tb_idiomas (idioma_pt) VALUES(:idioma_pt)", array(
+            ":idioma_pt"=>$this->getidioma_pt()
+        ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Erro ao Salvar Idioma!");
+            return false;
+        }
+
+        $this->setData($results[0]);
+
+        return true;
+    }
+
+    /**
+     * @return array
+     * Lista Idiomas
+     */
+    public static function languages() {
+        $conn = new Conection();
+
+        return $conn->select("SELECT * FROM tb_idiomas ORDER BY idioma_pt");
     }
 
 

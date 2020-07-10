@@ -134,6 +134,16 @@ $(document).ready(function () {
         $('#mens_social').attr("class", "success-disabled");
     });
 
+    // Novo Idioma
+    $('#nao_idioma').on('click',function () {
+        $('#novo_idioma').css("display" ,"block");
+
+    });
+
+    $('#sim_idioma').on('click',function () {
+        $('#novo_idioma').css("display", "none");
+    });
+
 });
 
 

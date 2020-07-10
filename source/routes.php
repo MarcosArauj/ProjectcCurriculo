@@ -52,6 +52,7 @@ $router->post("/contact", "CurriculumController:saveContact","curriculum.saveCon
 $router->post("/formation", "CurriculumController:saveAcademicFormation","curriculum.saveAcademicFormation");
 $router->post("/other_courses", "CurriculumController:saveOtherCourses","curriculum.saveOtherCourses");
 $router->post("/languages", "CurriculumController:saveLanguages","curriculum.saveLanguages");
+$router->post("/new_languages", "CurriculumController:createLanguage","curriculum.createLanguage");
 $router->get("/getCitsStates", "HelpersController:getCitsStates","curriculum.getCitsStates");
 
 

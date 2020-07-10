@@ -131,7 +131,8 @@ class AppController extends Controller {
 
         $page->setTpl("create_languages", array(
             "user" => $this->user_logado->getValues(),
-            "languages"=>Curriculum::getLanguages($this->user_logado->getid_usuario())
+            "languages"=>Curriculum::getLanguages($this->user_logado->getid_usuario()),
+            "lang_cad"=>Curriculum::languages()
         ));
 
     }
