@@ -44,7 +44,7 @@ class CurriculumController extends Controller {
      * @param $data
      * Cadastro de Dados Pessoais
      */
-    public function personalDataSave($data):void {
+    public function savePersonalData($data):void {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
@@ -69,7 +69,7 @@ class CurriculumController extends Controller {
             $personalData->savePersonalData();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.contactSave")
+                "url" =>$this->router->route("app.saveContact")
 
             ]);
             return;
@@ -83,14 +83,13 @@ class CurriculumController extends Controller {
             return;
         }
 
-
     }
 
     /**
      * @param $data
      * Cadastro de Contato e Endereço
      */
-    public function contactSave($data):void {
+    public function saveContact($data):void {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
@@ -106,12 +105,10 @@ class CurriculumController extends Controller {
             $contact->saveContact();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.academicFormation")
+                "url" =>$this->router->route("app.saveAcademicFormation")
 
             ]);
-            flash("success","Dados Cadastrados Com Sucesso");
             return;
-
 
         } catch (\Exception $e) {
 
@@ -122,14 +119,13 @@ class CurriculumController extends Controller {
             return;
         }
 
-
     }
 
     /**
      * @param $data
      * Cadastro de Formação Academica
      */
-    public function academicFormation($data):void {
+    public function saveAcademicFormation($data):void {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
@@ -144,12 +140,10 @@ class CurriculumController extends Controller {
             $formation->saveAcademicFormation();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.otherCourses")
+                "url" =>$this->router->route("app.saveOtherCourses")
 
             ]);
-            flash("success","Dados Cadastrados Com Sucesso");
             return;
-
 
         } catch (\Exception $e) {
 
@@ -160,14 +154,13 @@ class CurriculumController extends Controller {
             return;
         }
 
-
     }
 
     /**
      * @param $data
      * Cadastro de Outros Cursos
      */
-    public function otherCourses($data):void {
+    public function saveOtherCourses($data):void {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
@@ -190,7 +183,7 @@ class CurriculumController extends Controller {
             $courses->saveOtherCourses();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.otherCourses")
+                "url" =>$this->router->route("app.saveOtherCourses")
 
             ]);
             flash("success","Dados Cadastrados Com Sucesso");
@@ -206,6 +199,62 @@ class CurriculumController extends Controller {
             return;
         }
 
+    }
+
+    /**
+     * @param $data
+     * Cadastro de Idiomas
+     */
+    public function saveLanguages($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        if(in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos para cadastrar!"
+            ]);
+            return;
+        }
+
+        try {
+
+            $courses = new Curriculum();
+
+            $id_user = $this->user_logado->getid_usuario();
+
+            if(Curriculum::checkLanguage($id_user,$data["idioma"]) == true) {
+
+                echo $this->ajaxResponse("message", [
+                    "type" => "error",
+                    "message" =>"Você já registrou esse Idioma"
+                ]);
+                return;
+
+            }
+
+            $courses->setid_usuario($id_user);
+
+            $courses->setData($data);
+
+            $courses->saveLanguages();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.saveLanguages")
+
+            ]);
+            flash("success","Dados Cadastrados Com Sucesso");
+            return;
+
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
 
     }
 

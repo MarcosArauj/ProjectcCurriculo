@@ -8,6 +8,7 @@ function saudacao() {
     return "Bem Vindo";
 }
 
+
 function getNameUser() {
 
     $user = Login::getFromSession();

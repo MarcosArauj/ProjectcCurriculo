@@ -67,7 +67,7 @@ class AppController extends Controller {
     /**
      * Carrega Tela de Cadastro dos Dados Pessoais
      */
-    public function personalDataSave():void {
+    public function savePersonalData():void {
 
         $page = new PageCurriculum();
 
@@ -83,7 +83,7 @@ class AppController extends Controller {
     /**
      * Carrega Tela de Cadastro dos Contato e Endereço
      */
-    public function contactSave():void {
+    public function saveContact():void {
 
         $page = new PageCurriculum();
 
@@ -98,11 +98,11 @@ class AppController extends Controller {
     /**
      * Carrega Tela de Cadastro da Formação Acadêmica
      */
-    public function academicFormation():void {
+    public function saveAcademicFormation():void {
 
         $page = new PageCurriculum();
 
-        $page->setTpl("academic_formation", array(
+        $page->setTpl("create_academic_formation", array(
             "user" => $this->user_logado->getValues()
         ));
 
@@ -111,14 +111,27 @@ class AppController extends Controller {
     /**
      * Carrega Tela de Cadastro da Outros Cursos
      */
-    public function otherCourses():void {
+    public function saveOtherCourses():void {
 
         $page = new PageCurriculum();
 
-
-        $page->setTpl("other_courses", array(
+        $page->setTpl("create_other_courses", array(
             "user" => $this->user_logado->getValues(),
             "courses"=>Curriculum::getOtherCourses($this->user_logado->getid_usuario())
+        ));
+
+    }
+
+    /**
+     * Carrega Tela de Cadastro de Idiomas
+     */
+    public function saveLanguages():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("create_languages", array(
+            "user" => $this->user_logado->getValues(),
+            "languages"=>Curriculum::getLanguages($this->user_logado->getid_usuario())
         ));
 
     }

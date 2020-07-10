@@ -122,6 +122,7 @@ $(document).ready(function () {
         $('input[type=radio]:checked').not(this).prop('checked', false);
     });
 
+    // Nome Social
     $('#sim').on('click',function () {
         $('#nome_social').attr('disabled', false);
         $('#mens_social').attr("class", "success-enabled");
@@ -136,8 +137,44 @@ $(document).ready(function () {
 });
 
 
+// Seleção de Idiomas
+$(document).ready(function () {
+
+    $('#nivel').on("change", function () {
+        let nivel = $('#nivel').val();
+        var view;
 
 
+        if(nivel == "iniciante") {
+             view = '<div>*Iniciante:</br>Você não tem conhecimento algum do idioma, mas em breve você poderá dar os primeiros passos rumo ao progresso.</div>';
+
+        } else if (nivel == "basico") {
+             view = '<div>*Básico:</br>Você já poderá formar e entender questões simples.</div>';
+
+        } else if (nivel == "elementar") {
+            view = '<div>*Elementar:</br>Você poderá entender simples artigos de jornal. Escrever cartas e fazer declarações espontâneas não são problemas.</div>';
+
+        } else if (nivel == "intermediario") {
+           view = '<div>*Intermediário:</br>Você já terá conhecimento prévio detalhado de gramática e vocabulário.</div>';
+
+        } else if (nivel == "avancado") {
+            view = '<div>*Avançado:</br>Você tem um conhecimento grande do idioma. Você poderá apresentar tópicos específicos e conversar em quase quaisquer assuntos.</div>';
+
+        } else if (nivel == "fluente") {
+            view = '<div>*Fluente:</br>Você terá técnicas especiais de vocabulário e gramática. Você poderá se comunicar em alto nível.</div>';
+
+        } else if (nivel == "academico") {
+            view = '<div>*Acadêmico:</br>Você terá o perfeito conhecimento de vocabulário e gramática. Você poderá se comunicar quase como um falante nativo.</div>';
+
+        } else {
+            view = '<div></div>';
+            $(".success-disabled").html(view);
+        }
+        $(".success-enabled").html(view);
+
+    });
+
+});
 
 
 $('#uf').on('change', function () {

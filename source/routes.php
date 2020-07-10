@@ -35,10 +35,11 @@ $router->post("/login", "AuthController:login","auth.login");
 
 $router->group("/user");
 $router->get("", "AppController:start","app.start");
-$router->get("/personal_data", "AppController:personalDataSave","app.personalDataSave");
-$router->get("/contact", "AppController:contactSave","app.contactSave");
-$router->get("/formation", "AppController:academicFormation","app.academicFormation");
-$router->get("/other_courses", "AppController:otherCourses","app.otherCourses");
+$router->get("/personal_data", "AppController:savePersonalData","app.personalData");
+$router->get("/contact", "AppController:saveContact","app.saveContact");
+$router->get("/formation", "AppController:saveAcademicFormation","app.saveAcademicFormation");
+$router->get("/other_courses", "AppController:saveOtherCourses","app.saveOtherCourses");
+$router->get("/languages", "AppController:saveLanguages","app.saveLanguages");
 $router->get("/logout", "AppController:logout","app.logout");
 
 /**
@@ -46,10 +47,11 @@ $router->get("/logout", "AppController:logout","app.logout");
  */
 
 $router->group("/curriculum");
-$router->post("/personal_data", "CurriculumController:personalDataSave","curriculum.personalDataSave");
-$router->post("/contact", "CurriculumController:contactSave","curriculum.contactSave");
-$router->post("/formation", "CurriculumController:academicFormation","curriculum.academicFormation");
-$router->post("/other_courses", "CurriculumController:otherCourses","curriculum.otherCourses");
+$router->post("/personal_data", "CurriculumController:savePersonalData","curriculum.savePersonalData");
+$router->post("/contact", "CurriculumController:saveContact","curriculum.saveContact");
+$router->post("/formation", "CurriculumController:saveAcademicFormation","curriculum.saveAcademicFormation");
+$router->post("/other_courses", "CurriculumController:saveOtherCourses","curriculum.saveOtherCourses");
+$router->post("/languages", "CurriculumController:saveLanguages","curriculum.saveLanguages");
 $router->get("/getCitsStates", "HelpersController:getCitsStates","curriculum.getCitsStates");
 
 
