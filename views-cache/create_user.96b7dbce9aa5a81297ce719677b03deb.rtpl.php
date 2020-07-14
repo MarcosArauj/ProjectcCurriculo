@@ -1,7 +1,6 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><section class="container">
     <div class="align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h2 class="text-center h2">Registro de Usuário</h2>
-
     </div>
 
 </section>

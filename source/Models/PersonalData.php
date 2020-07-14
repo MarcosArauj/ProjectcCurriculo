@@ -35,7 +35,7 @@ class PersonalData extends User {
             ":uf_naturalidade" => $this->getuf_naturalidade(),
             ":nacionalidade" => $this->getnacionalidade(),
             ":rg" => $this->getrg(),
-            ":cpf" => $this->getcpf(),
+            ":cpf" => removeMaskCpf($this->getcpf()),
             ":id_usuario" => $this->getid_usuario()
 
         ));
@@ -62,7 +62,7 @@ class PersonalData extends User {
 
         $results = $conn->select("SELECT cpf FROM v_usuario WHERE cpf = :cpf",
             [
-                ":cpf"=>$cpf
+                ":cpf"=> removeMaskCpf($cpf)
             ]);
         if(count($results) > 0){
             return true;

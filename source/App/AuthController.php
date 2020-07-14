@@ -84,13 +84,13 @@ class AuthController extends Controller {
      */
     public function login($data):void {
 
-        $email = filter_var($data["login"], FILTER_VALIDATE_EMAIL);
+        $email = filter_var($data["login"], FILTER_SANITIZE_STRIPPED);
         $password = filter_var($data["senha"], FILTER_DEFAULT);
 
         if(!$email || !$password) {
             echo $this->ajaxResponse("message",[
                 "type"=>"alert",
-                "message"=>"Dados Inválidos, informe seu e-mail e senha corretos para logar!"
+                "message"=>"Dados Inválidos, informe seu Usuário(e-mail ou CPF) e senha corretos para logar!"
             ]);
             return;
         }

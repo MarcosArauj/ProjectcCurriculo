@@ -21,15 +21,12 @@
                 <div class="row">
                     <!-- Coluna E-mail e Senha -->
                     <div class="col">
-                        <div id="email" class="form-group col-md-12">
-                            <div class="error-disabled" id="mesmeail" >
-                                <strong>E-mail inválido!!!</strong>
-                            </div>
+                        <div class="form-group col-md-12">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" ><i class="fa fa-user" aria-hidden="true"></i></span>
                                 </div>
-                                <input type="email" class="form-control " placeholder="Usuário - E-mail(exemplo@email.com)" id="campo_email"  name="login"  autofocus>
+                                <input type="text" class="form-control " placeholder="Usuário - E-mail ou CPF" id="campo_email"  name="login"  autofocus>
                             </div>
                         </div>
                         <div class="form-group col-md-12">

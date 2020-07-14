@@ -8,6 +8,13 @@ function saudacao() {
     return "Bem Vindo";
 }
 
+function removeMaskCpf($cpf) {
+    // Elimina possivel mascara
+    $cpf = preg_replace("/[^0-9]/", "", $cpf);
+    $cpf = str_pad($cpf, 11, '0', STR_PAD_LEFT);
+
+    return $cpf;
+}
 
 function getNameUser() {
 

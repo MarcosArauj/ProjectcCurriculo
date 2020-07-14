@@ -23,7 +23,7 @@ class Login extends User {
         $conn = new Conection();
 
         $results = $conn->select("SELECT * FROM v_usuario
-                    WHERE email = :login AND status_usuario = :status",
+                    WHERE email = :login OR cpf = :login AND status_usuario = :status",
             array(
                 ":login"=>$login,
                 ":status"=>"ativo",

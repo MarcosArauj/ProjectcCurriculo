@@ -60,11 +60,9 @@ class CurriculumController extends Controller {
 
             $personalData = new PersonalData();
 
-
             $personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
 
             $personalData->setData($data);
-
 
             $personalData->savePersonalData();
 
@@ -211,11 +209,9 @@ class CurriculumController extends Controller {
 
         try {
 
-            $language_user = new Curriculum();
-
             $id_user = $this->user_logado->getid_usuario();
 
-            if(Curriculum::checkLanguage($id_user,$data["idioma"]) == true) {
+            if(Curriculum::checkLanguage((INT)$id_user,$data["idioma"]) == true) {
 
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
@@ -225,7 +221,9 @@ class CurriculumController extends Controller {
 
             }
 
-            $language_user->setid_usuario($id_user);
+            $language_user = new Curriculum();
+
+            $language_user->setid_usuario((INT)$id_user);
 
             $language_user->setData($data);
 
@@ -238,7 +236,6 @@ class CurriculumController extends Controller {
             ]);
             flash("success","Dados Cadastrados Com Sucesso");
             return;
-
 
         } catch (\Exception $e) {
 
@@ -257,10 +254,7 @@ class CurriculumController extends Controller {
 
         try {
 
-            $language = new Curriculum();
-
-
-            if(Curriculum::checkLanguageExists($data["idioma"]) == true) {
+            if(Curriculum::checkLanguageExists($data["idioma_pt"]) == true) {
 
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
@@ -269,6 +263,8 @@ class CurriculumController extends Controller {
                 return;
 
             }
+
+            $language = new Curriculum();
 
             $language->setData($data);
 
@@ -281,7 +277,6 @@ class CurriculumController extends Controller {
             ]);
             flash("success","Idioma Cadastrado Com Sucesso");
             return;
-
 
         } catch (\Exception $e) {
 
