@@ -128,7 +128,6 @@ $(document).ready(function () {
         $('#mens_social').attr("class", "success-enabled");
 
     });
-
     $('#nao').on('click',function () {
         $('#nome_social').attr('disabled', true);
         $('#mens_social').attr("class", "success-disabled");
@@ -139,9 +138,20 @@ $(document).ready(function () {
         $('#novo_idioma').css("display" ,"block");
 
     });
-
     $('#sim_idioma').on('click',function () {
         $('#novo_idioma').css("display", "none");
+    });
+
+
+    // Novo Experiencia Profissional
+    $('#sim_emprego').on('click',function () {
+        $('.professional_atual').css("display" ,"block");
+        $('.professional_anterior').css("display" ,"none");
+
+    });
+    $('#nao_emprego').on('click',function () {
+        $('.professional_atual').css("display" ,"none");
+        $('.professional_anterior').css("display" ,"block");
     });
 
 });

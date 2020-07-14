@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="form-group col-md-12">
-                <button class="btn btn-md btn-success float-right">Adicionar Idioma</button>
+                <button class="btn btn-md btn-success float-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Idioma</button>
             </div>
             </form>
             </div>
@@ -68,7 +68,7 @@
                                 <input type="text" class="form-control form-control-sm" id="idioma_pt" name="idioma_pt" placeholder="Ex:Idioma" >
                             </div>
                             <div class="form-group col-md-12">
-                                <button class="btn btn-md btn-success float-right">Novo Idioma</button>
+                                <button class="btn btn-md btn-success float-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Novo Idioma</button>
                             </div>
                         </div>
                   </form>

@@ -6,6 +6,14 @@ body{
     display: none;
 }
 
+.professional_anterior {
+    display: none;
+}
+
+.professional_atual {
+    display: block;
+}
+
 #titulo_home{
     margin-top: auto;
     text-align: center;

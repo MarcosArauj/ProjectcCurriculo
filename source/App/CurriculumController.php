@@ -184,7 +184,7 @@ class CurriculumController extends Controller {
                 "url" =>$this->router->route("app.saveOtherCourses")
 
             ]);
-            flash("success","Dados Cadastrados Com Sucesso");
+            flash("success","Curso Cadastrado Com Sucesso");
             return;
 
 
@@ -231,7 +231,7 @@ class CurriculumController extends Controller {
                 "url" =>$this->router->route("app.saveLanguages")
 
             ]);
-            flash("success","Dados Cadastrados Com Sucesso");
+            flash("success","Idioma Cadastrados Com Sucesso!");
             return;
 
         } catch (\Exception $e) {
@@ -246,6 +246,10 @@ class CurriculumController extends Controller {
     }
 
 
+    /**
+     * @param $data
+     * Cadastro de Novo Idioma no Sistema
+     */
     public function createLanguage($data):void {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
@@ -274,6 +278,42 @@ class CurriculumController extends Controller {
 
             ]);
             flash("success","Idioma Cadastrado Com Sucesso - Agora já pode Selecionar para seu Curriculo");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
+     * Cadastro de Experiência Profissional
+     */
+    public function saveProfessional($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            $professional = new Curriculum();
+
+            $professional->setid_usuario((INT)$this->user_logado->getid_usuario());
+
+            $professional->setData($data);
+
+            $professional->saveProfessional();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.saveProfessional")
+
+            ]);
+            flash("success","Experiência Profissional Cadastrada Com Sucesso");
             return;
 
         } catch (\Exception $e) {

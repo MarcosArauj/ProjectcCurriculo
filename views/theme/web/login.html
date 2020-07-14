@@ -26,7 +26,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" ><i class="fa fa-user" aria-hidden="true"></i></span>
                                 </div>
-                                <input type="text" class="form-control " placeholder="Usuário - E-mail ou CPF" id="campo_email"  name="login"  autofocus>
+                                <input type="text" class="form-control " placeholder="Usuário - E-mail ou CPF"  name="login"  autofocus>
                             </div>
                         </div>
                         <div class="form-group col-md-12">
