@@ -90,7 +90,20 @@ class AppController extends Controller {
         $page->setTpl("create_contact", array(
             "user" => $this->user_logado->getValues(),
             "countries"=> Contact::listcountries()
+        ));
 
+    }
+
+
+    /**
+     * Carrega Tela de Cadastro de Deficiência
+     */
+    public function saveDeficiency():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("create_deficiency", array(
+            "user" => $this->user_logado->getValues()
         ));
 
     }

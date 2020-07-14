@@ -143,7 +143,7 @@ $(document).ready(function () {
     });
 
 
-    // Novo Experiencia Profissional
+    // Nova Experiencia Profissional
     $('#sim_emprego').on('click',function () {
         $('.professional_atual').css("display" ,"block");
         $('.professional_anterior').css("display" ,"none");
@@ -152,6 +152,15 @@ $(document).ready(function () {
     $('#nao_emprego').on('click',function () {
         $('.professional_atual').css("display" ,"none");
         $('.professional_anterior').css("display" ,"block");
+    });
+
+    // Deficiência
+    $('#sim_deficiencia').on('click',function () {
+        $('.deficiencia').css("display" ,"block");
+
+    });
+    $('#nao_deficiencia').on('click',function () {
+        $('.deficiencia').css("display" ,"none");
     });
 
 });

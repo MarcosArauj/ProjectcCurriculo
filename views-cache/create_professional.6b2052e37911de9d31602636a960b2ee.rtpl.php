@@ -22,8 +22,8 @@
                 <input type="radio" id="nao_emprego" name="nao_emprego" class="custom-control-input">
                 <label class="custom-control-label" for="nao_emprego">Empregos Ateriores</label>
             </div>
+            <hr>
         </div>
-        <hr>
         <div class="col">
           <div class="row">
             <div class="form-group col-md-12 professional_atual">

@@ -71,7 +71,7 @@
         </div>
         <div class="card-footer">
             <button class="btn btn-md btn-success float-right">Proximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-            <a class="btn btn-danger float-left" href="/user/personal_data" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a></p>
+            <a class="btn btn-danger float-left" href="/user/deficiency" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a></p>
         </div>
 
     </div>
