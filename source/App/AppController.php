@@ -138,6 +138,20 @@ class AppController extends Controller {
     }
 
     /**
+     * Carrega Tela de Cadastro de Experiência Profissional
+     */
+    public function saveProfessional():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("create_professional", array(
+            "user" => $this->user_logado->getValues(),
+            "professional"=>Curriculum::getExProfessional($this->user_logado->getid_usuario()),
+        ));
+
+    }
+
+    /**
      * Carrega rota de Logout
      */
     public function logout():void{

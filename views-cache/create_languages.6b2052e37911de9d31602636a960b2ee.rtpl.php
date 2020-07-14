@@ -79,7 +79,7 @@
     <div class="card-footer">
           <a class="btn btn-danger float-left" href="/user/other_courses" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
         <div class="float-right">
-           <a class="btn btn-primary" href="#" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+           <a class="btn btn-primary" href="/user/professional_experience" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
         </div>
     </div>
 </div>
@@ -91,6 +91,7 @@
     <thead>
         <tr>
             <th>Idiomas</th>
+            <th>Nível de Conhecimento</th>
             <th>&nbsp;</th>
         </tr>
     </thead>
@@ -98,8 +99,8 @@
         <?php $counter1=-1;  if( isset($languages) && ( is_array($languages) || $languages instanceof Traversable ) && sizeof($languages) ) foreach( $languages as $key1 => $value1 ){ $counter1++; ?>
         <tr>
             <td><?php echo htmlspecialchars( $value1["idioma"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+            <td><?php echo htmlspecialchars( $value1["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td class="float-right">
-                <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
                 <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
                 <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
             </td>

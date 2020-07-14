@@ -210,5 +210,23 @@ class Curriculum extends User {
     }
 
 
+    /**
+     * @param $id_usuario
+     * @return array
+     *
+     * Pega Experiência Profissional de Acordo com Usuario
+     */
+    public static function getExProfessional($id_usuario) {
+
+        $conn = new Conection();
+
+        return  $conn->select("SELECT * FROM tb_experiencia_profissional
+                WHERE id_usuario = :id_usuario", array(
+            ":id_usuario"=>$id_usuario
+        ));
+
+    }
+
+
 
 }

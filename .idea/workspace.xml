@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/CurriculumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/CurriculumController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Models/Curriculum.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Curriculum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_languages.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_languages.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +103,7 @@
       <workItem from="1594417256057" duration="332000" />
       <workItem from="1594672928551" duration="5506000" />
       <workItem from="1594678792012" duration="116000" />
-      <workItem from="1594727402462" duration="6320000" />
+      <workItem from="1594727402462" duration="7063000" />
     </task>
     <servers />
   </component>
@@ -131,9 +135,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="453" y="178" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1594231590738" />
-    <state x="346" y="49" key="search.everywhere.popup" timestamp="1594308551352">
+    <state x="346" y="49" key="search.everywhere.popup" timestamp="1594733966576">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594308551352" />
+    <state x="346" y="49" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594733966576" />
   </component>
 </project>
