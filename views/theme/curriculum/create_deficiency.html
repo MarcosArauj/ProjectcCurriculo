@@ -14,12 +14,12 @@
                 <div class="form-group col-md-12">
                     <b>Selecione para realizar o Cadstro</b> <br>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sim_deficiencia" name="sim_deficiencia" class="custom-control-input" autofocus>
-                        <label class="custom-control-label" for="sim_deficiencia">Sim</label>
+                        <input type="radio" id="nao_deficiencia" name="nao_deficiencia" class="custom-control-input" autofocus>
+                        <label class="custom-control-label" for="nao_deficiencia">Não</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="nao_deficiencia" name="nao_deficiencia" class="custom-control-input">
-                        <label class="custom-control-label" for="nao_deficiencia">Não</label>
+                        <input type="radio" id="sim_deficiencia" name="sim_deficiencia" class="custom-control-input">
+                        <label class="custom-control-label" for="sim_deficiencia">Sim</label>
                     </div>
                     <hr>
                 </div>
