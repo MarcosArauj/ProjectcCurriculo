@@ -68,7 +68,7 @@ class Curriculum extends User {
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Salver Cadastro!");
+            throw new \Exception("Erro ao Salvar Cadastro!");
             return false;
         }
 
@@ -101,13 +101,12 @@ class Curriculum extends User {
      * @throws \Exception
      * Salva Cadastro de Idioma pora o Usuario
      */
-    public function saveLanguagesCurriculum():bool {
 
+    public function saveLanguages(): bool {
         $conn = new Conection();
 
-        $results = $conn->select(
-            "CALL sp_idiomas_salvar(:id_idioma_curriculo,:idioma,:nivel_conhecimento,:id_usuario)", array(
-            ":id_idioma_curriculo"=>$this->getid_idioma_curriculo(),
+        $results = $conn->select("CALL sp_idiomas_salvar(:id_idiomac,:idioma,:nivel_conhecimento,:id_usuario)", array(
+            ":id_idiomac"=>$this->getid_idiomac(),
             ":idioma"=>$this->getidioma(),
             ":nivel_conhecimento"=>$this->getnivel_conhecimento(),
             ":id_usuario"=>$this->getid_usuario()
@@ -182,10 +181,11 @@ class Curriculum extends User {
 
     }
 
-    public function saveLanguage(): bool {
+    public function createLanguage(): bool {
         $conn = new Conection();
 
-        $results = $conn->select("INSERT INTO tb_idiomas (idioma_pt) VALUES(:idioma_pt)", array(
+        $results = $conn->select("CALL sp_idiomas_criar(:id_idioma,:idioma_pt)", array(
+            ":id_idioma"=>$this->getid_idioma(),
             ":idioma_pt"=>$this->getidioma_pt()
         ));
 

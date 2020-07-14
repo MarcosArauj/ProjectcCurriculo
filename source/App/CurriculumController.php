@@ -209,9 +209,7 @@ class CurriculumController extends Controller {
 
         try {
 
-            $id_user = $this->user_logado->getid_usuario();
-
-            if(Curriculum::checkLanguage((INT)$id_user,$data["idioma"]) == true) {
+            if(Curriculum::checkLanguage((INT)$this->user_logado->getid_usuario(),$data["idioma"]) == true) {
 
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
@@ -223,12 +221,11 @@ class CurriculumController extends Controller {
 
             $language_user = new Curriculum();
 
-            $language_user->setid_usuario((INT)$id_user);
+            $language_user->setid_usuario((INT)$this->user_logado->getid_usuario());
 
             $language_user->setData($data);
 
-            // Idioma do Usuario
-            $language_user->saveLanguagesCurriculum();
+            $language_user->saveLanguages();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveLanguages")
@@ -247,6 +244,7 @@ class CurriculumController extends Controller {
         }
 
     }
+
 
     public function createLanguage($data):void {
 
@@ -269,13 +267,13 @@ class CurriculumController extends Controller {
             $language->setData($data);
 
             //Novo Idioma no Sistema
-            $language->saveLanguage();
+            $language->createLanguage();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveLanguages")
 
             ]);
-            flash("success","Idioma Cadastrado Com Sucesso");
+            flash("success","Idioma Cadastrado Com Sucesso - Agora já pode Selecionar para seu Curriculo");
             return;
 
         } catch (\Exception $e) {
