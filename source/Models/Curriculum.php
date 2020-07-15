@@ -241,9 +241,10 @@ class Curriculum extends User {
 
         $conn = new Conection();
 
-        $results = $conn->select("CALL sp_profissional_salvar(:id_profissional,:empresa_atual,:cargo_atual,:data_admissao,:atividade, 
+        $results = $conn->select("CALL sp_profissional_salvar(:id_profissional,:registro,:empresa_atual,:cargo_atual,:data_admissao,:atividade, 
         :empresa_anterior,:cargo_anterior,:data_demissao,:id_usuario)", array(
             ":id_profissional"=>$this->getid_profissional(),
+            ":registro"=>$this->getregistro(),
             ":empresa_atual"=>$this->getempresa_atual(),
             ":cargo_atual"=>$this->getcargo_atual(),
             ":data_admissao"=>$this->getdata_admissao(),

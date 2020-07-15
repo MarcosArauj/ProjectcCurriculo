@@ -15,11 +15,11 @@
         <div class="form-group col-md-12">
             <b>Selecione para realizar o Cadstro</b> <br>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="sim_emprego" name="emprego" class="custom-control-input" autofocus>
+                <input type="radio" id="sim_emprego" name="registro" class="custom-control-input" value="ativo" autofocus>
                 <label class="custom-control-label" for="sim_emprego">Emprego Atual</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="nao_emprego" name="emprego" class="custom-control-input">
+                <input type="radio" id="nao_emprego" name="registro" class="custom-control-input" value="inativo">
                 <label class="custom-control-label" for="nao_emprego">Empregos Ateriores</label>
             </div>
             <hr>
@@ -87,7 +87,7 @@
     <tbody>
         <?php $counter1=-1;  if( isset($professional) && ( is_array($professional) || $professional instanceof Traversable ) && sizeof($professional) ) foreach( $professional as $key1 => $value1 ){ $counter1++; ?>
         <tr>
-            <?php if( $value1["cargo_atual"] ){ ?>
+            <?php if( $value1["registro"] == 'ativo' ){ ?>
                 <td><?php echo htmlspecialchars( $value1["cargo_atual"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                 <td><?php echo htmlspecialchars( $value1["empresa_atual"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td style="color: #00cc00;"> <b>Emprego Atual</b> </td>
