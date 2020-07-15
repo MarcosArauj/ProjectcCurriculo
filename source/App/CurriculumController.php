@@ -103,6 +103,43 @@ class CurriculumController extends Controller {
             $contact->saveContact();
 
             echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.saveDeficiency")
+
+            ]);
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
+     * Cadastro de Deficiência
+     */
+    public function saveDeficiency($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            $deficiency = new Curriculum();
+
+            $deficiency->setid_usuario((INT)$this->user_logado->getid_usuario());
+
+            $data["regime_cota"] = (isset($data["regime_cota"]))? "Sim": "Não";
+
+            $deficiency->setData($data);
+
+            $deficiency->saveDeficiency();
+
+            echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveAcademicFormation")
 
             ]);
