@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group col-md-12">
                         <label for="compentencias"><strong class="obrigatorio">*</strong><b>Compentências</b></label>
-                        <textarea class="form-control form-control-sm" id="descricao" id="compentencias" name="compentencias" placeholder="Descreva um pouca as competências aprendidas no curso"  rows="4"></textarea>
+                        <textarea class="form-control form-control-sm" id="compentencias" name="compentencias" placeholder="Descreva um pouco das competências aprendidas no curso"  rows="4"></textarea>
                     </div>
                 </div>
            </div>

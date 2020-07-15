@@ -53,11 +53,11 @@
                 <div class="form-group col-md-12">
                         <b>Encontrou o idioma ?</b> <br>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="sim_idioma" name="sim_idioma" class="custom-control-input" >
+                            <input type="radio" id="sim_idioma" name="idioma" class="custom-control-input" >
                             <label class="custom-control-label" for="sim_idioma">Sim</label>
                         </div>
                         <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="nao_idioma" name="nao_idioma" class="custom-control-input">
+                            <input type="radio" id="nao_idioma" name="idioma" class="custom-control-input">
                             <label class="custom-control-label" for="nao_idioma">Não</label>
                         </div>
                     </div>

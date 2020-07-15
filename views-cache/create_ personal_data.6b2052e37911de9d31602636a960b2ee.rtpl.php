@@ -25,11 +25,11 @@
                         <div class="form-group col-md-3">
                             <b >Usar Nome Social ?</b> <br>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="sim" name="sim" class="custom-control-input">
+                                <input type="radio" id="sim" name="nomesocial" class="custom-control-input">
                                 <label class="custom-control-label" for="sim">Sim</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="nao" name="nao" class="custom-control-input" autofocus>
+                                <input type="radio" id="nao" name="nomesocial" class="custom-control-input" autofocus>
                                 <label class="custom-control-label" for="nao">Não</label>
                             </div>
                         </div>
@@ -116,8 +116,11 @@
            </div>
         </div>
         <div class="card-footer">
-            <button class="btn btn-md btn-success float-right">Proximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-            <a class="btn btn-danger float-left" href="/user" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a></p>
+            <a class="btn btn-danger float-left" href="/user" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            <div class="float-right">
+                <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Dados Pessoais</button>
+                <a class="btn btn-primary" href="/user/contact" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+            </div>
         </div>
 
     </div>
