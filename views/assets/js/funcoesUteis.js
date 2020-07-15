@@ -157,10 +157,12 @@ $(document).ready(function () {
     // Deficiência
     $('#sim_deficiencia').on('click',function () {
         $('.deficiencia').css("display" ,"block");
+        $('.success-enabled').css("display" ,"block");
 
     });
     $('#nao_deficiencia').on('click',function () {
         $('.deficiencia').css("display" ,"none");
+        $('.success-enabled').css("display" ,"none");
     });
 
 });
