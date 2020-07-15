@@ -11,49 +11,114 @@
     <div class="card border-success ">
         <div class="card-body">
             <div class="row">
-                <div class="form-group col-md-12">
-                    <b>Selecione para realizar o Cadstro</b> <br>
+                <div class="form-group col-md-4">
+                    <b>Você possui algum tipo de Deficiência? </b> <br>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="nao_deficiencia" name="nao_deficiencia" class="custom-control-input" autofocus>
+                        <input type="radio" id="nao_deficiencia" name="deficiencia" class="custom-control-input" autofocus>
                         <label class="custom-control-label" for="nao_deficiencia">Não</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sim_deficiencia" name="sim_deficiencia" class="custom-control-input">
+                        <input type="radio" id="sim_deficiencia" name="deficiencia" class="custom-control-input">
                         <label class="custom-control-label" for="sim_deficiencia">Sim</label>
                     </div>
-                    <hr>
                 </div>
-
+                <div class="success-enabled col-md-8">
+                </div>
+                <div class="form-group col-md-12">
+                <hr>
+                </div>
                 <!-- Coluna 1 -->
                 <div class="col deficiencia">
-                    <div class="form-group col-md-12">
-                        <label for="tipo_deficiencia"><strong class="obrigatorio">*</strong><b>Tipo de Deficiência</b></label>
-                        <select class="form-control form-control-sm" name="tipo_deficiencia" id="tipo_deficiencia" >
-                            <option value="">Selecione</option>
-                            <option value="Auditiva">Auditiva</option>
-                            <option value="Fisica">Fisica</option>
-                            <option value="Mental">Mental</option>
-                            <option value="Multipla">Multipla</option>
-                            <option value="Visual">Visual</option>
-                        </select>
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label><strong class="obrigatorio">*</strong><b>Tipo de Deficiência</b></label>
+                            <select class="form-control form-control-sm" name="tipo_deficiencia" id="tipo_deficiencia">
+                                <option value="">Selecione</option>
+                                <option value="Auditiva">Auditiva</option>
+                                <option value="Fisica">Fisica</option>
+                                <option value="Mental">Mental</option>
+                                <option value="Multipla">Multipla</option>
+                                <option value="Visual">Visual</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cid"><b>CID</b></label>
+                            <input type="text" class="form-control form-control-sm" id="cid" name="cid" placeholder="Ex: M17.0 ">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="especificacao"><strong class="obrigatorio">*</strong><b>Especifique sua Deficiência</b></label>
+                            <textarea class="form-control form-control-sm" id="especificacao" name="especificacao" placeholder="Descreva sua Deficiência"  rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="regime_cota" id="regime_cota">
+                        <label class="custom-control-label" for="regime_cota">Já trabalhou pelo regime de Lei de Cotas 8213/91?</label>
                     </div>
                 </div>
                 <!-- Coluna 2 -->
                 <div class="col deficiencia">
-                    <div class="form-group col-md-12">
-                        <label for="empresa_atual"><strong class="obrigatorio">*</strong><b>Empresa Atual </b></label>
-                        <input type="text" class="form-control form-control-sm" id="" name="empresa_atual" placeholder="Ex:Empresa">
+                    <div class="row">
+                        <div class="form-group  col-md-12">
+                        <b>Possúi veículo adaptado ?</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="offset-md-4"></span>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="simveículo" name="veiculo" class="custom-control-input">
+                            <label class="custom-control-label" for="simveículo">Sim</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="naoveículo" name="veiculo" class="custom-control-input">
+                            <label class="custom-control-label" for="naoveículo">Não</label>
+                        </div>
+                        <br>
+                        <b >Independente no transporte coletivo ?</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="offset-md-2"></span>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="simtransporte" name="transporte" class="custom-control-input">
+                            <label class="custom-control-label" for="simtransporte">Sim</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="naotransporte" name="transporte" class="custom-control-input">
+                            <label class="custom-control-label" for="naotransporte">Não</label>
+                        </div>
+                        <br>
+                        <b >Necessita de acompanhantes ou cão-guia ?</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="offset-md-1"></span>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="simacompanhantes" name="companhantes" class="custom-control-input">
+                            <label class="custom-control-label" for="simacompanhantes">Sim</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="naoacompanhantes" name="acompanhantes" class="custom-control-input">
+                            <label class="custom-control-label" for="naoacompanhantes">Não</label>
+                        </div>
+                        <br>
+                        <strong class="obrigatorio">*</strong><b>Necessita de adaptações no ambiente de trabalho ?</b>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="simadaptacoes" name="adaptacoes" class="custom-control-input">
+                            <label class="custom-control-label" for="simadaptacoes">Sim</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="naoadaptacoes" name="adaptacoes" class="custom-control-input">
+                            <label class="custom-control-label" for="naoadaptacoes">Não</label>
+                        </div>
+                        </div>
                     </div>
-                    <div class="form-group col-md-12">
-                        <button class="btn btn-md btn-success float-right">Adicionar Deficiência</button>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="especificacao_nessecidade"><strong class="obrigatorio">*</strong><b>Especifique a Necessidade</b></label>
+                            <textarea class="form-control form-control-sm" id="especificacao_nessecidade" name="especificacao_nessecidade" placeholder="Digite no espaço acima as adaptações necessárias no ambiente de trabalho."  rows="4"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
            </div>
            <div class="card-footer">
-               <a class="btn btn-primary float-right" href="/user/formation" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
-            <a class="btn btn-danger float-left" href="/user/contact" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a></p>
-        </div>
+               <a class="btn btn-danger float-left" href="/user/contact" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+               <div class="row float-right">
+               <button class="btn btn-md btn-success deficiencia">Adicionar Deficiência</button>&nbsp;
+               <a class="btn btn-primary " href="/user/formation" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+               </div>
+           </div>
     </div>
     </form>
 
