@@ -70,4 +70,86 @@ class PersonalData extends User {
         return false;
     }
 
+    /**
+     * @return bool
+     * @throws \Exception
+     * Salvar Contato no sistema
+     */
+    public function saveContact():bool {
+
+        $conn = new Conection();
+
+        $results = $conn->select(
+            "CALL sp_contato_salvar(:celular,:telefone,:c_email,:endereco,:numero,:bairro,:cep,:cidade,:estado,:pais,:id_usuario)",
+            array(
+                ":celular" => $this->getcelular(),
+                ":telefone" => $this->gettelefone(),
+                ":c_email" => $this->getc_email(),
+                ":endereco" => $this->getendereco(),
+                ":numero" => $this->getnumero(),
+                ":bairro" => $this->getbairro(),
+                ":cep" => $this->getcep(),
+                ":cidade" => $this->getcidade(),
+                ":estado" => $this->getestado(),
+                ":pais" => $this->getpais(),
+                ":id_usuario" => $this->getid_usuario()
+            ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Erro ao Salver Contato!");
+            return false;
+        }
+
+        $this->setData($results[0]);
+
+        return true;
+
+    }
+
+    /**
+     * @return array
+     */
+    public static function listcountries(): array {
+        $conn = new Conection();
+
+        return $conn->select(" SELECT * FROM tb_paises");
+
+    }
+
+    /**
+     * @return bool
+     * @throws \Exception
+     * Salva Cadastro de Deficiência
+     */
+    public function saveDeficiency(): bool {
+
+        $conn = new Conection();
+
+        $results = $conn->select("CALL sp_deficiencia_salvar(:id_deficiencia,:tipo_deficiencia,:cid,:especificacao_deficiencia,:regime_cota, :veiculo_adaptado, 
+        :transporte,:acompanhantes,:adaptacoes_trabalho,:especificacao_trabalho,:id_usuario)", array(
+            ":id_deficiencia"=>$this->getid_deficiencia(),
+            ":tipo_deficiencia"=>$this->gettipo_deficiencia(),
+            ":cid"=>$this->getcid(),
+            ":especificacao_deficiencia"=>$this->getespecificacao_deficiencia(),
+            ":regime_cota"=>$this->getregime_cota(),
+            ":veiculo_adaptado"=>$this->getveiculo_adaptado(),
+            ":transporte"=>$this->gettransporte(),
+            ":acompanhantes"=>$this->getacompanhantes(),
+            ":adaptacoes_trabalho"=>$this->getadaptacoes_trabalho(),
+            ":especificacao_trabalho"=>$this->getespecificacao_trabalho(),
+            ":id_usuario"=>$this->getid_usuario()
+        ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Erro ao Salvar Cadastro de Deficiência!");
+            return false;
+        }
+
+        $this->setData($results[0]);
+
+        return true;
+
+    }
+
+
 }

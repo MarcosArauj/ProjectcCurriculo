@@ -49,14 +49,14 @@ $router->get("/logout", "AppController:logout","app.logout");
  */
 
 $router->group("/curriculum");
-$router->post("/personal_data", "CurriculumController:savePersonalData","curriculum.savePersonalData");
-$router->post("/contact", "CurriculumController:saveContact","curriculum.saveContact");
-$router->post("/deficiency", "CurriculumController:saveDeficiency","curriculum.saveDeficiency");
-$router->post("/formation", "CurriculumController:saveAcademicFormation","curriculum.saveAcademicFormation");
-$router->post("/other_courses", "CurriculumController:saveOtherCourses","curriculum.saveOtherCourses");
-$router->post("/languages", "CurriculumController:saveLanguages","curriculum.saveLanguages");
-$router->post("/new_languages", "CurriculumController:createLanguage","curriculum.createLanguage");
-$router->post("/professional_experience", "CurriculumController:saveProfessional","curriculum.saveProfessional");
+$router->post("/personal_data", "PersonalDataController:savePersonalData","personal.savePersonalData");
+$router->post("/contact", "PersonalDataController:saveContact","personal.saveContact");
+$router->post("/deficiency", "PersonalDataController:saveDeficiency","personal.saveDeficiency");
+$router->post("/formation", "FormationController:saveAcademicFormation","formation.saveAcademicFormation");
+$router->post("/other_courses", "FormationController:saveOtherCourses","formation.saveOtherCourses");
+$router->post("/languages", "FormationController:saveLanguages","formation.saveLanguages");
+$router->post("/new_languages", "FormationController:createLanguage","formation.createLanguage");
+$router->post("/professional_experience", "ProfessionalController:saveProfessional","professional.saveProfessional");
 $router->get("/getCitsStates", "HelpersController:getCitsStates","curriculum.getCitsStates");
 
 

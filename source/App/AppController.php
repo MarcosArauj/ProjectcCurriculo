@@ -5,9 +5,10 @@ namespace Source\App;
 
 use Source\App\Pages\PageCurriculum;
 use Source\App\Pages\PageWeb;
-use Source\Models\Contact;
-use Source\Models\Curriculum;
+use Source\Models\Formation;
 use Source\Models\Login;
+use Source\Models\PersonalData;
+use Source\Models\Professional;
 use Source\Models\StatesCity;
 
 /**
@@ -73,7 +74,7 @@ class AppController extends Controller {
 
         $page->setTpl("create_ personal_data", array(
             "user" => $this->user_logado->getValues(),
-            "countries"=> Contact::listcountries(),
+            "countries"=> PersonalData::listcountries(),
             "uf" => StatesCity::listuf()
 
         ));
@@ -89,7 +90,7 @@ class AppController extends Controller {
 
         $page->setTpl("create_contact", array(
             "user" => $this->user_logado->getValues(),
-            "countries"=> Contact::listcountries()
+            "countries"=> PersonalData::listcountries()
         ));
 
     }
@@ -130,7 +131,7 @@ class AppController extends Controller {
 
         $page->setTpl("create_other_courses", array(
             "user" => $this->user_logado->getValues(),
-            "courses"=>Curriculum::getOtherCourses($this->user_logado->getid_usuario())
+            "courses"=>Formation::getOtherCourses($this->user_logado->getid_usuario())
         ));
 
     }
@@ -144,8 +145,8 @@ class AppController extends Controller {
 
         $page->setTpl("create_languages", array(
             "user" => $this->user_logado->getValues(),
-            "languages"=>Curriculum::getLanguages($this->user_logado->getid_usuario()),
-            "lang_cad"=>Curriculum::languages()
+            "languages"=>Formation::getLanguages($this->user_logado->getid_usuario()),
+            "lang_cad"=>Formation::languages()
         ));
 
     }
@@ -159,7 +160,7 @@ class AppController extends Controller {
 
         $page->setTpl("create_professional", array(
             "user" => $this->user_logado->getValues(),
-            "professional"=>Curriculum::getExProfessional($this->user_logado->getid_usuario()),
+            "professional"=>Professional::getExProfessional($this->user_logado->getid_usuario()),
         ));
 
     }

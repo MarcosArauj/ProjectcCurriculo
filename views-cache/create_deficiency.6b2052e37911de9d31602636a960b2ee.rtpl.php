@@ -4,7 +4,7 @@
         <h4 class="h2">Registro - Deficiência <?php echo htmlspecialchars( $user["id_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h4>
     </div>
 
-    <div class="alert">
+    <div class="alert_message">
         <?php echo flash(); ?>
     </div>
 <form class="form" action="/curriculum/deficiency" method="post" autocomplete="off">

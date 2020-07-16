@@ -6,7 +6,7 @@
 </section>
 
 <section class="container col-md-7">
-    <div class="alert">
+    <div class="alert_message">
         <?php echo flash(); ?>
     </div>
     <form class="form" action="/register" method="post" autocomplete="off">

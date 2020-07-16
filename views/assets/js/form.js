@@ -19,7 +19,7 @@ $(function () {
 
                 if (su.message) {
                     var view = '<div class="message ' + su.message.type + '">' + su.message.message + '</div>';
-                    $(".alert").html(view);
+                    $(".alert_message").html(view);
                     $(".message").effect("bounce");
                     return;
                 }

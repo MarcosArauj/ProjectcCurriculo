@@ -8,13 +8,14 @@
     border-radius: 6px;
     margin-bottom: 20px;
 
-    font-size: 0.875em;
+
     font-weight: 600;
 }
 
 .message.success {
-    color: #1dd1a1;
-    border-color: #1dd1a1;
+    color: green;
+    border-color: green;
+    font-size: 1.100em;
 }
 
 .message.info {

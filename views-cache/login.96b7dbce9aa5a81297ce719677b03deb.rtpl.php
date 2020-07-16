@@ -9,7 +9,7 @@
 </section>
 
 <section class="container col-md-4">
-    <div class="alert">
+    <div class="alert_message">
         <?php echo flash(); ?>
     </div>
     <form class="form" action="/login" method="post" autocomplete="off">
