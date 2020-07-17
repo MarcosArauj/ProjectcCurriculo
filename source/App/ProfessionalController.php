@@ -62,7 +62,7 @@ class ProfessionalController extends Controller {
                 "url" =>$this->router->route("app.saveProfessional")
 
             ]);
-            flash("success","Sucesso no Registro! Clique em Próximo");
+            flash("success","Sucesso no Registro! Clique em Próximo ou Adicione + Experiência Porfissional");
             return;
 
         } catch (\Exception $e) {

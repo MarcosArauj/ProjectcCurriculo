@@ -101,7 +101,7 @@ class FormationController extends Controller {
                 "url" =>$this->router->route("app.saveOtherCourses")
 
             ]);
-            flash("success","Sucesso no Registro! Clique em Próximo para Idiomas ou Adicione Mais Cursos");
+            flash("success","Sucesso no Registro! Clique em Próximo para Idiomas ou Adicione + Cursos");
             return;
 
 
@@ -148,7 +148,7 @@ class FormationController extends Controller {
                 "url" =>$this->router->route("app.saveLanguages")
 
             ]);
-            flash("success","Sucesso no Registro! Clique em Próximo para Experiência Profissional ou Adicione Mais Idiomas");
+            flash("success","Sucesso no Registro! Clique em Próximo para Experiência Profissional ou Adicione + Idiomas");
             return;
 
         } catch (\Exception $e) {

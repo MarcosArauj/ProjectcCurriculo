@@ -3,6 +3,7 @@
 use Source\Models\Login;
 use Source\Models\StatesCity;
 
+
 function saudacao() {
 
     return "Bem Vindo";
@@ -29,6 +30,15 @@ function getNameUser() {
         return $user->getprimeiro_nome();
     }
 
+
+}
+
+
+function checkCurriculum() {
+
+    $user = Login::getFromSession();
+
+    return \Source\Models\Curriculum::checkCurriculum($user->getid_usuario());
 
 }
 

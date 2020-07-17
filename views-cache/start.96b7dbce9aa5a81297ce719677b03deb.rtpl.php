@@ -1,6 +1,7 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><div class="page">
 
     <div style="text-align: center">
+        <p class="alert_message"> <?php echo flash(); ?></p>
 
         <h2><?php echo site("desc"); ?></h2>
 

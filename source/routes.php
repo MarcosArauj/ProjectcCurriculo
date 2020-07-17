@@ -42,6 +42,7 @@ $router->get("/formation", "AppController:saveAcademicFormation","app.saveAcadem
 $router->get("/other_courses", "AppController:saveOtherCourses","app.saveOtherCourses");
 $router->get("/languages", "AppController:saveLanguages","app.saveLanguages");
 $router->get("/professional_experience", "AppController:saveProfessional","app.saveProfessional");
+$router->get("/curriculum", "AppController:saveCurriculum","app.saveCurriculum");
 $router->get("/logout", "AppController:logout","app.logout");
 
 /**
@@ -57,6 +58,7 @@ $router->post("/other_courses", "FormationController:saveOtherCourses","formatio
 $router->post("/languages", "FormationController:saveLanguages","formation.saveLanguages");
 $router->post("/new_languages", "FormationController:createLanguage","formation.createLanguage");
 $router->post("/professional_experience", "ProfessionalController:saveProfessional","professional.saveProfessional");
+$router->post("/curriculum", "CurriculumController:saveCurriculum","curriculum.saveCurriculum");
 $router->get("/getCitsStates", "HelpersController:getCitsStates","curriculum.getCitsStates");
 
 

@@ -5,6 +5,7 @@ namespace Source\App;
 
 use Source\App\Pages\PageCurriculum;
 use Source\App\Pages\PageWeb;
+use Source\Models\Curriculum;
 use Source\Models\Formation;
 use Source\Models\Login;
 use Source\Models\PersonalData;
@@ -161,6 +162,25 @@ class AppController extends Controller {
         $page->setTpl("create_professional", array(
             "user" => $this->user_logado->getValues(),
             "professional"=>Professional::getExProfessional($this->user_logado->getid_usuario()),
+        ));
+
+    }
+
+    /**
+     * Carrega Tela de Finalizar Curriculo
+     */
+    public function saveCurriculum():void {
+
+        if(Curriculum::checkCurriculum($this->user_logado->getid_usuario())) {
+
+            $this->router->redirect("app.start");
+            return;
+        }
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("finish_curriculum", array(
+            "user" => $this->user_logado->getValues()
         ));
 
     }

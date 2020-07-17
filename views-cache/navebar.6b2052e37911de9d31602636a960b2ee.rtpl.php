@@ -21,7 +21,14 @@
                          Dashboard
                     </a>
                 </li>
-
+                <hr>
+                <?php if( checkCurriculum() ){ ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span> Formação Acadêmica </span>
+                    </a>
+                </li>
+                <?php } ?>
             </ul>
         </div>
     </nav>
