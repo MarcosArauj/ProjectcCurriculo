@@ -62,7 +62,7 @@ class PersonalDataController extends Controller {
             $personalData->savePersonalData();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.savePersonalData")
+                "url" =>$this->router->route("app.personalData")
 
             ]);
             flash("success","Sucesso no Registro! Clique em Próximo para Registrar seu Contato e Endereço");

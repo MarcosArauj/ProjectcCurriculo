@@ -41,7 +41,7 @@ class PersonalData extends User {
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Salver Cadastro!" );
+            throw new \Exception("Erro ao Salvar Cadastro!" );
             return false;
         }
 

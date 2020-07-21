@@ -18,6 +18,8 @@ class RecoverPassword extends User {
      * @param $email
      * @return EmailRecover
      * @throws \Exception
+     *
+     * Envia E-mail para recuperação da Senha
      */
     public static function getEmailRecoverPass($email): bool {
 
@@ -44,10 +46,9 @@ class RecoverPassword extends User {
             } else {
                 $data_recovery = $results_recovery[0];
 
-                $code = base64_encode( $data_recovery["id_recupera"]);
+                $code = base64_encode($data_recovery["id_recupera"]);
 
-
-                $link = "http://curriculotcc.com.br/reset?code=$code";
+                $link = site("root")."/reset?code=$code";
 
                 $emailRovever = new EmailRecover();
 
@@ -78,6 +79,7 @@ class RecoverPassword extends User {
      * @param $code
      * @return array
      * @throws \Exception
+     * Valida a o Link Enviado para Recuperção da Senha
      */
     public static function validRecoverDecrypt($code):array {
 
@@ -103,6 +105,8 @@ class RecoverPassword extends User {
 
     /**
      * @param $id_recupera
+     *
+     * Registra a recuperação da Senha
      */
     public static function setRecoverUsed($id_recupera):void {
 

@@ -9,6 +9,7 @@ class User extends Model {
     const ACESSO = 0;
     const STATUS_USUARIO = "ativo";
     const SESSION = "user";
+    const SECRET = "Web_Curriculotcc";
 
     /**
      * @return array
