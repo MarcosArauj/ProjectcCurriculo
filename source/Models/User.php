@@ -90,7 +90,6 @@ class User extends Model {
         return false;
     }
 
-
     /**
      * @return bool
      * @throws \Exception
@@ -101,6 +100,29 @@ class User extends Model {
             return false;
         }
         return true;
+    }
+
+
+    /**
+     * Atualizar Senha
+     */
+    public function updatePassword():bool {
+        $conn = new Conection();
+
+        $results =  $conn->select("CALL sp_senha_atualizar(:id_usuario,:senha)",array(
+            ":id_usuario"=>$this->getid_usuario(),
+            ":senha"=>password_hash($this->getsenha(), PASSWORD_DEFAULT,["cost"=>12])
+        ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Erro ao Atualizar Senha !");
+            return false;
+        }
+
+        $this->setData($results[0]);
+
+        return true;
+
     }
 
 

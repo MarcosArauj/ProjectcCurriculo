@@ -205,3 +205,20 @@ a#recuperasenha {
         font-size: 3.5rem;
     }
 }
+
+/*----Botões Social----*/
+
+.cor_windows{
+    background-color: #007bff;
+    color: white
+}
+
+.cor_google{
+    background-color: #ef1047;
+    color: white
+}
+
+.cor_yahoo{
+    background-color: #4B0082;
+    color: white
+}

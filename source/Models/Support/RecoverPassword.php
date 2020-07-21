@@ -5,26 +5,32 @@ namespace Source\Models\Support;
 
 
 use Source\Config\Conection;
-use Source\Models\User;
 use Source\Models\Support\EmailRecover;
+use Source\Models\User;
 
+/**
+ * Class RecoverPassword
+ * @package Source\Models\Support
+ */
 class RecoverPassword extends User {
 
-    public static function getEmailRecoverPass($email) {
+    /**
+     * @param $email
+     * @return EmailRecover
+     * @throws \Exception
+     */
+    public static function getEmailRecoverPass($email): bool {
 
         $conn = new Conection();
 
         $results = $conn->select(
-            "SELECT * FROM tb_users as u
-                    INNER JOIN tb_pessoa_fisica as pf ON u.pessoa_id = pf.id_pessoaf
-                    INNER JOIN tb_contato as c ON pf.contato_id = c.id_contato
-                    INNER JOIN tb_endereco as e ON pf.endereco_id = e.id_endereco
-                    WHERE c.email = :email", array(
+            "SELECT * FROM v_usuario WHERE email = :email", array(
             ":email"=>$email
         ));
 
         if (count($results) === 0) {
             throw new \Exception("Não foi possivel recuperar a senha. E-mail não cadastrado");
+            return false;
         } else {
             $data = $results[0];
 
@@ -38,50 +44,51 @@ class RecoverPassword extends User {
             } else {
                 $data_recovery = $results_recovery[0];
 
-                $code = base64_encode($data_recovery["id_recupera"]);
+                $code = base64_encode( $data_recovery["id_recupera"]);
 
-                $link = "http://curriculotcc.com.br/recover-password/forgot/recover?code=$code";
+
+                $link = "http://curriculotcc.com.br/reset?code=$code";
 
                 $emailRovever = new EmailRecover();
 
-                $emailRovever->add(
-                    "Redefinir senha de acesso",
-                    "recover-password",
-                    $data["first_name"].$data["last_name"],
-                    $data["email"], // Email do Usuario
-//                    array(
-//                        "first_name"=>$data["first_name"],
-//                        "link"=>$link
-//                        )
-
-                )->send();
+                $emailRovever->send(
+                    $data["email"],
+                    $data["primeiro_nome"],
+                    "Redefinir senha - ". site("name"),
+                    "email_recover",
+                    array(
+                        "name"=>$data["primeiro_nome"],
+                        "link"=>$link,
+                        "site"=>site("name")
+                    ));
 
                 if(!$emailRovever->error()) {
-                    var_dump(true);
+                   return true;
                 } else {
                     echo $emailRovever->error()->getMessage();
+                    return false;
                 }
-
-                return $data;
 
             }
 
         }
     }
 
-    public static function validRecoverDecrypt($code) {
+    /**
+     * @param $code
+     * @return array
+     * @throws \Exception
+     */
+    public static function validRecoverDecrypt($code):array {
 
         $disrecupera =  base64_decode($code);
 
         $conn = new Conection();
 
-        $results = $conn->select("SELECT * FROM
-	  tb_recupera_senha as r 
-	  INNER JOIN tb_usuario as u ON r.id_usuario = u.id_usuario
-	  INNER JOIN tb_pessoa_fisica as pf ON u.pessoa_id = pf.id_pessoaf
-	  WHERE r.id_recupera = :id_recupera AND 
-	  r.dtrecuperacao IS NULL AND 
-	  DATE_ADD(r.dtregistro, INTERVAL 1 HOUR) >= NOW()", array(
+        $results = $conn->select("SELECT * FROM v_recupera_senha
+	    WHERE id_recupera = :id_recupera AND 
+	    dtrecuperacao IS NULL AND 
+	     DATE_ADD(dtregistro_senha, INTERVAL 1 HOUR) >= NOW()", array(
             ":id_recupera"=>$disrecupera
         ));
 
@@ -91,9 +98,14 @@ class RecoverPassword extends User {
         } else {
             return $results[0];
         }
+
     }
 
-    public static function setRecoverUsed($id_recupera){
+    /**
+     * @param $id_recupera
+     */
+    public static function setRecoverUsed($id_recupera):void {
+
         $conn = new Conection();
 
         $conn->query("UPDATE tb_recupera_senha SET 

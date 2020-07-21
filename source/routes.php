@@ -20,6 +20,10 @@ $router->group(null);
 $router->get("/", "WebController:home","web.home");
 $router->get("/register", "WebController:register","web.register");
 $router->get("/login", "WebController:login","web.login");
+$router->get("/forgot", "WebController:forgot","web.forgot");
+$router->get("/sent", "WebController:sent","web.sent");
+$router->get("/reset", "WebController:reset","web.reset");
+$router->get("/reset_success","WebController:resetSuccess","web.resetSuccess");
 
 /**
  * Auth
@@ -28,6 +32,8 @@ $router->get("/login", "WebController:login","web.login");
 $router->group(null);
 $router->post("/register", "AuthController:register","auth.register");
 $router->post("/login", "AuthController:login","auth.login");
+$router->post("/forgot", "AuthController:forgot","auth.forgot");
+$router->post("/reset", "AuthController:reset","auth.reset");
 
 /**
  * User/Profile
