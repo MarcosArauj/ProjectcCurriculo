@@ -41,6 +41,7 @@ $router->post("/reset", "AuthController:reset","auth.reset");
 
 $router->group("/user");
 $router->get("", "AppController:start","app.start");
+$router->get("/dashboard", "AppController:dashboard","app.dashboard");
 $router->get("/personal_data", "AppController:savePersonalData","app.personalData");
 $router->get("/contact", "AppController:saveContact","app.saveContact");
 $router->get("/deficiency", "AppController:saveDeficiency","app.saveDeficiency");

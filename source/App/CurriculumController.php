@@ -72,7 +72,7 @@ class CurriculumController extends Controller {
             $curriculum->saveCurriculum();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.start")
+                "url" =>$this->router->route("app.dashboard")
 
             ]);
             flash("success","Sucesso no Registro do Seu Curriculo!");

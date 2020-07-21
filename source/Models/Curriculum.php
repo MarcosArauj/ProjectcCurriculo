@@ -16,14 +16,22 @@ class Curriculum extends Model {
     /**
      * @return array
      */
-    public static function getCurriculum($id_usuario):array {
+    public function getCurriculum($id_usuario): void {
 
         $conn = new Conection();
 
-        return  $conn->select("SELECT * FROM tb_curriculo
+        $results = $conn->select("SELECT * FROM v_curriculo
             WHERE id_usuario = :id_usuario",array(
                 ":id_usuario" =>$id_usuario
         ));
+
+        if (count($results) > 0) {
+
+            $data = $results[0];
+
+            $this->setData($data);
+
+        }
 
     }
 

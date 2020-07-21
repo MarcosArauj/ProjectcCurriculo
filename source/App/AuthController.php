@@ -62,7 +62,7 @@ class AuthController extends Controller {
                 $_SESSION[User::SESSION] = $user->getValues();
 
                 echo $this->ajaxResponse("redirect", [
-                 "url" =>$this->router->route("curriculum.start")
+                 "url" =>$this->router->route("app.start")
 
                ]);
                 return;
@@ -101,7 +101,7 @@ class AuthController extends Controller {
             Login::loginUser($login,$password);
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("curriculum.start")
+                "url" =>$this->router->route("app.dashboard")
 
             ]);
             return;

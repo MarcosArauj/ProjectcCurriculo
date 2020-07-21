@@ -65,6 +65,23 @@ class AppController extends Controller {
 
     }
 
+    /**
+     * Carrega Tela de Area de Trabalho Principal
+     */
+    public function dashboard():void {
+
+        $page = new PageCurriculum();
+
+        $curriculum = new Curriculum();
+
+        $curriculum->getCurriculum($this->user_logado->getid_usuario());
+
+        $page->setTpl("dashboard", array(
+            "curriculum" => $curriculum->getValues()
+        ));
+
+    }
+
 
     /**
      * Carrega Tela de Cadastro dos Dados Pessoais
