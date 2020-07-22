@@ -10,7 +10,7 @@ use Source\Models\Formation;
 use Source\Models\Login;
 use Source\Models\PersonalData;
 use Source\Models\Professional;
-use Source\Models\StatesCity;
+use Source\Models\Address;
 use Source\Models\User;
 
 /**
@@ -47,7 +47,7 @@ class AppController extends Controller {
             $this->user_logado = User::getFromSession();
             $this->data_user = new User();
             $this->personalData = new PersonalData();
-            $this->contact = new StatesCity();
+            $this->contact = new Address();
             $this->formation = new Formation();
             $this->professional = new Professional();
             $this->curruculum = new Curriculum();
@@ -105,7 +105,7 @@ class AppController extends Controller {
 
         $page->setTpl("create_personal_data", array(
             "user" => $this->user_logado->getValues(),
-            "countries"=> $this->personalData->listcountries(),
+            "countries"=> $this->contact->listcountries(),
             "uf" => $this->contact->listuf()
 
         ));
@@ -123,7 +123,7 @@ class AppController extends Controller {
 
         $page->setTpl("update_personal_data", array(
             "user" => $this->data_user->getValues(),
-            "countries"=> $this->personalData->listcountries(),
+            "countries"=> $this->contact->listcountries(),
             "uf" => $this->contact->listuf()
 
         ));
@@ -141,7 +141,7 @@ class AppController extends Controller {
 
         $page->setTpl("create_contact", array(
             "user" => $this->data_user->getValues(),
-            "countries"=> $this->personalData->listcountries(),
+            "countries"=> $this->contact->listcountries()
         ));
 
     }

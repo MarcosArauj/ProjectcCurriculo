@@ -1,7 +1,7 @@
 <?php
 
 use Source\Models\User;
-use Source\Models\StatesCity;
+use Source\Models\Address;
 
 
 function saudacao() {
@@ -46,7 +46,7 @@ function checkCurriculum() {
 
 function getCitsStates() {
 
-    $results = StatesCity::listCitys($_POST['id_estado']);
+    $results = Address::listCitys($_POST['id_estado']);
 
     foreach ($results as $citys) {
         echo '<option>' . $citys["id_cidade"] . '</option>';

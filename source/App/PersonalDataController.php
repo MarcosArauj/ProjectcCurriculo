@@ -4,6 +4,7 @@
 namespace Source\App;
 
 
+use Source\Models\Address;
 use Source\Models\Contact;
 use Source\Models\PersonalData;
 use Source\Models\User;
@@ -26,6 +27,7 @@ class PersonalDataController extends Controller {
     private $data_user;
 
     private $personalData;
+    private $contact;
 
     /**
      * AppController constructor.
@@ -45,6 +47,7 @@ class PersonalDataController extends Controller {
             $this->data_user = new User();
 
             $this->personalData =  new PersonalData();
+            $this->contact = new Address();
         }
 
     }
@@ -149,12 +152,12 @@ class PersonalDataController extends Controller {
         try {
 
 
-            $this->personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
-            $this->personalData->setc_email($this->user_logado->getemail());
+            $this->contact->setid_usuario((INT)$this->user_logado->getid_usuario());
+            $this->contact->setc_email($this->user_logado->getemail());
 
-            $this->personalData->setData($data);
+            $this->contact->setData($data);
 
-            $this->personalData->saveContact();
+            $this->contact->saveContact();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveContact")
