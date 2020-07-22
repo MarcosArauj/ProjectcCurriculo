@@ -63,9 +63,11 @@ jQuery(document).ready(function($) {
 
         if(validarEmail.test(email) == false) {
             $('#email').attr("class"," has-error col-md-12");
+            $('#upemail').attr("class"," has-error col-md-6");
             $('#mesmeail').attr("class", "error-enabled");
         } else {
             $('#email').attr("class","has-success col-md-12");
+            $('#upemail').attr("class","has-success col-md-6");
             $('#mesmeail').attr("class", "error-disabled");
         }
     });

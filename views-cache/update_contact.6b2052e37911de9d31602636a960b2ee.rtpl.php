@@ -55,6 +55,7 @@
                     </div>
                     <!-- Linha 3 -->
                     <hr>
+
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label  for="celular"><strong class="obrigatorio">*</strong><b>Celular</b></label>
@@ -63,6 +64,19 @@
                         <div class="form-group col-md-6">
                             <label  for="telefone"><b>Telefone Fixo</b></label>
                             <input type="text" class="form-control form-control-sm" name="telefone" id="telefone" value="<?php echo htmlspecialchars( $user["telefone"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onkeypress="formatar('##-####-####',this)"  maxlength="12" >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="upemail" class="form-group col-md-6">
+                            <label for="upemail">
+                                <strong class="obrigatorio">*</strong><b>E-mail</b>&nbsp;&nbsp; <strong id="mesmeail" class="error-disabled" >E-mail inválido!!!</strong>
+                            </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" ><i class="fa fa-user" aria-hidden="true"></i></span>
+                                </div>
+                                <input type="email" class="form-control form-control-sm" value="<?php echo htmlspecialchars( $user["c_email"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" id="campo_email"  name="c_email"  autofocus>
+                            </div>
                         </div>
                     </div>
                 </div>

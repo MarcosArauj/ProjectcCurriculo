@@ -185,7 +185,6 @@ class PersonalDataController extends Controller {
         try {
 
             $this->contact->setid_contato($this->data_user->getid_contato());
-            $this->contact->setc_email($this->data_user->getemail());
 
             $this->contact->setData($data);
 
@@ -213,48 +212,13 @@ class PersonalDataController extends Controller {
      * @param $data
      * Atualizar de Deficiencia
      */
-    public function updateDeficiency($data):void {
-
-        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
-
-        try {
-
-            $this->personalData->setid_deficiencia($this->data_user->getid_deficiencia());
-
-            $data["regime_cota"] = (isset($data["regime_cota"]))? "Sim": "Não";
-
-            $this->personalData->setData($data);
-
-            $this->personalData->saveDeficiency();
-
-            echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.updateDeficiency")
-
-            ]);
-            flash("success","Dados Alterados Com Sucesso");
-            return;
-
-        } catch (\Exception $e) {
-
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" =>$e->getMessage()
-            ]);
-            return;
-        }
-
-    }
-
-    /**
-     * @param $data
-     * Cadastro de Deficiência
-     */
     public function saveDeficiency($data):void {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
         try {
 
+            $this->personalData->setid_deficiencia($this->data_user->getid_deficiencia());
             $this->personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
 
             $data["regime_cota"] = (isset($data["regime_cota"]))? "Sim": "Não";
@@ -263,12 +227,21 @@ class PersonalDataController extends Controller {
 
             $this->personalData->saveDeficiency();
 
-            echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.saveDeficiency")
+            if($this->data_user->getid_deficiencia()) {
 
-            ]);
-            flash("success","Sucesso no Registro! Clique em Próximo para Registrar Formação Acadêmica");
-            return;
+                echo $this->ajaxResponse("redirect", [
+                    "url" => $this->router->route("app.updateDeficiency")
+                ]);
+                flash("success", "Dados Alterados Com Sucesso");
+                return;
+            }else {
+
+                echo $this->ajaxResponse("redirect", [
+                    "url" =>$this->router->route("app.saveDeficiency")
+                ]);
+                flash("success","Sucesso no Registro! Clique em Próximo para Registrar Formação Acadêmica");
+                return;
+            }
 
         } catch (\Exception $e) {
 

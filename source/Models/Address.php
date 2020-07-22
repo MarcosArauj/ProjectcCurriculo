@@ -30,7 +30,7 @@ class Address extends Model {
             ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Salver Contato!");
+            throw new \Exception("Erro ao Salvar Contato!");
             return false;
         }
 

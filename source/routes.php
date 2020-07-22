@@ -68,7 +68,6 @@ $router->post("/personal_data_update", "PersonalDataController:updatePersonalDat
 $router->post("/contact", "PersonalDataController:saveContact","personal.saveContact");
 $router->post("/contact_update", "PersonalDataController:updateContact","personal.updateContact");
 $router->post("/deficiency", "PersonalDataController:saveDeficiency","personal.saveDeficiency");
-$router->post("/deficiency_update", "PersonalDataController:updateDeficiency","personal.updateDeficiency");
 $router->post("/formation", "FormationController:saveAcademicFormation","formation.saveAcademicFormation");
 $router->post("/other_courses", "FormationController:saveOtherCourses","formation.saveOtherCourses");
 $router->post("/languages", "FormationController:saveLanguages","formation.saveLanguages");

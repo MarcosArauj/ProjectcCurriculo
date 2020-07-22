@@ -127,7 +127,7 @@ class PersonalData extends Model {
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Registrar de Deficiência!");
+            throw new \Exception("Erro ao Registrar de Deficiência!".$this->getid_usuario());
             return false;
         }
 

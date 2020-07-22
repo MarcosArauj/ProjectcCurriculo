@@ -14,11 +14,11 @@
                 <div class="form-group col-md-4">
                     <b>Você possui algum tipo de Deficiência? </b> <br>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="nao_deficiencia" name="deficiencia" class="custom-control-input" autofocus>
+                        <input type="radio" id="nao_deficiencia" class="custom-control-input" name="deficiencia_existe" value="Não" autofocus>
                         <label class="custom-control-label" for="nao_deficiencia">Não</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="sim_deficiencia" name="deficiencia" class="custom-control-input">
+                        <input type="radio" id="sim_deficiencia" class="custom-control-input" name="deficiencia_existe" value="Sim">
                         <label class="custom-control-label" for="sim_deficiencia">Sim</label>
                     </div>
                 </div>
