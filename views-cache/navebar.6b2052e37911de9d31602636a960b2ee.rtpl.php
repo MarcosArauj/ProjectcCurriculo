@@ -24,7 +24,7 @@
                 <hr>
                 <?php if( checkCurriculum() ){ ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/user/formation_update">
                         <span> Formação Acadêmica </span>
                     </a>
                 </li>

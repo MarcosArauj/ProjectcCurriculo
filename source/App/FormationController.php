@@ -45,13 +45,14 @@ class FormationController extends Controller {
             $this->data_user->getValues();
 
             $this->formation = new Formation();
+            $this->formation->setid_usuario((INT)$this->user_logado->getid_usuario());
         }
 
     }
 
     /**
      * @param $data
-     * Cadastro de Formação Academica
+     * Cadastro e Atulização de Formação Academica
      */
     public function saveAcademicFormation($data):void {
 
@@ -60,7 +61,6 @@ class FormationController extends Controller {
         try {
 
             $this->formation->setid_formacao($this->data_user->getid_formacao());
-            $this->formation->setid_usuario((INT)$this->user_logado->getid_usuario());
 
             $this->formation->setData($data);
 
@@ -112,8 +112,6 @@ class FormationController extends Controller {
 
         try {
 
-            $this->formation->setid_usuario((INT)$this->user_logado->getid_usuario());
-
             $this->formation->setData($data);
 
             $this->formation->saveOtherCourses();
@@ -123,6 +121,49 @@ class FormationController extends Controller {
 
             ]);
             flash("success","Sucesso no Registro! Clique em Próximo para Idiomas ou Adicione + Cursos");
+            return;
+
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
+     * Atualização de Outros Cursos
+     */
+    public function updateOtherCourses($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        if(in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos para cadastrar!"
+            ]);
+            return;
+        }
+
+        try {
+
+            $this->formation->setid_cursos($this->data_user->getid_cursos());
+
+            $this->formation->setData($data);
+
+            $this->formation->saveOtherCourses();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.saveOtherCourses")
+
+            ]);
+            flash("success","Dados do Curso Atualizado");
             return;
 
 
@@ -156,8 +197,6 @@ class FormationController extends Controller {
                 return;
 
             }
-
-            $this->formation->setid_usuario((INT)$this->user_logado->getid_usuario());
 
             $this->formation->setData($data);
 

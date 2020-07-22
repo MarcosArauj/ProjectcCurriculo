@@ -63,7 +63,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label  for="telefone"><b>Telefone Fixo</b></label>
-                            <input type="text" class="form-control form-control-sm" name="telefone" id="telefone" value="<?php echo htmlspecialchars( $user["telefone"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onkeypress="formatar('##-####-####',this)"  maxlength="12" >
+                            <input type="text" class="form-control form-control-sm" name="telefone" id="telefone" value="<?php echo htmlspecialchars( $user["telefone"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" placeholder="Ex: 00-00000-0000" onkeypress="formatar('##-####-####',this)"  maxlength="12" >
                         </div>
                     </div>
                     <div class="row">

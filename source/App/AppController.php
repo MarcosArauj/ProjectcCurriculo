@@ -209,7 +209,7 @@ class AppController extends Controller {
     }
 
     /**
-     * Carrega Tela de Cadastro da Outros Cursos
+     * Carrega Tela de Cadastro de Outros Cursos
      */
     public function saveOtherCourses():void {
 
@@ -217,7 +217,27 @@ class AppController extends Controller {
 
         $page->setTpl("create_other_courses", array(
             "user" => $this->data_user->getValues(),
-            "courses"=>$this->formation->getOtherCourses($this->user_logado->getid_usuario())
+            "courses"=>$this->formation->getOtherCoursesUser($this->user_logado->getid_usuario())
+        ));
+
+    }
+
+    /**
+     * Carrega Tela de Ataluzação de Outros Cursos
+     */
+    public function updateOtherCourses($data):void {
+
+        $page = new PageCurriculum(
+            [
+                "header"=> true
+            ]
+        );
+
+        $this->formation->getOtherCourses($data["id_cursos"]);
+
+        $page->setTpl("update_other_courses", array(
+            "user" => $this->data_user->getValues(),
+            "courses"=>$this->formation->getValues()
         ));
 
     }

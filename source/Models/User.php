@@ -49,9 +49,7 @@ class User extends Model {
      */
     public function getUser(int $id_usuario): void {
 
-        $conn = new Conection();
-
-        $results =  $conn->select("SELECT * FROM v_usuario
+        $results =  $this->conn->select("SELECT * FROM v_usuario
             WHERE  id_usuario = :id_usuario",array(
             ":id_usuario"=>$id_usuario
         ));

@@ -9,7 +9,7 @@ class Formation extends Model {
     /**
      * @return bool
      * @throws \Exception
-     * Salva dados da Formação Acadêmica
+     * Salvar e Atualizar dados da Formação Acadêmica
      */
     public function saveAcademicFormation(): bool {
 
@@ -29,7 +29,7 @@ class Formation extends Model {
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Salver Cadastro de Formação Acadêmica!");
+            throw new \Exception("Erro  No Registro da Formação Acadêmica!");
             return false;
         }
 
@@ -42,7 +42,7 @@ class Formation extends Model {
     /**
      * @return bool
      * @throws \Exception
-     * Salva dados de Outros Cursos
+     * Salvar e Atualizar dados de Outros Cursos
      */
     public function saveOtherCourses(): bool {
 
@@ -58,7 +58,7 @@ class Formation extends Model {
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Salvar Cadastro de Curso!");
+            throw new \Exception("Erro no Registro do Curso!");
             return false;
         }
 
@@ -74,12 +74,29 @@ class Formation extends Model {
      *
      * Pega Curso de Acordo com Usuario
      */
-    public function getOtherCourses($id_usuario) {
+    public function getOtherCoursesUser($id_usuario):array {
 
         return  $this->conn->select("SELECT * FROM tb_cursos
                 WHERE id_usuario = :id_usuario", array(
             ":id_usuario"=>$id_usuario
         ));
+
+    }
+
+    /**
+     * @param $id_cursos
+     * @return void
+     *
+     * Pega Curso de Acordo com Usuario
+     */
+    public function getOtherCourses($id_cursos):void {
+
+        $results =   $this->conn->select("SELECT * FROM tb_cursos
+                WHERE id_cursos = :id_cursos", array(
+            ":id_cursos"=>$id_cursos
+        ));
+
+        $this->setData($results[0]);
 
     }
 

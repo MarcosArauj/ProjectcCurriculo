@@ -53,6 +53,7 @@ $router->get("/deficiency_update", "AppController:updateDeficiency","app.updateD
 $router->get("/formation", "AppController:saveAcademicFormation","app.saveAcademicFormation");
 $router->get("/formation_update", "AppController:updateAcademicFormation","app.updateAcademicFormation");
 $router->get("/other_courses", "AppController:saveOtherCourses","app.saveOtherCourses");
+$router->get("/{id_cursos}/other_courses_update", "AppController:updateOtherCourses","app.updateOtherCourses");
 $router->get("/languages", "AppController:saveLanguages","app.saveLanguages");
 $router->get("/professional_experience", "AppController:saveProfessional","app.saveProfessional");
 $router->get("/curriculum", "AppController:saveCurriculum","app.saveCurriculum");
@@ -71,6 +72,7 @@ $router->post("/contact_update", "PersonalDataController:updateContact","persona
 $router->post("/deficiency", "PersonalDataController:saveDeficiency","personal.saveDeficiency");
 $router->post("/formation", "FormationController:saveAcademicFormation","formation.saveAcademicFormation");
 $router->post("/other_courses", "FormationController:saveOtherCourses","formation.saveOtherCourses");
+$router->post("/{id_cursos}/other_courses_update", "FormationController:updateOtherCourses","formation.updateOtherCourses");
 $router->post("/languages", "FormationController:saveLanguages","formation.saveLanguages");
 $router->post("/new_languages", "FormationController:createLanguage","formation.createLanguage");
 $router->post("/professional_experience", "ProfessionalController:saveProfessional","professional.saveProfessional");

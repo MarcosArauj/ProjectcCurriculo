@@ -49,7 +49,9 @@ class PersonalDataController extends Controller {
             $this->data_user->getValues();
 
             $this->personalData =  new PersonalData();
+            $this->personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
             $this->contact = new Address();
+            $this->contact->setid_usuario((INT)$this->user_logado->getid_usuario());
         }
 
     }
@@ -71,8 +73,6 @@ class PersonalDataController extends Controller {
                 ]);
                 return;
             }
-
-            $this->personalData->setid_usuario($this->user_logado->getid_usuario());
 
             $this->personalData->setData($data);
 
@@ -149,7 +149,6 @@ class PersonalDataController extends Controller {
 
         try {
 
-            $this->contact->setid_usuario((INT)$this->user_logado->getid_usuario());
             $this->contact->setc_email($this->user_logado->getemail());
 
             $this->contact->setData($data);
@@ -219,7 +218,6 @@ class PersonalDataController extends Controller {
         try {
 
             $this->personalData->setid_deficiencia($this->data_user->getid_deficiencia());
-            $this->personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
 
             $data["regime_cota"] = (isset($data["regime_cota"]))? "Sim": "Não";
 
