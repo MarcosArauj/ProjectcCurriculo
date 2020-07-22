@@ -106,13 +106,14 @@ class PersonalData extends Model {
     /**
      * @return bool
      * @throws \Exception
-     * Salva Cadastro de Deficiência
+     * Salva e Atualizar Cadastro de Deficiência
      */
     public function saveDeficiency(): bool {
 
-        $results = $this->conn->select("CALL sp_deficiencia_salvar(:id_deficiencia,:tipo_deficiencia,:cid,:especificacao_deficiencia,:regime_cota, :veiculo_adaptado, 
+        $results = $this->conn->select("CALL sp_deficiencia_salvar(:id_deficiencia,:deficiencia_existe,:tipo_deficiencia,:cid,:especificacao_deficiencia,:regime_cota, :veiculo_adaptado, 
         :transporte,:acompanhantes,:adaptacoes_trabalho,:especificacao_trabalho,:id_usuario)", array(
             ":id_deficiencia"=>$this->getid_deficiencia(),
+            ":deficiencia_existe"=>$this->getdeficiencia_existe(),
             ":tipo_deficiencia"=>$this->gettipo_deficiencia(),
             ":cid"=>$this->getcid(),
             ":especificacao_deficiencia"=>$this->getespecificacao_deficiencia(),
@@ -126,7 +127,7 @@ class PersonalData extends Model {
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Salvar Cadastro de Deficiência!");
+            throw new \Exception("Erro ao Registrar de Deficiência!");
             return false;
         }
 

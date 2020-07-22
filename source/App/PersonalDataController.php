@@ -114,7 +114,7 @@ class PersonalDataController extends Controller {
                 ]);
                 return;
             }
-            
+
             $this->personalData->setid_pessoa($this->data_user->getid_pessoa());
 
             $this->personalData->setData($data);
@@ -138,8 +138,6 @@ class PersonalDataController extends Controller {
         }
 
     }
-
-
 
     /**
      * @param $data
@@ -198,6 +196,42 @@ class PersonalDataController extends Controller {
 
             ]);
             flash("success","Dados Alterados");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
+     * Atualizar de Deficiencia
+     */
+    public function updateDeficiency($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            $this->personalData->setid_deficiencia($this->data_user->getid_deficiencia());
+
+            $data["regime_cota"] = (isset($data["regime_cota"]))? "Sim": "Não";
+
+            $this->personalData->setData($data);
+
+            $this->personalData->saveDeficiency();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.updateDeficiency")
+
+            ]);
+            flash("success","Dados Alterados Com Sucesso");
             return;
 
         } catch (\Exception $e) {

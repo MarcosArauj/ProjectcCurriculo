@@ -81,7 +81,7 @@
            </div>
         </div>
         <div class="card-footer">
-            <a class="btn btn-danger float-left" href="/user/deficiency" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            <a class="btn btn-danger float-left" href="/user/deficiency_update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
             <div class="row float-right">
                 <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Formação Acadêmica</button>&nbsp;
                 <a class="btn btn-primary " href="/user/other_courses" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>

@@ -46,11 +46,14 @@ class AppController extends Controller {
         } else {
             $this->user_logado = User::getFromSession();
             $this->data_user = new User();
+            $this->data_user->getUser($this->user_logado->getid_usuario());
+
             $this->personalData = new PersonalData();
             $this->contact = new Address();
             $this->formation = new Formation();
             $this->professional = new Professional();
             $this->curruculum = new Curriculum();
+            $this->curruculum->getCurriculum($this->user_logado->getid_usuario());
         }
 
     }
@@ -84,12 +87,8 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
-        $curriculum = new Curriculum();
-
-        $curriculum->getCurriculum($this->user_logado->getid_usuario());
-
         $page->setTpl("dashboard", array(
-            "curriculum" => $curriculum->getValues()
+            "curriculum" => $this->curruculum->getValues()
         ));
 
     }
@@ -101,7 +100,6 @@ class AppController extends Controller {
     public function savePersonalData():void {
 
         $page = new PageCurriculum();
-
 
         $page->setTpl("create_personal_data", array(
             "user" => $this->user_logado->getValues(),
@@ -119,7 +117,6 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
-        $this->data_user->getUser($this->user_logado->getid_usuario());
 
         $page->setTpl("update_personal_data", array(
             "user" => $this->data_user->getValues(),
@@ -137,7 +134,6 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
-        $this->data_user->getUser($this->user_logado->getid_usuario());
 
         $page->setTpl("create_contact", array(
             "user" => $this->data_user->getValues(),
@@ -153,15 +149,12 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
-        $this->data_user->getUser($this->user_logado->getid_usuario());
-
         $page->setTpl("update_contact", array(
             "user" => $this->data_user->getValues(),
             "countries"=> $this->contact->listcountries()
         ));
 
     }
-
 
     /**
      * Carrega Tela de Cadastro de Deficiência
@@ -170,9 +163,20 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
-        $this->data_user->getUser($this->user_logado->getid_usuario());
-
         $page->setTpl("create_deficiency", array(
+            "user" => $this->data_user->getValues()
+        ));
+
+    }
+
+    /**
+     * Carrega Tela de Atualiza de Deficiência
+     */
+    public function updateDeficiency():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("update_deficiency", array(
             "user" => $this->data_user->getValues()
         ));
 
@@ -184,8 +188,6 @@ class AppController extends Controller {
     public function saveAcademicFormation():void {
 
         $page = new PageCurriculum();
-
-        $this->data_user->getUser($this->user_logado->getid_usuario());
 
         $page->setTpl("create_academic_formation", array(
             "user" => $this->data_user->getValues()
@@ -199,8 +201,6 @@ class AppController extends Controller {
     public function saveOtherCourses():void {
 
         $page = new PageCurriculum();
-
-        $this->data_user->getUser($this->user_logado->getid_usuario());
 
         $page->setTpl("create_other_courses", array(
             "user" => $this->data_user->getValues(),
@@ -216,8 +216,6 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
-        $this->data_user->getUser($this->user_logado->getid_usuario());
-
         $page->setTpl("create_languages", array(
             "user" => $this->data_user->getValues(),
             "languages"=>$this->formation->getLanguages($this->user_logado->getid_usuario()),
@@ -232,8 +230,6 @@ class AppController extends Controller {
     public function saveProfessional():void {
 
         $page = new PageCurriculum();
-
-        $this->data_user->getUser($this->user_logado->getid_usuario());
 
         $page->setTpl("create_professional", array(
             "user" => $this->data_user->getValues(),
@@ -254,8 +250,6 @@ class AppController extends Controller {
         }
 
         $page = new PageCurriculum();
-
-        $this->data_user->getUser($this->user_logado->getid_usuario());
 
         $page->setTpl("finish_curriculum", array(
             "user" => $this->data_user->getValues()

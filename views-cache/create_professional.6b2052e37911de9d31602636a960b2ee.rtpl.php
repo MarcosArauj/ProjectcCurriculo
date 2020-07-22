@@ -15,7 +15,7 @@
         <div class="form-group col-md-12">
             <b>Selecione para realizar o Cadstro</b> <br>
             <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="sim_emprego" name="registro" class="custom-control-input" value="ativo" autofocus>
+                <input type="radio" id="sim_emprego" name="registro" class="custom-control-input" value="ativo" checked autofocus>
                 <label class="custom-control-label" for="sim_emprego">Emprego Atual</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
