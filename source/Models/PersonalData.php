@@ -10,8 +10,7 @@ use Source\Config\Conection;
  * Class PersonalData
  * @package Source\Models
  */
-class PersonalData extends User {
-
+class PersonalData extends Model {
 
     /**
      * @return bool

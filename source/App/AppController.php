@@ -20,7 +20,7 @@ use Source\Models\User;
 class AppController extends Controller {
 
     /**
-     * @var \Source\Models\User
+     * @var \User
      * Pegar Usuario logado
      */
     private $user_logado;

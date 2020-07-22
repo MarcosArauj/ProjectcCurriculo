@@ -4,10 +4,18 @@
 namespace Source\Models;
 
 
+use Source\Config\Conection;
+
 abstract class Model {
 
     private $values = Array();
 
+    protected $conn;
+
+    public function __construct() {
+        $this->conn = new Conection();
+
+    }
 
     public function __call($name, $args) {
 

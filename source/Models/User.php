@@ -13,18 +13,12 @@ class User extends Model {
     const ACESSO = 0;
     const STATUS_USUARIO = "ativo";
     const SESSION = "user";
-    private $conn;
 
     /**
      * @return array
      * @throws \Exception
      * Salvar cadastro do usuario
      */
-
-    public function __construct() {
-        $this->conn = new Conection();
-
-    }
 
     public function saveUser():bool {
 
