@@ -51,6 +51,7 @@ $router->get("/contact_update", "AppController:updateContact","app.updateContact
 $router->get("/deficiency", "AppController:saveDeficiency","app.saveDeficiency");
 $router->get("/deficiency_update", "AppController:updateDeficiency","app.updateDeficiency");
 $router->get("/formation", "AppController:saveAcademicFormation","app.saveAcademicFormation");
+$router->get("/formation_update", "AppController:updateAcademicFormation","app.updateAcademicFormation");
 $router->get("/other_courses", "AppController:saveOtherCourses","app.saveOtherCourses");
 $router->get("/languages", "AppController:saveLanguages","app.saveLanguages");
 $router->get("/professional_experience", "AppController:saveProfessional","app.saveProfessional");

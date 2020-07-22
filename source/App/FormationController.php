@@ -41,6 +41,9 @@ class FormationController extends Controller {
             $this->user_logado = User::getFromSession();
 
             $this->data_user = new User();
+            $this->data_user->getUser($this->user_logado->getid_usuario());
+            $this->data_user->getValues();
+
             $this->formation = new Formation();
         }
 
@@ -56,18 +59,28 @@ class FormationController extends Controller {
 
         try {
 
+            $this->formation->setid_formacao($this->data_user->getid_formacao());
             $this->formation->setid_usuario((INT)$this->user_logado->getid_usuario());
 
             $this->formation->setData($data);
 
             $this->formation->saveAcademicFormation();
 
-            echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.saveAcademicFormation")
+            if($this->data_user->getid_formacao()) {
+                echo $this->ajaxResponse("redirect", [
+                    "url" => $this->router->route("app.updateAcademicFormation")
+                ]);
+                flash("success", "Dados Altualizados com Sucesso");
+                return;
 
-            ]);
-            flash("success","Sucesso no Registro! Clique em Próximo para Registrar Outros Cursos");
-            return;
+            } else {
+                echo $this->ajaxResponse("redirect", [
+                    "url" => $this->router->route("app.saveAcademicFormation")
+                ]);
+                flash("success", "Sucesso no Registro! Clique em Próximo para Registrar Outros Cursos");
+                return;
+
+            }
 
         } catch (\Exception $e) {
 
@@ -79,6 +92,7 @@ class FormationController extends Controller {
         }
 
     }
+
 
     /**
      * @param $data

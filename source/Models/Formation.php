@@ -14,8 +14,9 @@ class Formation extends Model {
     public function saveAcademicFormation(): bool {
 
         $results = $this->conn->select(
-            "CALL sp_formacao_salvar(:nivel_conclusao, :instituicao_conclusao, :ano_inicio_conclusao, :ano_conclusao, :nivel_andamento,
+            "CALL sp_formacao_salvar(:id_formacao,:nivel_conclusao, :instituicao_conclusao, :ano_inicio_conclusao, :ano_conclusao, :nivel_andamento,
              :instituicao_andamento, :ano_inicio_andamento, :curso, :id_usuario)", array(
+            ":id_formacao"=>$this->getid_formacao(),
             ":nivel_conclusao"=>$this->getnivel_conclusao(),
             ":instituicao_conclusao"=>$this->getinstituicao_conclusao(),
             ":ano_inicio_conclusao"=>$this->getano_inicio_conclusao(),

@@ -196,6 +196,19 @@ class AppController extends Controller {
     }
 
     /**
+     * Carrega Tela de Atualização da Formação Acadêmica
+     */
+    public function updateAcademicFormation():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("update_academic_formation", array(
+            "user" => $this->data_user->getValues()
+        ));
+
+    }
+
+    /**
      * Carrega Tela de Cadastro da Outros Cursos
      */
     public function saveOtherCourses():void {
