@@ -146,6 +146,22 @@ class AppController extends Controller {
 
     }
 
+    /**
+     * Carrega Tela de Atualizar dos Contato e Endereço
+     */
+    public function updateContact():void {
+
+        $page = new PageCurriculum();
+
+        $this->data_user->getUser($this->user_logado->getid_usuario());
+
+        $page->setTpl("update_contact", array(
+            "user" => $this->data_user->getValues(),
+            "countries"=> $this->contact->listcountries()
+        ));
+
+    }
+
 
     /**
      * Carrega Tela de Cadastro de Deficiência

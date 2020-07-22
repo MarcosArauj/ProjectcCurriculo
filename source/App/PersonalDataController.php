@@ -114,7 +114,6 @@ class PersonalDataController extends Controller {
             }
 
             $this->data_user->getUser($this->user_logado->getid_usuario());
-
             $this->data_user->getValues();
 
             $this->personalData->setid_pessoa($this->data_user->getid_pessoa());
@@ -141,6 +140,8 @@ class PersonalDataController extends Controller {
 
     }
 
+
+
     /**
      * @param $data
      * Cadastro de Contato e Endereço
@@ -150,7 +151,6 @@ class PersonalDataController extends Controller {
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
         try {
-
 
             $this->contact->setid_usuario((INT)$this->user_logado->getid_usuario());
             $this->contact->setc_email($this->user_logado->getemail());
@@ -164,6 +164,44 @@ class PersonalDataController extends Controller {
 
             ]);
             flash("success","Sucesso no Registro! Clique em Próximo para Registrar Deficiência se Houver");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
+     * Atualizar de Contato e Endereço
+     */
+    public function updateContact($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            $this->data_user->getUser($this->user_logado->getid_usuario());
+            $this->data_user->getValues();
+
+            $this->contact->setid_contato($this->data_user->getid_contato());
+            $this->contact->setc_email($this->data_user->getemail());
+
+            $this->contact->setData($data);
+
+            $this->contact->updateContact();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.updateContact")
+
+            ]);
+            flash("success","Dados Alterados");
             return;
 
         } catch (\Exception $e) {
