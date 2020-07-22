@@ -45,6 +45,8 @@ class PersonalDataController extends Controller {
             $this->user_logado = User::getFromSession();
 
             $this->data_user = new User();
+            $this->data_user->getUser($this->user_logado->getid_usuario());
+            $this->data_user->getValues();
 
             $this->personalData =  new PersonalData();
             $this->contact = new Address();
@@ -112,10 +114,7 @@ class PersonalDataController extends Controller {
                 ]);
                 return;
             }
-
-            $this->data_user->getUser($this->user_logado->getid_usuario());
-            $this->data_user->getValues();
-
+            
             $this->personalData->setid_pessoa($this->data_user->getid_pessoa());
 
             $this->personalData->setData($data);
@@ -186,9 +185,6 @@ class PersonalDataController extends Controller {
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
         try {
-
-            $this->data_user->getUser($this->user_logado->getid_usuario());
-            $this->data_user->getValues();
 
             $this->contact->setid_contato($this->data_user->getid_contato());
             $this->contact->setc_email($this->data_user->getemail());
