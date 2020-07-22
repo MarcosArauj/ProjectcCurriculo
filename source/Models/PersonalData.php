@@ -19,9 +19,8 @@ class PersonalData extends Model {
      */
     public function savePersonalData():bool {
 
-        $conn = new Conection();
 
-        $results = $conn->select(
+        $results = $this->conn->select(
             "CALL sp_dados_pessoais_salvar(:primeiro_nome,:sobrenome,:nome_social,:nome_social_uso,:genero,:cor_raca,:nascimento,
            :naturalidade,:uf_naturalidade,:nacionalidade,:rg,:cpf,:id_usuario)", array(
             ":primeiro_nome" => $this->getprimeiro_nome(),
@@ -59,9 +58,7 @@ class PersonalData extends Model {
      */
     public function updatePersonalData():bool {
 
-        $conn = new Conection();
-
-        $results = $conn->select(
+        $results = $this->conn->select(
             "CALL sp_dados_pessoais_atualizar(:id_pessoa,:primeiro_nome,:sobrenome,:nome_social,:nome_social_uso,:genero,:cor_raca,:nascimento,
            :naturalidade,:uf_naturalidade,:nacionalidade,:rg,:cpf)", array(
             ":id_pessoa"=>$this->getid_pessoa(),
@@ -78,11 +75,10 @@ class PersonalData extends Model {
             ":rg" => $this->getrg(),
             ":cpf" => removeMaskCpf($this->getcpf())
 
-
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Atualizar Cadastro!" . $this->getid_pessoa());
+            throw new \Exception("Erro ao Atualizar Cadastro!" );
             return false;
         }
 
@@ -97,11 +93,9 @@ class PersonalData extends Model {
      * @return bool
      * Checar CPF já cadastrado
      */
-    public static function checkCpf(string $cpf):bool {
+    public function checkCpf(string $cpf):bool {
 
-        $conn = new Conection();
-
-        $results = $conn->select("SELECT cpf FROM v_usuario WHERE cpf = :cpf",
+        $results = $this->conn->select("SELECT cpf FROM v_usuario WHERE cpf = :cpf",
             [
                 ":cpf"=> removeMaskCpf($cpf)
             ]);
@@ -118,9 +112,7 @@ class PersonalData extends Model {
      */
     public function saveContact():bool {
 
-        $conn = new Conection();
-
-        $results = $conn->select(
+        $results = $this->conn->select(
             "CALL sp_contato_salvar(:celular,:telefone,:c_email,:endereco,:numero,:bairro,:cep,:cidade,:estado,:pais,:id_usuario)",
             array(
                 ":celular" => $this->getcelular(),
@@ -150,10 +142,9 @@ class PersonalData extends Model {
     /**
      * @return array
      */
-    public static function listcountries(): array {
-        $conn = new Conection();
+    public function listcountries(): array {
 
-        return $conn->select(" SELECT * FROM tb_paises");
+        return  $this->conn->select(" SELECT * FROM tb_paises");
 
     }
 
@@ -164,9 +155,7 @@ class PersonalData extends Model {
      */
     public function saveDeficiency(): bool {
 
-        $conn = new Conection();
-
-        $results = $conn->select("CALL sp_deficiencia_salvar(:id_deficiencia,:tipo_deficiencia,:cid,:especificacao_deficiencia,:regime_cota, :veiculo_adaptado, 
+        $results = $this->conn->select("CALL sp_deficiencia_salvar(:id_deficiencia,:tipo_deficiencia,:cid,:especificacao_deficiencia,:regime_cota, :veiculo_adaptado, 
         :transporte,:acompanhantes,:adaptacoes_trabalho,:especificacao_trabalho,:id_usuario)", array(
             ":id_deficiencia"=>$this->getid_deficiencia(),
             ":tipo_deficiencia"=>$this->gettipo_deficiencia(),

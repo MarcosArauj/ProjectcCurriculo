@@ -38,7 +38,9 @@ function checkCurriculum() {
 
     $user = User::getFromSession();
 
-    return \Source\Models\Curriculum::checkCurriculum($user->getid_usuario());
+    $curriculum = new \Source\Models\Curriculum();
+
+    return $curriculum->checkCurriculum($user->getid_usuario());
 
 }
 

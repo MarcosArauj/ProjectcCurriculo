@@ -22,10 +22,8 @@ class FormationController extends Controller {
      */
     private $user_logado;
 
-    /**
-     * @var User
-     */
     private $data_user;
+    private $formation;
 
     /**
      * AppController constructor.
@@ -43,6 +41,7 @@ class FormationController extends Controller {
             $this->user_logado = User::getFromSession();
 
             $this->data_user = new User();
+            $this->formation = new Formation();
         }
 
     }
@@ -57,13 +56,11 @@ class FormationController extends Controller {
 
         try {
 
-            $formation = new Formation();
+            $this->formation->setid_usuario((INT)$this->user_logado->getid_usuario());
 
-            $formation->setid_usuario((INT)$this->user_logado->getid_usuario());
+            $this->formation->setData($data);
 
-            $formation->setData($data);
-
-            $formation->saveAcademicFormation();
+            $this->formation->saveAcademicFormation();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveAcademicFormation")
@@ -101,13 +98,11 @@ class FormationController extends Controller {
 
         try {
 
-            $courses = new Formation();
+            $this->formation->setid_usuario((INT)$this->user_logado->getid_usuario());
 
-            $courses->setid_usuario((INT)$this->user_logado->getid_usuario());
+            $this->formation->setData($data);
 
-            $courses->setData($data);
-
-            $courses->saveOtherCourses();
+            $this->formation->saveOtherCourses();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveOtherCourses")
@@ -138,7 +133,7 @@ class FormationController extends Controller {
 
         try {
 
-            if(Formation::checkLanguage((INT)$this->user_logado->getid_usuario(),$data["idioma"]) == true) {
+            if($this->formation->checkLanguage((INT)$this->user_logado->getid_usuario(),$data["idioma"]) == true) {
 
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
@@ -148,13 +143,11 @@ class FormationController extends Controller {
 
             }
 
-            $language_user = new Formation();
+            $this->formation->setid_usuario((INT)$this->user_logado->getid_usuario());
 
-            $language_user->setid_usuario((INT)$this->user_logado->getid_usuario());
+            $this->formation->setData($data);
 
-            $language_user->setData($data);
-
-            $language_user->saveLanguages();
+            $this->formation->saveLanguages();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveLanguages")
@@ -184,7 +177,7 @@ class FormationController extends Controller {
 
         try {
 
-            if(Formation::checkLanguageExists($data["idioma_pt"]) == true) {
+            if($this->formation->checkLanguageExists($data["idioma_pt"]) == true) {
 
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
@@ -193,12 +186,10 @@ class FormationController extends Controller {
                 return;
             }
 
-            $language = new Formation();
-
-            $language->setData($data);
+            $this->formation->setData($data);
 
             //Novo Idioma no Sistema
-            $language->createLanguage();
+            $this->formation->createLanguage();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveLanguages")

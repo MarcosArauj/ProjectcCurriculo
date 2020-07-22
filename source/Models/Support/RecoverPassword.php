@@ -3,16 +3,13 @@
 
 namespace Source\Models\Support;
 
-
-use Source\Config\Conection;
-use Source\Models\Support\EmailRecover;
-use Source\Models\User;
+use Source\Models\Model;
 
 /**
  * Class RecoverPassword
  * @package Source\Models\Support
  */
-class RecoverPassword extends User {
+class RecoverPassword extends Model {
 
     /**
      * @param $email
@@ -21,11 +18,10 @@ class RecoverPassword extends User {
      *
      * Envia E-mail para recuperação da Senha
      */
-    public static function getEmailRecoverPass($email): bool {
+    public function getEmailRecoverPass($email): bool {
 
-        $conn = new Conection();
 
-        $results = $conn->select(
+        $results = $this->conn->select(
             "SELECT * FROM v_usuario WHERE email = :email", array(
             ":email"=>$email
         ));
@@ -36,7 +32,7 @@ class RecoverPassword extends User {
         } else {
             $data = $results[0];
 
-            $results_recovery = $conn->select("CALL sp_recupera_senha(:id_usuario,:ip)",array(
+            $results_recovery = $this->conn->select("CALL sp_recupera_senha(:id_usuario,:ip)",array(
                 ":id_usuario"=>$data["id_usuario"],
                 ":ip"=>$_SERVER["REMOTE_ADDR"]
             ));
@@ -81,13 +77,11 @@ class RecoverPassword extends User {
      * @throws \Exception
      * Valida a o Link Enviado para Recuperção da Senha
      */
-    public static function validRecoverDecrypt($code):array {
+    public function validRecoverDecrypt($code):array {
 
         $disrecupera =  base64_decode($code);
 
-        $conn = new Conection();
-
-        $results = $conn->select("SELECT * FROM v_recupera_senha
+        $results = $this->conn->select("SELECT * FROM v_recupera_senha
 	    WHERE id_recupera = :id_recupera AND 
 	    dtrecuperacao IS NULL AND 
 	     DATE_ADD(dtregistro_senha, INTERVAL 1 HOUR) >= NOW()", array(
@@ -108,11 +102,9 @@ class RecoverPassword extends User {
      *
      * Registra a recuperação da Senha
      */
-    public static function setRecoverUsed($id_recupera):void {
+    public function setRecoverUsed($id_recupera):void {
 
-        $conn = new Conection();
-
-        $conn->query("UPDATE tb_recupera_senha SET 
+        $this->conn->query("UPDATE tb_recupera_senha SET 
         dtrecuperacao = NOW() WHERE id_recupera = :id_recupera", array(
             ":id_recupera"=>$id_recupera
         ));

@@ -17,6 +17,7 @@ class AuthController extends Controller {
      * @var User
      */
     private $user;
+    private $recover;
 
     /**
      * AuthController constructor.
@@ -27,6 +28,7 @@ class AuthController extends Controller {
         parent::__construct($router);
 
         $this->user = new User();
+        $this->recover = new RecoverPassword();
 
     }
 
@@ -142,7 +144,7 @@ class AuthController extends Controller {
 
         try{
 
-            RecoverPassword::getEmailRecoverPass($data["email"]);
+            $this->recover->getEmailRecoverPass($data["email"]);
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("web.sent")
@@ -176,9 +178,9 @@ class AuthController extends Controller {
         }
         try{
 
-            $recover = RecoverPassword::validRecoverDecrypt($data["code"]);
+            $recover_pass = $this->recover->validRecoverDecrypt($data["code"]);
 
-            RecoverPassword::setRecoverUsed($recover["id_recupera"]);
+            $this->recover->setRecoverUsed($recover_pass["id_recupera"]);
 
         } catch (\Exception $e) {
 
@@ -191,7 +193,7 @@ class AuthController extends Controller {
 
         $user = new User();
 
-        $user->getUser($recover["id_usuario"]);
+        $user->getUser($recover_pass["id_usuario"]);
 
         $user->setsenha($data["senha_nova"]);
 

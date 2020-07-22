@@ -20,7 +20,7 @@
             </div>
             <div class="custom-control custom-radio custom-control-inline">
                 <input type="radio" id="nao_emprego" name="registro" class="custom-control-input" value="inativo">
-                <label class="custom-control-label" for="nao_emprego">Empregos Ateriores</label>
+                <label class="custom-control-label" for="nao_emprego">Empregos Anteriores</label>
             </div>
             <hr>
         </div>

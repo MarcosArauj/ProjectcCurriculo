@@ -12,17 +12,15 @@ class StatesCity extends Model {
     /**
      * @return array
      */
-    public static function listuf(): array {
-        $conn = new Conection();
+    public function listuf(): array {
 
-        return $conn->select(" SELECT * FROM tb_estados");
+        return $this->conn->select(" SELECT * FROM tb_estados");
 
     }
 
-    public static function listCitys(int $id_estado): string {
-        $conn = new Conection();
+    public  function listCitys(int $id_estado): array {
 
-        return  $conn->select(" SELECT * FROM tb_cidades WHERE id_estado = :id_estado",array(
+        return  $this->conn->select(" SELECT * FROM tb_cidades WHERE id_estado = :id_estado",array(
             ":id_estado" => $id_estado
         ));
 

@@ -24,13 +24,12 @@ class AppController extends Controller {
      * Pegar Usuario logado
      */
     private $user_logado;
-
-    /**
-     * @var User
-     */
     private $data_user;
-
     private $personalData;
+    private $contact;
+    private $formation;
+    private $professional;
+    private $curruculum;
 
     /**
      * AppController constructor.
@@ -46,14 +45,15 @@ class AppController extends Controller {
             $this->router->redirect("web.home");
         } else {
             $this->user_logado = User::getFromSession();
-
             $this->data_user = new User();
-
             $this->personalData = new PersonalData();
+            $this->contact = new StatesCity();
+            $this->formation = new Formation();
+            $this->professional = new Professional();
+            $this->curruculum = new Curriculum();
         }
 
     }
-
 
     /**
      * Carrega tela de Inicio de Cadastro no Sistema
@@ -106,7 +106,7 @@ class AppController extends Controller {
         $page->setTpl("create_personal_data", array(
             "user" => $this->user_logado->getValues(),
             "countries"=> $this->personalData->listcountries(),
-            "uf" => StatesCity::listuf()
+            "uf" => $this->contact->listuf()
 
         ));
 
@@ -124,7 +124,7 @@ class AppController extends Controller {
         $page->setTpl("update_personal_data", array(
             "user" => $this->data_user->getValues(),
             "countries"=> $this->personalData->listcountries(),
-            "uf" => StatesCity::listuf()
+            "uf" => $this->contact->listuf()
 
         ));
 
@@ -188,7 +188,7 @@ class AppController extends Controller {
 
         $page->setTpl("create_other_courses", array(
             "user" => $this->data_user->getValues(),
-            "courses"=>Formation::getOtherCourses($this->user_logado->getid_usuario())
+            "courses"=>$this->formation->getOtherCourses($this->user_logado->getid_usuario())
         ));
 
     }
@@ -204,8 +204,8 @@ class AppController extends Controller {
 
         $page->setTpl("create_languages", array(
             "user" => $this->data_user->getValues(),
-            "languages"=>Formation::getLanguages($this->user_logado->getid_usuario()),
-            "lang_cad"=>Formation::languages()
+            "languages"=>$this->formation->getLanguages($this->user_logado->getid_usuario()),
+            "lang_cad"=>$this->formation->languages()
         ));
 
     }
@@ -221,7 +221,7 @@ class AppController extends Controller {
 
         $page->setTpl("create_professional", array(
             "user" => $this->data_user->getValues(),
-            "professional"=>Professional::getExProfessional($this->user_logado->getid_usuario()),
+            "professional"=>$this->professional->getExProfessional($this->user_logado->getid_usuario()),
         ));
 
     }
@@ -231,7 +231,7 @@ class AppController extends Controller {
      */
     public function saveCurriculum():void {
 
-        if(Curriculum::checkCurriculum($this->user_logado->getid_usuario())) {
+        if($this->curruculum->checkCurriculum($this->user_logado->getid_usuario())) {
 
             $this->router->redirect("app.start");
             return;

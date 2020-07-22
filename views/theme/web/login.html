@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <a class="btn btn-primary" href="/register" title="Cadastro"><strong>&nbsp;&nbsp;Cadastre-se aqui :)&nbsp;&nbsp;</strong> </a>
+                <a class="btn btn-primary" href="/register" title="Cadastro"><strong>&nbsp;&nbsp;Registre-se aqui :)&nbsp;&nbsp;</strong> </a>
             </div>
 
         </div>

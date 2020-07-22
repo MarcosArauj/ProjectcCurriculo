@@ -5,8 +5,6 @@ namespace Source\App;
 
 
 use Source\Models\Contact;
-use Source\Models\Curriculum;
-use Source\Models\PersonalData;
 use Source\Models\Login;
 use Source\Models\Professional;
 use Source\Models\User;
@@ -23,10 +21,9 @@ class ProfessionalController extends Controller {
      */
     private $user_logado;
 
-    /**
-     * @var User
-     */
     private $data_user;
+    private $professional;
+
 
     /**
      * AppController constructor.
@@ -44,6 +41,7 @@ class ProfessionalController extends Controller {
             $this->user_logado = User::getFromSession();
 
             $this->data_user = new User();
+            $this->professional = new Professional();
         }
 
     }
@@ -58,13 +56,11 @@ class ProfessionalController extends Controller {
 
         try {
 
-            $professional = new Professional();
+            $this->professional->setid_usuario((INT)$this->user_logado->getid_usuario());
 
-            $professional->setid_usuario((INT)$this->user_logado->getid_usuario());
+            $this->professional->setData($data);
 
-            $professional->setData($data);
-
-            $professional->saveProfessional();
+            $this->professional->saveProfessional();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveProfessional")

@@ -4,13 +4,11 @@
 namespace Source\Models;
 
 
-use Source\Config\Conection;
-
 /**
  * Class Curriculum
  * @package Source\Models
  */
-class Professional extends User {
+class Professional extends Model {
 
     /**
      * @param $id_usuario
@@ -18,11 +16,9 @@ class Professional extends User {
      *
      * Pega Experiência Profissional de Acordo com Usuario
      */
-    public static function getExProfessional($id_usuario) {
+    public function getExProfessional($id_usuario) {
 
-        $conn = new Conection();
-
-        return  $conn->select("SELECT * FROM tb_experiencia_profissional
+        return  $this->conn->select("SELECT * FROM tb_experiencia_profissional
                 WHERE id_usuario = :id_usuario ORDER BY data_admissao DESC", array(
             ":id_usuario"=>$id_usuario
         ));
@@ -36,9 +32,7 @@ class Professional extends User {
      */
     public function saveProfessional(): bool {
 
-        $conn = new Conection();
-
-        $results = $conn->select("CALL sp_profissional_salvar(:id_profissional,:registro,:empresa_atual,:cargo_atual,:data_admissao,:atividade, 
+        $results = $this->conn->select("CALL sp_profissional_salvar(:id_profissional,:registro,:empresa_atual,:cargo_atual,:data_admissao,:atividade, 
         :empresa_anterior,:cargo_anterior,:data_demissao,:id_usuario)", array(
             ":id_profissional"=>$this->getid_profissional(),
             ":registro"=>$this->getregistro(),

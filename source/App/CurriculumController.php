@@ -16,10 +16,8 @@ class CurriculumController extends Controller {
      */
     private $user_logado;
 
-    /**
-     * @var User
-     */
     private $data_user;
+    private $curruculum;
 
     /**
      * AppController constructor.
@@ -37,6 +35,7 @@ class CurriculumController extends Controller {
             $this->user_logado = User::getFromSession();
 
             $this->data_user = new User();
+            $this->curruculum = new Curriculum();
         }
 
     }
@@ -52,7 +51,7 @@ class CurriculumController extends Controller {
 
         try {
 
-            if(Curriculum::checkCurriculum((INT)$this->user_logado->getid_usuario())) {
+            if($this->curruculum->checkCurriculum((INT)$this->user_logado->getid_usuario())) {
 
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
@@ -61,7 +60,7 @@ class CurriculumController extends Controller {
                 return;
             }
 
-            if(Curriculum::checkCurriculumData((INT)$this->user_logado->getid_usuario()) == false) {
+            if($this->curruculum->checkCurriculumData((INT)$this->user_logado->getid_usuario()) == false) {
 
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
@@ -70,14 +69,11 @@ class CurriculumController extends Controller {
                 return;
             }
 
+            $this->curruculum->setid_usuario((INT)$this->user_logado->getid_usuario());
 
-            $curriculum = new Curriculum();
+            $this->curruculum->setData($data);
 
-            $curriculum->setid_usuario((INT)$this->user_logado->getid_usuario());
-
-            $curriculum->setData($data);
-
-            $curriculum->saveCurriculum();
+            $this->curruculum->saveCurriculum();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.dashboard")

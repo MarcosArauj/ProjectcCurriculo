@@ -3,9 +3,6 @@
 
 namespace Source\Models;
 
-
-use Source\Config\Conection;
-
 /**
  * Class Curriculum
  * @package Source\Models
@@ -18,9 +15,7 @@ class Curriculum extends Model {
      */
     public function getCurriculum($id_usuario): void {
 
-        $conn = new Conection();
-
-        $results = $conn->select("SELECT * FROM v_curriculo
+        $results = $this->conn->select("SELECT * FROM v_curriculo
             WHERE id_usuario = :id_usuario",array(
                 ":id_usuario" =>$id_usuario
         ));
@@ -41,11 +36,9 @@ class Curriculum extends Model {
      *
      * Pega Curriculo
      */
-    public static function checkCurriculumData($id_usuario):bool {
+    public function checkCurriculumData($id_usuario):bool {
 
-        $conn = new Conection();
-
-        $results =  $conn->select("SELECT * FROM v_pre_curriculo
+        $results =  $this->conn->select("SELECT * FROM v_pre_curriculo
                 WHERE id_usuario = :id_usuario", array(
             ":id_usuario"=>$id_usuario,
         ));
@@ -61,11 +54,9 @@ class Curriculum extends Model {
      *
      * Checa se o Usuario já cadastrou o Curriculo
      */
-    public static function checkCurriculum($id_usuario):bool {
+    public function checkCurriculum($id_usuario):bool {
 
-        $conn = new Conection();
-
-        $results =  $conn->select("SELECT * FROM v_curriculo 
+        $results =  $this->conn->select("SELECT * FROM v_curriculo 
                 WHERE  id_usuario = :id_usuario", array(
             ":id_usuario"=>$id_usuario
         ));
@@ -81,9 +72,7 @@ class Curriculum extends Model {
      */
     public function saveCurriculum(): bool {
 
-        $conn = new Conection();
-
-        $results = $conn->select("CALL sp_curriculo_salvar(:id_usuario)", array(
+        $results = $this->conn->select("CALL sp_curriculo_salvar(:id_usuario)", array(
             ":id_usuario"=>$this->getid_usuario()
         ));
 

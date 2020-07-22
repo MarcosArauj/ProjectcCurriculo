@@ -4,9 +4,7 @@
 namespace Source\Models;
 
 
-use Source\Config\Conection;
-
-class Formation extends User {
+class Formation extends Model {
 
     /**
      * @return bool
@@ -15,9 +13,7 @@ class Formation extends User {
      */
     public function saveAcademicFormation(): bool {
 
-        $conn = new Conection();
-
-        $results = $conn->select(
+        $results = $this->conn->select(
             "CALL sp_formacao_salvar(:nivel_conclusao, :instituicao_conclusao, :ano_inicio_conclusao, :ano_conclusao, :nivel_andamento,
              :instituicao_andamento, :ano_inicio_andamento, :curso, :id_usuario)", array(
             ":nivel_conclusao"=>$this->getnivel_conclusao(),
@@ -49,9 +45,7 @@ class Formation extends User {
      */
     public function saveOtherCourses(): bool {
 
-        $conn = new Conection();
-
-        $results = $conn->select(
+        $results = $this->conn->select(
             "CALL sp_cursos_salvar(:id_cursos,:nome_curso,:instituicao,:carga_horaria,:termino,:compentencias,:id_usuario)", array(
             ":id_cursos"=>$this->getid_cursos(),
             ":nome_curso"=>$this->getnome_curso(),
@@ -79,11 +73,9 @@ class Formation extends User {
      *
      * Pega Curso de Acordo com Usuario
      */
-    public static function getOtherCourses($id_usuario) {
+    public function getOtherCourses($id_usuario) {
 
-        $conn = new Conection();
-
-        return  $conn->select("SELECT * FROM tb_cursos
+        return  $this->conn->select("SELECT * FROM tb_cursos
                 WHERE id_usuario = :id_usuario", array(
             ":id_usuario"=>$id_usuario
         ));
@@ -98,9 +90,8 @@ class Formation extends User {
      */
 
     public function saveLanguages(): bool {
-        $conn = new Conection();
 
-        $results = $conn->select("CALL sp_idiomas_salvar(:id_idiomac,:idioma,:nivel_conhecimento,:id_usuario)", array(
+        $results = $this->conn->select("CALL sp_idiomas_salvar(:id_idiomac,:idioma,:nivel_conhecimento,:id_usuario)", array(
             ":id_idiomac"=>$this->getid_idiomac(),
             ":idioma"=>$this->getidioma(),
             ":nivel_conhecimento"=>$this->getnivel_conhecimento(),
@@ -124,11 +115,9 @@ class Formation extends User {
      *
      * Pega Idioma de Acordo com Usuario
      */
-    public static function getLanguages($id_usuario) {
+    public function getLanguages($id_usuario) {
 
-        $conn = new Conection();
-
-        return  $conn->select("SELECT * FROM tb_idioma_curriculo
+        return  $this->conn->select("SELECT * FROM tb_idioma_curriculo
                 WHERE id_usuario = :id_usuario", array(
             ":id_usuario"=>$id_usuario
         ));
@@ -142,11 +131,9 @@ class Formation extends User {
      *
      * Checa se o Usuario já cadastrou o Idioma
      */
-    public static function checkLanguage($id_usuario, $idioma):bool {
+    public function checkLanguage($id_usuario, $idioma):bool {
 
-        $conn = new Conection();
-
-        $results =  $conn->select("SELECT * FROM tb_idioma_curriculo 
+        $results =  $this->conn->select("SELECT * FROM tb_idioma_curriculo 
                 WHERE  id_usuario = :id_usuario AND idioma = :idioma", array(
             ":id_usuario"=>$id_usuario,
             ":idioma"=>$idioma
@@ -163,11 +150,9 @@ class Formation extends User {
      *
      * Checa  cadastrou o Idioma
      */
-    public static function checkLanguageExists($idioma_pt):bool {
+    public function checkLanguageExists($idioma_pt):bool {
 
-        $conn = new Conection();
-
-        $results =  $conn->select("SELECT * FROM tb_idiomas 
+        $results =  $this->conn->select("SELECT * FROM tb_idiomas 
                 WHERE idioma_pt = :idioma_pt", array(
             ":idioma_pt"=>$idioma_pt
         ));
@@ -182,9 +167,8 @@ class Formation extends User {
      * Salvar novos Idiomas no Sistema
      */
     public function createLanguage(): bool {
-        $conn = new Conection();
 
-        $results = $conn->select("CALL sp_idiomas_criar(:id_idioma,:idioma_pt)", array(
+        $results = $this->conn->select("CALL sp_idiomas_criar(:id_idioma,:idioma_pt)", array(
             ":id_idioma"=>$this->getid_idioma(),
             ":idioma_pt"=>$this->getidioma_pt()
         ));
@@ -203,10 +187,9 @@ class Formation extends User {
      * @return array
      * Lista Idiomas
      */
-    public static function languages() {
-        $conn = new Conection();
+    public function languages() {
 
-        return $conn->select("SELECT * FROM tb_idiomas ORDER BY idioma_pt");
+        return $this->conn->select("SELECT * FROM tb_idiomas ORDER BY idioma_pt");
     }
 
 }

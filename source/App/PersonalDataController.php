@@ -59,7 +59,7 @@ class PersonalDataController extends Controller {
 
         try {
 
-            if(PersonalData::checkCpf($data["cpf"]) === true) {
+            if($this->personalData->checkCpf($data["cpf"]) === true) {
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
                     "message" => "CPF informado já está em uso!"
@@ -102,7 +102,7 @@ class PersonalDataController extends Controller {
 
         try {
 
-            if((PersonalData::checkCpf($data["cpf"]) === true) && (!$this->user_logado->getid_usuario()) ) {
+            if(($this->personalData->checkCpf($data["cpf"]) === true) && (!$this->user_logado->getid_usuario()) ) {
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
                     "message" => "CPF informado já está em uso!"
@@ -114,13 +114,11 @@ class PersonalDataController extends Controller {
 
             $this->data_user->getValues();
 
-            $personalData = new PersonalData();
+            $this->personalData->setid_pessoa($this->data_user->getid_pessoa());
 
-            $personalData->setid_pessoa($this->data_user->getid_pessoa());
+            $this->personalData->setData($data);
 
-            $personalData->setData($data);
-
-            $personalData->updatePersonalData();
+            $this->personalData->updatePersonalData();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.updatePersonalData")
@@ -150,14 +148,13 @@ class PersonalDataController extends Controller {
 
         try {
 
-            $contact = new PersonalData();
 
-            $contact->setid_usuario((INT)$this->user_logado->getid_usuario());
-            $contact->setc_email($this->user_logado->getemail());
+            $this->personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
+            $this->personalData->setc_email($this->user_logado->getemail());
 
-            $contact->setData($data);
+            $this->personalData->setData($data);
 
-            $contact->saveContact();
+            $this->personalData->saveContact();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveContact")
@@ -187,15 +184,13 @@ class PersonalDataController extends Controller {
 
         try {
 
-            $deficiency = new PersonalData();
-
-            $deficiency->setid_usuario((INT)$this->user_logado->getid_usuario());
+            $this->personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
 
             $data["regime_cota"] = (isset($data["regime_cota"]))? "Sim": "Não";
 
-            $deficiency->setData($data);
+            $this->personalData->setData($data);
 
-            $deficiency->saveDeficiency();
+            $this->personalData->saveDeficiency();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.saveDeficiency")

@@ -18,7 +18,6 @@ class WebController extends Controller {
     {
         parent::__construct($router);
 
-
     }
 
     /**
@@ -62,10 +61,12 @@ class WebController extends Controller {
 
     public function reset():void{
 
-        $recuperarSenha = null;
+        $recover = new RecoverPassword();
+
+        $recover_pass = null;
 
         try {
-            $recuperarSenha = RecoverPassword::validRecoverDecrypt($_GET["code"]);
+            $recover_pass = $recover->validRecoverDecrypt($_GET["code"]);
 
         } catch (\Exception $e) {
 
@@ -80,7 +81,7 @@ class WebController extends Controller {
         $page = new PageRecoverPassword();
 
         $page->setTpl("recover_send", array(
-            'name' => $recuperarSenha["primeiro_nome"],
+            'name' => $recover_pass["primeiro_nome"],
             'code' => $_GET["code"]
         ));
     }
