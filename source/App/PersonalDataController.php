@@ -5,10 +5,13 @@ namespace Source\App;
 
 
 use Source\Models\Contact;
-use Source\Models\Curriculum;
-use Source\Models\Login;
 use Source\Models\PersonalData;
+use Source\Models\User;
 
+/**
+ * Class PersonalDataController
+ * @package Source\App
+ */
 class PersonalDataController extends Controller {
 
     /**
@@ -18,6 +21,13 @@ class PersonalDataController extends Controller {
     private $user_logado;
 
     /**
+     * @var User
+     */
+    private $data_user;
+
+    private $personalData;
+
+    /**
      * AppController constructor.
      * @param $router
      */
@@ -25,19 +35,23 @@ class PersonalDataController extends Controller {
     {
         parent::__construct($router);
 
-        if(!Login::verifyLogin()) {
+        if(!User::verifyLogin()) {
             flash("error","Acesso negado, favor logar-se");
-            Login::logout();
+            User::logout();
             $this->router->redirect("web.home");
         } else {
-            $this->user_logado = Login::getFromSession();
+            $this->user_logado = User::getFromSession();
+
+            $this->data_user = new User();
+
+            $this->personalData =  new PersonalData();
         }
 
     }
 
     /**
      * @param $data
-     * Cadastro de Dados Pessoais
+     * Salvar de Dados Pessoais
      */
     public function savePersonalData($data):void {
 
@@ -53,19 +67,66 @@ class PersonalDataController extends Controller {
                 return;
             }
 
-            $personalData = new PersonalData();
+            $this->personalData->setid_usuario($this->user_logado->getid_usuario());
 
-            $personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
+            $this->personalData->setData($data);
 
-            $personalData->setData($data);
-
-            $personalData->savePersonalData();
+            $this->personalData->savePersonalData();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.personalData")
+                "url" =>$this->router->route("app.savePersonalData")
 
             ]);
             flash("success","Sucesso no Registro! Clique em Próximo para Registrar seu Contato e Endereço");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+
+    /**
+     * @param $data
+     * Atualiza de Dados Pessoais
+     */
+    public function updatePersonalData($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            if((PersonalData::checkCpf($data["cpf"]) === true) && (!$this->user_logado->getid_usuario()) ) {
+                echo $this->ajaxResponse("message", [
+                    "type" => "error",
+                    "message" => "CPF informado já está em uso!"
+                ]);
+                return;
+            }
+
+            $this->data_user->getUser($this->user_logado->getid_usuario());
+
+            $this->data_user->getValues();
+
+            $personalData = new PersonalData();
+
+            $personalData->setid_pessoa($this->data_user->getid_pessoa());
+
+            $personalData->setData($data);
+
+            $personalData->updatePersonalData();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.updatePersonalData")
+
+            ]);
+            flash("success","Dados Alterados Com Sucesso");
             return;
 
         } catch (\Exception $e) {

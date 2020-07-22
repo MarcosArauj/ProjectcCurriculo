@@ -14,12 +14,19 @@ use Source\Models\User;
 class AuthController extends Controller {
 
     /**
+     * @var User
+     */
+    private $user;
+
+    /**
      * AuthController constructor.
      * @param $router
      */
     public function __construct($router)
     {
         parent::__construct($router);
+
+        $this->user = new User();
 
     }
 
@@ -40,7 +47,7 @@ class AuthController extends Controller {
 
         try {
 
-            if(User::checkEmail($data["email"]) === true){
+            if($this->user->checkEmail($data["email"]) === true){
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
                     "message" => "O e-mail informado já está em uso!"
@@ -54,12 +61,11 @@ class AuthController extends Controller {
                 return;
             }
 
-                $user = new User();
-                $user->setData($data);
+                $this->user->setData($data);
 
-                $user->saveUser();
+                $this->user->saveUser();
 
-                $_SESSION[User::SESSION] = $user->getValues();
+                $_SESSION[User::SESSION] = $this->user->getValues();
 
                 echo $this->ajaxResponse("redirect", [
                  "url" =>$this->router->route("app.start")
@@ -98,7 +104,8 @@ class AuthController extends Controller {
 
         try {
 
-            Login::loginUser($login,$password);
+
+            $this->user->loginUser($login,$password);
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.dashboard")

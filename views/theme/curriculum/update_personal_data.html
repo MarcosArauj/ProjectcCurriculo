@@ -1,13 +1,13 @@
 {include="navebar"}
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h4 class="h2">Registro - Dados Pessoais {$user.id_usuario}</h4>
+        <h4 class="h2">Atualização - Dados Pessoais {$user.primeiro_nome}</h4>
     </div>
 
     <div class="alert_message">
         {function="flash()"}
     </div>
-<form class="form" action="/curriculum/personal_data" method="post" autocomplete="off">
+<form class="form" action="/curriculum/personal_data_update" method="post" autocomplete="off">
     <div class="card border-success ">
         <div class="card-body">
             <div class="row">
@@ -25,22 +25,22 @@
                         <div class="form-group col-md-3">
                             <b >Usar Nome Social ?</b> <br>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="sim" name="nomesocial" class="custom-control-input">
+                                <input class="custom-control-input" type="radio" id="sim" name="nome_social_uso" value="Sim" {if="$user.nome_social_uso == 'Sim'"} checked {/if} >
                                 <label class="custom-control-label" for="sim">Sim</label>
                             </div>
                             <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="nao" name="nomesocial" class="custom-control-input" autofocus>
+                                <input class="custom-control-input" type="radio" id="nao" name="nome_social_uso"  value="Não" {if="$user.nome_social_uso == 'Não'"} checked {/if} >
                                 <label class="custom-control-label" for="nao">Não</label>
                             </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="nome_social"><b>Nome Social</b></label>
-                            <input type="text" class="form-control form-control-sm" id="nome_social" name="nome_social" placeholder="Nome social se Houver" disabled>
+                            <input type="text" class="form-control form-control-sm" id="nome_social" name="nome_social" value="{$user.nome_social}" disabled>
                         </div>
                         <div class="form-group col-md-3">
                             <label  for="genero"><strong class="obrigatorio">*</strong><b>Sexo</b></label>
                             <select class="form-control form-control-sm" name="genero" id="genero" required>
-                                <option value="">Selecione</option>
+                                <option style="color:blue" value="{$user.genero}">{$user.genero}</option>
                                 <option value="Masculino">Masculino</option>
                                 <option value="Feminino">Feminino</option>
                                 <option value="Outro">Outro</option>
@@ -51,15 +51,15 @@
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label for="primeiro_nome"><strong class="obrigatorio">*</strong><b>Nome</b></label>
-                            <input type="text" class="form-control form-control-sm" id="primeiro_nome" name="primeiro_nome" placeholder="Digite seu nome" required>
+                            <input type="text" class="form-control form-control-sm" id="primeiro_nome" name="primeiro_nome" value="{$user.primeiro_nome}" required>
                         </div>
                         <div class="form-group col-md-5">
                             <label for="sobrenome"><strong class="obrigatorio">*</strong><b>Sobrenome</b></label>
-                            <input type="text" class="form-control form-control-sm" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required>
+                            <input type="text" class="form-control form-control-sm" id="sobrenome" name="sobrenome" value="{$user.sobrenome}" required>
                         </div>
                         <div class="form-group col-md-3">
                             <label for="nascimento"><strong class="obrigatorio">*</strong><b>Data de Nascimento</b></label>
-                            <input type="date" class="form-control form-control-sm" id="nascimento" name="nascimento" required>
+                            <input type="date" class="form-control form-control-sm" id="nascimento" name="nascimento"  value="{$user.nascimento}"required>
                         </div>
                     </div>
                     <!-- Linha 3 -->
@@ -67,7 +67,7 @@
                         <div class="form-group col-md-2">
                             <label  for="uf"><strong class="obrigatorio">*</strong><b>Estado</b></label>
                             <select class="form-control form-control-sm" name="uf_naturalidade" id="uf" required>
-                                <option value="">Selecione</option>
+                                <option style="color:blue" value="{$user.uf_naturalidade}">{$user.uf_naturalidade}</option>
                                 {loop="$uf"}
                                 <option value="{$value.uf}">{$value.uf}</option>
                                 {/loop}
@@ -75,12 +75,12 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label  for="city"><strong class="obrigatorio">*</strong><b>Naturalidade</b></label>
-                            <input type="text" class="form-control form-control-sm" id="city" name="naturalidade" required>
+                            <input type="text" class="form-control form-control-sm" id="city" name="naturalidade" value="{$user.naturalidade}" required>
                        </div>
                         <div class="form-group col-md-3">
                             <label for="nacionalidade"><strong class="obrigatorio">*</strong><b>País de Nacionalidade</b></label>
                             <select class="form-control form-control-sm" id="nacionalidade" name="nacionalidade"  required>
-                                <option value="">Selecione</option>
+                                <option style="color:blue" value="{$user.nacionalidade}">{$user.nacionalidade}</option>
                                 {loop="$countries"}
                                 <option value="{$value.nome_pais_pt}">{$value.nome_pais_pt}</option>
                                 {/loop}
@@ -89,7 +89,7 @@
                         <div class="form-group col-md-3">
                             <label  for="cor"><strong class="obrigatorio">*</strong><b>Cor ou Raça</b></label>
                             <select class="form-control form-control-sm" name="cor_raca" id="cor" required>
-                                <option value="">Selecione</option>
+                                <option style="color:blue" value="{$user.cor_raca}">{$user.cor_raca}</option>
                                 <option value="Branco">Branco</option>
                                 <option value="Negro">Negro</option>
                                 <option value="Parda">Parda</option>
@@ -101,11 +101,11 @@
                     <div class="row">
                         <div class="form-group col-md-4">
                             <label  for="city"><strong class="obrigatorio">*</strong><b>RG</b></label>
-                            <input type="text" class="form-control form-control-sm" id="rg" name="rg"  placeholder="Carteira de Identidade" maxlength="20" required>
+                            <input type="text" class="form-control form-control-sm" id="rg" name="rg"  value="{$user.rg}" maxlength="20" required>
                         </div>
                         <div id="cpf" class="form-group col-md-4">
                             <label  for="cpf"><strong class="obrigatorio">*</strong><b>CPF</b></label>
-                            <input type="text" class="form-control form-control-sm" name="cpf" id="camp_cpf" placeholder="Ex: 000.000.000-00" onkeypress="formatar('###.###.###-##',this)"  maxlength="14" required>
+                            <input type="text" class="form-control form-control-sm" name="cpf" id="camp_cpf" value="{function="formatCpf($user.cpf)"}" onkeypress="formatar('###.###.###-##',this)"  maxlength="14" required>
                             <div id="mescpf" class="error-disabled" >
                                 CPF inválido!!!
                             </div>
@@ -118,7 +118,7 @@
         <div class="card-footer">
             <a class="btn btn-danger float-left" href="/user" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
             <div class="float-right">
-                <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Dados Pessoais</button>
+                <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Alterar Registro</button>
                 <a class="btn btn-primary" href="/user/contact" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
             </div>
         </div>

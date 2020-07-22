@@ -23,11 +23,12 @@ class PersonalData extends User {
         $conn = new Conection();
 
         $results = $conn->select(
-            "CALL sp_dados_pessoais_salvar(:primeiro_nome,:sobrenome,:nome_social,:genero,:cor_raca,:nascimento,:naturalidade,:uf_naturalidade,
-            :nacionalidade,:rg,:cpf,:id_usuario)", array(
+            "CALL sp_dados_pessoais_salvar(:primeiro_nome,:sobrenome,:nome_social,:nome_social_uso,:genero,:cor_raca,:nascimento,
+           :naturalidade,:uf_naturalidade,:nacionalidade,:rg,:cpf,:id_usuario)", array(
             ":primeiro_nome" => $this->getprimeiro_nome(),
             ":sobrenome" => $this->getsobrenome(),
             ":nome_social" =>$this->getnome_social(),
+            ":nome_social_uso"=>$this->getnome_social_uso(),
             ":genero" => $this->getgenero(),
             ":cor_raca" => $this->getcor_raca(),
             ":nascimento" => $this->getnascimento(),
@@ -41,7 +42,48 @@ class PersonalData extends User {
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Salvar Cadastro!" );
+            throw new \Exception("Erro ao Salvar Cadastro!");
+            return false;
+        }
+
+        $this->setData($results[0]);
+
+        return true;
+
+    }
+
+
+    /**
+     * @return bool
+     * @throws \Exception
+     * Atualizar cadastro de Dados Pessoais
+     */
+    public function updatePersonalData():bool {
+
+        $conn = new Conection();
+
+        $results = $conn->select(
+            "CALL sp_dados_pessoais_atualizar(:id_pessoa,:primeiro_nome,:sobrenome,:nome_social,:nome_social_uso,:genero,:cor_raca,:nascimento,
+           :naturalidade,:uf_naturalidade,:nacionalidade,:rg,:cpf)", array(
+            ":id_pessoa"=>$this->getid_pessoa(),
+            ":primeiro_nome" => $this->getprimeiro_nome(),
+            ":sobrenome" => $this->getsobrenome(),
+            ":nome_social" =>$this->getnome_social(),
+            ":nome_social_uso"=>$this->getnome_social_uso(),
+            ":genero" => $this->getgenero(),
+            ":cor_raca" => $this->getcor_raca(),
+            ":nascimento" => $this->getnascimento(),
+            ":naturalidade" => $this->getnaturalidade(),
+            ":uf_naturalidade" => $this->getuf_naturalidade(),
+            ":nacionalidade" => $this->getnacionalidade(),
+            ":rg" => $this->getrg(),
+            ":cpf" => removeMaskCpf($this->getcpf())
+
+
+        ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Erro ao Atualizar Cadastro!" . $this->getid_pessoa());
             return false;
         }
 

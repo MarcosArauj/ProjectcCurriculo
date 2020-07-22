@@ -1,6 +1,6 @@
 <?php
 
-use Source\Models\Login;
+use Source\Models\User;
 use Source\Models\StatesCity;
 
 
@@ -19,7 +19,7 @@ function removeMaskCpf($cpf) {
 
 function getNameUser() {
 
-    $user = Login::getFromSession();
+    $user = User::getFromSession();
 
     $name_user = $user->getprimeiro_nome();
 
@@ -36,7 +36,7 @@ function getNameUser() {
 
 function checkCurriculum() {
 
-    $user = Login::getFromSession();
+    $user = User::getFromSession();
 
     return \Source\Models\Curriculum::checkCurriculum($user->getid_usuario());
 

@@ -4,12 +4,16 @@ namespace Source\Models;
 
 use Source\Config\Conection;
 
+/**
+ * Class User
+ * @package Source\Models
+ */
 class User extends Model {
 
     const ACESSO = 0;
     const STATUS_USUARIO = "ativo";
     const SESSION = "user";
-    const SECRET = "Web_Curriculotcc";
+    private $conn;
 
     /**
      * @return array
@@ -17,11 +21,14 @@ class User extends Model {
      * Salvar cadastro do usuario
      */
 
+    public function __construct() {
+        $this->conn = new Conection();
+
+    }
+
     public function saveUser():bool {
 
-        $conn = new Conection();
-
-        $results = $conn->select(
+        $results = $this->conn->select(
             "CALL sp_usuario_salvar(:email,:senha,:status_usuario,:acesso)", array(
             ":email" => $this->getemail(),
             ":senha" => password_hash($this->getsenha(), PASSWORD_DEFAULT, ["cost" => 12]),
@@ -64,9 +71,7 @@ class User extends Model {
      */
     public function getAllUsers():array {
 
-        $conn = new Conection();
-
-        $results =  $conn->select("SELECT * FROM v_usuario " , array(
+        $results =  $this->conn->select("SELECT * FROM v_usuario " , array(
             ":status"=>'ativo'
         ));
 
@@ -77,11 +82,10 @@ class User extends Model {
      * @param string $email
      * @return bool
      */
-   public static function checkEmail(string $email):bool {
+   public  function checkEmail(string $email):bool {
 
-        $conn = new Conection();
 
-        $results = $conn->select("SELECT email FROM v_usuario WHERE email = :email",
+        $results = $this->conn->select("SELECT email FROM v_usuario WHERE email = :email",
                 [
                    ":email"=>$email
                 ]);
@@ -108,9 +112,8 @@ class User extends Model {
      * Atualizar Senha
      */
     public function updatePassword():bool {
-        $conn = new Conection();
 
-        $results =  $conn->select("CALL sp_senha_atualizar(:id_usuario,:senha)",array(
+        $results =  $this->conn->select("CALL sp_senha_atualizar(:id_usuario,:senha)",array(
             ":id_usuario"=>$this->getid_usuario(),
             ":senha"=>password_hash($this->getsenha(), PASSWORD_DEFAULT,["cost"=>12])
         ));
@@ -123,6 +126,120 @@ class User extends Model {
         $this->setData($results[0]);
 
         return true;
+
+    }
+
+    /**
+     * @param $login
+     * @param $senha
+     * @return Login
+     * @throws \Exception
+     */
+    public function loginUser($login, $password): User {
+
+        $results = $this->conn->select("SELECT * FROM v_usuario
+                    WHERE email = :login OR cpf = :login AND status_usuario = :status",
+            array(
+                ":login"=>$login,
+                ":status"=>"ativo",
+            ));
+
+        if (count($results) === 0) {
+
+            throw new \Exception("Usuário ou Senha inválidos - :(");
+
+        }
+
+        $data = $results[0];
+
+        if (password_verify($password, $data["senha"])) {
+
+            $user = new User();
+
+            $user->setData($data);
+
+            $_SESSION[User::SESSION] = $user->getValues();
+
+            return $user;
+
+        } else {
+
+            throw new \Exception("Usuário ou Senha inválidos!");
+
+        }
+
+    }
+
+    // Pega dados do Usuario Logado
+
+    /**
+     * @return User
+     */
+    public static function getFromSession(): User{
+
+        $user = new User();
+
+        if (isset($_SESSION[User::SESSION]) && (int)$_SESSION[User::SESSION]['id_usuario'] > 0) {
+            $user->setData($_SESSION[User::SESSION]);
+        }
+
+        return $user;
+
+    }
+
+    //Verifcar o Usuario logado e Tipo de acesso permitido
+
+    /**
+     * @param bool $access
+     * @return bool
+     */
+    public static function checkLogin($access = true): bool {
+        if (!isset($_SESSION[User::SESSION])
+            ||
+            !$_SESSION[User::SESSION]
+            ||
+            !(int)$_SESSION[User::SESSION]["id_usuario"] > 0) {
+            //Não esta logado
+            return false;
+        } else {
+            if($access === true && (bool)$_SESSION[User::SESSION]["acesso"] === true) {
+                return true;
+
+            } else if($access === false){
+                return true;
+
+            } else {
+                return false;
+            }
+        }
+
+    }
+
+    /**
+     *
+     */
+    public static function logout():void {
+
+        $_SESSION[User::SESSION] = NULL;
+
+    }
+
+    /**
+     * @param bool $access
+     * @return bool
+     */
+    public static function verifyLogin($access = true):bool{
+
+        if (User::checkLogin($access)) {
+
+            return true;
+
+        } else if (User::checkLogin($access = false)) {
+            return true;
+        } else {
+            header("Location: /");
+            exit;
+        }
 
     }
 

@@ -11,6 +11,7 @@ use Source\Models\Login;
 use Source\Models\PersonalData;
 use Source\Models\Professional;
 use Source\Models\StatesCity;
+use Source\Models\User;
 
 /**
  * Class AppController
@@ -25,6 +26,13 @@ class AppController extends Controller {
     private $user_logado;
 
     /**
+     * @var User
+     */
+    private $data_user;
+
+    private $personalData;
+
+    /**
      * AppController constructor.
      * @param $router
      */
@@ -32,12 +40,16 @@ class AppController extends Controller {
     {
         parent::__construct($router);
 
-        if(!Login::verifyLogin()) {
+        if(!User::verifyLogin()) {
             flash("error","Acesso negado, favor logar-se");
-            Login::logout();
+            User::logout();
             $this->router->redirect("web.home");
         } else {
-            $this->user_logado = Login::getFromSession();
+            $this->user_logado = User::getFromSession();
+
+            $this->data_user = new User();
+
+            $this->personalData = new PersonalData();
         }
 
     }
@@ -48,7 +60,7 @@ class AppController extends Controller {
      */
     public function start():void {
 
-        $access = Login::checkLogin();
+        $access = User::checkLogin();
 
         if ($access == false) {
             $page = new PageWeb();
@@ -90,9 +102,28 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
-        $page->setTpl("create_ personal_data", array(
+
+        $page->setTpl("create_personal_data", array(
             "user" => $this->user_logado->getValues(),
-            "countries"=> PersonalData::listcountries(),
+            "countries"=> $this->personalData->listcountries(),
+            "uf" => StatesCity::listuf()
+
+        ));
+
+    }
+
+    /**
+     * Carrega Tela de Atualização dos Dados Pessoais
+     */
+    public function updatePersonalData():void {
+
+        $page = new PageCurriculum();
+
+        $this->data_user->getUser($this->user_logado->getid_usuario());
+
+        $page->setTpl("update_personal_data", array(
+            "user" => $this->data_user->getValues(),
+            "countries"=> $this->personalData->listcountries(),
             "uf" => StatesCity::listuf()
 
         ));
@@ -106,9 +137,11 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
+        $this->data_user->getUser($this->user_logado->getid_usuario());
+
         $page->setTpl("create_contact", array(
-            "user" => $this->user_logado->getValues(),
-            "countries"=> PersonalData::listcountries()
+            "user" => $this->data_user->getValues(),
+            "countries"=> $this->personalData->listcountries(),
         ));
 
     }
@@ -121,8 +154,10 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
+        $this->data_user->getUser($this->user_logado->getid_usuario());
+
         $page->setTpl("create_deficiency", array(
-            "user" => $this->user_logado->getValues()
+            "user" => $this->data_user->getValues()
         ));
 
     }
@@ -134,8 +169,10 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
+        $this->data_user->getUser($this->user_logado->getid_usuario());
+
         $page->setTpl("create_academic_formation", array(
-            "user" => $this->user_logado->getValues()
+            "user" => $this->data_user->getValues()
         ));
 
     }
@@ -147,8 +184,10 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
+        $this->data_user->getUser($this->user_logado->getid_usuario());
+
         $page->setTpl("create_other_courses", array(
-            "user" => $this->user_logado->getValues(),
+            "user" => $this->data_user->getValues(),
             "courses"=>Formation::getOtherCourses($this->user_logado->getid_usuario())
         ));
 
@@ -161,8 +200,10 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
+        $this->data_user->getUser($this->user_logado->getid_usuario());
+
         $page->setTpl("create_languages", array(
-            "user" => $this->user_logado->getValues(),
+            "user" => $this->data_user->getValues(),
             "languages"=>Formation::getLanguages($this->user_logado->getid_usuario()),
             "lang_cad"=>Formation::languages()
         ));
@@ -176,8 +217,10 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
+        $this->data_user->getUser($this->user_logado->getid_usuario());
+
         $page->setTpl("create_professional", array(
-            "user" => $this->user_logado->getValues(),
+            "user" => $this->data_user->getValues(),
             "professional"=>Professional::getExProfessional($this->user_logado->getid_usuario()),
         ));
 
@@ -196,8 +239,10 @@ class AppController extends Controller {
 
         $page = new PageCurriculum();
 
+        $this->data_user->getUser($this->user_logado->getid_usuario());
+
         $page->setTpl("finish_curriculum", array(
-            "user" => $this->user_logado->getValues()
+            "user" => $this->data_user->getValues()
         ));
 
     }
@@ -207,7 +252,7 @@ class AppController extends Controller {
      */
     public function logout():void{
 
-        Login::logout();
+        User::logout();
 
         $this->router->redirect("web.home");
 

@@ -9,6 +9,7 @@ use Source\Models\Curriculum;
 use Source\Models\PersonalData;
 use Source\Models\Login;
 use Source\Models\Professional;
+use Source\Models\User;
 
 /**
  * Class ProfessionalController
@@ -23,6 +24,11 @@ class ProfessionalController extends Controller {
     private $user_logado;
 
     /**
+     * @var User
+     */
+    private $data_user;
+
+    /**
      * AppController constructor.
      * @param $router
      */
@@ -30,12 +36,14 @@ class ProfessionalController extends Controller {
     {
         parent::__construct($router);
 
-        if(!Login::verifyLogin()) {
+        if(!User::verifyLogin()) {
             flash("error","Acesso negado, favor logar-se");
-            Login::logout();
+            User::logout();
             $this->router->redirect("web.home");
         } else {
-            $this->user_logado = Login::getFromSession();
+            $this->user_logado = User::getFromSession();
+
+            $this->data_user = new User();
         }
 
     }

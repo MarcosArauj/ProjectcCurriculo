@@ -14,7 +14,7 @@ $router  = new Router(site());
 $router->namespace("Source\App");
 
 /**
- * Home
+ * Rotas para Telas Usuarios Não Logado
  */
 $router->group(null);
 $router->get("/", "WebController:home","web.home");
@@ -28,7 +28,6 @@ $router->get("/reset_success","WebController:resetSuccess","web.resetSuccess");
 /**
  * Auth
  */
-
 $router->group(null);
 $router->post("/register", "AuthController:register","auth.register");
 $router->post("/login", "AuthController:login","auth.login");
@@ -36,13 +35,17 @@ $router->post("/forgot", "AuthController:forgot","auth.forgot");
 $router->post("/reset", "AuthController:reset","auth.reset");
 
 /**
- * User/Profile
+ * - ------------------Rotas para Telas Usuarios Logado------------------------------
  */
 
+//------ Area de Trabalho -----------------//
 $router->group("/user");
 $router->get("", "AppController:start","app.start");
 $router->get("/dashboard", "AppController:dashboard","app.dashboard");
-$router->get("/personal_data", "AppController:savePersonalData","app.personalData");
+
+//------ Cadastro Usuario/Curriculo -----------------//
+$router->get("/personal_data", "AppController:savePersonalData","app.savePersonalData");
+$router->get("/personal_data_update", "AppController:updatePersonalData","app.updatePersonalData");
 $router->get("/contact", "AppController:saveContact","app.saveContact");
 $router->get("/deficiency", "AppController:saveDeficiency","app.saveDeficiency");
 $router->get("/formation", "AppController:saveAcademicFormation","app.saveAcademicFormation");
@@ -50,14 +53,16 @@ $router->get("/other_courses", "AppController:saveOtherCourses","app.saveOtherCo
 $router->get("/languages", "AppController:saveLanguages","app.saveLanguages");
 $router->get("/professional_experience", "AppController:saveProfessional","app.saveProfessional");
 $router->get("/curriculum", "AppController:saveCurriculum","app.saveCurriculum");
+
+//------ Logout -----------------//
 $router->get("/logout", "AppController:logout","app.logout");
 
 /**
- * Curriculo
+ * Rotas de Cadastro Usuario/Curriculo
  */
-
 $router->group("/curriculum");
 $router->post("/personal_data", "PersonalDataController:savePersonalData","personal.savePersonalData");
+$router->post("/personal_data_update", "PersonalDataController:updatePersonalData","personal.updatePersonalData");
 $router->post("/contact", "PersonalDataController:saveContact","personal.saveContact");
 $router->post("/deficiency", "PersonalDataController:saveDeficiency","personal.saveDeficiency");
 $router->post("/formation", "FormationController:saveAcademicFormation","formation.saveAcademicFormation");
