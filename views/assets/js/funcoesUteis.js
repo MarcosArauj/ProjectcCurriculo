@@ -154,6 +154,15 @@ $(document).ready(function () {
         $('.professional_anterior').css("display" ,"block");
     });
 
+    if($('#sim_emprego').prop("checked")) {
+        $('.professional_atual').css("display" ,"block");
+        $('.professional_anterior').css("display" ,"none");
+
+    } else if($('#nao_emprego').prop("checked")) {
+        $('.professional_atual').css("display" ,"none");
+        $('.professional_anterior').css("display" ,"block");
+    }
+
     // Deficiência
     $('#sim_deficiencia').on('click',function () {
         $('.deficiencia').css("display" ,"block");

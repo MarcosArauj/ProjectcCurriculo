@@ -52,6 +52,7 @@ class AppController extends Controller {
             $this->contact = new Address();
             $this->formation = new Formation();
             $this->professional = new Professional();
+
             $this->curruculum = new Curriculum();
             $this->curruculum->getCurriculum($this->user_logado->getid_usuario());
         }
@@ -227,11 +228,7 @@ class AppController extends Controller {
      */
     public function updateOtherCourses($data):void {
 
-        $page = new PageCurriculum(
-            [
-                "header"=> true
-            ]
-        );
+        $page = new PageCurriculum();
 
         $this->formation->getOtherCourses($data["id_cursos"]);
 
@@ -251,10 +248,25 @@ class AppController extends Controller {
 
         $page->setTpl("create_languages", array(
             "user" => $this->data_user->getValues(),
-            "languages"=>$this->formation->getLanguages($this->user_logado->getid_usuario()),
+            "languages"=>$this->formation->getLanguagesUser($this->user_logado->getid_usuario()),
             "lang_cad"=>$this->formation->languages()
         ));
+    }
 
+    /**
+     * Carrega Tela de Atualização de Idiomas
+     */
+    public function updateLanguages($data):void {
+
+        $page = new PageCurriculum();
+
+        $this->formation->getLanguages($data["id_idiomac"]);
+
+        $page->setTpl("update_languages", array(
+            "user" => $this->data_user->getValues(),
+            "languages" =>$this->formation->getValues(),
+            "lang_cad"=>$this->formation->languages()
+        ));
     }
 
     /**
@@ -266,7 +278,23 @@ class AppController extends Controller {
 
         $page->setTpl("create_professional", array(
             "user" => $this->data_user->getValues(),
-            "professional"=>$this->professional->getExProfessional($this->user_logado->getid_usuario()),
+            "professional"=>$this->professional->getExProfessionalUser($this->user_logado->getid_usuario()),
+        ));
+
+    }
+
+    /**
+     * Carrega Tela de Atualização de Experiência Profissional
+     */
+    public function updateProfessional($data):void {
+
+        $page = new PageCurriculum();
+
+        $this->professional->getExProfessional($data["id_profissional"]);
+
+        $page->setTpl("update_professional", array(
+            "user" => $this->data_user->getValues(),
+            "professional"=>$this->professional->getValues()
         ));
 
     }

@@ -2,21 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/theme/curriculum/update_other_courses.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/theme/curriculum/update_languages.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/theme/curriculum/update_professional.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/App/FormationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/FormationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/PersonalDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/PersonalDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/ProfessionalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/ProfessionalController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Models/Formation.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Formation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Professional.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Professional.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_languages.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_languages.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views-cache/create_other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/navebar.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/navebar.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/update_academic_formation.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/update_academic_formation.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/update_contact.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/update_contact.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/update_other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/update_other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/navebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/navebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_academic_formation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_deficiency.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_deficiency.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_personal_data.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +129,7 @@
       <workItem from="1594910172522" duration="11116000" />
       <workItem from="1594990161724" duration="26393000" />
       <workItem from="1595337421581" duration="32665000" />
-      <workItem from="1595417933791" duration="25884000" />
+      <workItem from="1595417933791" duration="33015000" />
     </task>
     <servers />
   </component>

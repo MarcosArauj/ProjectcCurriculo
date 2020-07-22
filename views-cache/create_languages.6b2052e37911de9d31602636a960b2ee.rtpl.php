@@ -101,7 +101,7 @@
             <td><?php echo htmlspecialchars( $value1["idioma"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td><?php echo htmlspecialchars( $value1["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td class="float-right">
-                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                <a href="<?php echo htmlspecialchars( $value1["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
                 <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
             </td>
         </tr>

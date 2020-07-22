@@ -86,8 +86,7 @@ class Formation extends Model {
     /**
      * @param $id_cursos
      * @return void
-     *
-     * Pega Curso de Acordo com Usuario
+     * Pega Curso
      */
     public function getOtherCourses($id_cursos):void {
 
@@ -97,9 +96,7 @@ class Formation extends Model {
         ));
 
         $this->setData($results[0]);
-
     }
-
 
     /**
      * @return bool
@@ -133,13 +130,28 @@ class Formation extends Model {
      *
      * Pega Idioma de Acordo com Usuario
      */
-    public function getLanguages($id_usuario) {
+    public function getLanguagesUser($id_usuario) {
 
         return  $this->conn->select("SELECT * FROM tb_idioma_curriculo
                 WHERE id_usuario = :id_usuario", array(
             ":id_usuario"=>$id_usuario
         ));
 
+    }
+
+    /**
+     * @param $id_idiomac
+     * @return void
+     * Pega Idiomas
+     */
+    public function getLanguages($id_idiomac):void {
+
+        $results =   $this->conn->select("SELECT * FROM tb_idioma_curriculo
+                WHERE id_idiomac = :id_idiomac", array(
+            ":id_idiomac"=>$id_idiomac
+        ));
+
+        $this->setData($results[0]);
     }
 
     /**

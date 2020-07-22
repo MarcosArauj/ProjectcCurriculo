@@ -222,6 +222,40 @@ class FormationController extends Controller {
 
     /**
      * @param $data
+     * Atualização de Idiomas
+     */
+    public function updateLanguages($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            $this->formation->setid_idiomac($this->data_user->getid_idiomac());
+
+            $this->formation->setData($data);
+
+            $this->formation->saveLanguages();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.saveLanguages")
+
+            ]);
+            flash("success","Idioma Atualizado com Sucesso");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
      * Cadastro de Novo Idioma no Sistema
      */
     public function createLanguage($data):void {

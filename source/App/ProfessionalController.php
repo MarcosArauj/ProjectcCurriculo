@@ -41,7 +41,11 @@ class ProfessionalController extends Controller {
             $this->user_logado = User::getFromSession();
 
             $this->data_user = new User();
+            $this->data_user->getUser($this->user_logado->getid_usuario());
+            $this->data_user->getValues();
+
             $this->professional = new Professional();
+            $this->professional->setid_usuario((INT)$this->user_logado->getid_usuario());
         }
 
     }
@@ -56,8 +60,6 @@ class ProfessionalController extends Controller {
 
         try {
 
-            $this->professional->setid_usuario((INT)$this->user_logado->getid_usuario());
-
             $this->professional->setData($data);
 
             $this->professional->saveProfessional();
@@ -67,6 +69,40 @@ class ProfessionalController extends Controller {
 
             ]);
             flash("success","Sucesso no Registro! Clique em Próximo ou Adicione + Experiência Porfissional");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
+     * Atualização de Experiência Profissional
+     */
+    public function updateProfessional($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            $this->professional->setid_profissional($this->data_user->getid_profissional());
+
+            $this->professional->setData($data);
+
+            $this->professional->saveProfessional();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.saveProfessional")
+
+            ]);
+            flash("success","Experiência Porfissional Atualizada com Sucesso");
             return;
 
         } catch (\Exception $e) {

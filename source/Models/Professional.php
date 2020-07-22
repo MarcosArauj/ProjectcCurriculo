@@ -16,13 +16,28 @@ class Professional extends Model {
      *
      * Pega Experiência Profissional de Acordo com Usuario
      */
-    public function getExProfessional($id_usuario) {
+    public function getExProfessionalUser($id_usuario) {
 
         return  $this->conn->select("SELECT * FROM tb_experiencia_profissional
                 WHERE id_usuario = :id_usuario ORDER BY data_admissao DESC", array(
             ":id_usuario"=>$id_usuario
         ));
 
+    }
+
+    /**
+     * @param $id_profissional
+     * @return void
+     * Pega Idiomas
+     */
+    public function getExProfessional($id_profissional):void {
+
+        $results =   $this->conn->select("SELECT * FROM tb_experiencia_profissional
+                WHERE id_profissional = :id_profissional", array(
+            ":id_profissional"=>$id_profissional
+        ));
+
+        $this->setData($results[0]);
     }
 
     /**
