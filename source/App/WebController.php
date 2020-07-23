@@ -59,14 +59,14 @@ class WebController extends Controller {
         $page->setTpl("forgot_sent");
     }
 
-    public function reset():void{
+    public function reset($data):void{
 
         $recover = new RecoverPassword();
 
         $recover_pass = null;
 
         try {
-            $recover_pass = $recover->validRecoverDecrypt($_GET["code"]);
+            $recover_pass = $recover->validRecoverDecrypt($data["code"]);
 
         } catch (\Exception $e) {
 

@@ -58,7 +58,7 @@ class AuthController extends Controller {
             } else if(strlen($data["senha"]) < 8) {
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
-                    "message" => $e->getMessage()
+                    "message" => "Senha precisa ser de no minimo 8 caracteres!"
                 ]);
                 return;
             }
