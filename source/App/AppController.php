@@ -65,17 +65,14 @@ class AppController extends Controller {
     public function start():void {
 
         $access = User::checkLogin();
+        $page = new PageWeb();
 
         if ($access == false) {
-            $page = new PageWeb();
-
             $page->setTpl("start", array(
                 "user" => $this->user_logado->getValues()
             ));
 
         } else {
-            $page = new PageWeb();
-
             $page->setTpl("home");
         }
 

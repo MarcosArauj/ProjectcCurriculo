@@ -32,8 +32,6 @@ $(function () {
 
     });
 
-
-
     function ajax_load(action) {
         ajax_load_div = $(".ajax_load");
 
@@ -45,4 +43,5 @@ $(function () {
             ajax_load_div.fadeOut(100);
         }
     }
+
 });

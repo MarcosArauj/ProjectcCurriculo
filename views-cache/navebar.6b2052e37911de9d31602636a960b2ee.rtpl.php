@@ -16,7 +16,7 @@
         <div class="sidebar-sticky pt-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="/user/dashboard">
                         <span><i class="fa fa-tachometer" aria-hidden="true"></i></span>
                          Dashboard
                     </a>

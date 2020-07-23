@@ -24,10 +24,10 @@ if($_SERVER["SERVER_NAME"] == "localhost") {
 define("MAIL_RECOVER", [
     "host" => "smtp.hostinger.com.br",
     "port" => "587",
-    "user" => "teste@cruzm.com.br",
-    "passwd" => "Cruz2517",
-    "from_name" => "Marcos Araujo da Cruz",
-    "from_email" => "teste@cruzm.com.br"
+    "user" => "webcurriculo@cruzm.com.br",
+    "passwd" => "Web251723",
+    "from_name" => "Web Curriculo",
+    "from_email" => "webcurriculo@cruzm.com.br"
 
 ]);
 

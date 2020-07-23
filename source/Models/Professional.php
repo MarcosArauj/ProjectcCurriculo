@@ -62,7 +62,7 @@ class Professional extends Model {
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Salvar Cadastro de Experiência Profissional!". $this->getregistro());
+            throw new \Exception("Erro ao Salvar Cadastro de Experiência Profissional!");
             return false;
         }
 
@@ -70,6 +70,17 @@ class Professional extends Model {
 
         return true;
 
+    }
+
+    /**
+     *Exclui Experiencia Profissional para o Usuario
+     */
+    public function deleteProfessional():void{
+
+        $this->conn->query("DELETE FROM tb_experiencia_profissional WHERE id_profissional = :id_profissional"
+            ,array(
+                ":id_profissional"=>$this->getid_profissional()
+            ));
     }
 
 }

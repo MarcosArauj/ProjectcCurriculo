@@ -1,7 +1,6 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("navebar");?>
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 text-center">
 
-    <div style="text-align: center">
         <p class="alert_message"> <?php echo flash(); ?></p>
 
         <h2><?php echo site("desc"); ?></h2>
@@ -11,9 +10,7 @@
         <?php }else{ ?>
         <h4>Finalize seu Curriculo!</h4>
         <br>
-        <p><a class="btn btn-primary" href="/user/curriculum" id="Finalizar" title="Iniciar">Finalizar Curriculo <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        <p><a class="btn btn-primary" href="/user/curriculum" id="Finalizar" title="Iniciar">Finalizar Curriculo <i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
         <?php } ?>
-    </div>
 
-</div>
-</main>
+

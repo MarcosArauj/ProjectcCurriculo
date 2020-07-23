@@ -115,7 +115,7 @@
            </div>
            <div class="card-footer">
                <a class="btn btn-danger float-left" href="/user/contact_update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
-               <div class="row float-right">
+               <div class="form-inline float-right">
                <button class="btn btn-md btn-success deficiencia"><i class="fa fa-plus-circle" aria-hidden="true"></i>  Adicionar Deficiência</button>&nbsp;
                <a class="btn btn-primary " href="/user/formation" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
                </div>

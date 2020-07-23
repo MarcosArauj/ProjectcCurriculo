@@ -4,16 +4,17 @@
         <h4 class="h2">Atualização - Idiomas </h4>
     </div>
 
-<div class="alert_message">
+<div class="alert_message col-md-8">
     <?php echo flash(); ?>
 </div>
 <form class="form" action="/curriculum/<?php echo htmlspecialchars( $languages["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages" method="post" autocomplete="off">
-<div  class="card border-success col-md-8">
+<div class="col-md-8">
+<div  class="card border-success">
     <div class="card-body">
     <div class="row">
         <!-- Coluna 1 -->
         <div class="col">
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-8">
                 <label for="idioma"><strong class="obrigatorio">*</strong><b>Idioma</b></label>
                 <select class="form-control form-control-sm" name="idioma" id="idioma" autofocus>
                     <option value="<?php echo htmlspecialchars( $languages["idioma"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $languages["idioma"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
@@ -22,7 +23,7 @@
                     <?php } ?>
                 </select>
             </div>
-            <div class="form-group col-md-8">
+            <div class="form-group col-md-6">
                 <label  for="nivel"><strong class="obrigatorio">*</strong><b>Nivél de Conhecimento</b></label>
                 <select class="form-control form-control-sm" name="nivel_conhecimento" id="nivel" required >
                     <option value="<?php echo htmlspecialchars( $languages["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $languages["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
@@ -35,8 +36,6 @@
                     <option value="Academico">Acadêmico</option>
                 </select>
             </div>
-        </div>
-        <div class="col">
             <div class="col-md-12">
                 <div class="success-enabled">
                 </div>
@@ -50,6 +49,7 @@
             <button class="btn btn-md btn-success float-right"> Atualizar Idioma</button>
         </div>
     </div>
+</div>
 </div>
 </form>
 

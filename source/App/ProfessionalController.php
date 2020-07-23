@@ -116,5 +116,31 @@ class ProfessionalController extends Controller {
 
     }
 
+    /**
+     * @param $data
+     * Exclui de Experiência Profissional
+     */
+    public function deleteProfessional($data):void {
+
+        try {
+
+            $this->professional->getExProfessional($data["id_profissional"]);
+
+            $this->professional->deleteProfessional();
+
+            flash("success","Experiência Profissional Excluido com Sucesso!");
+            $this->router->redirect("app.saveProfessional");
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
 }
 

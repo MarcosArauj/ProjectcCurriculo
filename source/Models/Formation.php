@@ -99,6 +99,18 @@ class Formation extends Model {
     }
 
     /**
+     *Exclui Curso
+     */
+    public function deleteOtherCourses():void{
+
+        $this->conn->query("DELETE FROM tb_cursos WHERE id_cursos = :id_cursos"
+            ,array(
+            ":id_cursos"=>$this->getid_cursos()
+        ));
+
+    }
+
+    /**
      * @return bool
      * @throws \Exception
      * Salva Cadastro de Idioma pora o Usuario
@@ -170,7 +182,17 @@ class Formation extends Model {
         ));
 
         return (count($results) > 0);
+    }
 
+    /**
+     *Exclui Idioma para o Usuario
+     */
+    public function deleteLanguages():void{
+
+        $this->conn->query("DELETE FROM tb_idioma_curriculo WHERE id_idiomac = :id_idiomac"
+            ,array(
+                ":id_idiomac"=>$this->getid_idiomac()
+            ));
     }
 
     /**

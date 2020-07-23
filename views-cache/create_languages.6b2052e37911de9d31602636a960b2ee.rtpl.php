@@ -28,13 +28,13 @@
                 <label  for="nivel"><strong class="obrigatorio">*</strong><b>Nivél de Conhecimento</b></label>
                 <select class="form-control form-control-sm" name="nivel_conhecimento" id="nivel" required >
                     <option value="">Selecione</option>
-                    <option value="iniciante">Iniciante</option>
-                    <option value="basico">Básico</option>
-                    <option value="elementar">Elementar</option>
-                    <option value="intermediario">Intermediário</option>
-                    <option value="avancado">Avançado</option>
-                    <option value="fluente">Fluente</option>
-                    <option value="academico">Acadêmico</option>
+                    <option value="Iniciante">Iniciante</option>
+                    <option value="Basico">Básico</option>
+                    <option value="Elementar">Elementar</option>
+                    <option value="Intermediario">Intermediário</option>
+                    <option value="Avancado">Avançado</option>
+                    <option value="Fluente">Fluente</option>
+                    <option value="Academico">Acadêmico</option>
                 </select>
             </div>
             <div class="col-md-12">
@@ -102,7 +102,7 @@
             <td><?php echo htmlspecialchars( $value1["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td class="float-right">
                 <a href="<?php echo htmlspecialchars( $value1["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
-                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
+                <a href="/curriculum/<?php echo htmlspecialchars( $value1["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages_delete" onclick="return confirm('Deseja realmente excluir este Curso?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
             </td>
         </tr>
         <?php } ?>

@@ -180,6 +180,32 @@ class FormationController extends Controller {
 
     /**
      * @param $data
+     * Exclui de Outros Cursos
+     */
+    public function deleteOtherCourses($data):void {
+
+        try {
+
+            $this->formation->getOtherCourses($data["id_cursos"]);
+
+            $this->formation->deleteOtherCourses();
+
+            flash("success","Curso Excluido com Sucesso!");
+            $this->router->redirect("app.saveOtherCourses");
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
      * Cadastro de Idiomas
      */
     public function saveLanguages($data):void {
@@ -284,6 +310,33 @@ class FormationController extends Controller {
             ]);
             flash("success","Idioma Cadastrado Com Sucesso - Agora já pode Selecionar para seu Curriculo");
             return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
+     * Exclui de Idioma para o Usuário
+     */
+    public function deleteLanguages($data):void {
+
+        try {
+
+            $this->formation->getLanguages($data["id_idiomac"]);
+
+            $this->formation->deleteLanguages();
+
+            flash("success","Idioma Excluido com Sucesso!");
+
+            $this->router->redirect("app.saveLanguages");
 
         } catch (\Exception $e) {
 

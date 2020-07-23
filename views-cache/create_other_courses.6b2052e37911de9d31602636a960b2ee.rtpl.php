@@ -43,13 +43,12 @@
            </div>
         </div>
         <div class="card-footer">
-              <a class="btn btn-danger float-left" href="/user/formation_update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+              <a class="btn btn-danger" href="/user/formation_update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
             <div class="float-right">
                <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Curso</button>
                <a class="btn btn-primary" href="/user/languages" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
             </div>
         </div>
-
     </div>
 </form>
 
@@ -69,8 +68,8 @@
             <td><?php echo htmlspecialchars( $value1["nome_curso"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td class="float-right">
                 <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
-                <a href="/user/<?php echo htmlspecialchars( $value1["id_cursos"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/other_courses" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
-                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
+                <a href="<?php echo htmlspecialchars( $value1["id_cursos"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/other_courses" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                <a href="/curriculum/<?php echo htmlspecialchars( $value1["id_cursos"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/other_courses_delete" onclick="return confirm('Deseja realmente excluir este Curso?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
             </td>
         </tr>
         <?php } ?>

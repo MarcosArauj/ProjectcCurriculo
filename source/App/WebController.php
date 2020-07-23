@@ -14,15 +14,13 @@ use Source\Models\User;
  */
 class WebController extends Controller {
 
+
     public function __construct($router)
     {
         parent::__construct($router);
 
     }
 
-    /**
-     *
-     */
     public function home():void{
 
         $page = new PageWeb();
@@ -66,7 +64,7 @@ class WebController extends Controller {
         $recover_pass = null;
 
         try {
-            $recover_pass = $recover->validRecoverDecrypt($data["code"]);
+            $recover_pass = $recover->validRecoverDecrypt($_GET["code"]);
 
         } catch (\Exception $e) {
 

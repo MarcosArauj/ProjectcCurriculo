@@ -98,8 +98,8 @@
             {/if}
             <td class="float-right">
                 <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
-                <a href="/user/{$value.id_profissional}/professional_experience" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
-                <a href="#" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
+                <a href="{$value.id_profissional}/professional_experience" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                <a href="/curriculum/{$value.id_profissional}/professional_experience_delete" onclick="return confirm('Deseja realmente excluir este Experiência Profissional?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
             </td>
         </tr>
         {/loop}

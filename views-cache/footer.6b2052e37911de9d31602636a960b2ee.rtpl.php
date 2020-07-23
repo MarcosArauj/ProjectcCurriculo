@@ -1,6 +1,6 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?>    <footer class="pt-5 text-muted text-center text-small">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><footer style="margin-bottom: 10%" class="pt-5 text-muted text-center text-small">
 
-        <p><strong>Copyright &copy; <?php echo date('Y'); ?> </strong> All rights - <b>Version</b> <?php echo site("version"); ?>
+        <p ><strong>Copyright &copy; <?php echo date('Y'); ?> </strong> All rights - <b>Version</b> <?php echo site("version"); ?>
             reserved.</p>
     </footer>
   </main>
