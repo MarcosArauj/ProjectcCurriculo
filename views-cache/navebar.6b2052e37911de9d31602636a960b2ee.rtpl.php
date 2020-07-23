@@ -33,6 +33,11 @@
                         <span> Experiencia Profissional </span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/password_update">
+                        <span> Alterar Senha</span>
+                    </a>
+                </li>
                 <?php } ?>
             </ul>
         </div>

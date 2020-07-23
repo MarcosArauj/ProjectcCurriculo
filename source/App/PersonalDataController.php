@@ -252,6 +252,60 @@ class PersonalDataController extends Controller {
 
     }
 
+    /**
+     * @param $data
+     * Atualizar de Deficiencia
+     */
+    public function updatePassword($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        if(in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos para cadastrar!"
+            ]);
+            return;
+        }
+
+        try {
+
+            if (!password_verify($data['senha_atual'], $this->data_user->getsenha())){
+
+                echo $this->ajaxResponse("message", [
+                    "type" => "error",
+                    "message" => "Senha Atual Inválida, Gentileza verificar!!"
+                ]);
+                return;
+            } else if(strlen($data["nova_senha"]) < 8) {
+                echo $this->ajaxResponse("message", [
+                    "type" => "error",
+                    "message" => "Senha precisa ser de no minimo 8 caracteres!"
+                ]);
+                return;
+            }
+
+            $this->data_user->setsenha($data['nova_senha']);
+
+            $this->data_user->updatePassword();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.updatePassword")
+            ]);
+            flash("success","Senha Alterada Com Sucesso");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
 
 
 }

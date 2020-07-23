@@ -77,17 +77,17 @@ jQuery(document).ready(function($) {
 
     $('#mostrar_senha_alterar').on("click", function(e) {
         e.preventDefault();
-        if ( $('#novasenha').attr('type') === 'password' || $('#confirmasenha').attr('type') === 'password' ||
+        if ( $('#senha').attr('type') === 'password' || $('#confirma_senha').attr('type') === 'password' ||
             $('#senhatual').attr('type') === 'password' ) {
 
             $('#senhatual').attr('type', 'text');
-            $('#novasenha').attr('type', 'text');
-            $('#confirmasenha').attr('type', 'text');
+            $('#senha').attr('type', 'text');
+            $('#confirma_senha').attr('type', 'text');
             $('#mostrar_senha_alterar').val('Ocultar Senhas');
         } else {
             $('#senhatual').attr('type', 'password');
-            $('#novasenha').attr('type', 'password');
-            $('#confirmasenha').attr('type', 'password');
+            $('#senha').attr('type', 'password');
+            $('#confirma_senha').attr('type', 'password');
             $('#mostrar_senha_alterar').val('Mostrar Senhas');
         }
 

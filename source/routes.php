@@ -60,6 +60,9 @@ $router->get("/professional_experience", "AppController:saveProfessional","app.s
 $router->get("/{id_profissional}/professional_experience", "AppController:updateProfessional","app.updateProfessional");
 $router->get("/curriculum", "AppController:saveCurriculum","app.saveCurriculum");
 
+//------ Password -----------------//
+$router->get("/password_update", "AppController:updatePassword","app.updatePassword");
+$router->post("/password_update", "PersonalDataController:updatePassword","personal.updatePassword");
 //------ Logout -----------------//
 $router->get("/logout", "AppController:logout","app.logout");
 

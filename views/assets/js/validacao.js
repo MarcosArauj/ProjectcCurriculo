@@ -94,6 +94,7 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         let senha = $('#senha').val();
         let confirma_senha = $('#confirma_senha').val();
+        let atual_senha = $('#senhatual').val();
 
         if(senha == confirma_senha) {
             $('#div_confsenha').attr("class","has-success");
@@ -103,6 +104,13 @@ jQuery(document).ready(function($) {
             $('#div_confsenha').attr("class","has-error");
             $('#div_senha').attr("class", "has-error");
             $('#mesenha_conf').attr("class", "error-enabled");
+        }
+
+        if(senha != atual_senha) {
+            $('#mesenha_atual').attr("class", "error-disabled");
+
+        } else {
+            $('#mesenha_atual').attr("class", "error-enabled");
         }
 
     });

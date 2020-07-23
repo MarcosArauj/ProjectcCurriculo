@@ -319,6 +319,19 @@ class AppController extends Controller {
     }
 
     /**
+     * Carrega Tela Alterar Senha
+     */
+    public function updatePassword():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("update_password", array(
+            "user" => $this->data_user->getValues()
+        ));
+
+    }
+
+    /**
      * Carrega rota de Logout
      */
     public function logout():void{

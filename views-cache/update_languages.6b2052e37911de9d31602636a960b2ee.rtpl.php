@@ -8,7 +8,7 @@
     <?php echo flash(); ?>
 </div>
 <form class="form" action="/curriculum/<?php echo htmlspecialchars( $languages["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages" method="post" autocomplete="off">
-<div  class="card border-success">
+<div  class="card border-success col-md-8">
     <div class="card-body">
     <div class="row">
         <!-- Coluna 1 -->
@@ -22,7 +22,7 @@
                     <?php } ?>
                 </select>
             </div>
-            <div class="form-group col-md-5">
+            <div class="form-group col-md-8">
                 <label  for="nivel"><strong class="obrigatorio">*</strong><b>Nivél de Conhecimento</b></label>
                 <select class="form-control form-control-sm" name="nivel_conhecimento" id="nivel" required >
                     <option value="<?php echo htmlspecialchars( $languages["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $languages["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
