@@ -71,59 +71,8 @@
     </div>
 </div>
 </form>
-<br>
-    <!-- Lista de Experiência Profissional -->
-{if="$professional"}
-<div  class="card border-success">
-<table class="table table-striped border-success">
-    <thead>
-        <tr>
-            <th>Cargo</th>
-            <th>Empresa</th>
-            <th>&nbsp;</th>
-            <th>&nbsp;</th>
-        </tr>
-    </thead>
-    <tbody>
-        {loop="$professional"}
-        <tr>
-            {if="$value.registro == 'ativo'"}
-                <td>{$value.cargo_atual}</td>
-                <td>{$value.empresa_atual}</td>
-            <td style="color: #00cc00;"> <b>Emprego Atual</b> </td>
-            {else}
-                <td>{$value.cargo_anterior}</td>
-                <td>{$value.empresa_anterior}</td>
-                <td></td>
-            {/if}
-            <td class="float-right">
-                <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
-                <a href="{$value.id_profissional}/professional_experience" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
-                <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>
-                <!-- Modal Excluir -->
-                <div class="modal fade" id="ModalExcluir" role="dialog">
-                    <div class="modal-dialog modal-sm">
 
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <p><b>Deseja realmente excluir esta Experiência Profissional?</b></p>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="/curriculum/{$value.id_profissional}/professional_experience/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
-                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        {/loop}
-    </tbody>
-</table>
-</div>
-{else}
-<div  class="alert alert-danger">
-    <h5>Nenhum idioma cadastrato</h5>
-</div>
-{/if}
+
+<!-- Lista de Experiência Profissional -->
+{include="table_professional"}
+

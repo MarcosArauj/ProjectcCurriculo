@@ -83,6 +83,7 @@ class AppController extends Controller {
      */
     public function dashboard():void {
 
+
         $page = new PageCurriculum();
 
         $page->setTpl("dashboard", array(

@@ -212,7 +212,7 @@ class User extends Model {
      */
     public static function logout():void {
 
-        $_SESSION[User::SESSION] = NULL;
+        unset($_SESSION[User::SESSION]);
 
     }
 

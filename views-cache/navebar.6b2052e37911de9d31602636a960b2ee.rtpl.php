@@ -24,7 +24,7 @@
                 <hr>
                 <?php if( checkCurriculum() ){ ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user/formation_update">
+                    <a class="nav-link" href="/user/formation/update">
                         <span> Formação Acadêmica </span>
                     </a>
                 </li>
@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user/password_update">
+                    <a class="nav-link" href="/user/password/update">
                         <span> Alterar Senha</span>
                     </a>
                 </li>
