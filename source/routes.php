@@ -40,21 +40,26 @@ $router->post("/reset", "AuthController:reset","auth.reset");
 
 //------ Area de Trabalho -----------------//
 $router->group("/user");
-$router->get("", "AppController:start","app.start");
-$router->get("/dashboard", "AppController:dashboard","app.dashboard");
+$router->get("", "AppController:dashboard","app.dashboard");
+$router->get("/star", "AppController:start","app.start");
+//------ Password -----------------//
+$router->get("/password_update", "AppController:updatePassword","app.updatePassword");
+$router->post("/password_update", "PersonalDataController:updatePassword","personal.updatePassword");
+//------ Logout -----------------//
+$router->get("/logout", "AppController:logout","app.logout");
 
 //------ Cadastro Usuario/Curriculo -----------------//
 $router->get("/personal_data", "AppController:savePersonalData","app.savePersonalData");
-$router->get("/personal_data_update", "AppController:updatePersonalData","app.updatePersonalData");
+$router->get("/personal_data/update", "AppController:updatePersonalData","app.updatePersonalData");
 
 $router->get("/contact", "AppController:saveContact","app.saveContact");
-$router->get("/contact_update", "AppController:updateContact","app.updateContact");
+$router->get("/contact/update", "AppController:updateContact","app.updateContact");
 
 $router->get("/deficiency", "AppController:saveDeficiency","app.saveDeficiency");
-$router->get("/deficiency_update", "AppController:updateDeficiency","app.updateDeficiency");
+$router->get("/deficiency/update", "AppController:updateDeficiency","app.updateDeficiency");
 
 $router->get("/formation", "AppController:saveAcademicFormation","app.saveAcademicFormation");
-$router->get("/formation_update", "AppController:updateAcademicFormation","app.updateAcademicFormation");
+$router->get("/formation/update", "AppController:updateAcademicFormation","app.updateAcademicFormation");
 
 $router->get("/other_courses", "AppController:saveOtherCourses","app.saveOtherCourses");
 $router->get("/{id_cursos}/other_courses", "AppController:updateOtherCourses","app.updateOtherCourses");
@@ -67,21 +72,16 @@ $router->get("/{id_profissional}/professional_experience", "AppController:update
 
 $router->get("/curriculum", "AppController:saveCurriculum","app.saveCurriculum");
 
-//------ Password -----------------//
-$router->get("/password_update", "AppController:updatePassword","app.updatePassword");
-$router->post("/password_update", "PersonalDataController:updatePassword","personal.updatePassword");
-//------ Logout -----------------//
-$router->get("/logout", "AppController:logout","app.logout");
 
 /**
  * Rotas de Cadastro Usuario/Curriculo
  */
 $router->group("/curriculum");
 $router->post("/personal_data", "PersonalDataController:savePersonalData","personal.savePersonalData");
-$router->post("/personal_data_update", "PersonalDataController:updatePersonalData","personal.updatePersonalData");
+$router->post("/personal_data/update", "PersonalDataController:updatePersonalData","personal.updatePersonalData");
 
 $router->post("/contact", "PersonalDataController:saveContact","personal.saveContact");
-$router->post("/contact_update", "PersonalDataController:updateContact","personal.updateContact");
+$router->post("/contact/update", "PersonalDataController:updateContact","personal.updateContact");
 
 $router->post("/deficiency", "PersonalDataController:saveDeficiency","personal.saveDeficiency");
 
@@ -89,16 +89,16 @@ $router->post("/formation", "FormationController:saveAcademicFormation","formati
 
 $router->post("/other_courses", "FormationController:saveOtherCourses","formation.saveOtherCourses");
 $router->post("/{id_cursos}/other_courses", "FormationController:updateOtherCourses","formation.updateOtherCourses");
-$router->get("/{id_cursos}/other_courses_delete", "FormationController:deleteOtherCourses","formation.deleteOtherCourses");
+$router->get("/{id_cursos}/other_courses/delete", "FormationController:deleteOtherCourses","formation.deleteOtherCourses");
 
 $router->post("/languages", "FormationController:saveLanguages","formation.saveLanguages");
 $router->post("/{id_idiomac}/languages", "FormationController:updateLanguages","formation.updateLanguages");
-$router->get("/{id_idiomac}/languages_delete", "FormationController:deleteLanguages","formation.deleteLanguages");
+$router->get("/{id_idiomac}/languages/delete", "FormationController:deleteLanguages","formation.deleteLanguages");
 $router->post("/new_languages", "FormationController:createLanguage","formation.createLanguage");
 
 $router->post("/professional_experience", "ProfessionalController:saveProfessional","professional.saveProfessional");
 $router->post("/{id_profissional}/professional_experience", "ProfessionalController:updateProfessional","professional.updateProfessional");
-$router->get("/{id_profissional}/professional_experience_delete", "ProfessionalController:deleteProfessional","professional.deleteProfessional");
+$router->get("/{id_profissional}/professional_experience/delete", "ProfessionalController:deleteProfessional","professional.deleteProfessional");
 
 $router->post("/curriculum", "CurriculumController:saveCurriculum","curriculum.saveCurriculum");
 $router->get("/getCitsStates", "HelpersController:getCitsStates","curriculum.getCitsStates");

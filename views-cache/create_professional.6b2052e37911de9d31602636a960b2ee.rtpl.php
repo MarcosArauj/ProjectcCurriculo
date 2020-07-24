@@ -99,7 +99,23 @@
             <td class="float-right">
                 <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
                 <a href="<?php echo htmlspecialchars( $value1["id_profissional"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/professional_experience" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
-                <a href="/curriculum/<?php echo htmlspecialchars( $value1["id_profissional"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/professional_experience_delete" onclick="return confirm('Deseja realmente excluir este Experiência Profissional?')" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Excluir</a>
+                <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>
+                <!-- Modal Excluir -->
+                <div class="modal fade" id="ModalExcluir" role="dialog">
+                    <div class="modal-dialog modal-sm">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <p><b>Deseja realmente excluir esta Experiência Profissional?</b></p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="/curriculum/<?php echo htmlspecialchars( $value1["id_profissional"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/professional_experience/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
+                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </td>
         </tr>
         <?php } ?>
