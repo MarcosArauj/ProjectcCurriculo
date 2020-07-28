@@ -247,6 +247,21 @@ class AppController extends Controller {
             "user" => $this->data_user->getValues(),
             "courses"=>$this->formation->getValues()
         ));
+    }
+
+    /**
+     * Carrega Tela de Detalhar de Outros Cursos
+     */
+    public function detailOtherCourses($data):void {
+
+        $page = new PageCurriculum();
+
+        $this->formation->getOtherCourses($data["id_cursos"]);
+
+        $page->setTpl("detail_other_courses", array(
+            "user" => $this->data_user->getValues(),
+            "courses"=>$this->formation->getValues()
+        ));
 
     }
 
@@ -332,6 +347,22 @@ class AppController extends Controller {
             "professional"=>$this->professional->getValues()
         ));
     }
+
+    /**
+     * Carrega Tela de Detalahr de Experiência Profissional
+     */
+    public function detailProfessional($data):void {
+
+        $page = new PageCurriculum();
+
+        $this->professional->getExProfessional($data["id_profissional"]);
+
+        $page->setTpl("detail_professional", array(
+            "user" => $this->data_user->getValues(),
+            "professional"=>$this->professional->getValues()
+        ));
+    }
+
 
     /**
      * Carrega Tela de Finalizar Curriculo

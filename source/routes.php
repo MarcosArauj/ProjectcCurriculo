@@ -61,9 +61,10 @@ $router->get("/deficiency/update", "AppController:updateDeficiency","app.updateD
 $router->get("/formation/create", "AppController:saveAcademicFormation","app.saveAcademicFormation");
 $router->get("/formation/update", "AppController:updateAcademicFormation","app.updateAcademicFormation");
 
+$router->get("/other_courses", "AppController:otherCourses","app.otherCourses");
 $router->get("/other_courses/create", "AppController:saveOtherCourses","app.saveOtherCourses");
 $router->get("/{id_cursos}/other_courses/update", "AppController:updateOtherCourses","app.updateOtherCourses");
-$router->get("/other_courses", "AppController:otherCourses","app.otherCourses");
+$router->get("/{id_cursos}/other_courses/detail", "AppController:detailOtherCourses","app.detailOtherCourses");
 
 $router->get("/languages", "AppController:languages","app.languages");
 $router->get("/languages/create", "AppController:saveLanguages","app.saveLanguages");
@@ -72,6 +73,7 @@ $router->get("/{id_idiomac}/languages/update", "AppController:updateLanguages","
 $router->get("/professional_experience", "AppController:professional","app.professional");
 $router->get("/professional_experience/create", "AppController:saveProfessional","app.saveProfessional");
 $router->get("/{id_profissional}/professional_experience/update", "AppController:updateProfessional","app.updateProfessional");
+$router->get("/{id_profissional}/professional_experience/detail", "AppController:detailProfessional","app.detailProfessional");
 
 $router->get("/curriculum", "AppController:saveCurriculum","app.saveCurriculum");
 

@@ -15,7 +15,7 @@
             <div class="card-footer">
                 <a class="btn btn-danger" href="/user" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Início </a>
                 <div class="float-right">
-                    <a class="btn btn-primary" href="/user/professional/create" title="Adicionar Curso"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Nova Experiência Porfissional </a>
+                    <a class="btn btn-primary" href="/user/professional_experience/create" title="Adicionar Curso"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Nova Experiência Porfissional </a>
                 </div>
             </div>
         </div>
