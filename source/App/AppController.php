@@ -10,7 +10,7 @@ use Source\Models\Formation;
 use Source\Models\Login;
 use Source\Models\PersonalData;
 use Source\Models\Professional;
-use Source\Models\Address;
+use Source\Models\Contact;
 use Source\Models\User;
 
 /**
@@ -39,17 +39,17 @@ class AppController extends Controller {
     {
         parent::__construct($router);
 
-        if(!User::verifyLogin()) {
+        if(!Login::verifyLogin()) {
             flash("error","Acesso negado, favor logar-se");
-            User::logout();
+            Login::logout();
             $this->router->redirect("web.home");
         } else {
-            $this->user_logado = User::getFromSession();
+            $this->user_logado = Login::getFromSession();
             $this->data_user = new User();
             $this->data_user->getUser($this->user_logado->getid_usuario());
 
             $this->personalData = new PersonalData();
-            $this->contact = new Address();
+            $this->contact = new Contact();
             $this->formation = new Formation();
             $this->professional = new Professional();
 
@@ -64,7 +64,7 @@ class AppController extends Controller {
      */
     public function start():void {
 
-        $access = User::checkLogin();
+        $access = Login::checkLogin();
         $page = new PageWeb();
 
         if ($access == false) {
@@ -83,7 +83,6 @@ class AppController extends Controller {
      */
     public function dashboard():void {
 
-
         $page = new PageCurriculum();
 
         $page->setTpl("dashboard", array(
@@ -92,6 +91,18 @@ class AppController extends Controller {
 
     }
 
+    /**
+     * Carrega Tela Pefil
+     */
+    public function profile():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("profile", array(
+            "user" => $this->data_user->getValues()
+        ));
+
+    }
 
     /**
      * Carrega Tela de Cadastro dos Dados Pessoais
@@ -132,7 +143,6 @@ class AppController extends Controller {
     public function saveContact():void {
 
         $page = new PageCurriculum();
-
 
         $page->setTpl("create_contact", array(
             "user" => $this->data_user->getValues(),
@@ -401,7 +411,7 @@ class AppController extends Controller {
      */
     public function logout():void{
 
-        User::logout();
+        Login::logout();
 
         $this->router->redirect("web.home");
 

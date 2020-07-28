@@ -223,8 +223,49 @@ a#recuperasenha {
     color: white
 }
 
-.align {
-    margin-right: 50%;
-    margin-left: 15%;
-;
+.container_footer {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
+
+.footer {
+    position: fixed;
+    bottom:0;
+    right: 27%;
+}
+
+.img-circle {
+    width: 150px;
+    padding: 4px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-circle-none {
+    width: 150px;
+    padding: 4px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    max-width: 100%;
+    height: 150px;
+}
+
+input[type="file"] {
+    display: none;
+}
+label#userphoto {
+    padding: 10px 10px;
+    width: 150px;
+    background-color: #007bff;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 1em;
 }

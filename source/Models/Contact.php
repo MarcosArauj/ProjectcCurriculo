@@ -4,7 +4,7 @@
 namespace Source\Models;
 
 
-class Address extends Model {
+class Contact extends Model {
 
     /**
      * @return bool

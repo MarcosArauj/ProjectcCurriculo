@@ -40,7 +40,8 @@ $router->post("/reset", "AuthController:reset","auth.reset");
 
 //------ Area de Trabalho -----------------//
 $router->group("/user");
-$router->get("", "AppController:dashboard","app.dashboard");
+$router->get("", "AppController:profile","app.profile");
+$router->get("dashboard", "AppController:dashboard","app.dashboard");
 $router->get("/start", "AppController:start","app.start");
 //------ Password -----------------//
 $router->get("/password/update", "AppController:updatePassword","app.updatePassword");
@@ -84,6 +85,7 @@ $router->get("/curriculum", "AppController:saveCurriculum","app.saveCurriculum")
 $router->group("/curriculum");
 $router->post("/personal_data/create", "PersonalDataController:savePersonalData","personal.savePersonalData");
 $router->post("/personal_data/update", "PersonalDataController:updatePersonalData","personal.updatePersonalData");
+$router->post("/personal_data/photo", "PersonalDataController:savePhoto","personal.savePhoto");
 
 $router->post("/contact/create", "PersonalDataController:saveContact","personal.saveContact");
 $router->post("/contact/update", "PersonalDataController:updateContact","personal.updateContact");

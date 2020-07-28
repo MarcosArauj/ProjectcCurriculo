@@ -142,7 +142,6 @@ $(document).ready(function () {
         $('#novo_idioma').css("display", "none");
     });
 
-
     // Nova Experiencia Profissional
     $('#sim_emprego').on('click',function () {
         $('.professional_atual').css("display" ,"block");

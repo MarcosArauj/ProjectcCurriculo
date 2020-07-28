@@ -7,7 +7,7 @@
 <div class="alert_message">
     <?php echo flash(); ?>
 </div>
-<form class="form" action="/curriculum/formation" method="post" autocomplete="off">
+<form class="form" action="/curriculum/formation/create" method="post" autocomplete="off">
     <div  class="card border-success">
         <div class="card-body">
             <div class="row">
@@ -81,10 +81,14 @@
            </div>
         </div>
         <div class="card-footer">
+            <?php if( checkCurriculum() == false ){ ?>
             <a class="btn btn-danger" href="/user/deficiency/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            <?php } ?>
             <div class="float-right">
-                <button class="btn btn-md btn-success"> Atualizar Formação Acadêmica</button>&nbsp;
-                <a class="btn btn-primary" href="/user/other_courses" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                <button class="btn btn-md btn-success"><i class="fa fa-edit"></i> Atualizar Formação Acadêmica</button>&nbsp;
+                <?php if( checkCurriculum() == false ){ ?>
+                <a class="btn btn-primary" href="/user/other_courses/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                <?php } ?>
             </div>
         </div>
     </div>

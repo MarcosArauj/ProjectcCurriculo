@@ -2,17 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/theme/curriculum/detail_other_courses.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/curriculum/detail_professional.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Models/Login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/CurriculumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/CurriculumController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/FormationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/FormationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/PersonalDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/PersonalDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/ProfessionalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/ProfessionalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Config/FuncoesUteis.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/FuncoesUteis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Address.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/table_other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/table_other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/table_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/table_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/professional.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/table_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/table_other_courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/table_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/table_professional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/footer.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/footer.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/footer.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/footer.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/navebar.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/navebar.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/update_academic_formation.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/update_academic_formation.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/update_deficiency.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/update_deficiency.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/navebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/navebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_academic_formation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_deficiency.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_deficiency.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_languages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_personal_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_professional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/footer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +151,7 @@
       <workItem from="1595557729046" duration="83000" />
       <workItem from="1595586175945" duration="5527000" />
       <workItem from="1595608795213" duration="738000" />
-      <workItem from="1595953023051" duration="8911000" />
+      <workItem from="1595953023051" duration="25023000" />
     </task>
     <servers />
   </component>
@@ -145,14 +167,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1595521209125" />
-    <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595425878114">
+    <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595966538320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1595425878114" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595378314089">
+    <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1595966538320" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595966474403">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595378314089" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1595966474403" />
     <state x="459" y="277" key="ComposerInitDialogKey" timestamp="1594165234046">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -161,10 +183,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1595011250305" />
-    <state x="453" y="178" key="NewPhpClassDialog" timestamp="1595374008147">
+    <state x="453" y="178" key="NewPhpClassDialog" timestamp="1595966080573">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="453" y="178" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1595374008147" />
+    <state x="453" y="178" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1595966080573" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1595957945692">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

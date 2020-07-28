@@ -1,12 +1,10 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><footer style="margin-bottom: 10%" class="pt-5 text-muted text-center text-small">
+<?php if(!class_exists('Rain\Tpl')){exit;}?></main>
+<footer class="footer mt-auto py-3">
 
-        <p ><strong>Copyright &copy; <?php echo date('Y'); ?> </strong> All rights - <b>Version</b> <?php echo site("version"); ?>
-            reserved.</p>
-    </footer>
-  </main>
- </div>
-</div>
-
+    <div class="container_footer">
+        <p ><strong>Copyright &copy; <?php echo date('Y'); ?> </strong> All rights - <b>Version</b> <?php echo site("version"); ?> reserved.</p>
+    </div>
+</footer>
 
 <script  src=<?php echo asset("js/scripts.min.js"); ?> > </script>
 <script  src=<?php echo asset("bootstrap4/dist/js/bootstrap.min.js"); ?> > </script>

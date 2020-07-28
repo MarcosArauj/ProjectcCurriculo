@@ -121,119 +121,89 @@ class User extends Model {
 
     }
 
-    /**
-     * @param $login
-     * @param $senha
-     * @return Login
-     * @throws \Exception
-     */
-    public function loginUser($login, $password): User {
+    public function checkPhotoUser(){
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR. "views". DIRECTORY_SEPARATOR. "assets". DIRECTORY_SEPARATOR .
+            "images". DIRECTORY_SEPARATOR . $this->getid_usuario() . ".jpg")){
 
-        $results = $this->conn->select("SELECT * FROM v_usuario
-                    WHERE email = :login OR cpf = :login AND status_usuario = :status",
-            array(
-                ":login"=>$login,
-                ":status"=>"ativo",
-            ));
+            $url = "/views/assets/images/" . $this->getid_usuario() . ".jpg";
+
+        } else {
+            $url =  "/views/assets/images/usuario.jpg";
+        }
+
+        return $this->setfoto_usuario($url);
+
+    }
+
+    public function getValues() {
+
+        $this->checkPhotoUser();
+
+        $values =  parent::getValues();
+
+        return $values;
+
+    }
+
+    public function setPhotoUser($foto_usuario) {
+
+        $extension = explode('.',$foto_usuario['name']);
+        $extension = end($extension);
+
+        switch ($extension) {
+
+            case "jpg":case "jpeg":
+            $image = imagecreatefromjpeg($foto_usuario["tmp_name"]);
+            break;
+            case "git":
+                $image = imagecreatefromgif($foto_usuario["tmp_name"]);
+                break;
+            case "png":
+                $image = imagecreatefrompng($foto_usuario["tmp_name"]);
+                break;
+
+        }
+
+        $dist = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR. "views". DIRECTORY_SEPARATOR. "assets". DIRECTORY_SEPARATOR . "images".
+            DIRECTORY_SEPARATOR . $this->getid_usuario() . ".jpg";
+
+        imagejpeg($image, $dist);
+
+        imagedestroy($image);
+
+        $this->checkPhotoUser();
+    }
+
+    /**
+     *  Salvar Foto Usuario
+     */
+    public function savePhoto():bool {
+
+        $results =  $this->conn->select("CALL sp_foto_salvar(:id_usuario,:foto_usuario)",array(
+            ":id_usuario"=>$this->getid_usuario(),
+            ":foto_usuario"=>$this->getfoto_usuario()
+        ));
 
         if (count($results) === 0) {
-
-            throw new \Exception("Usuário ou Senha inválidos - :(");
-
-        }
-
-        $data = $results[0];
-
-        if (password_verify($password, $data["senha"])) {
-
-            $user = new User();
-
-            $user->setData($data);
-
-            $_SESSION[User::SESSION] = $user->getValues();
-
-            return $user;
-
-        } else {
-
-            throw new \Exception("Usuário ou Senha inválidos!");
-
-        }
-
-    }
-
-    // Pega dados do Usuario Logado
-
-    /**
-     * @return User
-     */
-    public static function getFromSession(): User{
-
-        $user = new User();
-
-        if (isset($_SESSION[User::SESSION]) && (int)$_SESSION[User::SESSION]['id_usuario'] > 0) {
-            $user->setData($_SESSION[User::SESSION]);
-        }
-
-        return $user;
-
-    }
-
-    //Verifcar o Usuario logado e Tipo de acesso permitido
-
-    /**
-     * @param bool $access
-     * @return bool
-     */
-    public static function checkLogin($access = true): bool {
-        if (!isset($_SESSION[User::SESSION])
-            ||
-            !$_SESSION[User::SESSION]
-            ||
-            !(int)$_SESSION[User::SESSION]["id_usuario"] > 0) {
-            //Não esta logado
+            throw new \Exception("Erro ao Inserir Foto!");
             return false;
-        } else {
-            if($access === true && (bool)$_SESSION[User::SESSION]["acesso"] === true) {
-                return true;
-
-            } else if($access === false){
-                return true;
-
-            } else {
-                return false;
-            }
         }
 
-    }
+        $this->setData($results[0]);
 
-    /**
-     *
-     */
-    public static function logout():void {
-
-        unset($_SESSION[User::SESSION]);
+        return true;
 
     }
 
-    /**
-     * @param bool $access
-     * @return bool
-     */
-    public static function verifyLogin($access = true):bool{
-
-        if (User::checkLogin($access)) {
-
-            return true;
-
-        } else if (User::checkLogin($access = false)) {
-            return true;
-        } else {
-            header("Location: /");
-            exit;
+    public static function checkList($list)
+    {
+        foreach ($list as &$row) {
+            $user = new User();
+            $user->setData($row);
+            $row = $user->getValues();
         }
 
+        return $list;
     }
-
 
 }

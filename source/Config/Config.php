@@ -2,9 +2,11 @@
 
 date_default_timezone_set('America/Sao_Paulo');
 
+const DS = DIRECTORY_SEPARATOR;
 
 define("SITE", [
     "name" => "WC",
+    "name_complete" =>"Web Curriculo",
     "desc" => "Sistema WebController Curriculo",
     "domain" => "curriculotcc.com.br",
     "locale" => "pt_BR",

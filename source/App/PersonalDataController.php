@@ -4,8 +4,8 @@
 namespace Source\App;
 
 
-use Source\Models\Address;
 use Source\Models\Contact;
+use Source\Models\Login;
 use Source\Models\PersonalData;
 use Source\Models\User;
 
@@ -37,12 +37,12 @@ class PersonalDataController extends Controller {
     {
         parent::__construct($router);
 
-        if(!User::verifyLogin()) {
+        if(!Login::verifyLogin()) {
             flash("error","Acesso negado, favor logar-se");
-            User::logout();
+            Login::logout();
             $this->router->redirect("web.home");
         } else {
-            $this->user_logado = User::getFromSession();
+            $this->user_logado = Login::getFromSession();
 
             $this->data_user = new User();
             $this->data_user->getUser($this->user_logado->getid_usuario());
@@ -50,7 +50,7 @@ class PersonalDataController extends Controller {
 
             $this->personalData =  new PersonalData();
             $this->personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
-            $this->contact = new Address();
+            $this->contact = new Contact();
             $this->contact->setid_usuario((INT)$this->user_logado->getid_usuario());
         }
 
@@ -293,6 +293,49 @@ class PersonalDataController extends Controller {
                 "url" =>$this->router->route("app.updatePassword")
             ]);
             flash("success","Senha Alterada Com Sucesso");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
+     * Foto
+     */
+    public function savePhoto($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        if(in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Escola A Foto para Cadastro!"
+            ]);
+            return;
+        }
+
+        try {
+
+            $this->data_user->setid_usuario($this->data_user->getid_usuario());
+
+            $this->data_user->setPhotoUser($_FILES["foto_usuario"]);
+
+            $this->data_user->setData($data);
+
+            $this->data_user->savePhoto();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.profile")
+            ]);
+            flash("success","Sucesso ao salvar Foto");
             return;
 
         } catch (\Exception $e) {

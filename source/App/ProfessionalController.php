@@ -33,12 +33,12 @@ class ProfessionalController extends Controller {
     {
         parent::__construct($router);
 
-        if(!User::verifyLogin()) {
+        if(!Login::verifyLogin()) {
             flash("error","Acesso negado, favor logar-se");
-            User::logout();
+            Login::logout();
             $this->router->redirect("web.home");
         } else {
-            $this->user_logado = User::getFromSession();
+            $this->user_logado = Login::getFromSession();
 
             $this->data_user = new User();
             $this->data_user->getUser($this->user_logado->getid_usuario());

@@ -1,7 +1,8 @@
 <?php
 
+use Source\Models\Login;
 use Source\Models\User;
-use Source\Models\Address;
+use Source\Models\Contact;
 
 
 function saudacao() {
@@ -19,7 +20,7 @@ function removeMaskCpf($cpf) {
 
 function getNameUser() {
 
-    $user = User::getFromSession();
+    $user = Login::getFromSession();
 
     $name_user = $user->getprimeiro_nome();
 
@@ -36,7 +37,7 @@ function getNameUser() {
 
 function checkCurriculum() {
 
-    $user = User::getFromSession();
+    $user = Login::getFromSession();
 
     $curriculum = new \Source\Models\Curriculum();
 
@@ -46,7 +47,7 @@ function checkCurriculum() {
 
 function getCitsStates() {
 
-    $results = Address::listCitys($_POST['id_estado']);
+    $results = Contact::listCitys($_POST['id_estado']);
 
     foreach ($results as $citys) {
         echo '<option>' . $citys["id_cidade"] . '</option>';

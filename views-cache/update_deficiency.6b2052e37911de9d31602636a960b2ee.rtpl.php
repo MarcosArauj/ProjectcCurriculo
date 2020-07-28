@@ -117,7 +117,7 @@
                <a class="btn btn-danger" href="/user/contact/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
                <div class="form-inline float-right">
                <button class="btn btn-md btn-success deficiencia">Atualizar Deficiência</button>&nbsp;
-               <a class="btn btn-primary " href="/user/formation" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+               <a class="btn btn-primary " href="/user/formation/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
                </div>
            </div>
     </div>
