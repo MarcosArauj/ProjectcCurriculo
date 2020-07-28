@@ -10,7 +10,7 @@
         <?php }else{ ?>
         <h4>Finalize seu Curriculo!</h4>
         <br>
-        <p><a class="btn btn-primary" href="/user/curriculum" id="Finalizar" title="Iniciar">Finalizar Curriculo <i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
+        <p><a class="btn btn-primary" href="/user/curriculum/create" id="Finalizar" title="Iniciar">Finalizar Curriculo <i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
         <?php } ?>
 
 

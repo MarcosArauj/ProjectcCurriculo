@@ -7,7 +7,7 @@
 <div class="alert_message">
     <?php echo flash(); ?>
 </div>
-<form class="form" action="/curriculum/contact" method="post" autocomplete="off">
+<form class="form" action="/curriculum/contact/create" method="post" autocomplete="off">
     <div class="card border-success ">
         <div class="card-body">
             <div class="row">
@@ -73,7 +73,7 @@
             <a class="btn btn-danger float-left" href="/user/personal_data/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
             <div class="float-right">
                 <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Contato</button>
-                <a class="btn btn-primary" href="/user/deficiency" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                <a class="btn btn-primary" href="/user/deficiency/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
             </div>
         </div>
 

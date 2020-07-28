@@ -1,6 +1,6 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php if( $courses ){ ?>
-<div  class="card border-success">
-    <table class="table table-striped border-success">
+
+<table class="table table-striped border-success">
         <thead>
         <tr>
             <th >Cursos</th>
@@ -13,7 +13,7 @@
             <td><?php echo htmlspecialchars( $value1["nome_curso"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td class="float-right">
                 <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
-                <a href="<?php echo htmlspecialchars( $value1["id_cursos"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/other_courses" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                <a href="/user/<?php echo htmlspecialchars( $value1["id_cursos"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/other_courses/update" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
                 <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>
                 <!-- Modal Excluir -->
                 <div class="modal fade" id="ModalExcluir" role="dialog">
@@ -37,7 +37,7 @@
         <?php } ?>
         </tbody>
     </table>
-</div>
+
 <?php }else{ ?>
 <div  class="alert alert-danger">
     <h5>Nenhum curso cadastrato</h5>

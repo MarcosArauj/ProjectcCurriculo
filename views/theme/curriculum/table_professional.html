@@ -1,6 +1,5 @@
 {if="$professional"}
-<div  class="card border-success">
-    <table class="table table-striped border-success">
+<table class="table table-striped border-success">
         <thead>
         <tr>
             <th>Cargo</th>
@@ -23,7 +22,7 @@
             {/if}
             <td class="float-right">
                 <a href="#" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
-                <a href="{$value.id_profissional}/professional_experience" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                <a href="/user/{$value.id_profissional}/professional_experience/update" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
                 <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>
                 <!-- Modal Excluir -->
                 <div class="modal fade" id="ModalExcluir" role="dialog">
@@ -46,7 +45,6 @@
         {/loop}
         </tbody>
     </table>
-</div>
 {else}
 <div  class="alert alert-danger">
     <h5>Nenhum idioma cadastrato</h5>

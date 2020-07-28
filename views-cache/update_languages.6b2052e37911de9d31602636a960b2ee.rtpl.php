@@ -7,7 +7,7 @@
 <div class="alert_message col-md-8">
     <?php echo flash(); ?>
 </div>
-<form class="form" action="/curriculum/<?php echo htmlspecialchars( $languages["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages" method="post" autocomplete="off">
+<form class="form" action="/curriculum/<?php echo htmlspecialchars( $languages["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages/update" method="post" autocomplete="off">
 <div class="col-md-8">
 <div  class="card border-success">
     <div class="card-body">
@@ -44,7 +44,7 @@
     </div>
     </div>
     <div class="card-footer">
-          <a class="btn btn-danger float-left" href="/user/languages" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
+          <a class="btn btn-danger float-left" href="/user/languages/create" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
         <div class="float-right">
             <button class="btn btn-md btn-success float-right"> Atualizar Idioma</button>
         </div>

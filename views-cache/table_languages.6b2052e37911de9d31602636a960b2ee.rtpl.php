@@ -1,7 +1,6 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Lista de Idiomas -->
 <?php if( $languages ){ ?>
-<div  class="card border-success">
-    <table class="table table-striped border-success">
+<table class="table table-striped border-success">
         <thead>
         <tr>
             <th>Idiomas</th>
@@ -15,7 +14,7 @@
             <td><?php echo htmlspecialchars( $value1["idioma"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td><?php echo htmlspecialchars( $value1["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td class="float-right">
-                <a href="<?php echo htmlspecialchars( $value1["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                <a href="/user/<?php echo htmlspecialchars( $value1["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages/update" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
                 <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>
                 <!-- Modal Excluir -->
                 <div class="modal fade" id="ModalExcluir" role="dialog">
@@ -38,7 +37,6 @@
         <?php } ?>
         </tbody>
     </table>
-</div>
 <?php }else{ ?>
 <div  class="alert alert-danger">
     <h5>Nenhum idioma cadastrato</h5>

@@ -14,7 +14,7 @@
         <!-- Coluna 1 -->
         <div class="col">
             <div  class="card border-success">
-            <form class="form" action="/curriculum/languages" method="post" autocomplete="off">
+            <form class="form" action="/curriculum/languages/create" method="post" autocomplete="off">
             <div class="form-group col-md-12">
                 <label for="idioma"><strong class="obrigatorio">*</strong><b>Idioma</b></label>
                 <select class="form-control form-control-sm" name="idioma" id="idioma" autofocus>
@@ -77,12 +77,14 @@
     </div>
     </div>
     <div class="card-footer">
-          <a class="btn btn-danger float-left" href="/user/other_courses" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+          <a class="btn btn-danger float-left" href="/user/other_courses/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
         <div class="float-right">
-           <a class="btn btn-primary" href="/user/professional_experience" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+           <a class="btn btn-primary" href="/user/professional_experience/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
         </div>
     </div>
 </div>
 <br>
 
+<div class="card border-success">
 {include="table_languages"}
+</div>

@@ -1,7 +1,6 @@
 <!-- Lista de Idiomas -->
 {if="$languages"}
-<div  class="card border-success">
-    <table class="table table-striped border-success">
+<table class="table table-striped border-success">
         <thead>
         <tr>
             <th>Idiomas</th>
@@ -15,7 +14,7 @@
             <td>{$value.idioma}</td>
             <td>{$value.nivel_conhecimento}</td>
             <td class="float-right">
-                <a href="{$value.id_idiomac}/languages" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                <a href="/user/{$value.id_idiomac}/languages/update" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
                 <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>
                 <!-- Modal Excluir -->
                 <div class="modal fade" id="ModalExcluir" role="dialog">
@@ -38,7 +37,6 @@
         {/loop}
         </tbody>
     </table>
-</div>
 {else}
 <div  class="alert alert-danger">
     <h5>Nenhum idioma cadastrato</h5>

@@ -7,7 +7,7 @@
 <div class="alert_message">
     <?php echo flash(); ?>
 </div>
-<form class="form" action="/curriculum/other_courses" method="post" autocomplete="off">
+<form class="form" action="/curriculum/other_courses/create" method="post" autocomplete="off">
     <div  class="card border-success">
         <div class="card-body">
             <div class="row">
@@ -46,14 +46,16 @@
               <a class="btn btn-danger" href="/user/formation/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
             <div class="float-right">
                <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Curso</button>
-               <a class="btn btn-primary" href="/user/languages" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+               <a class="btn btn-primary" href="/user/languages/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
             </div>
         </div>
     </div>
 </form>
 
 <!-- Lista de Cursos -->
+<div class="card border-success">
 <?php require $this->checkTemplate("table_other_courses");?>
+</div>
 
 
 

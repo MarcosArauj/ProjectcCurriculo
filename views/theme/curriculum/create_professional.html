@@ -7,7 +7,7 @@
 <div class="alert_message">
     {function="flash()"}
 </div>
-<form class="form" action="/curriculum/professional_experience" method="post" autocomplete="off">
+<form class="form" action="/curriculum/professional_experience/create" method="post" autocomplete="off">
 <div  class="card border-success">
     <div class="card-body">
     <div class="row">
@@ -63,10 +63,10 @@
     </div>
     </div>
     <div class="card-footer">
-          <a class="btn btn-danger float-left" href="/user/languages" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+          <a class="btn btn-danger float-left" href="/user/languages/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
         <div class="float-right">
             <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Experiência Profissional</button>
-            <a class="btn btn-primary" href="/user/curriculum" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+            <a class="btn btn-primary" href="/user/curriculum/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
         </div>
     </div>
 </div>
@@ -74,5 +74,7 @@
 
 
 <!-- Lista de Experiência Profissional -->
+<div  class="card border-success">
 {include="table_professional"}
+</div>
 

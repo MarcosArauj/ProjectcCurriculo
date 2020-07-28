@@ -208,6 +208,19 @@ class AppController extends Controller {
     }
 
     /**
+     * Carrega Tela Outros Cursos
+     */
+    public function otherCourses():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("other_courses", array(
+            "courses"=>$this->formation->getOtherCoursesUser($this->user_logado->getid_usuario())
+        ));
+
+    }
+
+    /**
      * Carrega Tela de Cadastro de Outros Cursos
      */
     public function saveOtherCourses():void {
@@ -235,6 +248,18 @@ class AppController extends Controller {
             "courses"=>$this->formation->getValues()
         ));
 
+    }
+
+    /**
+     * Carrega Tela de Idiomas
+     */
+    public function languages():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("languages", array(
+            "languages"=>$this->formation->getLanguagesUser($this->user_logado->getid_usuario())
+        ));
     }
 
     /**
@@ -268,6 +293,18 @@ class AppController extends Controller {
     }
 
     /**
+     * Carrega Tela de Experiência Profissional
+     */
+    public function professional():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("professional", array(
+            "professional"=>$this->professional->getExProfessionalUser($this->user_logado->getid_usuario())
+        ));
+    }
+
+    /**
      * Carrega Tela de Cadastro de Experiência Profissional
      */
     public function saveProfessional():void {
@@ -294,7 +331,6 @@ class AppController extends Controller {
             "user" => $this->data_user->getValues(),
             "professional"=>$this->professional->getValues()
         ));
-
     }
 
     /**
