@@ -1,4 +1,5 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?>
+
 <div class="alert alert-primary" role="alert">
 
     <div style="text-align: center">

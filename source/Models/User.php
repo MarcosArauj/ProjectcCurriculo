@@ -2,6 +2,8 @@
 
 namespace Source\Models;
 
+use CoffeeCode\Uploader\Image;
+use http\Url;
 use Source\Config\Conection;
 
 /**
@@ -123,12 +125,12 @@ class User extends Model {
 
     public function checkPhotoUser(){
         if (file_exists($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR. "views". DIRECTORY_SEPARATOR. "assets". DIRECTORY_SEPARATOR .
-            "images". DIRECTORY_SEPARATOR . $this->getid_usuario() . ".jpg")){
+            "images". DIRECTORY_SEPARATOR. "user". DIRECTORY_SEPARATOR . $this->getid_usuario() . ".jpg")){
 
-            $url = "/views/assets/images/" . $this->getid_usuario() . ".jpg";
+            $url = "/views/assets/images/user/" . $this->getid_usuario() . ".jpg";
 
         } else {
-            $url =  "/views/assets/images/usuario.jpg";
+            $url =  $this->getid_usuario();
         }
 
         return $this->setfoto_usuario($url);
@@ -140,6 +142,7 @@ class User extends Model {
         $this->checkPhotoUser();
 
         $values =  parent::getValues();
+
 
         return $values;
 
@@ -164,8 +167,8 @@ class User extends Model {
 
         }
 
-        $dist = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR. "views". DIRECTORY_SEPARATOR. "assets". DIRECTORY_SEPARATOR . "images".
-            DIRECTORY_SEPARATOR . $this->getid_usuario() . ".jpg";
+        $dist = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR. "views". DIRECTORY_SEPARATOR. "assets". DIRECTORY_SEPARATOR .
+            "images". DIRECTORY_SEPARATOR. "user". DIRECTORY_SEPARATOR . $this->getid_usuario() . ".jpg";
 
         imagejpeg($image, $dist);
 

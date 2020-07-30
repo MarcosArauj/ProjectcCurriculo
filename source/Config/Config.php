@@ -2,8 +2,6 @@
 
 date_default_timezone_set('America/Sao_Paulo');
 
-const DS = DIRECTORY_SEPARATOR;
-
 define("SITE", [
     "name" => "WC",
     "name_complete" =>"Web Curriculo",

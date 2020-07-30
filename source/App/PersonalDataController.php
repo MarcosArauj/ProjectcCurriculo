@@ -4,6 +4,7 @@
 namespace Source\App;
 
 
+use CoffeeCode\Uploader\Image;
 use Source\Models\Contact;
 use Source\Models\Login;
 use Source\Models\PersonalData;
@@ -324,17 +325,13 @@ class PersonalDataController extends Controller {
 
         try {
 
-            $this->data_user->setid_usuario($this->data_user->getid_usuario());
-
-            $this->data_user->setPhotoUser($_FILES["foto_usuario"]);
-
             $this->data_user->setData($data);
 
             $this->data_user->savePhoto();
 
-            echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.profile")
-            ]);
+            $this->data_user->setPhotoUser($_FILES["foto_usuario"]);
+
+            $this->router->redirect("app.profile");
             flash("success","Sucesso ao salvar Foto");
             return;
 

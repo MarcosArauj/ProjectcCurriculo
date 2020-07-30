@@ -1,4 +1,5 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("navebar");?>
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h4 class="h2">Atualização - Experiência Profissional</h4>
@@ -6,6 +7,7 @@
 
 <div class="alert_message">
     <?php echo flash(); ?>
+
 </div>
 <form class="form" action="/curriculum//<?php echo htmlspecialchars( $professional["id_profissional"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/professional_experience/update" method="post" autocomplete="off">
 <div  class="card border-success">
@@ -65,7 +67,7 @@
     <div class="card-footer">
           <a class="btn btn-danger float-left" href="/user/professional_experience/create" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
         <div class="float-right">
-            <button class="btn btn-md btn-success">Atualizar Experiência Profissional</button>
+            <button class="btn btn-md btn-success"><i class="fa fa-edit"></i>Atualizar Experiência Profissional</button>
         </div>
     </div>
 </div>

@@ -19,9 +19,11 @@
                     <a class="nav-link active" href="/user">
                         <span><i class="fa fa-user-circle" aria-hidden="true"></i></span>
                         Inicio - <?php echo getNameUser(); ?>
+
                     </a>
                 </li>
                 <?php if( checkCurriculum() ){ ?>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/user/formation/update">
                         <span> Formação Acadêmica </span>
@@ -48,6 +50,7 @@
                     </a>
                 </li>
                 <?php } ?>
+
             </ul>
         </div>
     </nav>

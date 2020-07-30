@@ -1,4 +1,5 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("navebar");?>
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h4 class="h2">Registro - Experiência Profissional <?php echo htmlspecialchars( $user["id_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h4>
@@ -6,6 +7,7 @@
 
 <div class="alert_message">
     <?php echo flash(); ?>
+
 </div>
 <form class="form" action="/curriculum/professional_experience/create" method="post" autocomplete="off">
 <div  class="card border-success">
@@ -76,5 +78,6 @@
 <!-- Lista de Experiência Profissional -->
 <div  class="card border-success">
 <?php require $this->checkTemplate("table_professional");?>
+
 </div>
 
