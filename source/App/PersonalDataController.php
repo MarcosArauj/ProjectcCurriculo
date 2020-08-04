@@ -331,9 +331,8 @@ class PersonalDataController extends Controller {
 
             $this->data_user->setPhotoUser($_FILES["foto_usuario"]);
 
-            $this->router->redirect("app.profile");
             flash("success","Sucesso ao salvar Foto");
-            return;
+            $this->router->redirect("app.profile");
 
         } catch (\Exception $e) {
 

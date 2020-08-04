@@ -137,16 +137,16 @@ class User extends Model {
 
     }
 
-    public function getValues() {
-
-        $this->checkPhotoUser();
-
-        $values =  parent::getValues();
-
-
-        return $values;
-
-    }
+//    public function getValues() {
+//
+//        $this->checkPhotoUser();
+//
+//        $values =  parent::getValues();
+//
+//
+//        return $values;
+//
+//    }
 
     public function setPhotoUser($foto_usuario) {
 
