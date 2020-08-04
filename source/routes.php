@@ -76,7 +76,7 @@ $router->get("/professional_experience/create", "AppController:saveProfessional"
 $router->get("/{id_profissional}/professional_experience/update", "AppController:updateProfessional","app.updateProfessional");
 $router->get("/{id_profissional}/professional_experience/detail", "AppController:detailProfessional","app.detailProfessional");
 
-$router->get("/curriculum", "AppController:saveCurriculum","app.saveCurriculum");
+$router->get("/curriculum/create", "AppController:saveCurriculum","app.saveCurriculum");
 
 
 /**

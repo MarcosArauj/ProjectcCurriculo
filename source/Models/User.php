@@ -2,10 +2,6 @@
 
 namespace Source\Models;
 
-use CoffeeCode\Uploader\Image;
-use http\Url;
-use Source\Config\Conection;
-
 /**
  * Class User
  * @package Source\Models
@@ -76,13 +72,13 @@ class User extends Model {
      * @param string $email
      * @return bool
      */
-   public  function checkEmail(string $email):bool {
+    public  function checkEmail(string $email):bool {
 
 
         $results = $this->conn->select("SELECT email FROM v_usuario WHERE email = :email",
-                [
-                   ":email"=>$email
-                ]);
+            [
+                ":email"=>$email
+            ]);
         if(count($results) > 0){
             return true;
         }
@@ -137,16 +133,16 @@ class User extends Model {
 
     }
 
-//    public function getValues() {
-//
-//        $this->checkPhotoUser();
-//
-//        $values =  parent::getValues();
-//
-//
-//        return $values;
-//
-//    }
+    public function getValues() {
+
+        $this->checkPhotoUser();
+
+        $values =  parent::getValues();
+
+
+        return $values;
+
+    }
 
     public function setPhotoUser($foto_usuario) {
 

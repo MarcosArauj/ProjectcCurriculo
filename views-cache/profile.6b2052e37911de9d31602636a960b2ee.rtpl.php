@@ -15,8 +15,15 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col">
+
                         <p> Id:  <?php echo htmlspecialchars( $user["id_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?></p>
-                        <img class="img-circle" src="<?php echo htmlspecialchars( $user["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" id="nova_imagem">
+                        <?php if( $user["foto_usuario"] != NULL ){ ?>
+
+                        <img class="img-circle" src="<?php echo htmlspecialchars( $user["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" id="nova_imagem" alt="Photo">
+                        <?php }else{ ?>
+
+                        <img class="img-circle" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
+                        <?php } ?>
 
                         <label id="userphoto" for="foto_usuario">Enviar Foto</label>
                         <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/>

@@ -13,9 +13,13 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col">
-                        <p> Id:  {$user.id_usuario}</p>
-                        <img class="img-circle" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">
 
+                        <p> Id:  {$user.id_usuario}</p>
+                        {if="$user.foto_usuario != NULL"}
+                        <img class="img-circle" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">
+                        {else}
+                        <img class="img-circle" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
+                        {/if}
                         <label id="userphoto" for="foto_usuario">Enviar Foto</label>
                         <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/>
                     </div>
