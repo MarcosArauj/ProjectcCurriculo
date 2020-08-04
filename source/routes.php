@@ -108,6 +108,7 @@ $router->post("/{id_profissional}/professional_experience/update", "Professional
 $router->get("/{id_profissional}/professional_experience/delete", "ProfessionalController:deleteProfessional","professional.deleteProfessional");
 
 $router->post("/curriculum/create", "CurriculumController:saveCurriculum","curriculum.saveCurriculum");
+$router->get("/curriculum/delete", "CurriculumController:deleteCurriculum","curriculum.deleteCurriculum");
 $router->get("/getCitsStates", "HelpersController:getCitsStates","curriculum.getCitsStates");
 
 

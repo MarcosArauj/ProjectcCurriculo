@@ -137,5 +137,14 @@ class PersonalData extends Model {
 
     }
 
+    public function deleteCurriculum():void{
+
+        $this->conn->query("CALL sp_usuario_excluir(:id_usuario)"
+            ,array(
+                ":id_usuario"=>$this->getid_usuario()
+            ));
+
+    }
+
 
 }

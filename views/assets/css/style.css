@@ -239,19 +239,8 @@ a#recuperasenha {
     width: 150px;
     height: 150px;
     padding: 4px;
-    background: rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     max-width: 100%;
-}
-
-.img-circle-none {
-    width: 150px;
-    padding: 4px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    max-width: 100%;
-    height: 150px;
 }
 
 input[type="file"] {

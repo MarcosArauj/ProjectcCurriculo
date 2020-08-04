@@ -194,15 +194,13 @@ class User extends Model {
 
     }
 
-    public static function checkList($list)
-    {
-        foreach ($list as &$row) {
-            $user = new User();
-            $user->setData($row);
-            $row = $user->getValues();
-        }
+    public function deleteCurriculum():void{
 
-        return $list;
+        $this->conn->query("CALL sp_usuario_excluir(:id_usuario)"
+            ,array(
+                ":id_usuario"=>$this->getid_usuario()
+            ));
+
     }
 
 }
