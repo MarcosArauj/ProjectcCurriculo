@@ -15,6 +15,8 @@
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="sidebar-sticky pt-3">
             <ul class="nav flex-column">
+               <?php if( checkCurriculum() ){ ?>
+
                 <li class="nav-item">
                     <a class="nav-link active" href="/user">
                         <span><i class="fa fa-user-circle" aria-hidden="true"></i></span>
@@ -22,8 +24,6 @@
 
                     </a>
                 </li>
-                <?php if( checkCurriculum() ){ ?>
-
                 <li class="nav-item">
                     <a class="nav-link" href="/user/formation/update">
                         <span> Formação Acadêmica </span>

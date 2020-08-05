@@ -80,10 +80,10 @@ class PersonalDataController extends Controller {
             $this->personalData->savePersonalData();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.savePersonalData")
+                "url" =>$this->router->route("app.saveContact")
 
             ]);
-            flash("success","Sucesso no Registro! Clique em Próximo para Registrar seu Contato e Endereço");
+            flash("success","Sucesso no Registro dos dados pessoais!");
             return;
 
         } catch (\Exception $e) {
@@ -157,10 +157,10 @@ class PersonalDataController extends Controller {
             $this->contact->saveContact();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.saveContact")
+                "url" =>$this->router->route("app.saveDeficiency")
 
             ]);
-            flash("success","Sucesso no Registro! Clique em Próximo para Registrar Deficiência se Houver");
+            flash("success","Sucesso no Registro do contato");
             return;
 
         } catch (\Exception $e) {
@@ -229,7 +229,7 @@ class PersonalDataController extends Controller {
             if($this->data_user->getid_deficiencia()) {
 
                 echo $this->ajaxResponse("redirect", [
-                    "url" => $this->router->route("app.updateDeficiency")
+                    "url" => $this->router->route("app.saveAcademicFormation")
                 ]);
                 flash("success", "Dados Alterados Com Sucesso");
                 return;
@@ -238,7 +238,7 @@ class PersonalDataController extends Controller {
                 echo $this->ajaxResponse("redirect", [
                     "url" =>$this->router->route("app.saveDeficiency")
                 ]);
-                flash("success","Sucesso no Registro! Clique em Próximo para Registrar Formação Acadêmica");
+                flash("success","Sucesso no Registro de sua deficiência");
                 return;
             }
 

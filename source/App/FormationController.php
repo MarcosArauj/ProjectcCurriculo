@@ -68,7 +68,7 @@ class FormationController extends Controller {
 
             if($this->data_user->getid_formacao()) {
                 echo $this->ajaxResponse("redirect", [
-                    "url" => $this->router->route("app.updateAcademicFormation")
+                    "url" => $this->router->route("app.saveOtherCourses")
                 ]);
                 flash("success", "Dados Altualizados com Sucesso");
                 return;
@@ -77,7 +77,7 @@ class FormationController extends Controller {
                 echo $this->ajaxResponse("redirect", [
                     "url" => $this->router->route("app.saveAcademicFormation")
                 ]);
-                flash("success", "Sucesso no Registro! Clique em Próximo para Registrar Outros Cursos");
+                flash("success", "Sucesso no Registro de sua formação acadêmica");
                 return;
 
             }
