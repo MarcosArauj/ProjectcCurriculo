@@ -103,7 +103,7 @@ class CurriculumController extends Controller {
 
             flash("success","Idioma Excluido com Sucesso!" .$this->user_logado->getid_usuario());
 
-            Login::logout();
+            unset($_SESSION[User::SESSION]);
             $this->router->redirect("web.register");
 
         } catch (\Exception $e) {
