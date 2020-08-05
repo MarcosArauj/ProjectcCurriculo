@@ -182,6 +182,22 @@ $(document).ready(function () {
         $('.success-enabled').css("display" ,"none");
     }
 
+    // Adaptações Deficiência
+    $('#simadaptacoes').on('click',function () {
+        $('.adaptacao').css("display" ,"block");
+
+    });
+    $('#naoadaptacoes').on('click',function () {
+        $('.adaptacao').css("display" ,"none");
+    });
+
+    if($('#simadaptacoes').prop("checked")) {
+        $('.adaptacao').css("display" ,"block");
+
+    } else if($('#naoadaptacoes').prop("checked")) {
+        $('.adaptacao').css("display" ,"none");
+    }
+
 });
 
 

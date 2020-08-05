@@ -9,7 +9,7 @@
         <?php echo flash(); ?>
 
     </div>
-<form class="form" action="/curriculum/deficiency" method="post" autocomplete="off">
+<form class="form" action="/curriculum/deficiency/create" method="post" autocomplete="off">
     <div class="card border-success ">
         <div class="card-body">
             <div class="row">
@@ -52,7 +52,7 @@
                     <div class="row">
                         <div class="form-group col-md-12">
                             <label for="especificacao"><strong class="obrigatorio">*</strong><b>Especifique sua Deficiência</b></label>
-                            <textarea class="form-control form-control-sm" id="especificacao" name="especificacao_deficiencia" rows="4" required><?php echo htmlspecialchars( $user["especificacao_deficiencia"], ENT_COMPAT, 'UTF-8', FALSE ); ?></textarea>
+                            <textarea class="form-control form-control-sm" id="especificacao" name="especificacao_deficiencia" rows="3" required><?php echo htmlspecialchars( $user["especificacao_deficiencia"], ENT_COMPAT, 'UTF-8', FALSE ); ?></textarea>
                         </div>
                     </div>
                     <div class="custom-control custom-switch">
@@ -65,7 +65,7 @@
                 <div class="col deficiencia">
                     <div class="row">
                         <div class="form-group  col-md-12">
-                        <strong class="obrigatorio">*</strong><b>Possúi veículo adaptado ?</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="offset-md-4"></span>
+                        <strong class="obrigatorio">*</strong><b>Possúi veículo adaptado ?</b>&nbsp;<br>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="simveículo" name="veiculo_adaptado" class="custom-control-input" value="Sim" <?php if( $user["veiculo_adaptado"] == 'Sim' ){ ?> checked <?php } ?>>
                             <label class="custom-control-label" for="simveículo">Sim</label>
@@ -75,7 +75,7 @@
                             <label class="custom-control-label" for="naoveículo">Não</label>
                         </div>
                         <br>
-                        <strong class="obrigatorio">*</strong><b>Independente no transporte coletivo ?</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="offset-md-2"></span>
+                        <strong class="obrigatorio">*</strong><b>Independente no transporte coletivo ?</b><br>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="simtransporte" name="transporte" class="custom-control-input" value="Sim" <?php if( $user["transporte"] == 'Sim' ){ ?> checked <?php } ?>>
                             <label class="custom-control-label" for="simtransporte">Sim</label>
@@ -85,7 +85,7 @@
                             <label class="custom-control-label" for="naotransporte">Não</label>
                         </div>
                         <br>
-                        <strong class="obrigatorio">*</strong><b>Necessita de acompanhantes ou cão-guia ?</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="offset-md-1"></span>
+                        <strong class="obrigatorio">*</strong><b>Necessita de acompanhantes ou cão-guia ?</b><br>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="simacompanhantes" name="acompanhantes" class="custom-control-input" value="Sim" <?php if( $user["acompanhantes"] == 'Sim' ){ ?> checked <?php } ?>>
                             <label class="custom-control-label" for="simacompanhantes">Sim</label>
@@ -95,7 +95,7 @@
                             <label class="custom-control-label" for="naoacompanhantes">Não</label>
                         </div>
                         <br>
-                        <strong class="obrigatorio">*</strong><b>Necessita de adaptações no ambiente de trabalho ?</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <strong class="obrigatorio">*</strong><b>Necessita de adaptações no ambiente de trabalho ?</b><br>
                         <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="simadaptacoes" name="adaptacoes_trabalho" class="custom-control-input" value="Sim" <?php if( $user["adaptacoes_trabalho"] == 'Sim' ){ ?> checked <?php } ?>>
                             <label class="custom-control-label" for="simadaptacoes">Sim</label>
@@ -107,9 +107,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-md-12">
+                        <div class="form-group col-md-12 adaptacao">
                             <label for="especificacao_nessecidade"><b>Especifique a Necessidade</b></label>
-                            <textarea class="form-control form-control-sm" id="especificacao_nessecidade" name="especificacao_trabalho" placeholder="Digite no espaço acima as adaptações necessárias no ambiente de trabalho."  rows="4" ><?php echo htmlspecialchars( $user["especificacao_trabalho"], ENT_COMPAT, 'UTF-8', FALSE ); ?></textarea>
+                            <textarea class="form-control form-control-sm" id="especificacao_nessecidade" name="especificacao_trabalho" placeholder="Digite no espaço acima as adaptações necessárias no ambiente de trabalho."  rows="2" ><?php echo htmlspecialchars( $user["especificacao_trabalho"], ENT_COMPAT, 'UTF-8', FALSE ); ?></textarea>
                         </div>
                     </div>
                 </div>

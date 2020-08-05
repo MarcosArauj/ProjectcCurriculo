@@ -18,6 +18,10 @@ body{
     display: none;
 }
 
+.adaptacao {
+    display: none;
+}
+
 #titulo_home{
     margin-top: auto;
     text-align: center;

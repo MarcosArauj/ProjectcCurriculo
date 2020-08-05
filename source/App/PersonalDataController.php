@@ -229,14 +229,14 @@ class PersonalDataController extends Controller {
             if($this->data_user->getid_deficiencia()) {
 
                 echo $this->ajaxResponse("redirect", [
-                    "url" => $this->router->route("app.saveAcademicFormation")
+                    "url" => $this->router->route("app.updateDeficiency")
                 ]);
                 flash("success", "Dados Alterados Com Sucesso");
                 return;
             }else {
 
                 echo $this->ajaxResponse("redirect", [
-                    "url" =>$this->router->route("app.saveDeficiency")
+                    "url" =>$this->router->route("app.saveAcademicFormation")
                 ]);
                 flash("success","Sucesso no Registro de sua deficiência");
                 return;
