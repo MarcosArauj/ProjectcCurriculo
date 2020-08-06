@@ -74,10 +74,8 @@
 </div>
 </form>
 
-
 <!-- Lista de Experiência Profissional -->
-<div  class="card border-success">
 <?php require $this->checkTemplate("table_professional");?>
 
-</div>
+
 

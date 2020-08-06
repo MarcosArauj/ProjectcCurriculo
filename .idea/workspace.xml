@@ -3,15 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/CurriculumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/CurriculumController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/FormationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/FormationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/create_deficiency.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_deficiency.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/update_deficiency.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/update_deficiency.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/images/user/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/table_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/table_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_deficiency.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_deficiency.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_deficiency.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_deficiency.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/table_languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/table_languages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/table_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/table_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/table_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/table_professional.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +135,8 @@
       <workItem from="1596158115110" duration="54000" />
       <workItem from="1596570160338" duration="12044000" />
       <workItem from="1596584258793" duration="1408000" />
-      <workItem from="1596660796018" duration="3861000" />
+      <workItem from="1596660796018" duration="4183000" />
+      <workItem from="1596675961637" duration="688000" />
     </task>
     <servers />
   </component>

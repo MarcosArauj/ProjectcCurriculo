@@ -1,5 +1,6 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php if( $professional ){ ?>
 
+<div class="card border-success">
 <table class="table table-striped border-success">
         <thead>
         <tr>
@@ -51,6 +52,7 @@
 
         </tbody>
     </table>
+</div>
 <?php }else{ ?>
 
 <div  class="alert alert-danger">
