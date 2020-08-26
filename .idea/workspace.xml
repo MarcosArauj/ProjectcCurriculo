@@ -2,18 +2,181 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/theme/_default.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ProjectcCurriculo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProjectcCurriculo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/create_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/create_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/table_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views-cache/table_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_deficiency.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_deficiency.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/table_languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/table_languages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/table_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/table_other_courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/table_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/table_professional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/ErrorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/ErrorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/Pages/Page.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/Pages/PageCurriculum.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/Pages/PageError.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/Pages/PageRecoverPassword.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/Pages/PageWeb.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/WebController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/WebController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Config/FuncoesUteis.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/UsefulFunctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Support/EmailRecover.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Support/EmailRecover.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Support/RecoverPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Support/RecoverPassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-all.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-draw-string.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-extend-class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-multiple-template-directories.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-nested-loop.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-plugin-compress.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-plugin-img-resize.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-simple.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-webpage-new.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/example-webpage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl/Exception.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl/IPlugin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl/NotFoundException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl/Parser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl/Plugin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl/Plugin/Compress.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl/Plugin/ImageResize.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl/Plugin/PathReplace.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl/PluginContainer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/Tpl/SyntaxException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/library/Rain/autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/phpunit.xml.dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/hero.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/js/bootstrap-alerts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/js/bootstrap-buttons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/js/bootstrap-dropdown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/js/bootstrap-modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/js/bootstrap-popover.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/js/bootstrap-scrollspy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/js/bootstrap-tabs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/js/bootstrap-twipsy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/js/less-1.1.5.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/lib/bootstrap.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/lib/forms.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/lib/mixins.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/lib/patterns.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/lib/reset.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/lib/scaffolding.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/lib/tables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/lib/type.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/bootstrap/lib/variables.less" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/compress/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/compress/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/compress/test_compress.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/image_resize/img/logo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/image_resize/img/wysiwyg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/image_resize/page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/image_resize/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/multiple-template-directories/base/subfolder/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/multiple-template-directories/base/subfolder/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/multiple-template-directories/newimplement/subfolder/gnb.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/multiple-template-directories/newimplement/subfolder/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/nested_loop/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/nested_loop/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl2/img/bottom.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl2/img/logo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl2/img/top.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl2/page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl2/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/bg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/bg.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/bottom.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/easy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/easy_text.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/fast.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/fast_text.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/googlegroup.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/groups_logo_sm.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/groups_logo_sm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/groups_logo_sm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/home_title.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/list" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/list.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/logo.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/pencil.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/search.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/top.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/useful.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/useful_text.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/wysiwyg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/img/wysiwyg_text.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/raintpl3/subfolder/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/simple/simple_template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/simple/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/test/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/templates/test/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/test/Tpl/Tests/Tpl/PluginContainerTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/test/Tpl/Tests/Tpl/PluginTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/test/Tpl/Tests/TplTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/test/Tpl/Tests/_files/template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/rain/raintpl/test/bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_academic_formation.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_contact.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_deficiency.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_languages.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_personal_data.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/create_user.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/dashboard.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/detail_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/error.99b12d445d5731457d7c4b9ba21b5786.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/finish_curriculum.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/footer.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/footer.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/header.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/header.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/home.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/login.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/navebar.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/profile.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/start.96b7dbce9aa5a81297ce719677b03deb.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/table_languages.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/table_other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/table_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/update_academic_formation.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/update_contact.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/update_deficiency.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/update_languages.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/update_other_courses.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/update_personal_data.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/update_professional.6b2052e37911de9d31602636a960b2ee.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/navebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/includes/navebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/email/email_recover.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/email/email_recover.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/error/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/error/error.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/forgot_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/recover_password/forgot_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/forgot_sent.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/recover_password/forgot_sent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/recover_send.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/recover_password/recover_send.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/reset_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/recover_password/reset_success.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/create_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/ex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/start.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +188,20 @@
     <execution>
       <executable path="composer" />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,10 +228,10 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/vendor/rain/raintpl" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
       <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/league/plates" />
     </include_path>
   </component>
   <component name="ProjectId" id="1eNYhrstTgaaHgG5yDVDdLgrgbo" />
@@ -82,16 +259,18 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\includes" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover-password" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\assets\images" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover_password" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App\Pages" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover-password" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover-password" />
     </key>
   </component>
@@ -136,7 +315,10 @@
       <workItem from="1596570160338" duration="12044000" />
       <workItem from="1596584258793" duration="1408000" />
       <workItem from="1596660796018" duration="4183000" />
-      <workItem from="1596675961637" duration="688000" />
+      <workItem from="1596675961637" duration="812000" />
+      <workItem from="1596895829949" duration="433000" />
+      <workItem from="1596997440510" duration="175000" />
+      <workItem from="1598465607129" duration="14304000" />
     </task>
     <servers />
   </component>
@@ -156,10 +338,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1595966538320" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1596047960091">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598479126050">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596047960091" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1598479126050" />
     <state x="459" y="277" key="ComposerInitDialogKey" timestamp="1594165234046">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -172,6 +354,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="453" y="178" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1595966080573" />
+    <state x="517" y="287" key="NewPhpFileDialog" timestamp="1598466211731">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1598466211731" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1595957945692">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

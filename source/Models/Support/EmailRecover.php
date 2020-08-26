@@ -4,19 +4,22 @@
 namespace Source\Models\Support;
 
 use PHPMailer\PHPMailer\PHPMailer;
+use stdClass;
 use Exception;
-use Rain\Tpl;
 
 class EmailRecover {
     /** @var PHPMailer */
     private $mail;
 
+    /**@var stdClass */
+    private $data;
+
     /**@var Exception */
     private $error;
 
     public function __construct() {
-
         $this->mail = new PHPMailer(true);
+        $this->data = new stdClass();
 
         $this->mail->isSMTP();
         $this->mail->isHTML(true);
@@ -32,32 +35,36 @@ class EmailRecover {
         $this->mail->Password = MAIL_RECOVER["passwd"];
     }
 
+    public function add(string $subject, string $body, string $toName, string $toAddress): EmailRecover {
+        $this->data->subject = $subject;
+        $this->data->body = $body;
+        $this->data->toName = $toName;
+        $this->data->toAddress = $toAddress;
 
-    public function send($toAddress, $toName, $subject, $tplName, $data = array()) {
+        return $this;
 
-        $config = array(
-            "tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/theme/email/",
-            "cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",
-            "debug"         => false
-        );
+    }
 
-        Tpl::configure( $config );
+    public function attach(string $filePath, string $fileName):EmailRecover{
+        $this->data->attach[$filePath] = $fileName;
 
-        $tpl = new Tpl;
+        return $this;
+    }
 
-        foreach ($data as $key => $value) {
-            $tpl->assign($key, $value);
-        }
 
-        $html = $tpl->draw($tplName, true);
-
+    public function send():bool {
         try {
             $this->mail->msgHTML(true);
-            $this->mail->Subject = $subject;
-            $this->mail->Body = $html;
-            $this->mail->addAddress($toAddress,$toName);
-            $this->mail->setFrom(MAIL_RECOVER["from_email"],MAIL_RECOVER["from_name"]);
+            $this->mail->Subject = $this->data->subject;
+            $this->mail->Body = $this->data->body;
+            $this->mail->addAddress($this->data->toAddress,$this->data->toName);
+            $this->mail->setFrom(MAIL_RECOVER["from_email"], MAIL_RECOVER["from_name"]);
 
+            if (!empty($this->data->attach)){
+                foreach ($this->data->attach as $path => $name){
+                    $this->mail->addAttachment($path,$name);
+                }
+            }
             $this->mail->send();
             return true;
         } catch (Exception $exception) {

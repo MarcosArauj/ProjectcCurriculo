@@ -23,38 +23,74 @@ class WebController extends Controller {
 
     public function home():void{
 
-        $page = new PageWeb();
+        $head = $this->seo->optimize(
+            site("name"),
+            site("desc"),
+            $this->router->route("web.home"),
+            routeImage("Home")
+        )->render();
 
-        $page->setTpl("home");
+        echo $this->view->render("theme/web/home",[
+            "head" =>$head
+        ]);
+
     }
 
     public function register():void{
 
-        $page = new PageWeb();
+        $head = $this->seo->optimize(
+            "Crie sua conta no" . site("name"),
+            site("desc"),
+            $this->router->route("web.register"),
+            routeImage("Register")
+        )->render();
 
-        $page->setTpl("create_user");
+        echo $this->view->render("theme/web/create_user",[
+            "head" =>$head
+        ]);
     }
 
     public function login():void{
+        $head = $this->seo->optimize(
+            "Faça login no" . site("name"),
+            site("desc"),
+            $this->router->route("web.login"),
+            routeImage("Login")
+        )->render();
 
-        $page = new PageWeb();
-
-        $page->setTpl("login");
+        echo $this->view->render("theme/web/login",[
+            "head" =>$head
+        ]);
     }
 
  //------------- Recuperar Senha ---------------------//
     public function forgot():void{
 
-        $page = new PageRecoverPassword();
+        $head = $this->seo->optimize(
+            "Recuperação de Senha " . site("name"),
+            site("desc"),
+            $this->router->route("web.forgot"),
+            routeImage("Recuperação de Senha")
+        )->render();
 
-        $page->setTpl("forgot_password");
+        echo $this->view->render("theme/recover_password/forgot_password",[
+            "head" =>$head
+        ]);
     }
 
     public function sent():void{
 
-        $page = new PageRecoverPassword();
+        $head = $this->seo->optimize(
+            "Recuperação de Senha " . site("name"),
+            site("desc"),
+            $this->router->route("web.sent"),
+            routeImage("Recuperação de Senha")
+        )->render();
 
-        $page->setTpl("forgot_sent");
+        echo $this->view->render("theme/recover_password/forgot_sent",[
+            "head" =>$head
+        ]);
+
     }
 
     public function reset($data):void{
@@ -76,19 +112,34 @@ class WebController extends Controller {
 
         }
 
-        $page = new PageRecoverPassword();
+        $head = $this->seo->optimize(
+            "Recuperação de Senha " . site("name"),
+            site("desc"),
+            $this->router->route("web.reset"),
+            routeImage("Recuperação de Senha")
+        )->render();
 
-        $page->setTpl("recover_send", array(
+        echo $this->view->render("theme/recover_password/recover_send",[
+            "head" =>$head,
             'name' => $recover_pass["primeiro_nome"],
             'code' => $_GET["code"]
-        ));
+        ]);
+
     }
 
     public function resetSuccess():void{
 
-        $page = new PageRecoverPassword();
+        $head = $this->seo->optimize(
+            "Recuperação de Senha " . site("name"),
+            site("desc"),
+            $this->router->route("web.resetSuccess"),
+            routeImage("Recuperação de Senha")
+        )->render();
 
-        $page->setTpl("reset_success");
+        echo $this->view->render("theme/recover_password/reset_success",[
+            "head" =>$head
+        ]);
+
     }
 
 }

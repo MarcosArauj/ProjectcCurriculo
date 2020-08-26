@@ -65,15 +65,25 @@ class AppController extends Controller {
     public function start():void {
 
         $access = Login::checkLogin();
-        $page = new PageWeb();
+
+        $head = $this->seo->optimize(
+            "Bem Vindo(a) " . site("name"),
+            site("desc"),
+            $this->router->route("web.home"),
+            routeImage("Home")
+        )->render();
 
         if ($access == false) {
-            $page->setTpl("start", array(
-                "user" => $this->user_logado->getValues()
-            ));
+
+            echo $this->view->render("theme/web/start",[
+                "head" =>$head,
+                "user" => (object)$this->data_user->getValues()
+            ]);
 
         } else {
-            $page->setTpl("home");
+            echo $this->view->render("theme/web/home",[
+                "head" =>$head
+            ]);
         }
 
     }
@@ -83,11 +93,17 @@ class AppController extends Controller {
      */
     public function dashboard():void {
 
-        $page = new PageCurriculum();
+        $head = $this->seo->optimize(
+            "Bem Vindo(a) " . site("name"),
+            site("desc"),
+            $this->router->route("app.dashboard"),
+            routeImage("Dashboard")
+        )->render();
 
-        $page->setTpl("dashboard", array(
-            "curriculum" => $this->curruculum->getValues()
-        ));
+        echo $this->view->render("theme/curriculum/dashboard",[
+            "head" =>$head,
+            "user" => (object)$this->curruculum->getValues()
+        ]);
 
     }
 
