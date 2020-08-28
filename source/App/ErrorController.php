@@ -5,30 +5,28 @@ namespace Source\App;
 
 
 use Source\App\Pages\PageError;
+use function MongoDB\BSON\toRelaxedExtendedJSON;
 
 class ErrorController extends Controller {
 
     public function __construct($router)
     {
         parent::__construct($router);
+
+        if (!empty($_SESSION["user"])) {
+            $this->router->redirect("curriculum.web");
+        }
     }
 
     public function error(array $data):void{
 
-
         $error = filter_var($data["errcode"],FILTER_VALIDATE_INT);
 
-        $head = $this->seo->optimize(
-            "Erro {$error} |". site("name"),
-            site("desc"),
-            $this->router->route("error.error", ["errcode" =>$error]),
-            routeImage($error)
-        )->render();
+        $page = new PageError();
 
-        echo $this->view->render("theme/error/error",[
-            "head" =>$head,
-            "error" => $error
-        ]);
+        $page->setTpl("error", array(
+            "error"=> $data["errcode"]
+        ));
 
     }
 }

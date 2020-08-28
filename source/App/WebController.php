@@ -23,74 +23,49 @@ class WebController extends Controller {
 
     public function home():void{
 
-        $head = $this->seo->optimize(
-            site("name"),
-            site("desc"),
-            $this->router->route("web.home"),
-            routeImage("Home")
-        )->render();
+        $page = new PageWeb();
 
-        echo $this->view->render("theme/web/home",[
-            "head" =>$head
-        ]);
-
+        $page->setTpl("home", array(
+            "title"=> site("name"),
+        ));
     }
 
     public function register():void{
 
-        $head = $this->seo->optimize(
-            "Crie sua conta no" . site("name"),
-            site("desc"),
-            $this->router->route("web.register"),
-            routeImage("Register")
-        )->render();
+        $page = new PageWeb();
 
-        echo $this->view->render("theme/web/create_user",[
-            "head" =>$head
-        ]);
+        $page->setTpl("create_user", array(
+            "title" => site("name") ." | Crie sua conta no"
+
+        ));
     }
 
     public function login():void{
-        $head = $this->seo->optimize(
-            "Faça login no" . site("name"),
-            site("desc"),
-            $this->router->route("web.login"),
-            routeImage("Login")
-        )->render();
 
-        echo $this->view->render("theme/web/login",[
-            "head" =>$head
-        ]);
+        $page = new PageWeb();
+
+        $page->setTpl("login", array(
+            "title" => site("name") ." | Faça login"
+        ));
     }
 
  //------------- Recuperar Senha ---------------------//
     public function forgot():void{
 
-        $head = $this->seo->optimize(
-            "Recuperação de Senha " . site("name"),
-            site("desc"),
-            $this->router->route("web.forgot"),
-            routeImage("Recuperação de Senha")
-        )->render();
+        $page = new PageRecoverPassword();
 
-        echo $this->view->render("theme/recover_password/forgot_password",[
-            "head" =>$head
-        ]);
+        $page->setTpl("forgot_password", array(
+            "title" => site("name") ." | Recuperação de Senha"
+        ));
     }
 
     public function sent():void{
 
-        $head = $this->seo->optimize(
-            "Recuperação de Senha " . site("name"),
-            site("desc"),
-            $this->router->route("web.sent"),
-            routeImage("Recuperação de Senha")
-        )->render();
+        $page = new PageRecoverPassword();
 
-        echo $this->view->render("theme/recover_password/forgot_sent",[
-            "head" =>$head
-        ]);
-
+        $page->setTpl("forgot_sent", array(
+            "title" => site("name") ." | Recuperação de Senha "
+        ));
     }
 
     public function reset($data):void{
@@ -112,34 +87,22 @@ class WebController extends Controller {
 
         }
 
-        $head = $this->seo->optimize(
-            "Recuperação de Senha " . site("name"),
-            site("desc"),
-            $this->router->route("web.reset"),
-            routeImage("Recuperação de Senha")
-        )->render();
+        $page = new PageRecoverPassword();
 
-        echo $this->view->render("theme/recover_password/recover_send",[
-            "head" =>$head,
-            'name' => $recover_pass["primeiro_nome"],
-            'code' => $_GET["code"]
-        ]);
-
+        $page->setTpl("recover_send", array(
+            "title" => site("name") ." | Recuperação de Senha",
+            "name" => $recover_pass["primeiro_nome"],
+            "code" => $_GET["code"]
+        ));
     }
 
     public function resetSuccess():void{
 
-        $head = $this->seo->optimize(
-            "Recuperação de Senha " . site("name"),
-            site("desc"),
-            $this->router->route("web.resetSuccess"),
-            routeImage("Recuperação de Senha")
-        )->render();
+        $page = new PageRecoverPassword();
 
-        echo $this->view->render("theme/recover_password/reset_success",[
-            "head" =>$head
-        ]);
-
+        $page->setTpl("reset_success", array(
+            "title" => site("name") ." | Senha Recuperada com Sucesso",
+        ));
     }
 
 }

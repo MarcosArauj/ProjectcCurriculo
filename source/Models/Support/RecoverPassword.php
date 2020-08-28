@@ -3,7 +3,6 @@
 
 namespace Source\Models\Support;
 
-use League\Plates\Engine;
 use Source\Models\Model;
 
 /**
@@ -11,9 +10,6 @@ use Source\Models\Model;
  * @package Source\Models\Support
  */
 class RecoverPassword extends Model {
-
-    /* @var Engine */
-    protected $view;
 
     /**
      * @param $email
@@ -52,18 +48,16 @@ class RecoverPassword extends Model {
 
                 $emailRovever = new EmailRecover();
 
-                $this->view =  Engine::create(dirname(__DIR__,3)."/views/theme","php");
-
-                $emailRovever->add(
+                $emailRovever->send(
+                    $data["email"],
+                    $data["primeiro_nome"],
                     "Redefinir senha - ". site("name"),
-                    $this->view->render("email/email_recover", [
+                    "email_recover",
+                    array(
                         "name"=>$data["primeiro_nome"],
                         "link"=>$link,
                         "site"=>site("name")
-                    ]),
-                    $data["primeiro_nome"],
-                    $data["email"]
-                )->send();
+                    ));
 
                 if(!$emailRovever->error()) {
                    return true;

@@ -65,25 +65,18 @@ class AppController extends Controller {
     public function start():void {
 
         $access = Login::checkLogin();
-
-        $head = $this->seo->optimize(
-            "Bem Vindo(a) " . site("name"),
-            site("desc"),
-            $this->router->route("web.home"),
-            routeImage("Home")
-        )->render();
+        $page = new PageWeb();
 
         if ($access == false) {
-
-            echo $this->view->render("theme/web/start",[
-                "head" =>$head,
-                "user" => (object)$this->data_user->getValues()
-            ]);
+            $page->setTpl("start", array(
+                "title"=> "Bem Vindo(a) " . site("name"),
+                "user" => $this->user_logado->getValues()
+            ));
 
         } else {
-            echo $this->view->render("theme/web/home",[
-                "head" =>$head
-            ]);
+            $page->setTpl("home",array(
+                "title"=> site("name"),
+            ));
         }
 
     }
@@ -93,17 +86,12 @@ class AppController extends Controller {
      */
     public function dashboard():void {
 
-        $head = $this->seo->optimize(
-            "Bem Vindo(a) " . site("name"),
-            site("desc"),
-            $this->router->route("app.dashboard"),
-            routeImage("Dashboard")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/dashboard",[
-            "head" =>$head,
-            "user" => (object)$this->curruculum->getValues()
-        ]);
+        $page->setTpl("dashboard", array(
+            "title" =>"Bem Vindo(a) " . site("name"),
+            "curriculum" => $this->curruculum->getValues()
+        ));
 
     }
 
@@ -112,17 +100,12 @@ class AppController extends Controller {
      */
     public function profile():void {
 
-        $head = $this->seo->optimize(
-            "Perfil " . getNameUser(),
-            site("desc"),
-            $this->router->route("app.profile"),
-            routeImage("Profile")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/profile",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues()
-        ]);
+        $page->setTpl("profile", array(
+            "title" => site("name"). " | " . getNameUser(),
+            "user" => $this->data_user->getValues()
+        ));
 
     }
 
@@ -131,19 +114,15 @@ class AppController extends Controller {
      */
     public function savePersonalData():void {
 
-        $head = $this->seo->optimize(
-            "Dados Pessoais - " . site("name"),
-            site("desc"),
-            $this->router->route("app.savePersonalData"),
-            routeImage("Personal Data")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/create_personal_data",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "countries"=> (object)$this->contact->listcountries(),
-            "uf" => (object)$this->contact->listuf()
-        ]);
+        $page->setTpl("create_personal_data", array(
+            "title" => site("name"). " | Dados Pessoais",
+            "user" => $this->user_logado->getValues(),
+            "countries"=> $this->contact->listcountries(),
+            "uf" => $this->contact->listuf()
+
+        ));
 
     }
 
@@ -152,19 +131,16 @@ class AppController extends Controller {
      */
     public function updatePersonalData():void {
 
-        $head = $this->seo->optimize(
-            "Dados Pessoais - " . site("name"),
-            site("desc"),
-            $this->router->route("app.updatePersonalData"),
-            routeImage("Personal Data Update")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/update_personal_data",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "countries"=> (object)$this->contact->listcountries(),
-            "uf" => (object)$this->contact->listuf()
-        ]);
+
+        $page->setTpl("update_personal_data", array(
+            "title" => site("name"). " | Dados Pessoais",
+            "user" => $this->data_user->getValues(),
+            "countries"=> $this->contact->listcountries(),
+            "uf" => $this->contact->listuf()
+
+        ));
 
     }
 
@@ -173,19 +149,13 @@ class AppController extends Controller {
      */
     public function saveContact():void {
 
-        $head = $this->seo->optimize(
-            "Contato - " . site("name"),
-            site("desc"),
-            $this->router->route("app.saveContact"),
-            routeImage("Contact")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/create_contact",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "countries"=> (object)$this->contact->listcountries()
-
-        ]);
+        $page->setTpl("create_contact", array(
+            "title" => site("name"). " | Contato",
+            "user" => $this->data_user->getValues(),
+            "countries"=> $this->contact->listcountries()
+        ));
 
     }
 
@@ -194,19 +164,13 @@ class AppController extends Controller {
      */
     public function updateContact():void {
 
-        $head = $this->seo->optimize(
-            "Contato - " . site("name"),
-            site("desc"),
-            $this->router->route("app.updateContact"),
-            routeImage("Contact")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/update_contact",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "countries"=> (object)$this->contact->listcountries()
-
-        ]);
+        $page->setTpl("update_contact", array(
+            "title" => site("name"). " | Contato",
+            "user" => $this->data_user->getValues(),
+            "countries"=> $this->contact->listcountries()
+        ));
 
     }
 
@@ -215,17 +179,12 @@ class AppController extends Controller {
      */
     public function saveDeficiency():void {
 
-        $head = $this->seo->optimize(
-            "Deficiência - " . site("name"),
-            site("desc"),
-            $this->router->route("app.saveDeficiency"),
-            routeImage("Deficiency")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/create_deficiency",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues()
-        ]);
+        $page->setTpl("create_deficiency", array(
+            "title" => site("name"). " | Deficiência",
+            "user" => $this->data_user->getValues()
+        ));
 
     }
 
@@ -234,17 +193,12 @@ class AppController extends Controller {
      */
     public function updateDeficiency():void {
 
-        $head = $this->seo->optimize(
-            "Deficiência - " . site("name"),
-            site("desc"),
-            $this->router->route("app.updateDeficiency"),
-            routeImage("Deficiency")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/update_deficiency",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues()
-        ]);
+        $page->setTpl("update_deficiency", array(
+            "title" => site("name"). " | Deficiência",
+            "user" => $this->data_user->getValues()
+        ));
 
     }
 
@@ -253,17 +207,12 @@ class AppController extends Controller {
      */
     public function saveAcademicFormation():void {
 
-        $head = $this->seo->optimize(
-            "Formação Acadêmica - " . site("name"),
-            site("desc"),
-            $this->router->route("app.saveAcademicFormation"),
-            routeImage("Academic Formation")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/create_academic_formation",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues()
-        ]);
+        $page->setTpl("create_academic_formation", array(
+            "title" => site("name"). " | Formação Acadêmica",
+            "user" => $this->data_user->getValues()
+        ));
 
     }
 
@@ -272,17 +221,12 @@ class AppController extends Controller {
      */
     public function updateAcademicFormation():void {
 
-        $head = $this->seo->optimize(
-            "Formação Acadêmica - " . site("name"),
-            site("desc"),
-            $this->router->route("app.updateAcademicFormation"),
-            routeImage("Academic Formation")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/update_academic_formation",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues()
-        ]);
+        $page->setTpl("update_academic_formation", array(
+            "title" => site("name"). " | Formação Acadêmica",
+            "user" => $this->data_user->getValues()
+        ));
 
     }
 
@@ -291,17 +235,12 @@ class AppController extends Controller {
      */
     public function otherCourses():void {
 
-        $head = $this->seo->optimize(
-            "Outros Cursos - " . site("name"),
-            site("desc"),
-            $this->router->route("app.otherCourses"),
-            routeImage("Other Courses")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/other_courses",[
-            "head" =>$head,
-            "user" => (object)$this->formation->getOtherCoursesUser($this->user_logado->getid_usuario())
-        ]);
+        $page->setTpl("other_courses", array(
+            "title" => site("name"). " | Outros Cursos",
+            "courses"=>$this->formation->getOtherCoursesUser($this->user_logado->getid_usuario())
+        ));
 
     }
 
@@ -310,18 +249,13 @@ class AppController extends Controller {
      */
     public function saveOtherCourses():void {
 
-        $head = $this->seo->optimize(
-            "Outros Cursos - " . site("name"),
-            site("desc"),
-            $this->router->route("app.saveOtherCourses"),
-            routeImage("Other Courses")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/create_other_courses",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "user" => (object)$this->formation->getOtherCoursesUser($this->user_logado->getid_usuario())
-        ]);
+        $page->setTpl("create_other_courses", array(
+            "title" => site("name"). " | Outros Cursos",
+            "user" => $this->data_user->getValues(),
+            "courses"=>$this->formation->getOtherCoursesUser($this->user_logado->getid_usuario())
+        ));
 
     }
 
@@ -330,21 +264,15 @@ class AppController extends Controller {
      */
     public function updateOtherCourses($data):void {
 
+        $page = new PageCurriculum();
+
         $this->formation->getOtherCourses($data["id_cursos"]);
 
-        $head = $this->seo->optimize(
-            "Outros Cursos - " . site("name"),
-            site("desc"),
-            $this->router->route("app.updateOtherCourses"),
-            routeImage("Other Courses")
-        )->render();
-
-        echo $this->view->render("theme/curriculum/update_other_courses",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "courses" => (object)$this->formation->getValues()
-        ]);
-
+        $page->setTpl("update_other_courses", array(
+            "title" => site("name"). " | Outros Cursos",
+            "user" => $this->data_user->getValues(),
+            "courses"=>$this->formation->getValues()
+        ));
     }
 
     /**
@@ -352,20 +280,15 @@ class AppController extends Controller {
      */
     public function detailOtherCourses($data):void {
 
+        $page = new PageCurriculum();
+
         $this->formation->getOtherCourses($data["id_cursos"]);
 
-        $head = $this->seo->optimize(
-            "Outros Cursos - " . site("name"),
-            site("desc"),
-            $this->router->route("app.detailOtherCourses"),
-            routeImage("Other Courses")
-        )->render();
-
-        echo $this->view->render("theme/curriculum/detail_other_courses",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "courses" => (object)$this->formation->getValues()
-        ]);
+        $page->setTpl("detail_other_courses", array(
+            "title" => site("name"). " | Outros Cursos",
+            "user" => $this->data_user->getValues(),
+            "courses"=>$this->formation->getValues()
+        ));
 
     }
 
@@ -374,18 +297,12 @@ class AppController extends Controller {
      */
     public function languages():void {
 
-        $head = $this->seo->optimize(
-            "Idiomas - " . site("name"),
-            site("desc"),
-            $this->router->route("app.languages"),
-            routeImage("Languages")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/languages",[
-            "head" =>$head,
-            "languages"=>(object)$this->formation->getLanguagesUser($this->user_logado->getid_usuario())
-        ]);
-
+        $page->setTpl("languages", array(
+            "title" => site("name"). " | Idiomas",
+            "languages"=>$this->formation->getLanguagesUser($this->user_logado->getid_usuario())
+        ));
     }
 
     /**
@@ -393,20 +310,14 @@ class AppController extends Controller {
      */
     public function saveLanguages():void {
 
-        $head = $this->seo->optimize(
-            "Salvar Idiomas - " . site("name"),
-            site("desc"),
-            $this->router->route("app.saveLanguages"),
-            routeImage("Save Languages")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/create_languages",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "languages"=>(object)$this->formation->getLanguagesUser($this->user_logado->getid_usuario()),
-            "lang_cad"=>(object)$this->formation->languages()
-        ]);
-
+        $page->setTpl("create_languages", array(
+            "title" => site("name"). " | Idiomas" ,
+            "user" => $this->data_user->getValues(),
+            "languages"=>$this->formation->getLanguagesUser($this->user_logado->getid_usuario()),
+            "lang_cad"=>$this->formation->languages()
+        ));
     }
 
     /**
@@ -414,22 +325,16 @@ class AppController extends Controller {
      */
     public function updateLanguages($data):void {
 
+        $page = new PageCurriculum();
+
         $this->formation->getLanguages($data["id_idiomac"]);
 
-        $head = $this->seo->optimize(
-            "Idiomas - " . site("name"),
-            site("desc"),
-            $this->router->route("app.updateLanguages"),
-            routeImage("Languages Update")
-        )->render();
-
-        echo $this->view->render("theme/curriculum/update_languages",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "languages"=>(object)$this->formation->getValues(),
-            "lang_cad"=>(object)$this->formation->languages()
-        ]);
-
+        $page->setTpl("update_languages", array(
+            "title" => site("name"). " | Idiomas",
+            "user" => $this->data_user->getValues(),
+            "languages" =>$this->formation->getValues(),
+            "lang_cad"=>$this->formation->languages()
+        ));
     }
 
     /**
@@ -437,18 +342,12 @@ class AppController extends Controller {
      */
     public function professional():void {
 
-        $head = $this->seo->optimize(
-            "Experiência Profissional - " . site("name"),
-            site("desc"),
-            $this->router->route("app.professional"),
-            routeImage("Professional")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/professional",[
-            "head" =>$head,
-            "professional"=>(object)$this->professional->getExProfessionalUser($this->user_logado->getid_usuario())
-        ]);
-
+        $page->setTpl("professional", array(
+            "title" => site("name"). " | Experiência Profissional",
+            "professional"=>$this->professional->getExProfessionalUser($this->user_logado->getid_usuario())
+        ));
     }
 
     /**
@@ -456,18 +355,13 @@ class AppController extends Controller {
      */
     public function saveProfessional():void {
 
-        $head = $this->seo->optimize(
-            "Experiência Profissional - " . site("name"),
-            site("desc"),
-            $this->router->route("app.saveProfessional"),
-            routeImage("Professional")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/create_professional",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "professional"=>(object)$this->professional->getExProfessionalUser($this->user_logado->getid_usuario())
-        ]);
+        $page->setTpl("create_professional", array(
+            "title" => site("name"). " | Experiência Profissional",
+            "user" => $this->data_user->getValues(),
+            "professional"=>$this->professional->getExProfessionalUser($this->user_logado->getid_usuario()),
+        ));
 
     }
 
@@ -476,21 +370,15 @@ class AppController extends Controller {
      */
     public function updateProfessional($data):void {
 
+        $page = new PageCurriculum();
+
         $this->professional->getExProfessional($data["id_profissional"]);
 
-        $head = $this->seo->optimize(
-            "Experiência Profissional - " . site("name"),
-            site("desc"),
-            $this->router->route("app.updateProfessional"),
-            routeImage("Professional")
-        )->render();
-
-        echo $this->view->render("theme/curriculum/update_professional",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "professional"=>(object)$this->professional->getValues()
-        ]);
-
+        $page->setTpl("update_professional", array(
+            "title" => site("name"). " | Experiência Profissional",
+            "user" => $this->data_user->getValues(),
+            "professional"=>$this->professional->getValues()
+        ));
     }
 
     /**
@@ -498,22 +386,15 @@ class AppController extends Controller {
      */
     public function detailProfessional($data):void {
 
+        $page = new PageCurriculum();
 
         $this->professional->getExProfessional($data["id_profissional"]);
 
-        $head = $this->seo->optimize(
-            "Experiência Profissional - " . site("name"),
-            site("desc"),
-            $this->router->route("app.detailProfessional"),
-            routeImage("Professional")
-        )->render();
-
-        echo $this->view->render("theme/curriculum/detail_professional",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues(),
-            "professional"=>(object)$this->professional->getValues()
-        ]);
-
+        $page->setTpl("detail_professional", array(
+            "title" => site("name"). " | Experiência Profissional",
+            "user" => $this->data_user->getValues(),
+            "professional"=>$this->professional->getValues()
+        ));
     }
 
 
@@ -528,17 +409,12 @@ class AppController extends Controller {
             return;
         }
 
-        $head = $this->seo->optimize(
-            "Curriculo- " . site("name"),
-            site("desc"),
-            $this->router->route("app.saveCurriculum"),
-            routeImage("Save Curriculum")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/finish_curriculum",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues()
-        ]);
+        $page->setTpl("finish_curriculum", array(
+            "title" => site("name"). " | Finalizar Curriculo",
+            "user" => $this->data_user->getValues()
+        ));
 
     }
 
@@ -547,17 +423,12 @@ class AppController extends Controller {
      */
     public function updatePassword():void {
 
-        $head = $this->seo->optimize(
-            "Alterar Senha- " . site("name"),
-            site("desc"),
-            $this->router->route("app.updatePassword"),
-            routeImage("Update Password")
-        )->render();
+        $page = new PageCurriculum();
 
-        echo $this->view->render("theme/curriculum/update_password",[
-            "head" =>$head,
-            "user" => (object)$this->data_user->getValues()
-        ]);
+        $page->setTpl("update_password", array(
+            "title" => site("name"). " | Alterar Senha",
+            "user" => $this->data_user->getValues()
+        ));
 
     }
 
