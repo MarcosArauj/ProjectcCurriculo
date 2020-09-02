@@ -42,7 +42,7 @@ $router->post("/reset", "AuthController:reset","auth.reset");
 //------ Area de Trabalho -----------------//
 $router->group("/user");
 $router->get("", "AppController:profile","app.profile");
-$router->get("dashboard", "AppController:dashboard","app.dashboard");
+$router->get("/dashboard", "AppController:dashboard","app.dashboard");
 $router->get("/start", "AppController:start","app.start");
 //------ Password -----------------//
 $router->get("/password/update", "AppController:updatePassword","app.updatePassword");

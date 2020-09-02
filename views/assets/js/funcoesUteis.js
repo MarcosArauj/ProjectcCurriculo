@@ -310,10 +310,32 @@ $('#uf').on('change', function () {
         error: function (data) {
             $('#city').html('Erro ao carregar!');
         }
-
-
     });
-
-
 });
 
+
+
+$(document).ready(function () {
+    $(function(){
+        // Executa o evento click no button
+        $('#btncopy').click(function(){
+            // Seleciona o conteúdo do input
+            $('#link').select();
+            // Copia o conteudo selecionado
+            var copy = document.execCommand('copy');
+            // Verifica se foi copia e retona mensagem
+            if(copy){
+                var view = '<div class="message success"> Sucesso ao Copiar Link </div>';
+                $(".alert_copy").html(view);
+                $(".message").effect("bounce");
+                return;
+            }else {
+                var view = '<div class="message error"> Erro ao copiar, seu navegador pode não ter suporte a essa função.</div>';
+                $(".alert_copy").html(view);
+                $(".message").effect("bounce");
+            }
+            // Cancela a execução do formulário
+            return false;
+        });
+    });
+});

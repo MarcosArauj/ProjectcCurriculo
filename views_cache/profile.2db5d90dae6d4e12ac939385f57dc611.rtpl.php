@@ -35,7 +35,7 @@
                         <img class="img-circle" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
                         <?php } ?>
 
-                        <label id="userphoto" for="foto_usuario">Enviar Foto</label>
+                        <label id="userphoto" for="foto_usuario">Carregar Foto</label>
                         <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/>
                     </div>
                     <!-- Coluna 2 -->
@@ -59,6 +59,9 @@
                         <div class="row">
                             <label><b>Nacionalidade: </b></label>&nbsp;
                             <span><?php echo htmlspecialchars( $user["nacionalidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
+                        </div>
+                        <div class="row">
+                            <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#ModalCompartilha" href="" title="Link de Compartinhamento">Link de Compartinhamento <i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <!-- Coluna 3 -->
@@ -103,16 +106,15 @@
             </div>
             <div class="card-footer">
                 <div class="float-left">
-                <a class="btn btn-danger" href="/user/other_courses" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
                 <button class="btn btn-md btn-success" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Foto</button>
                 </div>
                 <div class="float-right">
+                    <a class="btn btn-danger" href="/user/dashboard" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Início </a>
                     <a class="btn btn-primary" href="/user/personal_data/update" title="Editar Perfil"> Editar Perfil <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
                     <a class="btn btn-danger" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir Cadastro</a>
                     <!-- Modal Excluir -->
                     <div class="modal fade" id="ModalExcluir" role="dialog">
                         <div class="modal-dialog modal-sm">
-
                             <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-body">
@@ -129,6 +131,26 @@
             </div>
         </div>
 </form>
+    <!-- Modal Compartilhamento de Link do Curriculo -->
+    <div class="modal fade" id="ModalCompartilha" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="alert_copy ">
+                        <?php echo flash(); ?>
+
+                    </div>
+                    <p><b>Link de Compartinhamento do seu Curriculo</b></p>
+                    <input type="text" id="link" class="form-control" value="<?php echo site('root'); ?>/curriculum/<?php echo htmlspecialchars( $curriculum, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
+                </div>
+                <div class="modal-footer">
+                    <button id="btncopy"  class="btn btn-danger btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php require $this->checkTemplate("footer");?>
 
 <script>
@@ -141,4 +163,6 @@
         };
         reader.readAsDataURL(event.target.files[0]);
     };
+
+
 </script>

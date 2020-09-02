@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/CurriculumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/CurriculumController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/WebController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/WebController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Curriculum.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Curriculum.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/email_recover.afce575e899651344132a33a89a1e278.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
     </list>
@@ -140,7 +136,7 @@
       <workItem from="1598607263681" duration="161000" />
       <workItem from="1598636784363" duration="334000" />
       <workItem from="1598638740576" duration="442000" />
-      <workItem from="1599069176551" duration="5677000" />
+      <workItem from="1599069176551" duration="10708000" />
     </task>
     <servers />
   </component>
