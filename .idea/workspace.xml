@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Config/FuncoesUteis.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/UsefulFunctions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_deficiency.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_deficiency.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/finish_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/finish_curriculum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/CurriculumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/CurriculumController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/WebController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/WebController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Curriculum.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Curriculum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views-cache/email_recover.afce575e899651344132a33a89a1e278.rtpl.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_academic_formation.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_academic_formation.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_contact.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_contact.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_deficiency.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_deficiency.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_languages.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_languages.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_other_courses.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_other_courses.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_personal_data.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_personal_data.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +140,7 @@
       <workItem from="1598607263681" duration="161000" />
       <workItem from="1598636784363" duration="334000" />
       <workItem from="1598638740576" duration="442000" />
+      <workItem from="1599069176551" duration="5677000" />
     </task>
     <servers />
   </component>
@@ -156,18 +152,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Stylelint/0.0.1366.728@0.0.1366.728" timestamp="1594164630463" />
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1595521209125">
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1599070020589">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1595521209125" />
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1599070020589" />
     <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595966538320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1595966538320" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1596047960091">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599072865513">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1596047960091" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1599072865513" />
     <state x="459" y="277" key="ComposerInitDialogKey" timestamp="1594165234046">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -5,6 +5,7 @@ namespace Source\App;
 
 use Source\App\Pages\PageRecoverPassword;
 use Source\App\Pages\PageWeb;
+use Source\Models\Curriculum;
 use Source\Models\Support\RecoverPassword;
 use Source\Models\User;
 
@@ -46,6 +47,24 @@ class WebController extends Controller {
 
         $page->setTpl("login", array(
             "title" => site("name") ." | Faça login"
+        ));
+    }
+
+    /**
+     * Carrega Curriculo Compartilhado
+     */
+    public function shareCurriculum($data):void {
+
+        $page = new PageWeb();
+
+        $curriculum = new Curriculum();
+
+        $curriculum->getCurriculumCod($data['cod_curriculo']);
+
+        $page->setTpl("share_curriculum", array(
+            "title" => site("name"). " | " . $curriculum->getprimeiro_nome(),
+            "curriculum" => $curriculum->getValues()
+
         ));
     }
 

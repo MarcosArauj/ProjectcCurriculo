@@ -10,6 +10,9 @@
         <?php }else{ ?>
 
             <h4><?php echo htmlspecialchars( $user["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <?php echo htmlspecialchars( $user["sobrenome"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h4>
+
+<!--        <a href="<?php echo site('root'); ?>/curriculum/<?php echo htmlspecialchars( $curriculum, ENT_COMPAT, 'UTF-8', FALSE ); ?>" target="_blank"><?php echo site('root'); ?>/curriculum/<?php echo htmlspecialchars( $curriculum, ENT_COMPAT, 'UTF-8', FALSE ); ?></a>-->
+
         <?php } ?>
 
     </div>

@@ -31,6 +31,27 @@ class Curriculum extends Model {
     }
 
     /**
+     * @param $cod_curriculo
+     * Pegar dados do Curriculo pelo Código
+     */
+    public function getCurriculumCod($cod_curriculo): void {
+
+        $results = $this->conn->select("SELECT * FROM v_curriculo
+            WHERE cod_curriculo = :cod_curriculo",array(
+            ":cod_curriculo" =>$cod_curriculo
+        ));
+
+        if (count($results) > 0) {
+
+            $data = $results[0];
+
+            $this->setData($data);
+
+        }
+
+    }
+
+    /**
      * @param $id_usuario
      * @return bool
      *
@@ -72,8 +93,9 @@ class Curriculum extends Model {
      */
     public function saveCurriculum(): bool {
 
-        $results = $this->conn->select("CALL sp_curriculo_salvar(:id_usuario)", array(
-            ":id_usuario"=>$this->getid_usuario()
+        $results = $this->conn->select("CALL sp_curriculo_salvar(:id_usuario,:cod_curriculo)", array(
+            ":id_usuario"=>$this->getid_usuario(),
+            ":cod_curriculo"=>$this->getcod_curriculo()
         ));
 
         if (count($results) === 0) {
