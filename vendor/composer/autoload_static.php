@@ -14,7 +14,7 @@ class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
         'c20bc10ce25279f0f8dea289795555f3' => __DIR__ . '/../..' . '/source/Config/Config.php',
         'dc30e632b06392f68c51364eb79f7f08' => __DIR__ . '/../..' . '/source/Config/Helpers.php',
         '8c85b75f05b51386debeab4e018f5310' => __DIR__ . '/../..' . '/source/Config/Minify.php',
-        'c0aeaa31bdbd36d44d5134f0b109b95c' => __DIR__ . '/../..' . '/source/Config/UsefulFunctions.php',
+        'a647dde246603a0222daa30dc62a0c52' => __DIR__ . '/../..' . '/source/Utilities/UsefulFunctions.php',
     );
 
     public static $prefixLengthsPsr4 = array (

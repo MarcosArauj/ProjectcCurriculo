@@ -73,7 +73,7 @@ class CurriculumController extends Controller {
 
             $this->curruculum->setid_usuario((INT)$this->user_logado->getid_usuario());
 
-            $this->curruculum->setcod_curriculo(str_pad(mt_Rand(0, 999999), 6, '0', STR_PAD_LEFT));
+            $this->curruculum->setcod_curriculo(str_pad(mt_Rand(0, 9999999999), 10, '0', STR_PAD_LEFT));
 
             $this->curruculum->setData($data);
 

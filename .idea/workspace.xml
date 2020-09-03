@@ -3,11 +3,42 @@
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/WebController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/WebController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Config/Minify.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Minify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Config/UsefulFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Utilities/UsefulFunctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Formation.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Formation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/funcoesUteis.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/mascara.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/mask.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/validacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/navebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/navebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/table_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/table_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_academic_formation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/recover_password/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/create_academic_formation.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_academic_formation.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/create_contact.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_contact.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/create_other_courses.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_other_courses.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/create_personal_data.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_personal_data.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/header.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/header.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/header.520a0ec944c2973f9df3545cfc19d155.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/header.520a0ec944c2973f9df3545cfc19d155.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/header.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/header.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/login.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/login.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/navebar.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/navebar.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/share_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/share_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/table_other_courses.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/table_other_courses.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,16 +107,17 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\Utilities" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover-password" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\assets\images" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover_password" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App\Pages" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover-password" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover-password" />
     </key>
   </component>
@@ -136,7 +168,8 @@
       <workItem from="1598607263681" duration="161000" />
       <workItem from="1598636784363" duration="334000" />
       <workItem from="1598638740576" duration="442000" />
-      <workItem from="1599069176551" duration="10708000" />
+      <workItem from="1599069176551" duration="11047000" />
+      <workItem from="1599152926759" duration="15090000" />
     </task>
     <servers />
   </component>

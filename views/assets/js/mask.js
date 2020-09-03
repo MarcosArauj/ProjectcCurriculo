@@ -1,4 +1,4 @@
-function formatar(mascara,documento) {
+function format(mascara,documento) {
     var i = documento.value.length;
     var saida = mascara.substring(0,1);
     var texto = mascara.substring(i);

@@ -35,7 +35,6 @@
                 </div>
             </td>
         </tr>
-
         <?php } ?>
 
         </tbody>

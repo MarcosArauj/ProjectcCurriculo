@@ -21,7 +21,7 @@
       "source/Config/Config.php",
       "source/Config/Helpers.php",
       "source/Config/Minify.php",
-      "source/Config/UsefulFunctions.php"
+      "source/Utilities/UsefulFunctions.php"
 
     ]
   },

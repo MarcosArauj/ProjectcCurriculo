@@ -15,7 +15,7 @@ class Formation extends Model {
 
         $results = $this->conn->select(
             "CALL sp_formacao_salvar(:id_formacao,:nivel_conclusao, :instituicao_conclusao, :ano_inicio_conclusao, :ano_conclusao, :nivel_andamento,
-             :instituicao_andamento, :ano_inicio_andamento, :curso, :id_usuario)", array(
+             :instituicao_andamento, :ano_inicio_andamento, :curso,:tipo_graduacao, :id_usuario)", array(
             ":id_formacao"=>$this->getid_formacao(),
             ":nivel_conclusao"=>$this->getnivel_conclusao(),
             ":instituicao_conclusao"=>$this->getinstituicao_conclusao(),
@@ -25,6 +25,7 @@ class Formation extends Model {
             ":instituicao_andamento"=>$this->getinstituicao_andamento(),
             ":ano_inicio_andamento"=>$this->getano_inicio_andamento(),
             ":curso"=>$this->getcurso(),
+            ":tipo_graduacao"=>$this->gettipo_graduacao(),
             ":id_usuario"=>$this->getid_usuario()
         ));
 

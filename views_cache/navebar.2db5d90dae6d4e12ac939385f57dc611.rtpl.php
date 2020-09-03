@@ -39,6 +39,15 @@
                         <span> Idiomas </span>
                     </a>
                 </li>
+                <?php if( existDeficiency() ){ ?>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/deficiency/update">
+                        <span> Deficiência </span>
+                    </a>
+                </li>
+                <?php } ?>
+
                 <li class="nav-item">
                     <a class="nav-link" href="/user/professional_experience">
                         <span> Experiencia Profissional </span>

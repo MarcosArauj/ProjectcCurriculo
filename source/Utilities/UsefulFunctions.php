@@ -74,3 +74,34 @@ function formatCpf($cpf){
 
 }
 
+function existDeficiency():bool {
+
+    $user = Login::getFromSession();
+
+    $deficiency = $user->getdeficiencia_existe();
+    if($deficiency == 'Sim'){
+        return true;
+    }
+
+    return false;
+}
+
+//--- Calcula Idade
+function calculateAge($birth_date){
+
+    // separando yyyy, mm, ddd
+    list($year_diff, $month_diff, $day_diff) = explode('-', $birth_date);
+
+    // data atual
+    $today = mktime(0, 0, 0, date('m'), date('d'), date('Y'));
+    // Descobre a unix timestamp da data de nascimento do fulano
+    $birth = mktime( 0, 0, 0, $month_diff, $day_diff, $year_diff);
+
+    // cálculo
+    $age = floor((((($today - $birth) / 60) / 60) / 24) / 365.25);
+
+    return $age;
+}
+
+
+

@@ -63,6 +63,10 @@
                         <div class="row">
                             <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#ModalCompartilha" href="" title="Link de Compartinhamento">Link de Compartinhamento <i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
                         </div>
+                        <br>
+                        <div class="row">
+                            <a class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#" href="" title="Gerar PDF">Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i></a>
+                        </div>
                     </div>
                     <!-- Coluna 3 -->
                     <div class="col-6">

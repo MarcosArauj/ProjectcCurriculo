@@ -16,7 +16,7 @@
 
     </div>
     <form class="form" action="/login" method="post" autocomplete="off">
-        <div class="card border-success ">
+        <div class="card border-success">
             <div class="card-header text-success text-center">
                 <h5><strong>Entre em sua Conta</strong></h5>
             </div>
