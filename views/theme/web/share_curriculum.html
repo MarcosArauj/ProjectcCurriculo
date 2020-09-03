@@ -61,8 +61,10 @@
                        <label><b>Celular: </b></label>&nbsp;
                        <span>{$curriculum.celular} </span>
                        <span class="offset-2"></span>
+                       {if="$curriculum.telefone != NULL"}
                        <label><b>Telefone: </b></label>&nbsp;
                        <span>{$curriculum.telefone} </span>
+                       {/if}
                    </div>
                    <div class="row">
                        <label><b>E-mail: </b></label>&nbsp;

@@ -61,8 +61,10 @@
                        <label><b>Celular: </b></label>&nbsp;
                        <span><?php echo htmlspecialchars( $curriculum["celular"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
                        <span class="offset-2"></span>
+                       <?php if( $curriculum["telefone"] != NULL ){ ?>
                        <label><b>Telefone: </b></label>&nbsp;
                        <span><?php echo htmlspecialchars( $curriculum["telefone"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
+                       <?php } ?>
                    </div>
                    <div class="row">
                        <label><b>E-mail: </b></label>&nbsp;
