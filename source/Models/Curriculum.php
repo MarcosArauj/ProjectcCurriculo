@@ -85,6 +85,22 @@ class Curriculum extends Model {
         return (count($results) > 0);
 
     }
+    /**
+     * @param string $cpf
+     * @return bool
+     * Checar CPF já cadastrado
+     */
+    public function checkCodCurriculum($cod_curriculo):bool {
+
+        $results =  $this->conn->select("SELECT * FROM v_curriculo 
+                WHERE  id_usuario = :id_usuario", array(
+            ":cod_curriculo"=>$cod_curriculo
+        ));
+        if(count($results) > 0){
+            return true;
+        }
+        return false;
+    }
 
     /**
      * @return bool

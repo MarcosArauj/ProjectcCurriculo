@@ -8,6 +8,7 @@
         </h1>
     </div>
 </section>
+{if="$curriculum"}
 <section class="container col-md-8">
    <div class="card border-success">
      <div class="card-header text-success text-center">
@@ -45,8 +46,7 @@
                    <div class="row">
                        <label><b>Naturalidade: </b></label>&nbsp;
                        <span>{$curriculum.naturalidade}/{$curriculum.uf_naturalidade} </span>
-                   </div>
-                   <div class="row">
+                       <span class="offset-2"></span>
                        <label><b>Nacionalidade: </b></label>&nbsp;
                        <span>{$curriculum.nacionalidade} </span>
                    </div>
@@ -309,5 +309,10 @@
        </div>
    </div>
 </section>
+{else}
+<div  class="alert alert-danger">
+    <h3 class="text-center">Curriculo não Existe</h3>
+</div>
+{/if}
 </div>
 {include="footer"}
