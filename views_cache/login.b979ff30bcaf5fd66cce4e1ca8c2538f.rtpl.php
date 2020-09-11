@@ -1,5 +1,6 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
 
+<main role="main">
 <section class="container">
     <div class="align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 id="titulo_home">
@@ -58,13 +59,14 @@
                 </div>
             </div>
             <div class="card-footer">
-                <a class="btn btn-primary" href="/register" title="Cadastro"><strong>&nbsp;&nbsp;Registre-se aqui :)&nbsp;&nbsp;</strong> </a>
+                <a class="btn btn-danger" href="/" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Ínicio </a>
+                <a class="btn btn-primary float-right" href="/register" title="Cadastro"><strong>&nbsp;&nbsp;Registre-se aqui :)&nbsp;&nbsp;</strong> </a>
             </div>
 
         </div>
     </form>
 </section>
-</div>
+</main>
 <?php require $this->checkTemplate("footer");?>
 
 

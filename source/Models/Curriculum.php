@@ -85,7 +85,7 @@ class Curriculum extends Model {
         return (count($results) > 0);
 
     }
-    
+
     /**
      * @return bool
      * @throws \Exception

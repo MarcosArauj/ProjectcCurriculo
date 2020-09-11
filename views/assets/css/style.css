@@ -2,6 +2,39 @@ body{
     background-color: #ccdddd
 }
 
+main#home {
+    background-color: white;
+}
+
+.home {
+    padding-top: 8rem;
+    text-align: center;
+    width: 100%;
+    height: 480px;
+    /*opacity: 0.7;*/
+    background-repeat: repeat-y;
+    background-image: url("/views/assets/images/fundo_home.jpeg");
+}
+
+.text_home {
+    font-size: 1.3em;
+    text-align: center;
+}
+
+img#fluxo {
+    width: 100%;
+
+}
+
+/*#fundo_home {*/
+/*    width: 100%;*/
+/*    height: 480px;*/
+/*    opacity: 0.7;*/
+/*    background-repeat: repeat-y;*/
+/*    background-image: url("/views/assets/images/fundo_home.jpeg");*/
+
+/*}*/
+
 #novo_idioma {
     display: none;
 }
@@ -63,6 +96,44 @@ body{
 .form_actions button {
     order: 1;
     outline: none;
+}
+
+.brand {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.brand:hover{
+    text-decoration: none;
+    color: gainsboro;
+}
+
+.link_navebar {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+.link_footer {
+    text-decoration: none;
+    color: silver;
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+.link_footer:hover{
+    text-decoration: none;
+    color: gainsboro;
+}
+
+.container_footer {
+    position:relative;
+    padding-bottom: 1.3rem;
+    bottom:0;
+    width:100%;
+    text-align: center;
 }
 
 
@@ -195,6 +266,29 @@ a#recuperasenha {
 
 }
 
+a#link_login {
+    border-radius: 20px;
+    display: block;
+    padding: 10px 7px;
+    font-weight: bold;
+    transition: all .23s ease-in-out;
+}
+
+a#link_register {
+    border-radius: 20px;
+    background-color: orangered;
+    color: white;
+    font-size: 1.6em;
+    padding: 10px 30px 10px 30px;
+    font-weight: bold;
+    transition: all .23s ease-in-out;
+}
+
+a#link_register:hover{
+    text-decoration: none;
+    color: gainsboro;
+}
+
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -225,18 +319,6 @@ a#recuperasenha {
 .cor_yahoo{
     background-color: #4B0082;
     color: white
-}
-
-.container_footer {
-    width: auto;
-    max-width: 680px;
-    padding: 0 15px;
-}
-
-.footer {
-    position: fixed;
-    bottom:0;
-    right: 27%;
 }
 
 .img-circle {

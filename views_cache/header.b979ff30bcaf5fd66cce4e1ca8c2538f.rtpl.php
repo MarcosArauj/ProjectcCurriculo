@@ -23,4 +23,3 @@
         <div class="ajax_load_box_title">Aguarde, carrengando...</div>
     </div>
     </div>
-    <main class="container-fluid">

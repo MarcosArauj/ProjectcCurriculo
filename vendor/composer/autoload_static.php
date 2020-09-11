@@ -7,10 +7,6 @@ namespace Composer\Autoload;
 class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
 {
     public static $files = array (
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'c20bc10ce25279f0f8dea289795555f3' => __DIR__ . '/../..' . '/source/Config/Config.php',
         'dc30e632b06392f68c51364eb79f7f08' => __DIR__ . '/../..' . '/source/Config/Helpers.php',
         '8c85b75f05b51386debeab4e018f5310' => __DIR__ . '/../..' . '/source/Config/Minify.php',
@@ -20,12 +16,11 @@ class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
+            'Svg\\' => 4,
             'Source\\' => 7,
         ),
         'P' => 
         array (
-            'Psr\\Http\\Message\\' => 17,
-            'Psr\\Http\\Client\\' => 16,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
@@ -33,35 +28,28 @@ class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
             'MatthiasMullie\\PathConverter\\' => 29,
             'MatthiasMullie\\Minify\\' => 22,
         ),
-        'L' => 
+        'F' => 
         array (
-            'League\\OAuth2\\Client\\' => 21,
+            'FontLib\\' => 8,
         ),
-        'G' => 
+        'D' => 
         array (
-            'GuzzleHttp\\Psr7\\' => 16,
-            'GuzzleHttp\\Promise\\' => 19,
-            'GuzzleHttp\\' => 11,
+            'Dompdf\\' => 7,
         ),
         'C' => 
         array (
             'CoffeeCode\\Router\\' => 18,
-            'CoffeeCode\\Optimizer\\' => 21,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Svg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
+        ),
         'Source\\' => 
         array (
             0 => __DIR__ . '/../..' . '/source',
-        ),
-        'Psr\\Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-        ),
-        'Psr\\Http\\Client\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
         'PHPMailer\\PHPMailer\\' => 
         array (
@@ -75,35 +63,28 @@ class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
         array (
             0 => __DIR__ . '/..' . '/matthiasmullie/minify/src',
         ),
-        'League\\OAuth2\\Client\\' => 
+        'FontLib\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/oauth2-client/src',
-            1 => __DIR__ . '/..' . '/league/oauth2-facebook/src',
-            2 => __DIR__ . '/..' . '/league/oauth2-google/src',
+            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
         ),
-        'GuzzleHttp\\Psr7\\' => 
+        'Dompdf\\' => 
         array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
-        ),
-        'GuzzleHttp\\Promise\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
-        ),
-        'GuzzleHttp\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
         ),
         'CoffeeCode\\Router\\' => 
         array (
             0 => __DIR__ . '/..' . '/coffeecode/router/src',
         ),
-        'CoffeeCode\\Optimizer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/coffeecode/optimizer/src',
-        ),
     );
 
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Sabberworm\\CSS' => 
+            array (
+                0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
+            ),
+        ),
         'R' => 
         array (
             'Rain' => 
@@ -113,12 +94,22 @@ class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
         ),
     );
 
+    public static $classMap = array (
+        'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
+        'HTML5_Data' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Data.php',
+        'HTML5_InputStream' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/InputStream.php',
+        'HTML5_Parser' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Parser.php',
+        'HTML5_Tokenizer' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Tokenizer.php',
+        'HTML5_TreeBuilder' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/TreeBuilder.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c::$classMap;
 
         }, null, ClassLoader::class);
     }

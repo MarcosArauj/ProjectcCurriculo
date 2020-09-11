@@ -307,7 +307,7 @@
        </div>
      </div>
        <div class="card-footer">
-           <a class="btn btn-secondary float-right" href="#" title="Gerar PDF">Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i> </a>
+           <a class="btn btn-secondary float-right" href="/curriculum/pdf/<?php echo htmlspecialchars( $curriculum["cod_curriculo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" title="Gerar PDF">Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i> </a>
        </div>
    </div>
 </section>

@@ -1,11 +1,11 @@
 {include="header"}
+<main role="main">
 <section class="container">
     <div class="align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h2 class="text-center h2">Registro de Usuário</h2>
     </div>
 
 </section>
-
 <section class="container col-md-7">
     <div class="alert_message">
         {function="flash()"}
@@ -84,10 +84,14 @@
         <!--Fim Contato-->
         <div class="card-footer">
             <button class="btn btn-md btn-success float-right">Criar Conta</button>
+            <div class="float-left">
+                <a class="btn btn-danger" href="/" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Ínicio </a>
+                <a class="btn btn-primary" href="/login" title="Login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login&nbsp;&nbsp;</a>
+            </div>
         </div>
 
     </div>
     </form>
 </section>
-</div>
+</main>
 {include="footer"}

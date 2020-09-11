@@ -65,15 +65,16 @@ class AppController extends Controller {
     public function start():void {
 
         $access = Login::checkLogin();
-        $page = new PageWeb();
 
         if ($access == false) {
+            $page = new PageCurriculum();
             $page->setTpl("start", array(
                 "title"=> "Bem Vindo(a) " . site("name"),
                 "user" => $this->user_logado->getValues()
             ));
 
         } else {
+            $page = new PageWeb();
             $page->setTpl("home",array(
                 "title"=> site("name"),
             ));

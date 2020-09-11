@@ -329,7 +329,7 @@ $(document).ready(function () {
                 $(".alert_copy").html(view);
                 $(".message").effect("bounce");
                 return;
-            }else {
+            } else {
                 var view = '<div class="message error"> Erro ao copiar, seu navegador pode não ter suporte a essa função.</div>';
                 $(".alert_copy").html(view);
                 $(".message").effect("bounce");
@@ -339,3 +339,5 @@ $(document).ready(function () {
         });
     });
 });
+
+

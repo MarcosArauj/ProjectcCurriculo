@@ -38,7 +38,7 @@ class WebController extends Controller {
         $page = new PageWeb();
 
         $page->setTpl("create_user", array(
-            "title" => site("name") ." | Crie sua conta no"
+            "title" => site("name") ." | Crie sua conta"
 
         ));
     }
@@ -75,7 +75,7 @@ class WebController extends Controller {
         ));
     }
 
- //------------- Recuperar Senha ---------------------//
+    //------------- Recuperar Senha ---------------------//
     public function forgot():void{
 
         $page = new PageRecoverPassword();
