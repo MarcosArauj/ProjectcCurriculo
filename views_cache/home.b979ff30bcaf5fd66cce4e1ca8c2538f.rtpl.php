@@ -22,9 +22,8 @@
             <a id="link_login" class="btn btn-primary" href="/login" title="Login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login&nbsp;&nbsp;</a>
         </div>
     </div>
-    </div>
-</header>
 </nav>
+</header>
 <main id="home" role="main">
     <section class="section-banner">
         <img src="/views/assets/images/fundo_home.jpg" class="banner-img" alt="main-banner">

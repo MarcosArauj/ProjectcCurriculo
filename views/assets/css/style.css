@@ -340,7 +340,7 @@ label#userphoto {
 
 /* TAMANHO DA SECTION DO BANNER DESCONSIDERANDO O TAMANHO DO NAVBAR */
 .section-banner {
-    height: calc(100vh - 56px);
+    height: calc(110vh - 56px);
 }
 
 .banner-img {
