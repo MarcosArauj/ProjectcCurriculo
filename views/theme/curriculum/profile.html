@@ -6,9 +6,6 @@
           <h4>{$user.nome_social}</h4>
         {else}
             <h4>{$user.primeiro_nome} {$user.sobrenome}</h4>
-
-<!--        <a href="{#site('root')#}/curriculum/{$curriculum}" target="_blank">{#site('root')#}/curriculum/{$curriculum}</a>-->
-
         {/if}
     </div>
 
@@ -21,10 +18,10 @@
                 <div class="row">
                     <!-- Coluna 1 -->
                     <div class="col-3">
-                        {if="$user.foto_usuario != null"}
+                        {if="$user.foto_usuario != NULL"}
                         <img class="img-circle" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">
                         {else}
-                        <img class="img-circle" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
+                        <img class="img-circle" src="/views/assets/images/user/user.png"  alt="Photo">
                         {/if}
                         <label id="userphoto" for="foto_usuario">Carregar Foto</label>
                         <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/>

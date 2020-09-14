@@ -10,9 +10,6 @@
         <?php }else{ ?>
 
             <h4><?php echo htmlspecialchars( $user["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <?php echo htmlspecialchars( $user["sobrenome"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h4>
-
-<!--        <a href="<?php echo site('root'); ?>/curriculum/<?php echo htmlspecialchars( $curriculum, ENT_COMPAT, 'UTF-8', FALSE ); ?>" target="_blank"><?php echo site('root'); ?>/curriculum/<?php echo htmlspecialchars( $curriculum, ENT_COMPAT, 'UTF-8', FALSE ); ?></a>-->
-
         <?php } ?>
 
     </div>
@@ -27,12 +24,12 @@
                 <div class="row">
                     <!-- Coluna 1 -->
                     <div class="col-3">
-                        <?php if( $user["foto_usuario"] != null ){ ?>
+                        <?php if( $user["foto_usuario"] != NULL ){ ?>
 
                         <img class="img-circle" src="<?php echo htmlspecialchars( $user["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" id="nova_imagem" alt="Photo">
                         <?php }else{ ?>
 
-                        <img class="img-circle" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
+                        <img class="img-circle" src="/views/assets/images/user/user.png"  alt="Photo">
                         <?php } ?>
 
                         <label id="userphoto" for="foto_usuario">Carregar Foto</label>

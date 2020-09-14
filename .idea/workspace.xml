@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/assets/images/fundo_login.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/images/fundo_home.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/create_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/footer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/web/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/create_user.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_user.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/footer.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/footer.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views_cache/home.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/home.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/login.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/login.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,18 +91,18 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\assets\images" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover_password" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App\Pages" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover-password" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\Utilities" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover-password" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\assets\images" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\web" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover_password" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App\Pages" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -156,6 +166,9 @@
       <workItem from="1599733458613" duration="299000" />
       <workItem from="1599762685103" duration="170000" />
       <workItem from="1599762928445" duration="17713000" />
+      <workItem from="1599785582515" duration="650000" />
+      <workItem from="1599847756389" duration="2306000" />
+      <workItem from="1600115930945" duration="11517000" />
     </task>
     <servers />
   </component>
@@ -199,9 +212,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1595957945692" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1595955704478">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1600125688822">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1595955704478" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1600125688822" />
   </component>
 </project>

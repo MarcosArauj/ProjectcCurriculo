@@ -19,7 +19,7 @@
             </li>
         </ul>
         <div class="form-inline my-2 my-lg-0">
-            <a id="link_login" class="btn btn-primary" href="/login" title="Login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login&nbsp;&nbsp;</a>
+            <a class="btn btn-primary link_btn" href="/login" title="Login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login&nbsp;&nbsp;</a>
         </div>
     </div>
 </nav>
@@ -33,7 +33,7 @@
             </div>
             <div class="banner-group-2">
                 <h3 class="banner-subtitle"><b>Crie seu Currículo de Uma Forma simples e rápida!</b></h3>
-                <p><a  id="link_register" href="/register" title="COMEÇAR">COMEÇAR</a></p>
+                <p><a  class="btn-lg link_btn link_register" href="/register" title="COMEÇAR">COMEÇAR</a></p>
             </div>
         </div>
     </section>
@@ -89,15 +89,5 @@
     </div>
     <br>
 </main>
-<footer class="container_footer bg-dark">
-    <p class="brand"><strong> {#site("name_complete")#}</strong> Todos os direitos reservados. </p>
-    <p>
-        <a class="link_footer" href="/">Ínicio</a>
-        <span class="offset-1"></span>
-        <a class="link_footer" href="#">Sobre nós</a>
-        <span class="offset-1"></span>
-        <a class="link_footer" href="#">Contato</a>
-    </p>
-    <p class="text-muted"><b>Versão</b> {#site("version")#},  &copy; {#site("name_complete")#} {function="date('Y')"}</p>
-</footer>
+
 {include="footer"}

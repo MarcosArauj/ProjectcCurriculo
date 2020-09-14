@@ -1,5 +1,8 @@
-body{
-    background-color: #ccdddd
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 main#home {
@@ -121,14 +124,14 @@ img#fluxo {
     color: silver;
 }
 
-.container_footer {
+.web_footer {
     position:relative;
-    padding-bottom: 1.3rem;
+    padding-bottom: 1.6rem;
     bottom:0;
     width:100%;
     text-align: center;
+    background-color: #343a40 !important;
 }
-
 
 .form_register_action {
     display: grid;
@@ -156,12 +159,250 @@ img#fluxo {
     z-index: 9;
 }
 
+a#iniciar {
+
+    display: block;
+    width: 20%;
+    margin: auto;
+    padding: 10px 7px;
+    font-weight: bold;
+}
+
+a:hover#iniciar {
+    background-color:  #409cff;
+    border-color: #409cff;
+    width: 19%;
+    border-radius: 15px;
+    display: block;
+    margin: auto;
+    padding: 10px 7px;
+    font-weight: bold;
+    transition: all .23s ease-in-out;
+}
+
+a:hover#iniciar {
+    color: white;
+}
+
+a.link_forgot {
+    float: left;
+    color: #888888;
+    font-weight: bold;
+    font-size: 0.950em;
+    text-transform: capitalize;
+
+}
+
+.link_btn {
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    transition: all .23s ease-in-out;
+}
+
+.link_btn:hover{
+    text-decoration: none;
+    color: gainsboro;
+}
+
+.link:hover{
+    text-decoration: none;
+    color: gainsboro;
+}
+
+.link_register{
+    background-color: orangered;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+/*----Botões Social----*/
+
+.cor_windows{
+    background-color: #007bff;
+    color: white
+}
+
+.cor_google{
+    background-color: #ef1047;
+    color: white
+}
+
+.cor_yahoo{
+    background-color: #4B0082;
+    color: white
+}
+
+.img-circle {
+    width: 150px;
+    height: 150px;
+    padding: 4px;
+    border-radius: 50%;
+    max-width: 100%;
+}
+
+input[type="file"] {
+    display: none;
+}
+label#userphoto {
+    padding: 10px 10px;
+    width: 150px;
+    background-color: #007bff;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.fundo_login{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: url("/views/assets/images/fundo_login.jpg");
+}
+/* TAMANHO DA SECTION DO BANNER DESCONSIDERANDO O TAMANHO DO NAVBAR */
+.section-banner {
+    height: calc(110vh - 56px);
+}
+
+.banner-img {
+    width: 100%;
+    height: inherit;
+    opacity: 0.75;
+}
+
+.banner-text {
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    top: 56px;
+    text-align: center;
+    display: grid;
+}
+
+.banner-group-1 {
+    height: calc(50vh - 28px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-group-2 {
+    height: calc(54vh - 28px);
+    display: grid;
+}
+
+.banner-title {
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.banner-subtitle {
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.login-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    top: 20px;
+}
+
+.card-login {
+    min-width: 400px;
+    height: 370px;
+    background-color: #272a31;
+    border-radius: 20px;
+}
+
+.card-header {
+    width: inherit;
+    height: 15%;
+    /* border: 1px solid #ffffff; */
+    border-bottom: 1px solid #4b4b4b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title{
+    font-size: 22px;
+    color: #ffffff;
+    margin: auto auto;
+}
+
+.card-body {
+    width: inherit;
+    height: 70%;
+    padding: 20px 30px;
+    /* border: 1px solid red; */
+}
+
+.card-footer {
+    width: inherit;
+    height: 15%;
+    /* border: 1px solid #ffffff; */
+    border-top: 1px solid #4b4b4b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group{
+    margin-top: 15px;
+}
+
+.input-group:nth-child(2) {
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.input-group-text {
+    background-color: #1C1F27;
+    color: #ffffff;
+    border-color:#4b4b4b;
+}
+
+input.form-control {
+    background-color: #1C1F27;
+    border-color: #4b4b4b;
+    color: #ffffff;
+}
+
+input.form-control:focus {
+    background-color: #1C1F27;
+    color: #ffffff;
+}
+
+
+.fa{
+    color: white;
+}
 
 /*!
- * Bootstrap v3.4.1 (https://getbootstrap.com/)
- * Copyright 2011-2019 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+* Bootstrap v3.4.1 (https://getbootstrap.com/)
+* Copyright 2011-2019 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+*/
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 .has-success .help-block,
 .has-success .control-label,
@@ -223,159 +464,4 @@ img#fluxo {
 }
 .has-error .form-control-feedback {
     color: #a94442;
-}
-
-a#iniciar {
-
-    display: block;
-    width: 20%;
-    margin: auto;
-    padding: 10px 7px;
-    font-weight: bold;
-}
-
-a:hover#iniciar {
-    background-color:  #409cff;
-    border-color: #409cff;
-    width: 19%;
-    border-radius: 15px;
-    display: block;
-    margin: auto;
-    padding: 10px 7px;
-    font-weight: bold;
-    transition: all .23s ease-in-out;
-}
-
-a:hover#iniciar {
-    color: white;
-}
-
-a#recuperasenha {
-    float: left;
-    color: #888888;
-    font-weight: bold;
-    font-size: 0.950em;
-    text-transform: capitalize;
-
-}
-
-a#link_login {
-    border-radius: 20px;
-    display: block;
-    padding: 10px 7px;
-    font-weight: bold;
-    transition: all .23s ease-in-out;
-}
-
-a#link_register {
-    border-radius: 20px;
-    background-color: orangered;
-    color: white;
-    font-size: 1.6em;
-    padding: 10px 30px 10px 30px;
-    font-weight: bold;
-    transition: all .23s ease-in-out;
-}
-
-a#link_register:hover{
-    text-decoration: none;
-    color: gainsboro;
-}
-
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-@media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
-}
-
-/*----Botões Social----*/
-
-.cor_windows{
-    background-color: #007bff;
-    color: white
-}
-
-.cor_google{
-    background-color: #ef1047;
-    color: white
-}
-
-.cor_yahoo{
-    background-color: #4B0082;
-    color: white
-}
-
-.img-circle {
-    width: 150px;
-    height: 150px;
-    padding: 4px;
-    border-radius: 50%;
-    max-width: 100%;
-}
-
-input[type="file"] {
-    display: none;
-}
-label#userphoto {
-    padding: 10px 10px;
-    width: 150px;
-    background-color: #007bff;
-    color: #FFF;
-    text-transform: uppercase;
-    text-align: center;
-    display: block;
-    margin-top: 10px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-/* TAMANHO DA SECTION DO BANNER DESCONSIDERANDO O TAMANHO DO NAVBAR */
-.section-banner {
-    height: calc(110vh - 56px);
-}
-
-.banner-img {
-    width: 100%;
-    height: inherit;
-    opacity: 0.75;
-}
-
-.banner-text {
-    position: absolute;
-    width: 100%;
-    height: inherit;
-    top: 56px;
-    text-align: center;
-    display: grid;
-}
-
-.banner-group-1 {
-    height: calc(50vh - 28px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner-group-2 {
-    height: calc(54vh - 28px);
-    display: grid;
-}
-
-.banner-title {
-    font-size: 55px;
-    font-weight: 500;
-}
-
-.banner-subtitle {
-    font-size: 35px;
-    font-weight: 400;
 }
