@@ -12,15 +12,26 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href=<?php echo asset("font-awesome-4.7.0/css/font-awesome.min.css"); ?> />
 </head>
-<body>
+<body style="background-color: #ccdddd;">
 
-<div class="page_error">
-    <h1 style="text-align: center">Ooooops Error <?php echo htmlspecialchars( $error, ENT_COMPAT, 'UTF-8', FALSE ); ?>! :(</h1>
-    <p><b>Desculpe pelo incomodo, Caso o problema prescista <br> entre em contato com nosso Suporte!
-    </b></p>
-    <p><a class="btn btn-danger" href="/" title="Registrar"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar ao Ínicio</a></p>
+<main role="main">
+    <section class="section-forget">
+        <div class="form-content">
+            <div class="alert alert-danger">
+                <div class="page_error">
 
-</div>
+                    <h1 style="text-align: center">Ooooops Error <?php echo htmlspecialchars( $error, ENT_COMPAT, 'UTF-8', FALSE ); ?>! :(</h1>
+                    <p><b>Desculpe pelo incomodo, Caso o problema prescista <br> entre em contato com nosso Suporte!
+                    </b></p>
+                    <p><a class="btn btn-danger" href="/" title="Registrar"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar ao Ínicio</a></p>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <span  class="alert_message">  <?php echo flash(); ?></span>
+</main>
 
 </body>
 </html>
