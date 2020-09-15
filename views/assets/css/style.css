@@ -9,6 +9,10 @@ main#home {
     background-color: white;
 }
 
+main#register {
+    background-color: #007aff;
+}
+
 .text_home {
     font-size: 1.3em;
     text-align: center;
@@ -277,7 +281,7 @@ label#userphoto {
 }
 /* TAMANHO DA SECTION DO BANNER DESCONSIDERANDO O TAMANHO DO NAVBAR */
 .section-banner {
-    height: calc(110vh - 56px);
+    height: calc(110vh - 60px);
 }
 
 .banner-img {
@@ -317,7 +321,8 @@ label#userphoto {
     font-weight: 400;
 }
 
-.login-content {
+
+.form-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -325,6 +330,15 @@ label#userphoto {
     width: 100%;
     height: inherit;
     top: 20px;
+}
+.alert_message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: inherit;
+    top: 70px;
 }
 
 .card-login {
@@ -334,6 +348,35 @@ label#userphoto {
     border-radius: 20px;
 }
 
+.card-register {
+    min-width: 400px;
+    height: 500px;
+    background-color: #272a31;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.card-register-img {
+    min-width: 400px;
+    height: 500px;
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.card-header-img {
+    width: inherit;
+    height: 15%;
+    border-bottom: none;
+    color: #0062cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fundo_register {
+    width: 400px;
+    height: 320px;
+}
 .card-header {
     width: inherit;
     height: 15%;

@@ -22,14 +22,11 @@
 <main role="main">
     <section class="section-banner">
         <img src="/views/assets/images/fundo_login.jpg" class="banner-img" alt="main-banner">
-
-        <div class="login-content">
+        <div class="form-content">
             <div class="card-login">
-
                 <div class="card-header">
                     <span class="card-title">Entre em sua conta</span>
                 </div>
-
                 <div class="card-body">
                     <form class="form" action="/login" method="post" autocomplete="off">
                         <div class="input-group">
@@ -57,14 +54,13 @@
                         </div>
                     </form>
                 </div>
-
                 <div class="card-footer">
                     <a href="/register" title="Registre-se aqui" class="link_forgot">Ainda não tenho conta</a>
                 </div>
-
             </div>
         </div>
     </section>
+    <span  class="alert_message">  <?php echo flash(); ?></span>
 </main>
 <?php require $this->checkTemplate("footer");?>
 
