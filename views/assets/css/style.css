@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
 main#home {
@@ -22,7 +23,6 @@ img#fluxo {
     width: 100%;
 
 }
-
 
 #novo_idioma {
     display: none;
@@ -284,6 +284,14 @@ label#userphoto {
     height: calc(110vh - 60px);
 }
 
+.section-forget {
+    height: calc(90vh - 90px);
+}
+
+.section-register {
+    height: calc(110vh - 55px);
+}
+
 .banner-img {
     width: 100%;
     height: inherit;
@@ -348,6 +356,22 @@ label#userphoto {
     border-radius: 20px;
 }
 
+.card-forgot {
+    min-width: 400px;
+    height: 220px;
+    background-color: #272a31;
+    border-radius: 20px;
+}
+
+.card-header-forgot {
+    width: inherit;
+    height: 20%;
+    border-bottom: 1px solid #4b4b4b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card-register {
     min-width: 400px;
     height: 500px;
@@ -374,8 +398,8 @@ label#userphoto {
 }
 
 #fundo_register {
-    width: 400px;
-    height: 320px;
+    width: 350px;
+    height: 280px;
 }
 .card-header {
     width: inherit;
@@ -436,6 +460,16 @@ input.form-control:focus {
     color: #ffffff;
 }
 
+
+
+/*---- Sobrescrevendo classe ---------*/
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
 
 .fa{
     color: white;

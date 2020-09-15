@@ -1,29 +1,5 @@
 {include="header"}
-<header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="brand" href="/">{#site("name_complete")#}</a>
-        <ul class="navbar-nav mr-auto"></ul>
-        <ul class="navbar-nav mr-auto link_navebar">
-            <li class="nav-item">
-                <a class="nav-link" href="#oque">O que é?</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="#usar">Como Usar?</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Suporte</a>
-            </li>
-        </ul>
-        <div class="form-inline my-2 my-lg-0">
-            <a class="btn btn-primary link_btn" href="/login" title="Login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login&nbsp;&nbsp;</a>
-        </div>
-    </div>
-</nav>
-</header>
+{include="navebar_home"}
 <main id="home" role="main">
     <section class="section-banner">
         <img src="/views/assets/images/fundo_home.jpg" class="banner-img" alt="main-banner">
@@ -78,7 +54,7 @@
             </div>
         </div>
     </section>
-    <div id="usar">
+    <section id="usar">
         <div class="container">
             <h1><u>Como funciona?</u></h1>
             <hr class="my-5">
@@ -86,8 +62,9 @@
             <img id="fluxo" src="/views/assets/images/fluxo.png" alt="Fluxo">
             </div>
         </div>
-    </div>
+    </section>
     <br>
+    <span  class="alert_message">  {function="flash()"}</span>
 </main>
 
 {include="footer"}

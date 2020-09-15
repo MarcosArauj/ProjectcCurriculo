@@ -1,43 +1,23 @@
 {include="header"}
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="brand" href="/">{#site("name_complete")#}</a>
-            <ul class="navbar-nav mr-auto"></ul>
-            <ul class="navbar-nav mr-auto link_navebar">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Início</a>
-                </li>
-            </ul>
-            <div class="form-inline my-2 my-lg-0">
-                <a class="btn btn-primary link_btn" href="/login" title="Login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login&nbsp;&nbsp;</a>
-            </div>
-        </div>
-    </nav>
-</header>
+{include="navebar_register"}
 <main role="main" id="register">
-<section class="section-banner">
+<section class="section-register">
     <div class="form-content">
-    <div class="row">
         <div class="card-register-img">
-        <div class="col">
-            <div>
-            <h2 class="card-header-img"><u>CADASTRE-SE</u></h2>
-            <h3 style="color: #0062cc">TENHA SEU CURRÍCULO SEM <br> COMPLICAÇÕES DE ONDE ESTIVER</h3>
+            <div class="card-header-img">
+                <h2><u>CADASTRE-SE</u></h2>
             </div>
-        </div>
+            <div class="card-body">
+            <h4 style="color: #0062cc">TENHA SEU CURRÍCULO SEM <br> COMPLICAÇÕES DE ONDE ESTIVER</h4>
             <img src="/views/assets/images/fundo_register.png" alt="fundo_register"  id="fundo_register">
+            </div>
         </div>
         <div class="card-register">
-        <div class="col">
-                <div class="card-body">
+            <div class="card-body">
                 <form class="form" action="/register" method="post" autocomplete="off">
                     <div id="cad_email">
                         <div id="email" class="form-group">
-                                <strong class="obrigatorio">*</strong><b class="text-white">E-mail</b>&nbsp;&nbsp; <strong id="mesmeail" class="error-disabled" >E-mail inválido!!!</strong>
+                            <strong class="obrigatorio">*</strong><b class="text-white">E-mail</b>&nbsp;&nbsp; <strong id="mesmeail" class="error-disabled" >E-mail inválido!!!</strong>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" ><i class="fa fa-user" aria-hidden="true"></i></span>
@@ -51,8 +31,8 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" ><i class="fa fa-user" aria-hidden="true"></i></span>
                                 </div>
-                                 <input type="email" class="form-control" placeholder="E-mail (exemplo@email.com)" id="confirmaemail"  name="confirmaemail"  >
-                              </div>
+                                <input type="email" class="form-control" placeholder="E-mail (exemplo@email.com)" id="confirmaemail"  name="confirmaemail"  >
+                            </div>
                             <div id="mesmeail_conf" class="error-disabled" >
                                 E-mails não Conferem!!!
                             </div>
@@ -77,7 +57,7 @@
                         </div>
                         <div class="form-group">
                             <div id="div_confsenha">
-                               <strong class="obrigatorio">*</strong><b class="text-white">Confirma Senha</b>
+                                <strong class="obrigatorio">*</strong><b class="text-white">Confirma Senha</b>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
@@ -100,9 +80,7 @@
                     </div>
                 </form>
             </div>
-            </div>
         </div>
-    </div>
     </div>
 </section>
     <span  class="alert_message">  {function="flash()"}</span>

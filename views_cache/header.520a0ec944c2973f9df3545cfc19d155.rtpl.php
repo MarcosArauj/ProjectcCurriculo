@@ -15,8 +15,6 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    <script src=<?php echo asset("js/mask.js"); ?> > </script>
-
     </head>
     <body>
     <div class="ajax_load">
@@ -25,4 +23,3 @@
         <div class="ajax_load_box_title">Aguarde, carrengando...</div>
     </div>
     </div>
-    <main class="container-fluid">
