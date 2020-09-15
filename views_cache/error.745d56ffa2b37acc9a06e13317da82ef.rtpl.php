@@ -30,7 +30,6 @@
         </div>
         </div>
     </section>
-    <span  class="alert_message">  <?php echo flash(); ?></span>
 </main>
 
 </body>

@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/css/message.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/message.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/error/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/error/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/recover_send.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/recover_password/recover_send.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views_cache/error.745d56ffa2b37acc9a06e13317da82ef.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/error.745d56ffa2b37acc9a06e13317da82ef.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/login.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/login.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +164,7 @@
       <workItem from="1599785582515" duration="650000" />
       <workItem from="1599847756389" duration="2306000" />
       <workItem from="1600115930945" duration="17615000" />
-      <workItem from="1600195707445" duration="9538000" />
+      <workItem from="1600195707445" duration="10846000" />
     </task>
     <servers />
   </component>

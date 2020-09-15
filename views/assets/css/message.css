@@ -5,31 +5,33 @@
     border-left-width: 32px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
-    border-radius: 6px;
+    border-radius: 20px;
     margin-bottom: 20px;
-
-
     font-weight: 600;
 }
 
 .message.success {
-    color: green;
+    color: white;
+    background-color: green;
     border-color: green;
     font-size: 1.100em;
 }
 
 .message.info {
-    color: #2e86de;
+    color: white;
+    background-color: #2e86de;
     border-color: #2e86de;
 }
 
 .message.alert {
-    color: #ff9f43;
+    color: white;
+    background-color: #ff9f43;
     border-color: #ff9f43;
 }
 
 .message.error {
-    color: #ee5253;
+    color: white;
+    background-color: #ee5253;
     border-color: #ee5253;
 }
 

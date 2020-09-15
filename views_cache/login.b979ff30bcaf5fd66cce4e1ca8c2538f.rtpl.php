@@ -3,7 +3,7 @@
 <?php require $this->checkTemplate("navebar_login");?>
 
 <main role="main">
-    <section class="section-forget">
+    <section class="section-login">
         <img src="/views/assets/images/fundo_login.jpg" class="banner-img" alt="main-banner">
         <div class="form-content">
             <div class="card-login">

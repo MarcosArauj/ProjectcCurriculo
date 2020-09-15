@@ -288,6 +288,10 @@ label#userphoto {
     height: calc(90vh - 90px);
 }
 
+.section-login {
+    height: calc(110vh - 80px);
+}
+
 .section-register {
     height: calc(110vh - 55px);
 }
