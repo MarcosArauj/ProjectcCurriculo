@@ -87,47 +87,6 @@ img#fluxo {
     outline: none;
 }
 
-.brand {
-    text-decoration: none;
-    color: white;
-    font-size: 1.5em;
-    font-weight: bolder;
-}
-.brand:hover{
-    text-decoration: none;
-    color: gainsboro;
-}
-
-.link_navebar {
-    text-decoration: none;
-    color: white;
-    font-size: 1.3em;
-    font-weight: bolder;
-}
-
-.link_footer {
-    text-decoration: none;
-    color: silver;
-    font-size: 1.3em;
-    font-weight: bolder;
-}
-
-.link_footer:hover{
-    text-decoration: none;
-    color: gainsboro;
-}
-
-.link_options {
-    color: black;
-    text-decoration: none;
-    font-weight: bolder;
-}
-
-.link_options:hover{
-    text-decoration: none;
-    color: silver;
-}
-
 .web_footer {
     position:relative;
     padding-bottom: 1.6rem;
@@ -195,6 +154,47 @@ a.link_forgot {
     font-size: 0.950em;
     text-transform: capitalize;
 
+}
+
+.brand {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+.brand:hover{
+    text-decoration: none;
+    color: gainsboro;
+}
+
+.link_navebar {
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+.link_footer {
+    text-decoration: none;
+    color: silver;
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+.link_footer:hover{
+    text-decoration: none;
+    color: gainsboro;
+}
+
+.link_options {
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.link_options:hover{
+    text-decoration: none;
+    color: silver;
 }
 
 .link_btn {
@@ -301,7 +301,7 @@ label#userphoto {
 }
 
 .section-register {
-    height: calc(110vh - 55px);
+    height: calc(100vh - 40px);
 }
 
 .banner-img {
@@ -386,14 +386,14 @@ label#userphoto {
 
 .card-register {
     min-width: 400px;
-    height: 500px;
+    height: 465px;
     background-color: #272a31;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 .card-register-img {
     min-width: 400px;
-    height: 500px;
+    height: 465px;
     background-color: white;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -410,8 +410,8 @@ label#userphoto {
 }
 
 #fundo_register {
-    width: 350px;
-    height: 280px;
+    width: 330px;
+    height: 250px;
 }
 .card-header {
     width: inherit;
