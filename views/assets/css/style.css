@@ -200,8 +200,16 @@ a.link_forgot {
 .link_btn {
     border-radius: 20px;
     color: white;
+    padding: 0.5rem 1rem;
     font-weight: bold;
     transition: all .23s ease-in-out;
+}
+
+.link_start {
+    padding: 0.9rem 1.4rem;
+    font-size: 1.30rem;
+    line-height: 1.5;
+    background-color: orangered;
 }
 
 .link_btn:hover{

@@ -9,7 +9,7 @@
             </div>
             <div class="banner-group-2">
                 <h3 class="banner-subtitle"><b>Crie seu Currículo de Uma Forma simples e rápida!</b></h3>
-                <p><a  class="btn-lg link_btn link_register" href="/register" title="COMEÇAR">COMEÇAR</a></p>
+                <p><a  class="link_start link_btn" href="/register" title="COMEÇAR">COMEÇAR</a></p>
             </div>
         </div>
     </section>
