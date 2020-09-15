@@ -62,11 +62,11 @@ jQuery(document).ready(function($) {
         let validarEmail = /^[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2}/;
 
         if(validarEmail.test(email) == false) {
-            $('#email').attr("class"," has-error col-md-12");
+            $('#email').attr("class"," has-error");
             $('#upemail').attr("class"," has-error col-md-6");
             $('#mesmeail').attr("class", "error-enabled");
         } else {
-            $('#email').attr("class","has-success col-md-12");
+            $('#email').attr("class","has-success");
             $('#upemail').attr("class","has-success col-md-6");
             $('#mesmeail').attr("class", "error-disabled");
         }
@@ -79,11 +79,11 @@ jQuery(document).ready(function($) {
         let confirmaemail = $('#confirmaemail').val();
 
         if(campo_email == confirmaemail) {
-            $('#email').attr("class","has-success col-md-12");
-            $('#confirma_email').attr("class", "has-success col-md-12");
+            $('#email').attr("class","has-success");
+            $('#confirma_email').attr("class", "has-success");
             $('#mesmeail_conf').attr("class", "error-disabled");
         } else {
-            $('#confirma_email').attr("class", "has-error col-md-12");
+            $('#confirma_email').attr("class", "has-error");
             $('#mesmeail_conf').attr("class", "error-enabled");
         }
     });

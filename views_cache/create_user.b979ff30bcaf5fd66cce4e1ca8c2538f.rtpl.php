@@ -35,7 +35,7 @@
         <div class="card-register">
         <div class="col">
                 <div class="card-body">
-                <form class="form" action="/login" method="post" autocomplete="off">
+                <form class="form" action="/register" method="post" autocomplete="off">
                     <div id="cad_email">
                         <div id="email" class="form-group">
                                 <strong class="obrigatorio">*</strong><b class="text-white">E-mail</b>&nbsp;&nbsp; <strong id="mesmeail" class="error-disabled" >E-mail inválido!!!</strong>
@@ -59,6 +59,7 @@
                             </div>
                         </div>
                     </div>
+                    <br>
                     <div id="cad_senha">
                         <div class="form-group">
                             <div id="div_senha">
