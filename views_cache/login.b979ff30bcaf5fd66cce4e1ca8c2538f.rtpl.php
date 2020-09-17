@@ -37,7 +37,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer-login">
                     <a href="/register" title="Registre-se aqui" class="link_forgot">Ainda não tenho conta</a>
                 </div>
             </div>

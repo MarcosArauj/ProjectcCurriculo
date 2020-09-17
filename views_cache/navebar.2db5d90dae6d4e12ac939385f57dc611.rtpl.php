@@ -1,29 +1,40 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/user/start"><?php echo site("name_complete"); ?></a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="brand" href="/user">
+        <?php if( getPhotoUser() != NULL ){ ?>
+
+        <img class="img_brand" src="<?php echo getPhotoUser(); ?>" alt="Photo">
+        <?php }else{ ?>
+
+        <img class="img_brand" src="/views/assets/images/user/user.png"  alt="Photo">
+        <?php } ?>
+
+        <?php echo getNameUser(); ?>
+
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap">
-            <a class="nav-link" data-toggle="modal" data-target="#ModalSair" href=""><b><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</b></a>
-        </li>
-    </ul>
-</nav>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <br>
 
-<div class="container-fluid">
+        <ul class="navbar-nav mr-auto"></ul>
+        <ul class="navbar-nav mr-auto link_navebar">
+            <li class="nav-item ">
+                <a class="nav-link" href="/user/start"><img src="/views/assets/images/logo_brand.png" alt=""></a>
+            </li>
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+            <a class="btn btn-danger link_btn" data-toggle="modal" data-target="#ModalSair" href=""><b><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</b></a>
+        </div>
+    </div>
+</nav>
+<?php if( checkCurriculum() ){ ?>
+
     <div class="row">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="sidebar-sticky pt-3">
             <ul class="nav flex-column">
-               <?php if( checkCurriculum() ){ ?>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="/user">
-                        <span><i class="fa fa-user-circle" aria-hidden="true"></i></span>
-                        Inicio - <?php echo getNameUser(); ?>
-
-                    </a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/formation/update">
                         <span> Formação Acadêmica </span>
@@ -31,6 +42,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/other_courses">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
                         <span> Outros Cursos</span>
                     </a>
                 </li>
@@ -58,11 +70,13 @@
                         <span> Alterar Senha</span>
                     </a>
                 </li>
-                <?php } ?>
-
             </ul>
         </div>
     </nav>
+    </div>
+<?php } ?>
+
+</header>
 
     <!-- Modal Sair -->
     <div class="modal fade" id="ModalSair" role="dialog">

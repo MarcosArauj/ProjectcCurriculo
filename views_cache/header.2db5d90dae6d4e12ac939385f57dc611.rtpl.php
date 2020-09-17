@@ -15,8 +15,8 @@
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-    </head>
-    <body>
+</head>
+<body style="background-color: #ccdddd;">
     <div class="ajax_load">
         <div class="ajax_load_box">
         <div class="ajax_load_box_circle"></div>

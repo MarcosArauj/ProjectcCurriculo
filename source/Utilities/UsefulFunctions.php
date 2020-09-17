@@ -34,6 +34,14 @@ function getNameUser() {
 
 }
 
+function getPhotoUser() {
+
+    $user = Login::getFromSession();
+
+    return $user->getfoto_usuario();
+
+}
+
 
 function checkCurriculum() {
 

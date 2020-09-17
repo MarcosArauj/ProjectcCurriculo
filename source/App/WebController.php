@@ -29,7 +29,7 @@ class WebController extends Controller {
         $page = new PageWeb();
 
         $page->setTpl("home", array(
-            "title"=> site("name"),
+            "title"=> site("name_complete"),
         ));
     }
 
