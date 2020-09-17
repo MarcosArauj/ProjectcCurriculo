@@ -36,38 +36,49 @@
         <div class="sidebar-sticky pt-3">
             <ul class="nav flex-column">
                 <li class="nav-item">
+                    <a class="nav-link active" href="/user/dashboard">
+                        <i class="fa fa-tachometer fa-fw" aria-hidden="true"></i>
+                        <span>&nbsp; Area de Trabalho</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/user/formation/update">
-                        <span> Formação Acadêmica </span>
+                        <i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
+                        <span>&nbsp; Formação Acadêmica</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/other_courses">
-                        <i class="fa fa-sign-out" aria-hidden="true"></i>
-                        <span> Outros Cursos</span>
+                        <i class="fa fa-book fa-fw" aria-hidden="true"></i>
+                        <span>&nbsp; Outros Cursos</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/languages">
-                        <span> Idiomas </span>
+                        <i class="fa fa-language fa-fw" aria-hidden="true"></i>
+                        <span>&nbsp; Idiomas</span>
                     </a>
                 </li>
                 <?php if( existDeficiency() ){ ?>
 
                 <li class="nav-item">
                     <a class="nav-link" href="/user/deficiency/update">
-                        <span> Deficiência </span>
+                        <i class="fa fa-wheelchair fa-fw" aria-hidden="true"></i>
+                        <span>&nbsp; Deficiência</span>
                     </a>
                 </li>
                 <?php } ?>
 
                 <li class="nav-item">
                     <a class="nav-link" href="/user/professional_experience">
-                        <span> Experiencia Profissional </span>
+                        <i class="fa fa-id-card-o fa-fw" aria-hidden="true"></i>
+                        <span>&nbsp; Experiencia Profissional</span>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/password/update">
-                        <span> Alterar Senha</span>
+                        <i class="fa fa-unlock fa-fw" aria-hidden="true"></i>
+                        <span>&nbsp; Alterar Senha</span>
                     </a>
                 </li>
             </ul>
