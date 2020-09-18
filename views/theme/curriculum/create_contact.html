@@ -1,13 +1,16 @@
 {include="header"}
 {include="navebar"}
 <main role="main">
+    <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h4 class="h2">Registro - Contato</h4>
+    </div>
 <form class="form" action="/curriculum/contact/create" method="post" autocomplete="off">
-    <section class="section-register">
-        <div class="form-content">
-            <div class="card bg-dark col-md-8">
-                <div class="card-header">
-                    <h4 class="h2">Registro - Contato</h4>
-                </div>
+    <section class="container col-md-10">
+        <div class="alert_message">
+            {function="flash()"}
+        </div>
+        <div  class="card bg-dark">
+            <div class="card-body">
                 <div class="card-body">
                     <div class="row">
                         <!-- Coluna 1 -->
@@ -67,16 +70,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <div class="float-right">
-                        <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Contato</button>
-                        <a class="btn btn-primary" href="/user/deficiency/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
-                    </div>
+            </div>
+            <div class="card-footer">
+                <div class="float-right">
+                    <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Contato</button>
+                    <a class="btn btn-primary" href="/user/deficiency/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
                 </div>
             </div>
         </div>
     </section>
-    <span  class="alert_message">  {function="flash()"}</span>
 </form>
 </main>
 {include="footer"}

@@ -1,163 +1,140 @@
 {include="header"}
 {include="navebar"}
-<main role="main" >
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        {if="$user.nome_social_uso == 'Sim'"}
+        <h2>{$user.nome_social}</h2>
+        {else}
+        <h2>{$user.primeiro_nome} {$user.sobrenome}</h2>
+        {/if}
+    </div>
+<div class="alert_message col-md-8">
+    {function="flash()"}
+</div>
 <form action="/curriculum/personal_data/photo" method="post" enctype="multipart/form-data">
-   <section class="section-dashboard">
-       <div class="form-content">
-           <div class="card-profile">
-               <div class="header-cad">
-                   {if="$user.nome_social_uso == 'Sim'"}
-                   <h3><u>{$user.nome_social}</u></h3>
-                   {else}
-                   <h3><u>{$user.primeiro_nome} {$user.sobrenome}</u></h3>
-                   {/if}
-               </div>
-               <div class="card-body">
-                   <div class="row">
-                       <!-- Coluna 1 -->
-                       <div class="col">
-                           {if="$user.foto_usuario != NULL"}
-                           <img class="img-circle" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">
-                           {else}
-                           <img class="img-circle" src="/views/assets/images/user/user.png"  alt="Photo">
-                           {/if}
-                           <label id="userphoto" for="foto_usuario">Carregar Foto</label>
-                           <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/>
-                       </div>
-                       <!-- Coluna 2 -->
-                       <div class="col">
-                           <div class="row"><h5>Dados Pessoais</h5></div>
-                           <div class="row">
-                               <label><b>Sexo: </b></label>&nbsp;
-                               <span>{$user.genero}</span>
-                               <span class="offset-1"></span>
-                               <label><b>Cor/Raça: </b></label>&nbsp;
-                               <span>{$user.cor_raca}</span>
-                           </div>
-                           <div class="row">
-                               <label><b>Data de Nascimento: </b></label>&nbsp;
-                               <span>{function="formatDate($user.nascimento)"}</span>
-                           </div>
-                           <div class="row">
-                               <label><b>Naturalidade: </b></label>&nbsp;
-                               <span>{$user.naturalidade}/{$user.uf_naturalidade} </span>
-                           </div>
-                           <div class="row">
-                               <label><b>Nacionalidade: </b></label>&nbsp;
-                               <span>{$user.nacionalidade} </span>
-                           </div>
-                           <div class="row">
-                               <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#ModalCompartilha" href="" title="Link de Compartinhamento">Link de Compartinhamento <i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
-                           </div>
-                           <br>
-                           <div class="row">
-                               <a class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#" href="" title="Gerar PDF">Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i></a>
-                           </div>
-                       </div>
-                       <!-- Coluna 3 -->
-                       <div class="col">
-                           <div class="row"><h5>Contato</h5></div>
-                           <div class="row">
-                               <label><b>Rua/Av: </b></label>&nbsp;
-                               <span>{$user.endereco}</span>
-                               <span class="offset-1"></span>
-                               <label><b>Nº: </b></label>&nbsp;
-                               <span>{$user.numero}</span>
-                           </div>
-                           <div class="row">
-                               <label><b>CEP: </b></label>&nbsp;
-                               <span>{$user.cep}</span>
-                               <span class="offset-2"></span>&nbsp;&nbsp;
-                           </div>
-                           <div class="row">
-                               <label><b>Bairro: </b></label>&nbsp;
-                               <span>{$user.bairro}</span>
-                           </div>
-                           <div class="row">
-                               <label><b>Cidade: </b></label>&nbsp;
-                               <span>{$user.cidade}</span>
-                               <span class="offset-2"></span>
-                               <label><b>Pais: </b></label>&nbsp;
-                               <span>{$user.pais}</span>
-                           </div>
-                           <hr/>
-                           <div class="row">
-                               <label><b>Celular: </b></label>&nbsp;
-                               <span>{$user.celular} </span>
-                           </div>
-                           <div class="row">
-                               {if="$user.telefone != NULL"}
-                               <label><b>Telefone: </b></label>&nbsp;
-                               <span>{$user.telefone} </span>
-                               {/if}
-                           </div>
-                           <div class="row">
-                               <label><b>E-mail: </b></label>&nbsp;
-                               <span>{$user.email} </span>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-                   <div class="card-footer card-cad">
-                       <div class="float-left">
-                           <button class="btn btn-md btn-success" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Foto</button>
-                       </div>
-                       <div class="float-right">
-                           <a class="btn btn-danger" href="/user/dashboard" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Início </a>
-                           <a class="btn btn-primary" href="/user/personal_data/update" title="Editar Perfil"> Editar Perfil <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
-                           <a class="btn btn-danger" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir Cadastro</a>
-                           <!-- Modal Excluir -->
-                           <div class="modal fade" id="ModalExcluir" role="dialog">
-                               <div class="modal-dialog modal-sm">
-                                   <!-- Modal content-->
-                                   <div class="modal-content">
-                                       <div class="modal-body">
-                                           <p><b>Deseja realmente excluir seu Registro?</b></p>
-                                       </div>
-                                       <div class="modal-footer">
-                                           <a href="/curriculum/curriculum/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
-                                           <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </section>
-    <span  class="alert_message">  {function="flash()"}</span>
-   </div>
-</form>
-    <!-- Modal Compartilhamento de Link do Curriculo -->
-    <div class="modal fade" id="ModalCompartilha" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="alert_copy ">
-                        {function="flash()"}
+<section class="container col-md-10">
+<div  class="card" style="color: black;">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-3">
+                {if="$user.foto_usuario != null"}
+                <label for="foto_usuario" class="user_photo" data-toggle="tooltip" data-placement="bottom" title="Clique aqui e escolha sua Foto">
+                    <img class="img-circle card-img-overlay" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">
+                    {else}
+                    <img class="img-circle" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
+                </label>
+                {/if}
+                <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/><br>
+            </div>
+            <div class="col-4">
+                <h5><b>Dados Pessoais</b></h5>
+                    <label><b>Sexo: </b></label>&nbsp;
+                    <span>{$user.genero}</span>
+                <br>
+                    <label><b>Cor/Raça: </b></label>&nbsp;
+                    <span>{$user.cor_raca}</span>
+                <br>
+                    <label><b>Data de Nascimento: </b></label>&nbsp;
+                    <span>{function="formatDate($user.nascimento)"}</span>
+                <br>
+                    <label><b>Naturalidade: </b></label>&nbsp;
+                    <span>{$user.naturalidade}/{$user.uf_naturalidade} </span>
+                <br>
+                    <label><b>Nacionalidade: </b></label>&nbsp;
+                    <span>{$user.nacionalidade} </span>
+                <br>
+                   <p>
+                   <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#ModalCompartilha" href="" title="Link de Compartinhamento">
+                   Link de Compartinhamento <i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
+                   </p>
+                   <p>
+                   <a class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#" href="" title="Gerar PDF">
+                    Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i></a>
+                   </p>
+            </div>
+            <!-- Coluna 3 -->
+            <div class="col-5">
+                <h5><b>Contato</b></h5>
+                <br>
+                    <label><b>Rua/Av: </b></label>&nbsp;
+                    <span>{$user.endereco}</span>
+                    <span class="offset-1"></span>
+                    <label><b>Nº: </b></label>&nbsp;
+                    <span>{$user.numero}</span>
+                <br>
+                    <label><b>CEP: </b></label>&nbsp;
+                    <span>{$user.cep}</span>
+                <br>
+                    <label><b>Bairro: </b></label>&nbsp;
+                    <span>{$user.bairro}</span>
+                <br>
+                    <label><b>Cidade: </b></label>&nbsp;
+                    <span>{$user.cidade}</span>
+                    <span class="offset-2"></span>
+                    <label><b>Pais: </b></label>&nbsp;
+                    <span>{$user.pais}</span>
+                <br>
+                <hr/>
+                    <label><b>Celular: </b></label>&nbsp;
+                    <span>{$user.celular} </span>
+                <br>
+                    {if="$user.telefone != NULL"}
+                    <label><b>Telefone: </b></label>&nbsp;
+                    <span>{$user.telefone} </span>
+                    {/if}
+                <br>
+                    <label><b>E-mail: </b></label>&nbsp;
+                    <span>{$user.email} </span>
+             </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="float-left">
+            <button class="btn btn-md btn-success" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Foto</button>
+        </div>
+        <div class="float-right">
+            <a class="btn btn-primary" href="/user/personal_data/update" title="Editar Perfil"> Editar Perfil <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+            <a class="btn btn-danger" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir Cadastro</a>
+            <!-- Modal Excluir -->
+            <div class="modal fade" id="ModalExcluir" role="dialog">
+                <div class="modal-dialog modal-sm">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <p><b>Deseja realmente excluir seu Registro?</b></p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="/curriculum/curriculum/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
+                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+                        </div>
                     </div>
-                    <p><b>Link de Compartinhamento do seu Curriculo</b></p>
-                    <input type="text" id="link" class="form-control" value="{#site('root')#}/curriculum/{$curriculum}" readonly>
-                </div>
-                <div class="modal-footer">
-                    <button id="btncopy"  class="btn btn-danger btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
-                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
+</section>
+</form>
+</div>
 </main>
+<!-- Modal Compartilhamento de Link do Curriculo -->
+<div class="modal fade" id="ModalCompartilha" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert_copy ">
+                    {function="flash()"}
+                </div>
+                <p><b>Link de Compartinhamento do seu Curriculo</b></p>
+                <input type="text" id="link" style="color: black" class="form-control" value="{#site('root')#}/curriculum/{$curriculum}" readonly>
+            </div>
+            <div class="modal-footer">
+                <button id="btncopy"  class="btn btn-danger btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
 {include="footer"}
-<script>
-    var carregarImagem = function(){
-        var reader = new FileReader();
-        reader.onload = function(){
-
-            var output = document.getElementById('nova_imagem');
-            output.src = reader.result;
-        };
-        reader.readAsDataURL(event.target.files[0]);
-    };
-</script>
