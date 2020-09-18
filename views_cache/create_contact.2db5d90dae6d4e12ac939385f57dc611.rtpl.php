@@ -1,5 +1,7 @@
-{include="header"}
-{include="navebar"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navebar");?>
+
 <main role="main">
     <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h4 class="h2">Registro - Contato</h4>
@@ -7,7 +9,8 @@
 <form class="form" action="/curriculum/contact/create" method="post" autocomplete="off">
     <section class="container col-md-8">
         <div class="alert_message">
-            {function="flash()"}
+            <?php echo flash(); ?>
+
         </div>
         <div  class="card bg-dark">
             <div class="card-body">
@@ -48,9 +51,11 @@
                                     <label for="pais"><strong class="obrigatorio">*</strong><b>País</b></label>
                                     <select class="form-control form-control-sm" name="pais" id="pais" required>
                                         <option value="">Selecione</option>
-                                        {loop="$countries"}
-                                        <option value="{$value.nome_pais_pt}">{$value.nome_pais_pt}</option>
-                                        {/loop}
+                                        <?php $counter1=-1;  if( isset($countries) && ( is_array($countries) || $countries instanceof Traversable ) && sizeof($countries) ) foreach( $countries as $key1 => $value1 ){ $counter1++; ?>
+
+                                        <option value="<?php echo htmlspecialchars( $value1["nome_pais_pt"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["nome_pais_pt"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                                        <?php } ?>
+
                                     </select>
                                 </div>
 
@@ -81,5 +86,6 @@
     </section>
 </form>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+
 
