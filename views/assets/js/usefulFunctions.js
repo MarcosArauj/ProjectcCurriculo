@@ -125,11 +125,13 @@ $(document).ready(function () {
     // Nome Social
     $('#sim').on('click',function () {
         $('#nome_social').attr('disabled', false);
+        $('#nome_social').css('background-color', '#1C1F27');
         $('#mens_social').attr("class", "success-enabled");
 
     });
     $('#nao').on('click',function () {
         $('#nome_social').attr('disabled', true);
+        $('#nome_social').css('background-color', '#4b4b4b');
         $('#mens_social').attr("class", "success-disabled");
     });
 

@@ -50,12 +50,18 @@ img#fluxo {
 
 }
 
+.page {
+    color: #ffffff;
+    margin: 10% auto auto auto;
+    text-align: center;
+}
+
 .obrigatorio{
     color: red;
 }
 
 .form {
-    color: black;
+    color: white;
 }
 
 .form_actions {
@@ -297,6 +303,11 @@ label#userphoto {
     height: calc(110vh - 80px);
 }
 
+
+.section-courses {
+    height: calc(95vh - 80px);
+}
+
 .dashboard-text {
     position: absolute;
     width: 100%;
@@ -373,6 +384,13 @@ label#userphoto {
     border-radius: 20px;
 }
 
+.card-cad {
+    color: white;
+    min-width: 600px;
+    height: 500;
+    border-radius: 20px;
+}
+
 .card-profile {
     width: 800px;
     height: 400px;
@@ -421,6 +439,7 @@ label#userphoto {
     align-items: center;
 }
 
+
 #fundo_register {
     width: 330px;
     height: 250px;
@@ -465,11 +484,6 @@ label#userphoto {
     align-items: center;
 }
 
-.card-cad {
-    background-color: white;
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
-}
-
 .input-group{
     margin-top: 15px;
 }
@@ -485,17 +499,24 @@ label#userphoto {
     border-color:#4b4b4b;
 }
 
-input.form-control {
+input.form-control,
+textarea.form-control,
+select.form-control{
     background-color: #1C1F27;
     border-color: #4b4b4b;
     color: #ffffff;
 }
 
-input.form-control:focus {
+input.form-control:focus,
+textarea.form-control:focus,
+select.form-control:focus{
     background-color: #1C1F27;
     color: #ffffff;
 }
 
+#nome_social {
+    background-color: #4b4b4b;
+}
 
 
 /*---- Sobrescrevendo classe ---------*/
@@ -504,6 +525,11 @@ input.form-control:focus {
     padding: 0.75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
+
+}
+
+.card {
+    color: white;
     border-radius: 20px;
 }
 
