@@ -1,14 +1,17 @@
-{include="header"}
-{include="navebar"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navebar");?>
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
     <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h4 class="h2">Atualização - Idiomas </h4>
     </div>
 
-<form class="form" action="/curriculum/{$languages.id_idiomac}/languages/update" method="post" autocomplete="off">
+<form class="form" action="/curriculum/<?php echo htmlspecialchars( $languages["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages/update" method="post" autocomplete="off">
 <section class="container col-md-7">
 <div class="alert_message">
-    {function="flash()"}
+    <?php echo flash(); ?>
+
 </div>
 <div  class="card bg-dark">
     <div class="card-body">
@@ -18,16 +21,18 @@
             <div class="form-group col-md-8">
                 <label for="idioma"><strong class="obrigatorio">*</strong><b>Idioma</b></label>
                 <select class="form-control form-control-sm" name="idioma" id="idioma" autofocus>
-                    <option value="{$languages.idioma}">{$languages.idioma}</option>
-                    {loop="$lang_cad"}
-                    <option value="{$value.idioma_pt}">{$value.idioma_pt}</option>
-                    {/loop}
+                    <option value="<?php echo htmlspecialchars( $languages["idioma"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $languages["idioma"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                    <?php $counter1=-1;  if( isset($lang_cad) && ( is_array($lang_cad) || $lang_cad instanceof Traversable ) && sizeof($lang_cad) ) foreach( $lang_cad as $key1 => $value1 ){ $counter1++; ?>
+
+                    <option value="<?php echo htmlspecialchars( $value1["idioma_pt"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["idioma_pt"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                    <?php } ?>
+
                 </select>
             </div>
             <div class="form-group col-md-6">
                 <label  for="nivel"><strong class="obrigatorio">*</strong><b>Nivél de Conhecimento</b></label>
                 <select class="form-control form-control-sm" name="nivel_conhecimento" id="nivel" required >
-                    <option value="{$languages.nivel_conhecimento}">{$languages.nivel_conhecimento}</option>
+                    <option value="<?php echo htmlspecialchars( $languages["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $languages["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
                     <option value="Iniciante">Iniciante</option>
                     <option value="Basico">Básico</option>
                     <option value="Elementar">Elementar</option>
@@ -54,4 +59,5 @@
 </section>
 </form>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+

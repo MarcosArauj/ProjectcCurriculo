@@ -1,5 +1,7 @@
-{include="header"}
-{include="navebar"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navebar");?>
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h4 class="h2">Atualização - Formação Acadêmica</h4>
@@ -8,7 +10,8 @@
 <form class="form" action="/curriculum/formation/create" method="post" autocomplete="off">
 <section class="container col-md-10">
 <div class="alert_message">
-    {function="flash()"}
+    <?php echo flash(); ?>
+
 </div>
 <div  class="card bg-dark">
     <div class="card-body">
@@ -20,7 +23,7 @@
                     <div class="form-group col-md-3">
                         <label for="nivel_conclusao"><b>Formação Concluída</b></label>
                         <select class="form-control form-control-sm" id="nivel_conclusao" name="nivel_conclusao" autofocus>
-                            <option value="{$user.nivel_conclusao}">{$user.nivel_conclusao}</option>
+                            <option value="<?php echo htmlspecialchars( $user["nivel_conclusao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $user["nivel_conclusao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
                             <option value="Fundamental 1(1º a 5º ano)">Fundamental 1(1º a 5º ano)</option>
                             <option value="Fundamental 2(6º a 9º ano)">Fundamental 2(6º a 9º ano)</option>
                             <option value="Médio">Médio</option>
@@ -33,15 +36,15 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="ano_inicio_conclusao"><b>Início(Ano)</b></label>
-                        <input type="text" class="form-control form-control-sm" id="ano_inicio_conclusao" name="ano_inicio_conclusao" placeholder="Ex: 19999" value="{$user.ano_inicio_conclusao}" onkeypress="format('####',this)"  maxlength="4">
+                        <input type="text" class="form-control form-control-sm" id="ano_inicio_conclusao" name="ano_inicio_conclusao" placeholder="Ex: 19999" value="<?php echo htmlspecialchars( $user["ano_inicio_conclusao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onkeypress="format('####',this)"  maxlength="4">
                     </div>
                     <div class="form-group col-md-2">
                         <label for="ano_conclusao"><b>Conclusão(Ano)</b></label>
-                        <input type="text" class="form-control form-control-sm" id="ano_conclusao" name="ano_conclusao" placeholder="Ex: 2010" value="{$user.ano_conclusao}" onkeypress="format('####',this)"  maxlength="4" >
+                        <input type="text" class="form-control form-control-sm" id="ano_conclusao" name="ano_conclusao" placeholder="Ex: 2010" value="<?php echo htmlspecialchars( $user["ano_conclusao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onkeypress="format('####',this)"  maxlength="4" >
                     </div>
                     <div class="form-group col-md-5">
                         <label for="instituicao_conclusao"><b>Instituição de Ensino (Conclusão)</b></label>
-                        <input type="text" class="form-control form-control-sm" id="instituicao_conclusao" name="instituicao_conclusao" placeholder="Ex: IFTM" value="{$user.instituicao_conclusao}">
+                        <input type="text" class="form-control form-control-sm" id="instituicao_conclusao" name="instituicao_conclusao" placeholder="Ex: IFTM" value="<?php echo htmlspecialchars( $user["instituicao_conclusao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                     </div>
                 </div>
                 <hr>
@@ -50,7 +53,7 @@
                     <div class="form-group col-md-3">
                         <label for="nivel_andamento"><b>Formação em Andamento</b></label>
                         <select class="form-control form-control-sm" id="nivel_andamento" name="nivel_andamento">
-                            <option value="{$user.nivel_andamento}">{$user.nivel_andamento}</option>
+                            <option value="<?php echo htmlspecialchars( $user["nivel_andamento"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $user["nivel_andamento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
                             <option value="Fundamental 1(1º a 5º ano)">Fundamental 1(1º a 5º ano)</option>
                             <option value="Fundamental 2(6º a 9º ano)">Fundamental 2(6º a 9º ano)</option>
                             <option value="Médio">Médio</option>
@@ -63,11 +66,11 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="ano_inicio_andamento"><b>Início(Ano)</b></label>
-                        <input type="text" class="form-control form-control-sm" id="ano_inicio_andamento" name="ano_inicio_andamento" placeholder="Ex: 19999" value="{$user.ano_inicio_andamento}" onkeypress="formatar('####',this)"  maxlength="4">
+                        <input type="text" class="form-control form-control-sm" id="ano_inicio_andamento" name="ano_inicio_andamento" placeholder="Ex: 19999" value="<?php echo htmlspecialchars( $user["ano_inicio_andamento"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" onkeypress="formatar('####',this)"  maxlength="4">
                     </div>
                     <div class="form-group col-md-7">
                         <label for="instituicao_andamento"><b>Instituição de Ensino (Andamento)</b></label>
-                        <input type="text" class="form-control form-control-sm" id="instituicao_andamento" name="instituicao_andamento" placeholder="Ex: IFTM" value="{$user.instituicao_andamento}" >
+                        <input type="text" class="form-control form-control-sm" id="instituicao_andamento" name="instituicao_andamento" placeholder="Ex: IFTM" value="<?php echo htmlspecialchars( $user["instituicao_andamento"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" >
                     </div>
                 </div>
                 <hr>
@@ -75,12 +78,12 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="curso"><b>Curso</b></label>
-                        <input type="text" class="form-control form-control-sm" id="curso" name="curso" placeholder="Ex: Analise de Desenvolvimento de Sistemas" value="{$user.curso}" >
+                        <input type="text" class="form-control form-control-sm" id="curso" name="curso" placeholder="Ex: Analise de Desenvolvimento de Sistemas" value="<?php echo htmlspecialchars( $user["curso"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" >
                     </div>
                     <div class="form-group col-md-4">
                         <label for="nivel_andamento"><b>Tipo de Graduação</b></label>
                         <select class="form-control form-control-sm" id="tipo_graduacao" name="tipo_graduacao">
-                            <option value="{$user.tipo_graduacao}">{$user.tipo_graduacao}</option>
+                            <option value="<?php echo htmlspecialchars( $user["tipo_graduacao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $user["tipo_graduacao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
                             <option value="Bacharelado">Bacharelado</option>
                             <option value="Licenciatura">Licenciatura</option>
                             <option value="Tecnológico">Tecnológico</option>
@@ -92,19 +95,24 @@
        </div>
     </div>
     <div class="card-footer">
-        {if="checkCurriculum() == false"}
+        <?php if( checkCurriculum() == false ){ ?>
+
         <a class="btn btn-danger" href="/user/deficiency/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
-        {/if}
+        <?php } ?>
+
         <div class="float-right">
             <button class="btn btn-md btn-success"><i class="fa fa-edit"></i> Atualizar Formação Acadêmica</button>&nbsp;
-            {if="checkCurriculum() == false"}
+            <?php if( checkCurriculum() == false ){ ?>
+
             <a class="btn btn-primary" href="/user/other_courses/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
-            {/if}
+            <?php } ?>
+
         </div>
     </div>
 </div>
 </section>
 </form>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+
 

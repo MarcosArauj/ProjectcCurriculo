@@ -1,13 +1,16 @@
-{include="header"}
-{include="navebar"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navebar");?>
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
     <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h4 class="h2">Atereção de Senha - {$user.primeiro_nome} </h4>
+        <h4 class="h2">Atereção de Senha - <?php echo htmlspecialchars( $user["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </h4>
     </div>
 <form class="form" action="/user/password/update" method="post" autocomplete="off">
 <section class="container col-md-8">
 <div class="alert_message">
-    {function="flash()"}
+    <?php echo flash(); ?>
+
 </div>
 <div  class="card bg-dark">
     <div class="card-body">
@@ -16,7 +19,7 @@
         <div class="row">
             <div class="form-group col-md-12">
                 <div id="div_senhaatual">
-                    <input type="hidden" name="code" value="{$code}">
+                    <input type="hidden" name="code" value="<?php echo htmlspecialchars( $code, ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                     <label for="senhatual"><strong class="obrigatorio">*</strong><b>Senha Atual</b></label>
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -72,4 +75,5 @@
 </section>
 </form>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+
