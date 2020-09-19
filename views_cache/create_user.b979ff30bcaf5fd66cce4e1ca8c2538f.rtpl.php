@@ -1,5 +1,7 @@
-{include="header"}
-{include="navebar_register"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navebar_register");?>
+
 <main role="main" id="register">
     <section class="section-register">
         <div class="form-content">
@@ -83,8 +85,9 @@
             </div>
         </div>
     </section>
-    <span  class="alert_message">  {function="flash()"}</span>
+    <span  class="alert_message">  <?php echo flash(); ?></span>
 </main>
 
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+
 

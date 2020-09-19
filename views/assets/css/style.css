@@ -292,6 +292,10 @@ label#userphoto {
     height: calc(110vh - 50px);
 }
 
+.section-register {
+    height: calc(110vh - 30px);
+}
+
 .dashboard-text {
     position: absolute;
     width: 100%;

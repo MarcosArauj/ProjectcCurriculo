@@ -43,6 +43,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/user/contact/update">
+                            <i class="fa fa-compress fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Contato</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/user/formation/update">
                             <i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
                             <span>&nbsp; Formação Acadêmica</span>
