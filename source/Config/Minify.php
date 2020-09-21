@@ -15,6 +15,5 @@ $minJS->add(dirname(__DIR__,2)."/views/assets/js/jquery-ui.js");
 $minJS->add(dirname(__DIR__,2).'/views/assets/js/usefulFunctions.js');
 $minJS->add(dirname(__DIR__,2).'/views/assets/js/validation.js');
 $minJS->add(dirname(__DIR__,2).'/views/assets/js/mask.js');
-$minJS->add(dirname(__DIR__,2).'/views/assets/js/dashboard.js');
 $minJS->minify(dirname(__DIR__,2).'/views/assets/js/scripts.min.js');
 

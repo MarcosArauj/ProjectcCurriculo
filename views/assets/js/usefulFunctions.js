@@ -342,18 +342,3 @@ $(document).ready(function () {
     });
 });
 
-
-document.querySelector('.user_photo').addEventListener('mouseover',() => {
-    document.querySelector('.user_photo').style.cursor = 'pointer';
-});
-
-
-var carregarImagem = function(){
-    var reader = new FileReader();
-    reader.onload = function(){
-
-        var output = document.getElementById('nova_imagem');
-        output.src = reader.result;
-    };
-    reader.readAsDataURL(event.target.files[0]);
-};

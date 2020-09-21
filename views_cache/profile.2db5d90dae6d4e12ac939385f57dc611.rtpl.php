@@ -21,7 +21,7 @@
                 <label for="foto_usuario" class="user_photo" data-toggle="tooltip" data-placement="bottom" title="Clique aqui e escolha sua Foto">
                     <img class="img-circle card-img-overlay" src="<?php echo htmlspecialchars( $user["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" id="nova_imagem" alt="Photo">
                     <?php }else{ ?>
-                    <img class="img-circle" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
+                    <img class="img-circle card-img-overlay" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
                 </label>
                 <?php } ?>
                 <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/><br>
@@ -138,3 +138,20 @@
     </div>
 </div>
 <?php require $this->checkTemplate("footer");?>
+<script>
+
+    document.querySelector('.user_photo').addEventListener('mouseover',() => {
+        document.querySelector('.user_photo').style.cursor = 'pointer';
+    });
+
+
+    var carregarImagem = function(){
+        var reader = new FileReader();
+        reader.onload = function(){
+
+            var output = document.getElementById('nova_imagem');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
+</script>

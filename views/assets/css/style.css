@@ -3,14 +3,12 @@ html, body {
     font-family: Cambria;
     width: 100%;
     height: 100%;
+    background-color: #ccdddd;
 }
 
 main#home {
     background-color: white;
-}
 
-main#register {
-    background-color: #007aff;
 }
 
 .text_home {
@@ -71,13 +69,9 @@ img#fluxo {
     outline: none;
 }
 
-.web_footer {
-    position:relative;
-    padding-bottom: 1.6rem;
-    bottom:0;
-    width:100%;
-    text-align: center;
-    background-color: #343a40 !important;
+.container_footer {
+    width: auto;
+    max-width: 680px;
 }
 
 .form_register_action {
@@ -284,16 +278,10 @@ label#userphoto {
     height: calc(110vh - 60px);
 }
 
-.section-forget {
-    height: calc(90vh - 90px);
-}
-
-.section-login {
-    height: calc(110vh - 50px);
-}
-
-.section-register {
-    height: calc(110vh - 30px);
+#fundo_login {
+    width: 100%;
+    height: 100%;
+    background-image: url("/views/assets/images/fundo_login.jpg");
 }
 
 .dashboard-text {
@@ -403,18 +391,8 @@ label#userphoto {
 }
 
 .card-register {
-    min-width: 400px;
-    height: 465px;
-    background-color: #272a31;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-.card-register-img {
-    min-width: 400px;
-    height: 465px;
-    background-color: white;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-right-radius:20px;
+    border-bottom-right-radius:20px;
 }
 
 .card-header-img {
@@ -428,10 +406,6 @@ label#userphoto {
 }
 
 
-#fundo_register {
-    width: 330px;
-    height: 250px;
-}
 .card-header {
     width: 100%;
     height: 15%;
@@ -463,10 +437,7 @@ label#userphoto {
     padding: 20px 30px;
 }
 
-.card-footer-login {
-    width: inherit;
-    height: 15%;
-    border-top: 1px solid #4b4b4b;
+.footer-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -513,12 +484,14 @@ select.form-control:focus{
     padding: 0.75rem 1.25rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
+    border-radius: 20px;
 
 }
 
 .card {
     color: white;
     border-radius: 20px;
+    border: none;
 }
 
 /*!

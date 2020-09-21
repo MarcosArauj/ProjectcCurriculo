@@ -66,5 +66,16 @@
     <br>
     <span  class="alert_message">  <?php echo flash(); ?></span>
 </main>
+<footer class="footer mt-auto py-3 bg-dark text-center">
 
+    <p class="brand"><strong> <?php echo site("name_complete"); ?></strong> Todos os direitos reservados. </p>
+    <p>
+        <a class="link_footer" href="/">Ínicio</a>
+        <span class="offset-1"></span>
+        <a class="link_footer" href="#">Sobre nós</a>
+        <span class="offset-1"></span>
+        <a class="link_footer" href="#">Contato</a>
+    </p>
+    <p class="text-muted"><b>Versão</b> <?php echo site("version"); ?>,  &copy; <?php echo site("name_complete"); ?> <?php echo date('Y'); ?></p>
+</footer>
 <?php require $this->checkTemplate("footer");?>

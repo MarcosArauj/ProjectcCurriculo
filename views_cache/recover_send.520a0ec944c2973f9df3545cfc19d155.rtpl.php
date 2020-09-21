@@ -1,13 +1,14 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
 
+<main role="main" id="fundo_login">
+    <section class="container col-md-4" style="top: 25%">
+            <div class="alert_message">
+                <?php echo flash(); ?>
 
-<main role="main">
-    <section class="section-login">
-        <img src="/views/assets/images/fundo_login.jpg" class="banner-img" alt="main-banner">
-        <div class="form-content">
-            <div class="card-login">
+            </div>
+            <div  class="card bg-dark">
                 <div class="card-header">
-                    <span class="card-title">Olá, <?php echo htmlspecialchars( $name, ENT_COMPAT, 'UTF-8', FALSE ); ?> digite uma nova senha:</span>
+                    <span class="card-title">Olá, digite uma nova senha:</span>
                 </div>
                 <div class="card-body">
                     <form class="form" action="/reset" method="post" autocomplete="off">
@@ -47,17 +48,15 @@
                                 </div>
                             </div>
                         </div>
+                        <hr>
                         <div class="d-flex justify-content-center">
                             <button class="btn btn-md btn-success float-right" >&nbsp;&nbsp;Enviar Nova Senha&nbsp;&nbsp;<i class="fa fa-angle-right" aria-hidden="true"></i></button>
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
-    <span  class="alert_message">  <?php echo flash(); ?></span>
+        </section>
 </main>
-
 <?php require $this->checkTemplate("footer");?>
 
 

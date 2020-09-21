@@ -80,7 +80,7 @@ class WebController extends Controller {
 
         $page = new PageRecoverPassword();
 
-        $page->setTpl("forgot_password", array(
+        $page->setTpl("reset_success", array(
             "title" => site("name") ." | Recuperação de Senha"
         ));
     }

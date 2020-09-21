@@ -1,10 +1,12 @@
 {include="header"}
 {include="navebar_login"}
-<main role="main">
-    <section class="section-login">
-        <img src="/views/assets/images/fundo_login.jpg" class="banner-img" alt="main-banner">
-        <div class="form-content">
-            <div class="card-login">
+<main role="main" id="fundo_login">
+    <form class="form" action="/login" method="post" autocomplete="off">
+        <section class="container col-md-4" style="top: 40px;">
+            <div class="alert_message">
+                {function="flash()"}
+            </div>
+            <div  class="card bg-dark">
                 <div class="card-header">
                     <span class="card-title">Entre em sua conta</span>
                 </div>
@@ -17,7 +19,6 @@
                             <input type="text" class="form-control"  placeholder="Usuário - E-mail ou CPF"  name="login"  autofocus
                                    aria-label="Username" aria-describedby="basic-addon1">
                         </div>
-
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon2"><i class="fa fa-key"></i></span>
@@ -35,13 +36,15 @@
                         </div>
                     </form>
                 </div>
-                <div class="card-footer-login">
+                <div class="card-footer">
+                    <div class="footer-login">
                     <a href="/register" title="Registre-se aqui" class="link_forgot">Ainda não tenho conta</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <span  class="alert_message">  {function="flash()"}</span>
+            </div>
+        </section>
+    </form>
 </main>
 {include="footer"}
 

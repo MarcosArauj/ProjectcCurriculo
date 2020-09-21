@@ -21,7 +21,7 @@
                 <label for="foto_usuario" class="user_photo" data-toggle="tooltip" data-placement="bottom" title="Clique aqui e escolha sua Foto">
                     <img class="img-circle card-img-overlay" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">
                     {else}
-                    <img class="img-circle" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
+                    <img class="img-circle card-img-overlay" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
                 </label>
                 {/if}
                 <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/><br>
@@ -138,3 +138,20 @@
     </div>
 </div>
 {include="footer"}
+<script>
+
+    document.querySelector('.user_photo').addEventListener('mouseover',() => {
+        document.querySelector('.user_photo').style.cursor = 'pointer';
+    });
+
+
+    var carregarImagem = function(){
+        var reader = new FileReader();
+        reader.onload = function(){
+
+            var output = document.getElementById('nova_imagem');
+            output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
+</script>
