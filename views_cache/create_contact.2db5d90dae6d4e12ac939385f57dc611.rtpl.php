@@ -65,12 +65,22 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label  for="celular"><strong class="obrigatorio">*</strong><b>Celular</b></label>
+                                    <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><i class="fa fa-mobile" aria-hidden="true"></i></span>
+                                    </div>
                                     <input type="text" class="form-control form-control-sm" id="celular" name="celular"  placeholder="Ex: 00-00000-0000" onkeypress="format('##-#####-####',this)"  maxlength="13" required>
+                                 </div>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label  for="telefone"><b>Telefone Fixo</b></label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" ><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+                                        </div>
                                     <input type="text" class="form-control form-control-sm" name="telefone" id="telefone" placeholder="Ex: 00-00000-0000" onkeypress="format('##-####-####',this)"  maxlength="12" >
-                                </div>
+                                    </div>
+                                 </div>
                             </div>
                         </div>
                     </div>
