@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 </head>
-<body style="background-color: #ccdddd;">
+<body>
     <div class="ajax_load">
         <div class="ajax_load_box">
         <div class="ajax_load_box_circle"></div>
