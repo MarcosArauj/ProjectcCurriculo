@@ -9,15 +9,15 @@ namespace Source\Config;
  * @package Source\Config
  */
 class Conection {
-//    const HOSTNAME = "localHost";
-//    const USERNAME = "root";
-//    const PASSWORD = "";
-//    const DBNAME = "db_curriculo";
+    const HOSTNAME = "localHost";
+    const USERNAME = "root";
+    const PASSWORD = "";
+    const DBNAME = "db_curriculo";
 
-    const HOSTNAME = "185.201.11.230";
-    const USERNAME = "u655389713_wc";
-    const PASSWORD = "2517Mmm23";
-    const DBNAME = "u655389713_tb_curriculo";
+//    const HOSTNAME = "185.201.11.230";
+//    const USERNAME = "u655389713_wc";
+//    const PASSWORD = "2517Mmm23";
+//    const DBNAME = "u655389713_tb_curriculo";
 
     /**
      * @var \PDO
