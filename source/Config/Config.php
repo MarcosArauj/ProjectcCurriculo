@@ -8,7 +8,7 @@ define("SITE", [
     "desc" => "Sistema Web Controle de  Curriculo",
     "domain" => "curriculotcc.com.br",
     "locale" => "pt_BR",
-//    "root" => "http://curriculotcc.com.br",
+    //"root" => "http://curriculotcc.com.br",
     "root" => "http://wcurriculo.cruzm.com.br",
     "version"=>"1.0"
 ]);
