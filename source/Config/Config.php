@@ -9,7 +9,7 @@ define("SITE", [
     "domain" => "curriculotcc.com.br",
     "locale" => "pt_BR",
     //"root" => "http://curriculotcc.com.br",
-    "root" => "http://www.wcurriculo.cruzm.com.br",
+    "root" => "http://wcurriculo.cruzm.com.br",
     "version"=>"1.0"
 ]);
 
