@@ -3,16 +3,16 @@
 <?php require $this->checkTemplate("navebar");?>
 
 <main role="main">
-    <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h4 class="h2">Outros Cursos</h4>
-    </div>
 <form class="form" action="/curriculum/other_courses/create" method="post" autocomplete="off">
-<section class="container col-md-8">
+<section class="container col-md-8 cad">
     <div class="alert_message">
         <?php echo flash(); ?>
 
     </div>
     <div  class="card bg-dark">
+        <div class="card-header">
+            <h4 class="h2">Outros Cursos</h4>
+        </div>
         <div class="card-body">
             <div class="row">
                 <!-- Coluna 1 -->
@@ -60,8 +60,6 @@
 </section>
 </form>
 </main>
-
-
 <?php require $this->checkTemplate("footer");?>
 
 

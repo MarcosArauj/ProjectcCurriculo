@@ -421,6 +421,20 @@ class AppController extends Controller {
     }
 
     /**
+     * Carrega Tela de Verificar dados do Curriculo para Filnalização
+     */
+    public function checkCurriculum():void {
+
+        $page = new PageCurriculum();
+
+        $page->setTpl("check_curriculum", array(
+            "title" => site("name"). " | Verificar Curriculo",
+            "user" => $this->data_user->getValues()
+        ));
+
+    }
+
+    /**
      * Carrega Tela Alterar Senha
      */
     public function updatePassword():void {

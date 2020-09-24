@@ -3,17 +3,16 @@
 <?php require $this->checkTemplate("navebar");?>
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <div class="container d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h4 class="h2">Formação Acadêmica</h4>
-    </div>
-
-<section class="col-md-10">
+    <section class="col-md-10 cad">
 <form class="form" action="/curriculum/formation/create" method="post" autocomplete="off">
 <div class="alert_message">
     <?php echo flash(); ?>
 
 </div>
 <div  class="card bg-dark">
+    <div class="card-header">
+        <h4 class="h2">Formação Acadêmica</h4>
+    </div>
     <div class="card-body">
         <div class="row">
             <!-- Coluna 1 -->

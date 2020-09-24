@@ -3,17 +3,16 @@
 <?php require $this->checkTemplate("navebar");?>
 
 <main role="main">
-    <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h4 class="h2">Registro - Formação Acadêmica</h4>
-    </div>
-
 <form class="form" action="/curriculum/formation/create" method="post" autocomplete="off">
-    <section class="container col-md-8">
+    <section class="container col-md-8 cad">
         <div class="alert_message">
             <?php echo flash(); ?>
 
         </div>
         <div  class="card bg-dark">
+            <div class="card-header">
+                <h4 class="h2">Formação Acadêmica</h4>
+            </div>
             <div class="card-body">
                 <div class="row">
                     <!-- Coluna 1 -->
@@ -95,9 +94,12 @@
                 </div>
             </div>
             <div class="card-footer">
+                <a class="btn btn-danger" href="/user/deficiency/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
                 <div class="float-right">
-                    <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Formação Acadêmica</button>
-                    <a class="btn btn-primary " href="/user/other_courses/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                    <button class="btn btn-md btn-success">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;   Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                    </button>
+
                 </div>
             </div>
         </div>

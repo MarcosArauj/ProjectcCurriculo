@@ -79,6 +79,7 @@ $router->get("/{id_profissional}/professional_experience/update", "AppController
 $router->get("/{id_profissional}/professional_experience/detail", "AppController:detailProfessional","app.detailProfessional");
 
 $router->get("/curriculum/create", "AppController:saveCurriculum","app.saveCurriculum");
+$router->get("/curriculum/check", "AppController:checkCurriculum","app.checkCurriculum");
 
 
 /**

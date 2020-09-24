@@ -167,11 +167,13 @@ $(document).ready(function () {
     // Deficiência
     $('#sim_deficiencia').on('click',function () {
         $('.deficiencia').css("display" ,"block");
+        $('.deficiencia_nao').css("display" ,"none");
         $('.success-enabled').css("display" ,"block");
 
     });
     $('#nao_deficiencia').on('click',function () {
         $('.deficiencia').css("display" ,"none");
+        $('.deficiencia_nao').css("display" ,"block");
         $('.success-enabled').css("display" ,"none");
     });
 
