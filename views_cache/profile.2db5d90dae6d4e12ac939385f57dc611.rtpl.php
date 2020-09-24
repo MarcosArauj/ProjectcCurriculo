@@ -8,23 +8,20 @@
         <h2><?php echo htmlspecialchars( $user["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <?php echo htmlspecialchars( $user["sobrenome"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h2>
         <?php } ?>
     </div>
-<div class="alert_message col-md-8">
-    <?php echo flash(); ?>
-</div>
+
 <form action="/curriculum/personal_data/photo" method="post" enctype="multipart/form-data">
 <section class="container col-md-10">
+<div class="alert_message">
+    <?php echo flash(); ?>
+</div>
 <div  class="card" style="color: black;">
     <div class="card-body">
         <div class="row">
             <div class="col-3">
-                <?php if( $user["foto_usuario"] != null ){ ?>
                 <label for="foto_usuario" class="user_photo" data-toggle="tooltip" data-placement="bottom" title="Clique aqui e escolha sua Foto">
-                    <img class="img-circle card-img-overlay" src="<?php echo htmlspecialchars( $user["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" id="nova_imagem" alt="Photo">
-                    <?php }else{ ?>
-                    <img class="img-circle card-img-overlay" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
+                    <img class="img-circle card-img-overlay" src="<?php echo getPhotoUser(); ?>" id="nova_imagem" alt="Photo">
                 </label>
-                <?php } ?>
-                <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/><br>
+                <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/>
             </div>
             <div class="col-4">
                 <h5><b>Dados Pessoais</b></h5>

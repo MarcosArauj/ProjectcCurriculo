@@ -1,16 +1,13 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
+    <?php if( checkCurriculum() ){ ?>
+
     <a class="brand col-md-3 col-lg-2 mr-0 px-3" href="/user">
-        <?php if( getPhotoUser() != NULL ){ ?>
-
         <img class="img_brand" src="<?php echo getPhotoUser(); ?>" alt="Photo">
-        <?php }else{ ?>
-
-        <img class="img_brand" src="/views/assets/images/user/user.png"  alt="Photo">
-        <?php } ?>
-
         <?php echo getNameUser(); ?>
 
     </a>
+    <?php } ?>
+
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,6 +45,16 @@
                             <span>&nbsp; Contato</span>
                         </a>
                     </li>
+                    <?php if( existDeficiency() ){ ?>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/deficiency/update">
+                            <i class="fa fa-wheelchair fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Deficiência</span>
+                        </a>
+                    </li>
+                    <?php } ?>
+
                     <li class="nav-item">
                         <a class="nav-link" href="/user/formation/update">
                             <i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
@@ -66,16 +73,6 @@
                             <span>&nbsp; Idiomas</span>
                         </a>
                     </li>
-                    <?php if( existDeficiency() ){ ?>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/user/deficiency/update">
-                            <i class="fa fa-wheelchair fa-fw" aria-hidden="true"></i>
-                            <span>&nbsp; Deficiência</span>
-                        </a>
-                    </li>
-                    <?php } ?>
-
                     <li class="nav-item">
                         <a class="nav-link" href="/user/professional_experience">
                             <i class="fa fa-id-card-o fa-fw" aria-hidden="true"></i>

@@ -8,23 +8,20 @@
         <h2>{$user.primeiro_nome} {$user.sobrenome}</h2>
         {/if}
     </div>
-<div class="alert_message col-md-8">
-    {function="flash()"}
-</div>
+
 <form action="/curriculum/personal_data/photo" method="post" enctype="multipart/form-data">
 <section class="container col-md-10">
+<div class="alert_message">
+    {function="flash()"}
+</div>
 <div  class="card" style="color: black;">
     <div class="card-body">
         <div class="row">
             <div class="col-3">
-                {if="$user.foto_usuario != null"}
                 <label for="foto_usuario" class="user_photo" data-toggle="tooltip" data-placement="bottom" title="Clique aqui e escolha sua Foto">
-                    <img class="img-circle card-img-overlay" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">
-                    {else}
-                    <img class="img-circle card-img-overlay" src="/views/assets/images/user/user.png" id="nova_imagem" alt="Photo">
+                    <img class="img-circle card-img-overlay" src="{function="getPhotoUser()"}" id="nova_imagem" alt="Photo">
                 </label>
-                {/if}
-                <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/><br>
+                <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)"/>
             </div>
             <div class="col-4">
                 <h5><b>Dados Pessoais</b></h5>

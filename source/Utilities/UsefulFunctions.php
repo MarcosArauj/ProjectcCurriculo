@@ -38,8 +38,20 @@ function getPhotoUser() {
 
     $user = Login::getFromSession();
 
-    return $user->getfoto_usuario();
 
+    $photo_user_m = "/views/assets/images/user/masculino.jpg";
+
+    $photo_user_f = "/views/assets/images/user/feminino.jpg";
+
+    if($user->getfoto_usuario() != NULL) {
+        if ($user->getgenero() == "Masculino") {
+            return $photo_user_m;
+        } else if($user->getgenero() == "Feminino"){
+            return $photo_user_f;
+        }
+    } else {
+         return $user->getfoto_usuario();
+    }
 }
 
 

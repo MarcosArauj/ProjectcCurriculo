@@ -3,11 +3,11 @@
 <?php require $this->checkTemplate("navebar");?>
 
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h4 class="h2">Atualização - Deficiência</h4>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h4 class="h2">Deficiência</h4>
     </div>
+<section class="col-md-10">
 <form class="form" action="/curriculum/deficiency/create" method="post" autocomplete="off">
-<section class="container col-md-10">
 <div class="alert_message">
     <?php echo flash(); ?>
 
@@ -118,14 +118,23 @@
         </div>
        </div>
        <div class="card-footer">
+           <?php if( !checkCurriculum() ){ ?>
+
            <a class="btn btn-danger" href="/user/contact/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+           <?php } ?>
+
            <div class="form-inline float-right">
-           <button class="btn btn-md btn-success deficiencia"><i class="fa fa-edit"></i> Atualizar Deficiência</button>&nbsp;
+           <button class="btn btn-md btn-success deficiencia"><i class="fa fa-edit"></i> Atualizar</button>&nbsp;
+               <?php if( !checkCurriculum() ){ ?>
+
+               <a class="btn btn-primary" href="/user/formation/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+               <?php } ?>
+
            </div>
        </div>
 </div>
-</section>
 </form>
+</section>
 </main>
 <?php require $this->checkTemplate("footer");?>
 

@@ -3,8 +3,8 @@
 <?php require $this->checkTemplate("navebar");?>
 
 <main role="main">
-<div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h4 class="h2">Registro - Dados Pessoais</h4>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h4 class="h2">Dados Pessoais</h4>
 </div>
 <form class="form" action="/curriculum/personal_data/create" method="post" autocomplete="off">
 <section class="container col-md-8">

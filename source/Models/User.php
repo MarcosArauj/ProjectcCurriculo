@@ -194,6 +194,7 @@ class User extends Model {
 
     }
 
+
     public function deleteCurriculum():void{
 
         $this->conn->query("DELETE FROM tb_usuario  WHERE id_usuario  = :id_usuario"

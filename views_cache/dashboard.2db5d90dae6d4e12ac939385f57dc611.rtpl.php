@@ -4,6 +4,8 @@
 
 <main role="main">
     <div class="dashboard-text">
+         <div class="container col-md-8">
+             <span  class="alert_message">  <?php echo flash(); ?></span>
             <h1><?php echo site("desc"); ?></h1>
             <?php if( checkCurriculum() ){ ?>
 
@@ -12,10 +14,12 @@
 
             <h4>Finalize seu Curriculo!</h4>
             <br>
-            <p><a class="btn btn-primary hover" href="/user/curriculum/create" id="Finalizar" title="Iniciar">Finalizar Curriculo <i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
+             <form class="form" action="/curriculum/curriculum/create" method="post" autocomplete="off">
+                 <button class="btn btn-lg btn-success hover"><i class="fa fa-check" aria-hidden="true"></i>  Finalizar Curriculo</button>
+             </form>
             <?php } ?>
 
-           <span  class="alert_message" style="width: 50px">  <?php echo flash(); ?></span>
+         </div>
     </div>
 
 </main>

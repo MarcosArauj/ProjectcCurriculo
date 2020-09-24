@@ -64,10 +64,11 @@ class CurriculumController extends Controller {
 
             if($this->curruculum->checkCurriculumData((INT)$this->user_logado->getid_usuario()) == false) {
 
-                echo $this->ajaxResponse("message", [
-                    "type" => "error",
-                    "message" =>"Gentileza Verifique se Existe Dados Obrigaórios sem Preechimento!"
+                echo $this->ajaxResponse("redirect", [
+                    "url" =>$this->router->route("app.updatePersonalData")
+
                 ]);
+                flash("error","Gentileza Verifique se Existe Dados Obrigaórios sem Preechimento!");
                 return;
             }
 

@@ -1,13 +1,16 @@
-{include="header"}
-{include="navebar"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navebar");?>
+
 <main role="main">
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h4 class="h2">Deficiência</h4>
+    <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h4 class="h2">Registro - Deficiência</h4>
     </div>
 <form class="form" action="/curriculum/deficiency/create" method="post" autocomplete="off">
     <section class="container col-md-8">
         <div class="alert_message">
-            {function="flash()"}
+            <?php echo flash(); ?>
+
         </div>
         <div  class="card bg-dark">
             <div class="card-body">
@@ -122,6 +125,7 @@
     </section>
 </form>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+
 
 
