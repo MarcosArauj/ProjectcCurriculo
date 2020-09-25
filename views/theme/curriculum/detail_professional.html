@@ -13,13 +13,12 @@
                 <div class="row">
                     <!-- Coluna 1 -->
                     <div class="form-group col-md-12">
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="sim_emprego" name="registro" class="custom-control-input" value="ativo" {if="$professional.registro == 'ativo'"} checked {/if}>
-                            <label class="custom-control-label" for="sim_emprego">Emprego Atual</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="nao_emprego" name="registro" class="custom-control-input" value="inativo" {if="$professional.registro == 'inativo'"} checked {/if}>
-                            <label class="custom-control-label" for="nao_emprego">Empregos Anterior</label>
+                        <div class="form-inline col-md-12">&nbsp;
+                            {$professional.registro == 'ativo'}
+                              <h3><strong>Emprego Atual</strong></h3>
+                            {else}
+                             <h3><strong>Experiência Anterior</strong></h3>
+                            {/f}
                         </div>
                         <hr>
                     </div>
