@@ -4,6 +4,11 @@ use Source\Models\Login;
 use Source\Models\User;
 use Source\Models\Contact;
 
+function clearBrowserCache() {
+    header("Pragma: no-cache");
+    header("Cache: no-cache");
+    header("Cache-Control: no-cache, must-revalidate");
+}
 
 function saudacao() {
 
@@ -28,7 +33,7 @@ function getNameUser() {
 
         return " Olá ";
     } else {
-        return $user->getprimeiro_nome();
+        return $name_user;
     }
 
 
@@ -43,11 +48,11 @@ function getPhotoUser() {
 
     $photo_user_f = "/views/assets/images/user/feminino.jpg";
 
-    if($user->getfoto_usuario() != NULL) {
+    if($user->getfoto_usuario() == NULL) {
         if ($user->getgenero() == "Masculino") {
             return $photo_user_m;
         } else if($user->getgenero() == "Feminino"){
-            return $photo_user_f;
+            return $user->getfoto_usuario();
         }
     } else {
          return $user->getfoto_usuario();
