@@ -14,7 +14,7 @@ class Conection {
 //    const PASSWORD = "";
 //    const DBNAME = "db_curriculo";
 
-    const HOSTNAME = "185.201.11.23";
+    const HOSTNAME = "127.0.0.1";
     const USERNAME = "u655389713_wc";
     const PASSWORD = "2517Mmm23";
     const DBNAME = "u655389713_tb_curriculo";
