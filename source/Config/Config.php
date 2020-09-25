@@ -8,8 +8,8 @@ define("SITE", [
     "desc" => "Sistema Web Controle de  Curriculo",
     "domain" => "curriculotcc.com.br",
     "locale" => "pt_BR",
-    "root" => "http://curriculotcc.com.br",
-    //"root" => "http://wcurriculo.cruzm.com.br",
+   // "root" => "http://curriculotcc.com.br",
+    "root" => "http://wcurriculo.cruzm.com.br",
     "version"=>"1.0"
 ]);
 
@@ -17,7 +17,7 @@ define("SITE", [
  *  SITE MINIFY
  */
 
-if($_SERVER["SERVER_NAME"] == "localhost") {
+if($_SERVER["SERVER_NAME"] == "185.201.11.23") {
     require __DIR__ . "/Minify.php";
 }
 
