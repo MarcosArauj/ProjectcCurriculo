@@ -4,12 +4,6 @@ use Source\Models\Login;
 use Source\Models\User;
 use Source\Models\Contact;
 
-function clearBrowserCache() {
-    header("Pragma: no-cache");
-    header("Cache: no-cache");
-    header("Cache-Control: no-cache, must-revalidate");
-}
-
 function saudacao() {
 
     return "Bem Vindo";
