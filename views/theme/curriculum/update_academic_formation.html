@@ -92,7 +92,11 @@
     </div>
     <div class="card-footer">
         {if="!checkCurriculum()"}
-        <a class="btn btn-danger" href="/user/deficiency/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            {if="$user.id_deficiencia == NULL"}
+            <a class="btn btn-danger" href="/user/deficiency/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            {else}
+            <a class="btn btn-danger" href="/user/deficiency/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            {/if}
         {/if}
         <div class="float-right">
             <button class="btn btn-md btn-success"><i class="fa fa-edit"></i> Atualizar</button>&nbsp;

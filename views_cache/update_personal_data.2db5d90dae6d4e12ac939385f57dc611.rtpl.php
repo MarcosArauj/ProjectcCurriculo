@@ -127,7 +127,14 @@
             <button class="btn btn-md btn-success"><i class="fa fa-edit"></i> Atualizar Registro</button>
             <?php if( !checkCurriculum() ){ ?>
 
-            <a class="btn btn-primary" href="/user/contact/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                 <?php if( $user["id_contato"] == NULL ){ ?>
+
+                   <a class="btn btn-primary" href="/user/contact/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                 <?php }else{ ?>
+
+                  <a class="btn btn-primary" href="/user/contact/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"> </i> </a>
+                 <?php } ?>
+
             <?php } ?>
 
         </div>

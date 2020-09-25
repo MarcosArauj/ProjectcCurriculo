@@ -96,7 +96,14 @@
     <div class="card-footer">
         <?php if( !checkCurriculum() ){ ?>
 
-        <a class="btn btn-danger" href="/user/deficiency/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            <?php if( $user["id_deficiencia"] == NULL ){ ?>
+
+            <a class="btn btn-danger" href="/user/deficiency/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            <?php }else{ ?>
+
+            <a class="btn btn-danger" href="/user/deficiency/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            <?php } ?>
+
         <?php } ?>
 
         <div class="float-right">

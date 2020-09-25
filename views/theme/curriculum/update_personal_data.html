@@ -119,7 +119,11 @@
         <div class="float-right">
             <button class="btn btn-md btn-success"><i class="fa fa-edit"></i> Atualizar Registro</button>
             {if="!checkCurriculum()"}
-            <a class="btn btn-primary" href="/user/contact/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                 {if="$user.id_contato == NULL"}
+                   <a class="btn btn-primary" href="/user/contact/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                 {else}
+                  <a class="btn btn-primary" href="/user/contact/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"> </i> </a>
+                 {/if}
             {/if}
         </div>
     </div>

@@ -120,14 +120,28 @@
        <div class="card-footer">
            <?php if( !checkCurriculum() ){ ?>
 
-           <a class="btn btn-danger" href="/user/contact/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+                <?php if( $user["id_contato"] == NULL ){ ?>
+
+                <a class="btn btn-danger" href="/user/contact/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+                <?php }else{ ?>
+
+                <a class="btn btn-danger" href="/user/contact/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+                <?php } ?>
+
            <?php } ?>
 
            <div class="form-inline float-right">
            <button class="btn btn-md btn-success deficiencia"><i class="fa fa-edit"></i> Atualizar</button>&nbsp;
                <?php if( !checkCurriculum() ){ ?>
 
-               <a class="btn btn-primary" href="/user/formation/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                   <?php if( $user["id_formacao"] == NULL ){ ?>
+
+                    <a class="btn btn-primary" href="/user/formation/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                    <?php }else{ ?>
+
+                    <a class="btn btn-primary" href="/user/formation/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                    <?php } ?>
+
                <?php } ?>
 
            </div>

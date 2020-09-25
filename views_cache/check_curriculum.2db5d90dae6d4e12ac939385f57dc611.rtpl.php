@@ -11,7 +11,11 @@
                 <h4>Gentileza Verifique se Existe Dados Obrigatórios sem Preechimento!</h4>
             </div>
             <br>
-            <a class="btn btn-primary hover" href="/user/personal_data/update" title="Verificar Curriculo"><i class="fa fa-check" aria-hidden="true"></i>Verificar Curriculo </a>
+                <?php if( $user["id_pessoa"] == NULL ){ ?>
+                 <a class="btn btn-primary hover" href="/user/personal_data/create" title="Verificar Curriculo"><i class="fa fa-check" aria-hidden="true"></i>Verificar Curriculo </a>
+                <?php }else{ ?>
+                 <a class="btn btn-primary hover" href="/user/personal_data/update" title="Verificar Curriculo"><i class="fa fa-check" aria-hidden="true"></i>Verificar Curriculo </a>
+               <?php } ?>
             <?php } ?>
         </div>
     </div>

@@ -125,7 +125,6 @@
             </div>
         </div>
         <div class="card-footer">
-            <a class="btn btn-danger float-left" href="/user/start" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
             <div class="float-right">
                 <button class="btn btn-md btn-success">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;   Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>

@@ -79,12 +79,19 @@ class PersonalDataController extends Controller {
 
             $this->personalData->savePersonalData();
 
-            echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.saveContact")
-
-            ]);
-            flash("success","Sucesso no Registro dos dados pessoais!");
-            return;
+            if($this->user_logado->getid_contato() == NULL) {
+                echo $this->ajaxResponse("redirect", [
+                    "url" =>$this->router->route("app.saveContact")
+                ]);
+                flash("success","Sucesso no Registro dos dados pessoais!");
+                return;
+            } else {
+                echo $this->ajaxResponse("redirect", [
+                    "url" =>$this->router->route("app.updateContact")
+                ]);
+                flash("success","Sucesso no Registro dos dados pessoais!");
+                return;
+            }
 
         } catch (\Exception $e) {
 
@@ -156,12 +163,20 @@ class PersonalDataController extends Controller {
 
             $this->contact->saveContact();
 
-            echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.saveDeficiency")
+            if($this->user_logado->getid_deficiencia() == NULL) {
 
-            ]);
-            flash("success","Sucesso no Registro do contato");
-            return;
+                echo $this->ajaxResponse("redirect", [
+                    "url" => $this->router->route("app.saveDeficiency")
+                ]);
+                flash("success", "Sucesso no Registro do contato");
+                return;
+            } else {
+                echo $this->ajaxResponse("redirect", [
+                    "url" => $this->router->route("app.updateDeficiency")
+                ]);
+                flash("success", "Sucesso no Registro do contato");
+                return;
+            }
 
         } catch (\Exception $e) {
 
@@ -235,11 +250,20 @@ class PersonalDataController extends Controller {
                 return;
             }else {
 
-                echo $this->ajaxResponse("redirect", [
-                    "url" =>$this->router->route("app.saveAcademicFormation")
-                ]);
-                flash("success","Sucesso no Registro de sua deficiência");
-                return;
+                if($this->user_logado->getid_formacao() == NULL) {
+
+                    echo $this->ajaxResponse("redirect", [
+                        "url" => $this->router->route("app.saveAcademicFormation")
+                    ]);
+                    flash("success", "Sucesso no Registro de sua deficiência");
+                    return;
+                } else {
+                    echo $this->ajaxResponse("redirect", [
+                        "url" => $this->router->route("app.updateAcademicFormation")
+                    ]);
+                    flash("success", "Sucesso no Registro de sua deficiência");
+                    return;
+                }
             }
 
         } catch (\Exception $e) {

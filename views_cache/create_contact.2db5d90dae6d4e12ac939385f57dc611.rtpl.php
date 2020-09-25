@@ -87,7 +87,14 @@
                 </div>
             </div>
             <div class="card-footer">
+                <?php if( $user["id_pessoa"] == NULL ){ ?>
+
+                <a class="btn btn-danger float-left" href="/user/personal_data/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar</a>
+                <?php }else{ ?>
+
                 <a class="btn btn-danger float-left" href="/user/personal_data/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar</a>
+                <?php } ?>
+
                 <div class="float-right">
                     <button class="btn btn-md btn-success">
                         <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;   Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>

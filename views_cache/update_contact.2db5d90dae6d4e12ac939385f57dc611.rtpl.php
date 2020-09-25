@@ -99,14 +99,28 @@
     <div class="card-footer">
         <?php if( !checkCurriculum() ){ ?>
 
-        <a class="btn btn-danger float-left" href="/user/personal_data/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+        <?php if( $user["id_pessoa"] == NULL ){ ?>
+
+            <a class="btn btn-danger float-left" href="/user/personal_data/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            <?php }else{ ?>
+
+            <a class="btn btn-danger float-left" href="/user/personal_data/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            <?php } ?>
+
         <?php } ?>
 
         <div class="float-right">
             <button class="btn btn-md btn-success"><i class="fa fa-edit"></i> Atualizar</button>
             <?php if( !checkCurriculum() ){ ?>
 
-            <a class="btn btn-primary" href="/user/deficiency/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+               <?php if( $user["id_deficiencia"] == NULL ){ ?>
+
+                <a class="btn btn-primary" href="/user/deficiency/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                <?php }else{ ?>
+
+                <a class="btn btn-primary" href="/user/deficiency/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                <?php } ?>
+
             <?php } ?>
 
         </div>

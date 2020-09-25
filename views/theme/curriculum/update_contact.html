@@ -93,12 +93,20 @@
     </div>
     <div class="card-footer">
         {if="!checkCurriculum()"}
-        <a class="btn btn-danger float-left" href="/user/personal_data/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+        {if="$user.id_pessoa == NULL"}
+            <a class="btn btn-danger float-left" href="/user/personal_data/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            {else}
+            <a class="btn btn-danger float-left" href="/user/personal_data/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            {/if}
         {/if}
         <div class="float-right">
             <button class="btn btn-md btn-success"><i class="fa fa-edit"></i> Atualizar</button>
             {if="!checkCurriculum()"}
-            <a class="btn btn-primary" href="/user/deficiency/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+               {if="$user.id_deficiencia == NULL"}
+                <a class="btn btn-primary" href="/user/deficiency/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                {else}
+                <a class="btn btn-primary" href="/user/deficiency/update" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+                {/if}
             {/if}
         </div>
     </div>

@@ -94,7 +94,14 @@
                 </div>
             </div>
             <div class="card-footer">
+                <?php if( $user["id_deficiencia"] == NULL ){ ?>
+
+                <a class="btn btn-danger" href="/user/deficiency/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+                <?php }else{ ?>
+
                 <a class="btn btn-danger" href="/user/deficiency/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+                <?php } ?>
+
                 <div class="float-right">
                     <button class="btn btn-md btn-success">
                         <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;   Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>

@@ -47,7 +47,14 @@
             </div>
         </div>
         <div class="card-footer">
+            <?php if( $user["id_formacao"] == NULL ){ ?>
+
+            <a class="btn btn-danger float-left" href="/user/formation/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            <?php }else{ ?>
+
             <a class="btn btn-danger float-left" href="/user/formation/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
+            <?php } ?>
+
             <div class="float-right">
                 <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Curso</button>
                 <a class="btn btn-primary" href="/user/languages/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>

@@ -160,7 +160,7 @@ class FormationController extends Controller {
             $this->formation->saveOtherCourses();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.saveOtherCourses")
+                "url" =>$this->router->route("app.updateOtherCourses")
 
             ]);
             flash("success","Dados do Curso Atualizado");
@@ -263,7 +263,7 @@ class FormationController extends Controller {
             $this->formation->saveLanguages();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.saveLanguages")
+                "url" =>$this->router->route("app.updateLanguages")
 
             ]);
             flash("success","Idioma Atualizado com Sucesso");
