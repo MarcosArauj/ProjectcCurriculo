@@ -6,7 +6,8 @@ define("SITE", [
     "name" => "WC",
     "name_complete" =>"Web Curriculo",
     "desc" => "Sistema Web Controle de  Curriculo",
-    "domain" => "curriculotcc.com.br",
+   // "domain" => "curriculotcc.com.br",
+    "domain" => "wcurriculo.cruzm.com.br",
     "locale" => "pt_BR",
     //"root" => "http://curriculotcc.com.br",
     "root" => "https://wcurriculo.cruzm.com.br",
@@ -36,18 +37,6 @@ define("MAIL_RECOVER", [
     "from_name" => "Web Curriculo",
     "from_email" => "webcurriculo@cruzm.com.br"
 
-]);
-
-/*
- * SOCIAL CONFIG
- */
-
-define("SOCIAL",[
-    "facebook_page" => "maraujocruz",
-    "facebook_author" => "marcosaraujocruz2",
-    "facebook_appId" => "123456789464",
-    "twitter_creator" => "maraujocruz",
-    "twitter_site" => "maraujocruz",
 ]);
 
 /*

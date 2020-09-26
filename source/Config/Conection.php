@@ -21,11 +21,8 @@ class Conection {
     public function __construct() {
 
         $this->conn = new \PDO(
-            "mysql:dbname=".DB["dbname"].";host=".DB["hostname"],
-            DB["username"],
-            DB["password"]
+            "mysql:dbname=".DB["dbname"].";host=".DB["hostname"], DB["username"], DB["password"]
         );
-
     }
 
     /**
