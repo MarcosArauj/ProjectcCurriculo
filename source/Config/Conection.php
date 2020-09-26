@@ -9,15 +9,6 @@ namespace Source\Config;
  * @package Source\Config
  */
 class Conection {
-//    const HOSTNAME = "localHost";
-//    const USERNAME = "root";
-//    const PASSWORD = "";
-//    const DBNAME = "db_curriculo";
-
-    const HOSTNAME = "127.0.0.1";
-    const USERNAME = "u655389713_wc";
-    const PASSWORD = "Cruz2517";
-    const DBNAME = "u655389713_tb_curriculo";
 
     /**
      * @var \PDO
@@ -30,9 +21,9 @@ class Conection {
     public function __construct() {
 
         $this->conn = new \PDO(
-            "mysql:dbname=".Conection::DBNAME.";host=".Conection::HOSTNAME,
-            Conection::USERNAME,
-            Conection::PASSWORD
+            "mysql:dbname=".DB["dbname"].";host=".DB["hostname"],
+            DB["username"],
+            DB["password"]
         );
 
     }

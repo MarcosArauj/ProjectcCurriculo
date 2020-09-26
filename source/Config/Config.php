@@ -13,14 +13,19 @@ define("SITE", [
     "version"=>"1.0"
 ]);
 
+//define("DB", [
+//    "hostname" => "localHost",
+//    "username" => "root",
+//    "password" => "",
+//    "dbname" => "db_curriculo"
+//]);
 
-/*
- *  SITE MINIFY
- */
-
-if($_SERVER["SERVER_NAME"] == "127.0.0.1") {
-    require __DIR__ . "/Minify.php";
-}
+define("DB", [
+    "hostname" => "127.0.0.1",
+    "username" => "u655389713_wc",
+    "password" => "Cruz2517",
+    "dbname" => "u655389713_tb_curriculo"
+]);
 
 
 define("MAIL_RECOVER", [
@@ -46,18 +51,12 @@ define("SOCIAL",[
 ]);
 
 /*
- * MAIL CONECT
+ *  SITE MINIFY
  */
-define("MAIL",[]);
 
-/*
- * SOCIAL LOGIN: FACEBOOK
- */
-define("FACEBOOK_LOGIN",[]);
+if($_SERVER["SERVER_NAME"] == "127.0.0.1") {
+    require __DIR__ . "/Minify.php";
+}
 
-/*
- * SOCIAL LOGIN: GOOGLE
- */
-define("GOOGLE_LOGIN",[]);
 
 
