@@ -46,7 +46,7 @@ function getPhotoUser() {
         if ($user->getgenero() == "Masculino") {
             return $photo_user_m;
         } else if($user->getgenero() == "Feminino"){
-            return $user->getfoto_usuario();
+            return $photo_user_f;
         }
     } else {
          return $user->getfoto_usuario();

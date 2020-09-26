@@ -222,6 +222,15 @@ a.link_forgot {
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .banner-title {
+        font-size: 35px;
+    }
+    .banner-subtitle {
+        font-size: 25px;
+    }
+}
+
 /*----Botões Social----*/
 
 .cor_windows{
