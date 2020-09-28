@@ -1,10 +1,13 @@
-{include="header"}
-{include="navebar"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navebar");?>
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10">
 <section class="container col-md-8 cad">
 <form class="form" action="/user/password/update" method="post" autocomplete="off">
 <div class="alert_message">
-    {function="flash()"}
+    <?php echo flash(); ?>
+
 </div>
 <div  class="card bg-dark">
     <div class="card-header">
@@ -70,4 +73,5 @@
 </form>
 </section>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+

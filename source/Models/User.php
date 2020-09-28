@@ -86,6 +86,7 @@ class User extends Model {
     }
 
     /**
+     * @param string $senha
      * @return bool
      * @throws \Exception
      */
@@ -119,6 +120,16 @@ class User extends Model {
 
     }
 
+    public function getValues() {
+
+        $this->checkPhotoUser();
+
+        $values =  parent::getValues();
+
+        return $values;
+
+    }
+
     public function checkPhotoUser(){
         if (file_exists($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR. "views". DIRECTORY_SEPARATOR. "assets". DIRECTORY_SEPARATOR .
             "images". DIRECTORY_SEPARATOR. "user". DIRECTORY_SEPARATOR . $this->getid_usuario() . ".jpg")){
@@ -130,17 +141,6 @@ class User extends Model {
         }
 
         return $this->setfoto_usuario($url);
-
-    }
-
-    public function getValues() {
-
-        $this->checkPhotoUser();
-
-        $values =  parent::getValues();
-
-
-        return $values;
 
     }
 
