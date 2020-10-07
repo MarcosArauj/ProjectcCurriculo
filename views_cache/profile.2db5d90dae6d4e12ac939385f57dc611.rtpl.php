@@ -128,7 +128,7 @@
                 <input type="text" id="link" style="color: black" class="form-control" value="<?php echo site('root'); ?>/curriculum/<?php echo htmlspecialchars( $curriculum, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
             </div>
             <div class="modal-footer">
-                <button id="btncopy"  class="btn btn-danger btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
+                <button id="btncopia"  class="btn btn-danger btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
             </div>
         </div>

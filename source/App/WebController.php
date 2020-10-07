@@ -94,7 +94,7 @@ class WebController extends Controller {
         ));
     }
 
-    public function reset($data):void{
+    public function reset():void{
 
         $recover = new RecoverPassword();
 

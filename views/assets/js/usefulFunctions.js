@@ -117,6 +117,7 @@ jQuery(document).ready(function($) {
 //     })
 // });
 
+// ------------------ Verificação Check Box-------------------------- //
 $(document).ready(function () {
     // $('input[type=radio]').on('change',function() {
     //     $('input[type=radio]:checked').not(this).prop('checked', false);
@@ -204,7 +205,7 @@ $(document).ready(function () {
 
 });
 
-
+//--------------- Descrição do nivel de conhecimento dos Idiomas e Tipo de Deficiência-----------------------//
 $(document).ready(function () {
 
     // Seleção de  Nível de Conheciemento de Idioma
@@ -318,11 +319,11 @@ $('#uf').on('change', function () {
 });
 
 
-
+// ------------ Copiar link para compartilhamento do Curriculo -------------//
 $(document).ready(function () {
     $(function(){
         // Executa o evento click no button
-        $('#btncopy').click(function(){
+        $('#btncopia').click(function(){
             // Seleciona o conteúdo do input
             $('#link').select();
             // Copia o conteudo selecionado
@@ -341,6 +342,30 @@ $(document).ready(function () {
             // Cancela a execução do formulário
             return false;
         });
+    });
+});
+
+
+// -----------------------Seleção dos filtros da busca ------------------------//
+$(document).ready(function () {
+
+    $('#filtro').on("change", function () {
+        let filtro = $('#filtro').val();
+
+        if (filtro == "Formação") {
+            $('#selecao').css("display", "none");
+            $('#formacao').css("display", "block");
+            $('#sexo').css("display", "none");
+        } else if (filtro == "Sexo") {
+            $('#selecao').css("display", "none");
+            $('#formacao').css("display", "none");
+            $('#sexo').css("display", "block");
+
+        } else if (filtro == "") {
+            $('#selecao').css("display", "block");
+            $('#formacao').css("display", "none");
+            $('#sexo').css("display", "none");
+        }
     });
 });
 

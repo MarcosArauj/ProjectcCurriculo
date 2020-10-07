@@ -110,3 +110,4 @@ class Curriculum extends Model {
     }
 
 }
+

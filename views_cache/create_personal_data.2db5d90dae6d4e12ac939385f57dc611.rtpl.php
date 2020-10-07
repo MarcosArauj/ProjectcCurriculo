@@ -1,10 +1,13 @@
-{include="header"}
-{include="navebar"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navebar");?>
+
 <main role="main">
 <form class="form" action="/curriculum/personal_data/create" method="post" autocomplete="off">
 <section class="container col-md-8 cad">
     <div class="alert_message">
-        {function="flash()"}
+        <?php echo flash(); ?>
+
     </div>
     <div  class="card bg-dark">
         <div class="card-header">
@@ -70,9 +73,11 @@
                             <label  for="uf"><strong class="obrigatorio">*</strong><b>Estado</b></label>
                             <select class="form-control form-control-sm" name="uf_naturalidade" id="uf" required>
                                 <option value="">Selecione</option>
-                                {loop="$uf"}
-                                <option value="{$value.uf}">{$value.uf}</option>
-                                {/loop}
+                                <?php $counter1=-1;  if( isset($uf) && ( is_array($uf) || $uf instanceof Traversable ) && sizeof($uf) ) foreach( $uf as $key1 => $value1 ){ $counter1++; ?>
+
+                                <option value="<?php echo htmlspecialchars( $value1["uf"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["uf"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                                <?php } ?>
+
                             </select>
                         </div>
                         <div class="form-group col-md-4">
@@ -83,9 +88,11 @@
                             <label for="nacionalidade"><strong class="obrigatorio">*</strong><b>País de Nacionalidade</b></label>
                             <select class="form-control form-control-sm" id="nacionalidade" name="nacionalidade"  required>
                                 <option value="">Selecione</option>
-                                {loop="$countries"}
-                                <option value="{$value.nome_pais_pt}">{$value.nome_pais_pt}</option>
-                                {/loop}
+                                <?php $counter1=-1;  if( isset($countries) && ( is_array($countries) || $countries instanceof Traversable ) && sizeof($countries) ) foreach( $countries as $key1 => $value1 ){ $counter1++; ?>
+
+                                <option value="<?php echo htmlspecialchars( $value1["nome_pais_pt"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["nome_pais_pt"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                                <?php } ?>
+
                             </select>
                         </div>
                         <div class="form-group col-md-3">
@@ -128,6 +135,7 @@
 </section>
 </form>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+
 
 

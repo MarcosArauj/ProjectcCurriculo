@@ -32,7 +32,7 @@
                 <p class="text_home">As informações do seu currículo todas <br> em um clique</p>
             </div>
             <div class="col-lg-4">
-                <a href="" class="link_options">
+                <a href="/search/curriculum" class="link_options">
                 <svg width="140" height="140"><img src="/views/assets/images/support.png"  width="80" height="80"alt="Support"></svg>
                 <h2 class="text-center">Buscar Curriculos</h2>
                 </a>

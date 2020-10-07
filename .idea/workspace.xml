@@ -1,7 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="" />
+    <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/source/App/SearchController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/Models/Search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/PersonalDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/PersonalDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/WebController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/WebController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Curriculum.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Curriculum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/VERSION" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/VERSION" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/Cpdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/Cpdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Helvetica-Bold.afm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Helvetica.afm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Times-Bold.afm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/Times-Roman.afm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/dompdf_font_family_cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/fontawesome-normal_56ceb9252ae56e9c55a09079565bf4da.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/fontawesome-normal_56ceb9252ae56e9c55a09079565bf4da.ufm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/fontawesome-normal_56ceb9252ae56e9c55a09079565bf4da.ufm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/source-sans-pro-300_302e2dc707bd747512a5d4b16bfd7a0f.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/source-sans-pro-300_302e2dc707bd747512a5d4b16bfd7a0f.ufm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/source-sans-pro-bold_3e55723bb0d4936b0320296623a8c224.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/source-sans-pro-bold_3e55723bb0d4936b0320296623a8c224.ufm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/source-sans-pro-italic_ee7ae5fa11aa2d31d073a974b71aff96.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/source-sans-pro-italic_ee7ae5fa11aa2d31d073a974b71aff96.ufm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/source-sans-pro-normal_9bbc93cd4eeb4c96ec714f118af1ef95.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/fonts/source-sans-pro-normal_9bbc93cd4eeb4c96ec714f118af1ef95.ufm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/res/html.css" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/lib/res/html.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Adapter/CPDF.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Adapter/CPDF.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Adapter/GD.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Adapter/GD.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Adapter/PDFLib.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Adapter/PDFLib.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Canvas.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Canvas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Css/Color.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Css/Color.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Css/Style.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Css/Style.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Css/Stylesheet.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Css/Stylesheet.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Dompdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Dompdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FontMetrics.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FontMetrics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/Block.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/Block.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/ListBulletImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameDecorator/ListBulletImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Block.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Block.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Text.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/FrameReflower/Text.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Image/Cache.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Image/Cache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Options.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Options.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/AbstractRenderer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/AbstractRenderer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/Block.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/Block.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/Inline.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dompdf/dompdf/src/Renderer/Inline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/error/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/error/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/home.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/home.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,6 +148,7 @@
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\web" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\Utilities" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
@@ -170,7 +235,14 @@
       <workItem from="1601077397875" duration="441000" />
       <workItem from="1601119886772" duration="9194000" />
       <workItem from="1601137339538" duration="209000" />
-      <workItem from="1601328599029" duration="2103000" />
+      <workItem from="1601328599029" duration="3138000" />
+      <workItem from="1601413477459" duration="7110000" />
+      <workItem from="1601498657507" duration="10018000" />
+      <workItem from="1601676264792" duration="4715000" />
+      <workItem from="1601683881569" duration="148000" />
+      <workItem from="1601932091061" duration="6607000" />
+      <workItem from="1601942292555" duration="282000" />
+      <workItem from="1602018872200" duration="10299000" />
     </task>
     <servers />
   </component>
@@ -190,10 +262,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1595966538320" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1599072865513">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602020173762">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1599072865513" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1602020173762" />
     <state x="459" y="277" key="ComposerInitDialogKey" timestamp="1594165234046">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -202,10 +274,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599241215399" />
-    <state x="453" y="178" key="NewPhpClassDialog" timestamp="1595966080573">
+    <state x="453" y="178" key="NewPhpClassDialog" timestamp="1601502472534">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="453" y="178" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1595966080573" />
+    <state x="453" y="178" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1601502472534" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1599243599675">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

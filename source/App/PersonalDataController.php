@@ -342,7 +342,7 @@ class PersonalDataController extends Controller {
         if(in_array("", $data)) {
             echo $this->ajaxResponse("message", [
                 "type" => "error",
-                "message" => "Escola A Foto para Cadastro!"
+                "message" => "Escolha oto para Cadastro!"
             ]);
             return;
         }
