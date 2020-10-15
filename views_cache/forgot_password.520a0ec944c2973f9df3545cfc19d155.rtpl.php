@@ -1,9 +1,12 @@
-{include="header"}
-{include="navebar_forgot"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navebar_forgot");?>
+
 <main role="main" id="fundo_login">
     <section class="container col-md-4" style="top: 30%">
         <div class="alert_message">
-            {function="flash()"}
+            <?php echo flash(); ?>
+
         </div>
         <div  class="card bg-dark" style="color: white">
             <div class="card-body">
@@ -32,5 +35,6 @@
     </section>
 </main>
 
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+
 

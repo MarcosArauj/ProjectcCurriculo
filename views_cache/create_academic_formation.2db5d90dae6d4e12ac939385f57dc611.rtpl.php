@@ -1,10 +1,13 @@
-{include="header"}
-{include="navebar"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navebar");?>
+
 <main role="main">
 <form class="form" action="/curriculum/formation/create" method="post" autocomplete="off">
     <section class="container col-md-8 cad">
         <div class="alert_message">
-            {function="flash()"}
+            <?php echo flash(); ?>
+
         </div>
         <div  class="card bg-dark">
             <div class="card-header">
@@ -91,11 +94,14 @@
                 </div>
             </div>
             <div class="card-footer">
-                {if="$user.id_deficiencia == NULL"}
+                <?php if( $user["id_deficiencia"] == NULL ){ ?>
+
                 <a class="btn btn-danger" href="/user/deficiency/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
-                {else}
+                <?php }else{ ?>
+
                 <a class="btn btn-danger" href="/user/deficiency/update" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
-                {/if}
+                <?php } ?>
+
                 <div class="float-right">
                     <button class="btn btn-md btn-success">
                         <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;   Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
@@ -109,5 +115,6 @@
 </main>
 
 
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+
 

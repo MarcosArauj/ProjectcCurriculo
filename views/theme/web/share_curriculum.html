@@ -32,7 +32,7 @@
                <div class="col">
                    <div class="row">
                        <label><b>Idade: </b></label>&nbsp;
-                       <span>{function="calculateAge($curriculum.nascimento)"};</span>
+                       <span>{function="calculateAge($curriculum.nascimento)"} anos;</span>
                        <span class="offset-1"></span>
                        <label><b>Data de Nascimento: </b></label>&nbsp;
                        <span>{function="formatDate($curriculum.nascimento)"};</span>
@@ -236,11 +236,7 @@
                <div class="row">
                    <div class="col-5">
                        <label><b>Idioma: </b></label>&nbsp;
-                       <span>{$value.idioma}</span>
-                   </div>
-                   <div class="col">
-                       <label><b>Nivel Conhecimento: </b></label>&nbsp;
-                       <span>{$value.nivel_conhecimento}</span>
+                       <span>{$value.idioma} {$value.nivel_conhecimento}</span>
                    </div>
                </div>
                {/loop}
@@ -266,11 +262,11 @@
                    <div class="row">
                        <div class="col-5">
                            <label><b>Admissão: </b></label>&nbsp;
-                           <span>{$value.data_admissao}</span>
+                           <span>{function="formatDate($value.data_admissao)"}</span>
                        </div>
                        <div class="col">
                            <label><b>Demissão: </b></label>&nbsp;
-                           <span>{$value.data_demissao}</span>
+                           <span>{function="formatDate($value.data_demissao)"}</span>
                        </div>
                    </div>
                    <div class="row">
@@ -294,7 +290,7 @@
                        <div class="row">
                            <div class="col-5">
                                <label><b>Admissão: </b></label>&nbsp;
-                               <span>{$value.data_admissao}</span>
+                               <span>{function="formatDate($value.data_admissao)"}</span>
                            </div>
                        </div>
                        <div class="row">
@@ -304,12 +300,33 @@
                            </div>
                        </div>
                    {/if}
+                   <!-- Modal Compartilhamento de Link do Curriculo -->
+                   <div class="modal fade" id="ModalCompartilha" role="dialog">
+                       <div class="modal-dialog">
+                           <!-- Modal content-->
+                           <div class="modal-content">
+                               <div class="modal-body">
+                                   <div class="alert_copy ">
+                                       {function="flash()"}
+                                   </div>
+                                   <p><b>Link de Compartinhamento do seu Curriculo</b></p>
+                                   <input type="text" id="link" style="color: black" class="form-control" value="{#site('root')#}/curriculum/{$curriculum.cod_curriculo}" readonly>
+                               </div>
+                               <div class="modal-footer">
+                                   <button id="btncopia"  class="btn btn-info btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
+                                   <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
                {/loop}
                {/if}
            </div>
        </div>
      </div>
        <div class="card-footer">
+           <a class="btn btn-info" data-toggle="modal" data-target="#ModalCompartilha" href="" title="Link de Compartinhamento">
+               Link de Compartinhamento <i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
            <a class="btn btn-secondary float-right" href="/curriculum/pdf/{$curriculum.cod_curriculo}" title="Gerar PDF">Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i> </a>
        </div>
    </div>
@@ -320,5 +337,6 @@
 </div>
 {/if}
 </div>
+
 {include="footer"}
 </main>

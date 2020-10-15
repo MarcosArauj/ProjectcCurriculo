@@ -6,6 +6,7 @@ namespace Source\App;
 
 use Source\App\Pages\PageWeb;
 use Source\Models\Curriculum;
+use Source\Models\Formation;
 use Source\Models\Search;
 use Source\Models\User;
 
@@ -13,6 +14,7 @@ class SearchController extends Controller {
 
     private $data_curriculum;
     private $search_curriculo;
+    private $formation;
 
     public function __construct($router)
     {
@@ -20,6 +22,7 @@ class SearchController extends Controller {
 
         $this->data_curriculum = new Curriculum();
         $this->search_curriculo = new Search();
+        $this->formation = new Formation();
     }
 
     public function searchCurriculum():void{
@@ -33,8 +36,7 @@ class SearchController extends Controller {
         $page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
 
         if ($search) {
-
-            $pagination = $this->search_curriculo->getPageSearch($search, $page);
+                $pagination = $this->search_curriculo->getPageSearch($search,$_GET['filter'], $page);
 
             for ($cont = 0; $cont < $pagination['pages']; $cont++) {
                 array_push($pages, array(
@@ -47,18 +49,26 @@ class SearchController extends Controller {
             }
 
             if (!$pagination['data']) {
-                $this->router->redirect("web.searchCurriculum");
-                flash("error","Nenhum curriculo encontrado! :(");
+                $this->router->redirect("web.searchErrorCurriculum");
             }
-
 
         }
 
         $pageSearch->setTpl("search_curriculum", array(
             "title"=> site("name_complete"),
+            "lang_cad"=>$this->formation->languages(),
             "curriculum" => $pagination['data'],
             "search" => $search,
             "pages" => $pages
+        ));
+    }
+
+    public function searchErrorCurriculum():void{
+
+        $page = new PageWeb();
+
+        $page->setTpl("error_search", array(
+            "title" => site("name") ." | Erro na busca",
         ));
     }
 

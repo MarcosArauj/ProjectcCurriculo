@@ -1,0 +1,91 @@
+{if="$curriculum"}
+{loop="$curriculum"}
+<div class="card border-success">
+    <div class="card-body text-success">
+        <a data-toggle="modal" data-target="#ModalDetalhes{$value.id_curriculo}" href="" title="Detalhes">
+                    <span  data-toggle="tooltip" data-placement="bottom" title="Clique aqui para Detalhar">
+                    <h5 class="card-title" >{$value.primeiro_nome} {$value.sobrenome}</h5>
+                    </span>
+        </a>
+        {if="$value.nivel_andamento != NULL"}
+        <span class="card-text">Ensino {$value.nivel_andamento} incompleto, iniciou em {$value.ano_inicio_andamento} </span>
+        <br>
+        {/if}
+        {if="$value.nivel_conclusao != NULL"}
+        <span class="card-text">
+                Ensino {$value.nivel_conclusao} completo, concluido em {$value.ano_conclusao}
+                <br>
+                </span>
+        {/if}
+        {if="$value.curso != NULL"}
+        <span class="card-text">
+                 {if="$value.nivel_andamento == 'Superior'"}
+                     Cursando {$value.curso}
+                 {else}
+                 {$value.tipo_graduacao} em {$value.curso}
+                 {/if}
+                 </span>
+        {/if}
+    </div>
+</div>
+<!-- Modal Compartilhamento de Link do Curriculo -->
+<div class="modal fade" id="ModalDetalhes{$value.id_curriculo}" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="titulo_home"><b>{$value.primeiro_nome} {$value.sobrenome}</b></h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="rounded-circle" src="{$value.foto_usuario}" style="width: 100px; height: 100px" alt="Photo">
+                    </div>
+                    <div class="col-md-9">
+                                <span class="card-text">Idade {function="calculateAge($value.nascimento)"} anos, natural de {$value.naturalidade}/{$value.uf_naturalidade}, {$value.nacionalidade} <br>
+                                </span>
+                        {if="$value.nivel_andamento != NULL"}
+                        <span class="card-text">Ensino {$value.nivel_andamento} incompleto, iniciou em {$value.ano_inicio_andamento} </span>
+                        <br>
+                        {/if}
+                        {if="$value.nivel_conclusao != NULL"}
+                        <span class="card-text">
+                                Ensino {$value.nivel_conclusao} completo, concluido em {$value.ano_conclusao}
+                                <br>
+                                </span>
+                        {/if}
+                        {if="$value.curso != NULL"}
+                        <span class="card-text">
+                                 {if="$value.nivel_andamento == 'Superior'"}
+                                     Cursando {$value.curso}
+                                 {else}
+                                 {$value.tipo_graduacao} em {$value.curso}
+                                 {/if}
+                                 </span>
+                        {/if}
+                        {if="$value.deficiencia_existe == 'Sim'"}
+                        <hr>
+                        <p class="card-text"><b>PCD(Pessoa Com Deficiência)</b></p>
+                        <i class="fa fa-wheelchair" aria-hidden="true"></i> Tipo de Deficiência: {$value.tipo_deficiencia}
+
+                        {/if}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="{#site('root')#}/curriculum/{$value.cod_curriculo}"  class="btn btn-primary btn-sm" target="_blank"> Abrir Curriculo</a>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+{/loop}
+<hr>
+<ul class="pagination justify-content-center">
+    {loop="$pages"}
+    <li  class="page-item"><a class="page-link" href="{$value.href}">{$value.text}</a></li>
+    {/loop}
+</ul>
+{/if}

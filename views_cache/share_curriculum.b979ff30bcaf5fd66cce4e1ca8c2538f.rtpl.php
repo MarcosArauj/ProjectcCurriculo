@@ -32,7 +32,7 @@
                <div class="col">
                    <div class="row">
                        <label><b>Idade: </b></label>&nbsp;
-                       <span><?php echo calculateAge($curriculum["nascimento"]); ?>;</span>
+                       <span><?php echo calculateAge($curriculum["nascimento"]); ?> anos;</span>
                        <span class="offset-1"></span>
                        <label><b>Data de Nascimento: </b></label>&nbsp;
                        <span><?php echo formatDate($curriculum["nascimento"]); ?>;</span>
@@ -236,11 +236,7 @@
                <div class="row">
                    <div class="col-5">
                        <label><b>Idioma: </b></label>&nbsp;
-                       <span><?php echo htmlspecialchars( $value1["idioma"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
-                   </div>
-                   <div class="col">
-                       <label><b>Nivel Conhecimento: </b></label>&nbsp;
-                       <span><?php echo htmlspecialchars( $value1["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
+                       <span><?php echo htmlspecialchars( $value1["idioma"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <?php echo htmlspecialchars( $value1["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                </div>
                <?php } ?>
@@ -266,11 +262,11 @@
                    <div class="row">
                        <div class="col-5">
                            <label><b>Admissão: </b></label>&nbsp;
-                           <span><?php echo htmlspecialchars( $value1["data_admissao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
+                           <span><?php echo formatDate($value1["data_admissao"]); ?></span>
                        </div>
                        <div class="col">
                            <label><b>Demissão: </b></label>&nbsp;
-                           <span><?php echo htmlspecialchars( $value1["data_demissao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
+                           <span><?php echo formatDate($value1["data_demissao"]); ?></span>
                        </div>
                    </div>
                    <div class="row">
@@ -294,7 +290,7 @@
                        <div class="row">
                            <div class="col-5">
                                <label><b>Admissão: </b></label>&nbsp;
-                               <span><?php echo htmlspecialchars( $value1["data_admissao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
+                               <span><?php echo formatDate($value1["data_admissao"]); ?></span>
                            </div>
                        </div>
                        <div class="row">
@@ -304,12 +300,33 @@
                            </div>
                        </div>
                    <?php } ?>
+                   <!-- Modal Compartilhamento de Link do Curriculo -->
+                   <div class="modal fade" id="ModalCompartilha" role="dialog">
+                       <div class="modal-dialog">
+                           <!-- Modal content-->
+                           <div class="modal-content">
+                               <div class="modal-body">
+                                   <div class="alert_copy ">
+                                       <?php echo flash(); ?>
+                                   </div>
+                                   <p><b>Link de Compartinhamento do seu Curriculo</b></p>
+                                   <input type="text" id="link" style="color: black" class="form-control" value="<?php echo site('root'); ?>/curriculum/<?php echo htmlspecialchars( $curriculum["cod_curriculo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
+                               </div>
+                               <div class="modal-footer">
+                                   <button id="btncopia"  class="btn btn-info btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
+                                   <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
                <?php } ?>
                <?php } ?>
            </div>
        </div>
      </div>
        <div class="card-footer">
+           <a class="btn btn-info" data-toggle="modal" data-target="#ModalCompartilha" href="" title="Link de Compartinhamento">
+               Link de Compartinhamento <i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
            <a class="btn btn-secondary float-right" href="/curriculum/pdf/<?php echo htmlspecialchars( $curriculum["cod_curriculo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" title="Gerar PDF">Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i> </a>
        </div>
    </div>
@@ -320,5 +337,6 @@
 </div>
 <?php } ?>
 </div>
+
 <?php require $this->checkTemplate("footer");?>
 </main>

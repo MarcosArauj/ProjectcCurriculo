@@ -353,18 +353,52 @@ $(document).ready(function () {
         let filtro = $('#filtro').val();
 
         if (filtro == "Formação") {
+            $('#conhecimento').css("display", "none");
             $('#selecao').css("display", "none");
             $('#formacao').css("display", "block");
+            $('#deficiencia').css("display","none");
+            $('#idiomas').css("display","none");
             $('#sexo').css("display", "none");
         } else if (filtro == "Sexo") {
+            $('#conhecimento').css("display", "none");
             $('#selecao').css("display", "none");
             $('#formacao').css("display", "none");
+            $('#deficiencia').css("display","none");
+            $('#idiomas').css("display","none");
             $('#sexo').css("display", "block");
 
+        } else if (filtro == "PCD") {
+            $('#conhecimento').css("display", "none");
+            $('#deficiencia').css("display","block");
+            $('#selecao').css("display", "none");
+            $('#formacao').css("display", "none");
+            $('#idiomas').css("display","none");
+            $('#sexo').css("display", "none");
+
+        } else if (filtro == "Conhecimento") {
+            $('#conhecimento').css("display", "block");
+            $('#deficiencia').css("display", "none");
+            $('#selecao').css("display", "none");
+            $('#formacao').css("display", "none");
+            $('#idiomas').css("display","none");
+            $('#sexo').css("display", "none");
+
+        } else if (filtro == "Idioma") {
+            $('#conhecimento').css("display", "none");
+            $('#deficiencia').css("display","none");
+            $('#selecao').css("display", "none");
+            $('#formacao').css("display", "none");
+            $('#idiomas').css("display","block");
+            $('#sexo').css("display", "none");
+
         } else if (filtro == "") {
+            $('#conhecimento').css("display", "none");
+            $('#deficiencia').css("display","none");
             $('#selecao').css("display", "block");
             $('#formacao').css("display", "none");
+            $('#idiomas').css("display","none");
             $('#sexo').css("display", "none");
+
         }
     });
 });

@@ -11,78 +11,42 @@
 </div>
     <div class="row">
     <div class="form-group col-md-8">
-
             <div id="formacao">
-                <form action="/search/curriculum">
-                <div class="input-group">
-                    <input  type="text" name="search" class="form-control search" placeholder="Busca por Fomação" value="{$search}">
-                    <div class="input-group-append">
-                        <button class="btn btn-success" type="submit">Buscar &nbsp; <i class="fa fa-search" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-                </form>
+                {include="search_formation"}
             </div>
             <div id="sexo">
-                <form action="/search/curriculum">
-                    <div class="input-group">
-                    <select class="form-control search col-md-9" name="search" value="{$search}">
-                        <option value="">Selecione</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outro">Outro</option>
-                    </select>
-                        <div class="input-group-append">
-                        <button class="btn btn-success" type="submit">Buscar &nbsp; <i class="fa fa-search" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-                </form>
+                {include="search_gen"}
+            </div>
+            <div id="deficiencia">
+                {include="search_deficiency"}
+            </div>
+            <div id="conhecimento">
+                {include="search_knowledge"}
+            </div>
+            <div id="idiomas">
+                {include="search_languages"}
             </div>
             <div id="selecao">
                 <div  style="color: #0062cc">
                     <h4 class="text-center"><b>Selecione um filtro para a busca</b></h4>
                 </div>
             </div>
+
     </div>
     <div class="form-group col-md-4">
-        <select class="form-control search" id="filtro">
-            <option value="">Selecione...</option>
-            <option value="Formação">Formação</option>
+        <select class="form-control custom-select search" id="filtro">
+            <option value="">Selecione</option>
+            <option value="Conhecimento">Area de Conhecimento</option>
+            <option value="Formação">Formação Acadêmica</option>
+            <option value="Idioma">Idioma</option>
             <option value="Sexo">Sexo</option>
+            <option value="PCD">PCD</option>
         </select>
     </div>
     </div>
 </section>
 <section class="container col-md-6">
-    {if="$curriculum"}
-    <div class="card bg-info">
-        <h4 class="text-center">Curriculos</h4>
-        <div class="card-body">
-            <table class="table table-striped border-success">
-                <thead>
-                <tr>
-                    <th style="width: 10px"><strong>#</strong></th>
-                </tr>
-                </thead>
-            <tbody>
-            {loop="$curriculum"}
-            <tr>
-           <td><a href="{#site('root')#}/curriculum/{$value.cod_curriculo}" target="_blank"> {$value.id_pessoa}</a></td>
-                <td> {$value.primeiro_nome}</td>
-            </tr>
-            {/loop}
-                </tbody>
-            </table>
-        </div>
-        <div class="card-footer">
-            <ul class="pagination justify-content-end">
-                {loop="$pages"}
-                <li  class="page-item"><a class="page-link" href="{$value.href}">{$value.text}</a></li>
-                {/loop}
-            </ul>
-        </div>
-    </div>
-    {/if}
+    {include="results_search"}
 </section>
 </main>
-
 {include="footer"}

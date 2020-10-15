@@ -25,6 +25,7 @@ $router->get("/sent", "WebController:sent","web.sent");
 $router->get("/reset", "WebController:reset","web.reset");
 $router->get("/reset_success","WebController:resetSuccess","web.resetSuccess");
 $router->get("/search/curriculum", "SearchController:searchCurriculum","web.searchCurriculum");
+$router->get("/search/curriculum/error", "SearchController:searchErrorCurriculum","web.searchErrorCurriculum");
 $router->get("/curriculum/{cod_curriculo}", "WebController:shareCurriculum","web.shareCurriculum");
 $router->get("/curriculum/pdf/{cod_curriculo}", "WebController:getCurriculum","web.getCurriculum");
 

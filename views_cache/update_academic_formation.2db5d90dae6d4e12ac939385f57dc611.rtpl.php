@@ -85,7 +85,7 @@
                             <option value="<?php echo htmlspecialchars( $user["tipo_graduacao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $user["tipo_graduacao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
                             <option value="Bacharelado">Bacharelado</option>
                             <option value="Licenciatura">Licenciatura</option>
-                            <option value="Tecnológico">Tecnológico</option>
+                            <option value="Tecnológia">Tecnológia</option>
                         </select>
                     </div>
                 </div>
