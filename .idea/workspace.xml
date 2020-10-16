@@ -2,30 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/theme/web/error_search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/web/results_search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/web/search_deficiency.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/web/search_gen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/web/search_knowledge.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/web/search_languages.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/SearchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_academic_formation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/forgot_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/recover_password/forgot_password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/web/search_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/search_curriculum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/search_knowledge.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/search_knowledge.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views_cache/search_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/search_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/share_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/share_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/update_academic_formation.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/update_academic_formation.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/search_knowledge.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/search_knowledge.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +193,8 @@
       <workItem from="1602276792977" duration="6464000" />
       <workItem from="1602707379204" duration="10980000" />
       <workItem from="1602795461771" duration="8825000" />
+      <workItem from="1602805495912" duration="563000" />
+      <workItem from="1602880952869" duration="2677000" />
     </task>
     <servers />
   </component>

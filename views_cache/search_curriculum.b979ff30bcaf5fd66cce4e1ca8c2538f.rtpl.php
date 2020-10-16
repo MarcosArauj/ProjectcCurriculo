@@ -9,41 +9,28 @@
 <div class="alert_message">
     <?php echo flash(); ?>
 </div>
+<form action="/search/curriculum" >
     <div class="row">
-    <div class="form-group col-md-8">
-            <div id="formacao">
-                <?php require $this->checkTemplate("search_formation");?>
-            </div>
-            <div id="sexo">
-                <?php require $this->checkTemplate("search_gen");?>
-            </div>
-            <div id="deficiencia">
-                <?php require $this->checkTemplate("search_deficiency");?>
-            </div>
-            <div id="conhecimento">
-                <?php require $this->checkTemplate("search_knowledge");?>
-            </div>
-            <div id="idiomas">
-                <?php require $this->checkTemplate("search_languages");?>
-            </div>
-            <div id="selecao">
-                <div  style="color: #0062cc">
-                    <h4 class="text-center"><b>Selecione um filtro para a busca</b></h4>
+        <div class="form-group col-md-4">
+            <select class="form-control custom-select search" id="filtro" name="filter">
+                <option value="">Selecione um filtro</option>
+                <option value="Conhecimento">Area de Conhecimento</option>
+                <option value="Formação">Formação Acadêmica</option>
+                <option value="Idioma">Idioma</option>
+                <option value="Sexo">Sexo</option>
+                <option value="PCD">PCD</option>
+            </select>
+        </div>
+        <div class="form-group col-md-8">
+            <div class="input-group">
+                <input type="text" class="form-control search" name="search" id="busca" placeholder="Digite sua busca" disabled >
+                <div class="input-group-append">
+                    <button class="btn btn-success" type="submit">Buscar &nbsp; <i class="fa fa-search" aria-hidden="true"></i></button>
                 </div>
             </div>
-
+        </div>
     </div>
-    <div class="form-group col-md-4">
-        <select class="form-control custom-select search" id="filtro">
-            <option value="">Selecione</option>
-            <option value="Conhecimento">Area de Conhecimento</option>
-            <option value="Formação">Formação Acadêmica</option>
-            <option value="Idioma">Idioma</option>
-            <option value="Sexo">Sexo</option>
-            <option value="PCD">PCD</option>
-        </select>
-    </div>
-    </div>
+</form>
 </section>
 <section class="container col-md-6">
     <?php require $this->checkTemplate("results_search");?>
