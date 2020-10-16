@@ -353,22 +353,22 @@ $(document).ready(function () {
         let filtro = $('#filtro').val();
 
         if (filtro == "Formação") {
-            $('#busca').val('Digite a formação acadêmica desejada');
+            $('#busca').attr('placeholder','Digite a formação acadêmica desejada');
             $('#busca').attr('disabled', false);
         } else if (filtro == "Sexo") {
-            $('#busca').val('Digite um Sexo');
+            $('#busca').attr('placeholder','Digite um Sexo');
             $('#busca').attr('disabled', false);
 
         } else if (filtro == "PCD") {
-            $('#busca').val('Digite o tipo de deficiência desejado');
+            $('#busca').attr('placeholder','Digite o tipo de deficiência desejado');
             $('#busca').attr('disabled', false);
 
         } else if (filtro == "Conhecimento") {
-            $('#busca').val('Digite area de conhecimento desejada');
+            $('#busca').attr('placeholder','Digite area de conhecimento desejada');
             $('#busca').attr('disabled', false);
 
         } else if (filtro == "Idioma") {
-            $('#busca').val('Digite um Idioma');
+            $('#busca').attr('placeholder','Digite um Idioma');
             $('#busca').attr('disabled', false);
 
         } else if (filtro == "") {

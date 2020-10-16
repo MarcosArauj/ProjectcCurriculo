@@ -6,10 +6,11 @@
       <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/web/search_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/search_curriculum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/web/search_knowledge.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/search_knowledge.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/search_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/search_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/search_knowledge.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/search_knowledge.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/search_deficiency.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/search_formation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/search_gen.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/search_knowledge.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/search_languages.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +195,7 @@
       <workItem from="1602707379204" duration="10980000" />
       <workItem from="1602795461771" duration="8825000" />
       <workItem from="1602805495912" duration="563000" />
-      <workItem from="1602880952869" duration="2677000" />
+      <workItem from="1602880952869" duration="3551000" />
     </task>
     <servers />
   </component>
