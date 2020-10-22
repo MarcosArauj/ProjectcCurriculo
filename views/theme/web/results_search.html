@@ -40,7 +40,9 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-3">
+                        {if="$value.foto_usuario != NULL"}
                         <img class="rounded-circle" src="{$value.foto_usuario}" style="width: 100px; height: 100px" alt="Photo">
+                        {/if}
                     </div>
                     <div class="col-md-9">
                                 <span class="card-text">Idade {function="calculateAge($value.nascimento)"} anos, natural de {$value.naturalidade}/{$value.uf_naturalidade}, {$value.nacionalidade} <br>
