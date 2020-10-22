@@ -1,0 +1,216 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$title} </title>
+    <style>
+        body {
+            font-family: "Times New Roman";
+            background-color: white;
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        img {
+            width: 100px;
+            height: inherit;
+            padding: 4px;
+            max-width: 100%;
+            padding: 0.80rem 1.35rem
+        }
+
+        .space {
+            padding-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<main role="main">
+    {if="$curriculum"}
+    <section>
+        {if="$curriculum.foto_usuario != NULL"}
+        <img  src="{$curriculum.foto_usuario}" alt="Photo">
+        {/if}
+            {if="$curriculum.nome_social_uso == 'Sim'"}
+            <h1>{$curriculum.nome_social}</h1>
+            {else}
+            <h1>{$curriculum.primeiro_nome} {$curriculum.sobrenome}</h1>
+            {/if}
+                <!-- Dados Pessoais -->
+                <div>
+                    <h3><u>Dados Pessoais</u> </h3>
+                </div>
+                <div>
+                    <label><b>Idade: </b></label>{function="calculateAge($curriculum.nascimento)"} anos;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label><b>Data de Nascimento: </b></label>{function="formatDate($curriculum.nascimento)"};
+                    <br>
+                    <label><b>Sexo: </b></label>{$curriculum.genero};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label><b>Cor/Raça: </b></label>{$curriculum.cor_raca};
+                    <br>
+                    <label><b>Naturalidade: </b></label>{$curriculum.naturalidade}/{$curriculum.uf_naturalidade};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label><b>Nacionalidade: </b></label>{$curriculum.nacionalidade};
+                </div>
+                <hr>
+                <!-- Contato -->
+                <div>
+                    <h3><u>Contato</u> </h3>
+                </div>
+                <div>
+                    <label><b>Celular: </b></label>{$curriculum.celular};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    {if="$curriculum.telefone != NULL"}
+                    <label><b>Telefone: </b></label>{$curriculum.telefone};
+                    {/if}
+                    <br>
+                    <label><b>E-mail: </b></label>{$curriculum.email};
+                </div>
+                <hr>
+                <!-- Endereço -->
+                <div>
+                    <h5><u>Endereço</u> </h5>
+                </div>
+                <div>
+                    <label><b>Rua/Av: </b></label>{$curriculum.endereco};&nbsp;&nbsp;&nbsp;
+                    <label><b>Nº: </b></label>{$curriculum.numero};
+                    <label><b>CEP: </b></label>{$curriculum.cep};
+                    <br>
+                    <label><b>Bairro: </b></label>{$curriculum.bairro};&nbsp;&nbsp;&nbsp;
+                    <label><b>Cidade: </b></label>{$curriculum.cidade} - {$curriculum.estado};&nbsp;&nbsp;&nbsp;
+                    <label><b>Pais: </b></label>{$curriculum.pais};
+                </div>
+                <!-- Deficiência -->
+                {if="$curriculum.deficiencia_existe == 'Sim'"}
+                <hr>
+                <div>
+                    <h3><u>Deficiência</u> </h3>
+                </div>
+                <div>
+                    <label><b>Tipo: </b></label>{$curriculum.tipo_deficiencia};&nbsp;&nbsp;&nbsp;
+                    {if="$curriculum.cid != NULL"}
+                     <label><b>CID: </b></label>{$curriculum.cid}
+                    {/if}
+                    <br>
+                     <label><b>Detalhamento da Deficiência: </b></label>{$curriculum.especificacao_deficiencia};
+                    <br>
+                    {if="$curriculum.regime_cota == 'Sim'"}
+                     <label><b>* Já trabalhou pelo regime de <a href="https://www2.camara.leg.br/legin/fed/lei/1991/lei-8213-24-julho-1991-363650-publicacaooriginal-1-pl.html" target="_blank">Lei de Cotas 8213/91;</a></b></label>
+                    {/if}
+                    <br>
+                    {if="$curriculum.veiculo_adaptado == 'Sim'"}
+                      <label><b>* Possúi veículo adaptado;</b></label>
+                    {/if}
+                    <br>
+                    {if="$curriculum.transporte == 'Sim'"}
+                     <label><b>* Independente no transporte coletivo;</b></label>
+                    {else}
+                      <label><b>* Necessita de ajuda no transporte coletivo;</b></label>
+                    {/if}
+                    <br>
+                    {if="$curriculum.acompanhantes == 'Sim'"}
+                      <label><b>* Necessita de acompanhantes ou cão-guia;</b></label>
+                    {/if}
+                    <br>
+                    {if="$curriculum.adaptacoes_trabalho == 'Sim'"}
+                    {if="$curriculum.especificacao_trabalho != NULL"}
+                      <label><b>* Detalhamento da Adaptação Necessaria: </b></label>{$curriculum.especificacao_trabalho};
+                    {/if}
+                    {/if}
+                </div>
+                {/if}
+                <hr>
+                <!-- Formação Acadêmica -->
+                <div>
+                    <h3><u>Formação Acadêmica</u> </h3>
+                </div>
+                <div>
+                    {if="$curriculum.nivel_conclusao != NULL"}
+                    <label><b>Formação Concluida: </b></label>{$curriculum.nivel_conclusao};&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label><b>Início: </b></label>{$curriculum.ano_inicio_conclusao};&nbsp;&nbsp;
+                    <label><b>Conclusão: </b></label>{$curriculum.ano_conclusao};&nbsp;&nbsp;
+                     <br>
+                    <label><b>Instituição de Conclusão: </b></label>{$curriculum.instituicao_conclusao};
+                    {/if}
+                     <br>
+                    {if="$curriculum.nivel_andamento != NULL"}
+                    <label><b>Formação em Andamento: </b></label>{$curriculum.nivel_andamento};&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label><b>Início: </b></label>{$curriculum.ano_inicio_andamento};
+                    <br>
+                    <label><b>Instituição: </b></label>{$curriculum.instituicao_andamento};
+                    {/if}
+                    <br>
+                    {if="$curriculum.curso != NULL"}
+                    <label><b>Curso: </b></label>{$curriculum.curso};
+                     <br>
+                    <label><b>Tipo de Graduação: </b></label>{$curriculum.tipo_graduacao};
+                    {/if}
+                </div>
+                <!-- Outros Cursos -->
+                {if="$courses"}
+                <hr>
+                <div>
+                    <h3><u>Outros Cursos</u> </h3>
+                </div>
+                {loop="$courses"}
+                <div>
+                   <label><b>Curso: </b></label>{$value.nome_curso};&nbsp;&nbsp;&nbsp;&nbsp;
+                   <label><b>Carga Horária: </b></label>{$value.carga_horaria} horas;
+                    <br>
+                   <label><b>Instituicão: </b></label>{$value.instituicao};&nbsp;&nbsp;&nbsp;
+                   <label><b>Conclusão: </b></label>{function="formatDate($value.termino)"};
+                    <br>
+                    <label><b>Compentências: </b></label>{$value.compentencias}
+                </div>
+                {/loop}
+                {/if}
+                <!-- Idiomas -->
+                {if="$languages"}
+                <hr>
+                <div>
+                    <h3><u>Idiomas</u> </h3>
+                </div>
+                {loop="$languages"}
+                <div>
+                    <label><b>Idioma: </b></label>{$value.idioma} - {$value.nivel_conhecimento}
+                </div>
+                {/loop}
+                {/if}
+            <!-- Experiência Profissional -->
+            {if="$professional"}
+            <hr>
+            <div>
+                <h3><u>Experiência Profissional</u> </h3>
+            </div>
+           <div>
+            {loop="$professional"}
+            {if="$value.registro == 'inativo' && $value.empresa_anterior != NULL"}
+                <label><b>Empresa: </b></label>{$value.empresa_anterior};&nbsp;&nbsp;&nbsp;
+                <label><b>Cargo: </b></label>{$value.cargo_anterior};
+                <br>
+                <label><b>Admissão: </b></label>{function="formatDate($value.data_admissao)"};&nbsp;&nbsp;&nbsp;
+                <label><b>Demissão: </b></label>{function="formatDate($value.data_demissao)"};
+                <br>
+                <label><b>Atividade Exercida: </b></label>{$value.atividade}
+            {/if}
+            {if="$value.registro == 'ativo' && $value.empresa_atual != NULL"}
+                <label><b>Empresa Atual: </b></label>{$value.empresa_atual};&nbsp;&nbsp;&nbsp;
+                <label><b>Cargo: </b></label>{$value.cargo_atual};
+                <br>
+                <label><b>Admissão: </b></label>{function="formatDate($value.data_admissao)"};
+                <br>
+                <label><b>Atividade Exercida: </b></label>{$value.atividade};
+               <br>
+               <br>
+            {/if}
+            {/loop}
+           </div>
+        {/if}
+    </section>
+    {/if}
+</main>
+
+</body>
+</html>

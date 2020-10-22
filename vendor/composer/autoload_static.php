@@ -7,6 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
 {
     public static $files = array (
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'c20bc10ce25279f0f8dea289795555f3' => __DIR__ . '/../..' . '/source/Config/Config.php',
         'dc30e632b06392f68c51364eb79f7f08' => __DIR__ . '/../..' . '/source/Config/Helpers.php',
         '8c85b75f05b51386debeab4e018f5310' => __DIR__ . '/../..' . '/source/Config/Minify.php',
@@ -16,25 +17,22 @@ class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'Svg\\' => 4,
             'Source\\' => 7,
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
         'M' => 
         array (
+            'Mpdf\\' => 5,
             'MatthiasMullie\\PathConverter\\' => 29,
             'MatthiasMullie\\Minify\\' => 22,
         ),
-        'F' => 
-        array (
-            'FontLib\\' => 8,
-        ),
         'D' => 
         array (
-            'Dompdf\\' => 7,
+            'DeepCopy\\' => 9,
         ),
         'C' => 
         array (
@@ -43,17 +41,21 @@ class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
     );
 
     public static $prefixDirsPsr4 = array (
-        'Svg\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
-        ),
         'Source\\' => 
         array (
             0 => __DIR__ . '/../..' . '/source',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'Mpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
         ),
         'MatthiasMullie\\PathConverter\\' => 
         array (
@@ -63,13 +65,9 @@ class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
         array (
             0 => __DIR__ . '/..' . '/matthiasmullie/minify/src',
         ),
-        'FontLib\\' => 
+        'DeepCopy\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
-        ),
-        'Dompdf\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
+            0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
         'CoffeeCode\\Router\\' => 
         array (
@@ -78,13 +76,6 @@ class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
     );
 
     public static $prefixesPsr0 = array (
-        'S' => 
-        array (
-            'Sabberworm\\CSS' => 
-            array (
-                0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
-            ),
-        ),
         'R' => 
         array (
             'Rain' => 
@@ -95,12 +86,13 @@ class ComposerStaticInit16e9f7ea22bd19cec604d6426aa8e06c
     );
 
     public static $classMap = array (
-        'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
-        'HTML5_Data' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Data.php',
-        'HTML5_InputStream' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/InputStream.php',
-        'HTML5_Parser' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Parser.php',
-        'HTML5_Tokenizer' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Tokenizer.php',
-        'HTML5_TreeBuilder' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/TreeBuilder.php',
+        'FPDF_TPL' => __DIR__ . '/..' . '/setasign/fpdi/fpdf_tpl.php',
+        'FPDI' => __DIR__ . '/..' . '/setasign/fpdi/fpdi.php',
+        'FilterASCII85' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterASCII85.php',
+        'FilterASCIIHexDecode' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterASCIIHexDecode.php',
+        'FilterLZW' => __DIR__ . '/..' . '/setasign/fpdi/filters/FilterLZW.php',
+        'fpdi_pdf_parser' => __DIR__ . '/..' . '/setasign/fpdi/fpdi_pdf_parser.php',
+        'pdf_context' => __DIR__ . '/..' . '/setasign/fpdi/pdf_context.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

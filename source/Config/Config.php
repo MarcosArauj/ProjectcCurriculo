@@ -13,7 +13,7 @@ define("SITE", [
    "root" => "https://wcurriculo.cruzm.com.br",
     "version"=>"1.0"
 ]);
-//
+
 //define("DB", [
 //    "hostname" => "185.201.11.230",
 //    "username" => "u655389713_wc",
@@ -39,10 +39,10 @@ define("DB", [
 define("MAIL_RECOVER", [
     "host" => "smtp.hostinger.com.br",
     "port" => "587",
-    "user" => "webcurriculo@cruzm.com.br",
-    "passwd" => "Web251723",
+    "user" => "wcurriculo@cruzm.com.br",
+    "passwd" => "f6CBizM$",
     "from_name" => "Web Curriculo",
-    "from_email" => "webcurriculo@cruzm.com.br"
+    "from_email" => "wcurriculo@cruzm.com.br"
 
 ]);
 

@@ -1,5 +1,7 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
-<?php require $this->checkTemplate("navebar_register");?>
+
+<?php require $this->checkTemplate("navebar_home");?>
+
 
 <main role="main">
     <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -8,6 +10,7 @@
 <section class="container col-md-6">
 <div class="alert_message">
     <?php echo flash(); ?>
+
 </div>
 <form action="/search/curriculum" >
     <div class="row">
@@ -34,6 +37,7 @@
 </section>
 <section class="container col-md-6">
     <?php require $this->checkTemplate("results_search");?>
+
 </section>
 </main>
 <?php require $this->checkTemplate("footer");?>
