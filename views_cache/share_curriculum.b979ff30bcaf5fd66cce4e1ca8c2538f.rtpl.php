@@ -24,12 +24,12 @@
          <?php } ?>
 
      </div>
-     <div class="card-body" id="imprimir">
+     <div class="card-body">
        <div class="row">
            <?php if( $curriculum["foto_usuario"] != NULL ){ ?>
 
            <div class="col-3">
-               <img style="width: 150px;" src="<?php echo htmlspecialchars( $curriculum["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Photo">
+               <img style="width: 150px;" class="card-img-overlay" src="<?php echo htmlspecialchars( $curriculum["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Photo">
            </div>
            <?php }else{ ?>
 
@@ -263,6 +263,7 @@
                        <span><?php echo htmlspecialchars( $value1["compentencias"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                </div>
+               <br>
                <?php } ?>
 
                <?php } ?>
@@ -349,6 +350,7 @@
                                <span><?php echo htmlspecialchars( $value1["atividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                            </div>
                        </div>
+                       <br>
                    <?php } ?>
 
                    <!-- Modal Compartilhamento de Link do Curriculo -->
@@ -396,17 +398,3 @@
 </main>
 <?php require $this->checkTemplate("footer");?>
 
-
-<script>
-    window.onload = function() {
-        var imprimir = document.querySelector("#imprimir");
-        imprimir.onclick = function() {
-            imprimir.style.display = 'none';
-            window.print();
-
-            var time = window.setTimeout(function() {
-                imprimir.style.display = 'block';
-            }, 1000);
-        }
-    }
-</script>

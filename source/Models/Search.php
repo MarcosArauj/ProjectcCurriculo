@@ -7,6 +7,9 @@ namespace Source\Models;
 class Search extends Model {
 
 
+    /*
+     * Busca de curriculos com filtros
+     */
     public function getPageSearch($search,$filter,$page = 1, $itemsPerPage = 7):array {
         $start = ($page - 1) * $itemsPerPage;
         $column_search = null;
@@ -54,5 +57,50 @@ class Search extends Model {
             'pages'=>ceil($resultTotal[0]["nrtotal"] / $itemsPerPage)
         );
     }
+
+
+    /*
+    * Lista usuarios com busca
+    */
+    public function getPageUser($page = 1, $itemsPerPage = 10) {
+        $start = ($page - 1) * $itemsPerPage;
+
+        $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS *  FROM v_curriculo
+                    WHERE acesso = 0 AND status_usuario = 'ativo' GROUP BY id_usuario 
+                    ORDER BY primeiro_nome LIMIT $start, $itemsPerPage;");
+
+        $resultTotal = $this->conn->select("SELECT FOUND_ROWS() AS nrtotal" );
+
+        return array(
+            'data'=>$results,
+            'total'=>(int)$resultTotal[0]["nrtotal"],
+            'pages'=>ceil($resultTotal[0]["nrtotal"] / $itemsPerPage)
+        );
+
+    }
+
+
+    /*
+    * Busca  de Usuarios
+    */
+    public function getPageSearchUser($search,$page = 1, $itemsPerPage = 10){
+        $start = ($page - 1) * $itemsPerPage;
+
+        $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS *  FROM v_curriculo
+                    WHERE acesso = 0 AND status_usuario = 'ativo'
+                    AND primeiro_nome LIKE :search 
+                    GROUP BY id_usuario ORDER BY primeiro_nome LIMIT $start, $itemsPerPage;",array(
+                        ":search"=>'%'.$search.'%'
+                    ));
+
+        $resultTotal = $this->conn->select("SELECT FOUND_ROWS() AS nrtotal" );
+
+        return array(
+            'data'=>$results,
+            'total'=>(int)$resultTotal[0]["nrtotal"],
+            'pages'=>ceil($resultTotal[0]["nrtotal"] / $itemsPerPage)
+        );
+    }
+
 
 }

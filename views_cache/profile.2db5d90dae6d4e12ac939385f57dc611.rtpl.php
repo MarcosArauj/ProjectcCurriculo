@@ -1,18 +1,24 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
 <?php require $this->checkTemplate("navebar");?>
+
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <?php if( $user["nome_social_uso"] == 'Sim' ){ ?>
+
         <h2><?php echo htmlspecialchars( $user["nome_social"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h2>
         <?php }else{ ?>
+
         <h2><?php echo htmlspecialchars( $user["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <?php echo htmlspecialchars( $user["sobrenome"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h2>
         <?php } ?>
+
     </div>
 
 <form action="/curriculum/personal_data/photo" method="post" enctype="multipart/form-data">
 <section class="container col-md-10">
 <div class="alert_message">
     <?php echo flash(); ?>
+
 </div>
 <div  class="card" style="color: black;">
     <div class="card-body">
@@ -45,7 +51,7 @@
                    Link de Compartinhamento <i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
                    </p>
                    <p>
-                   <a class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#" href="" title="Gerar PDF">
+                   <a class="btn btn-secondary btn-sm" href="/curriculum/<?php echo htmlspecialchars( $curriculum, ENT_COMPAT, 'UTF-8', FALSE ); ?>/generate_pdf" title="Gerar PDF">
                     Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i></a>
                    </p>
             </div>
@@ -76,9 +82,11 @@
                     <span><?php echo htmlspecialchars( $user["celular"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
                 <br>
                     <?php if( $user["telefone"] != NULL ){ ?>
+
                     <label><b>Telefone: </b></label>&nbsp;
                     <span><?php echo htmlspecialchars( $user["telefone"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
                     <?php } ?>
+
                 <br>
                     <label><b>E-mail: </b></label>&nbsp;
                     <span><?php echo htmlspecialchars( $user["email"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
@@ -123,24 +131,25 @@
             <div class="modal-body">
                 <div class="alert_copy ">
                     <?php echo flash(); ?>
+
                 </div>
                 <p><b>Link de Compartinhamento do seu Curriculo</b></p>
                 <input type="text" id="link" style="color: black" class="form-control" value="<?php echo site('root'); ?>/curriculum/<?php echo htmlspecialchars( $curriculum, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
             </div>
             <div class="modal-footer">
-                <button id="btncopia"  class="btn btn-danger btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+                <button id="btncopia"  class="btn btn-info btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
     </div>
 </div>
 <?php require $this->checkTemplate("footer");?>
+
 <script>
 
     document.querySelector('.user_photo').addEventListener('mouseover',() => {
         document.querySelector('.user_photo').style.cursor = 'pointer';
     });
-
 
     var carregarImagem = function(){
         var reader = new FileReader();

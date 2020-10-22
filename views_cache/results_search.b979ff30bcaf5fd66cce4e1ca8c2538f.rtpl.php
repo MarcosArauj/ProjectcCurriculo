@@ -53,9 +53,16 @@
             </div>
             <div class="modal-body">
                 <div class="row">
+                    <?php if( $value1["foto_usuario"] != NULL ){ ?>
+
                     <div class="col-md-3">
                         <img class="rounded-circle" src="<?php echo htmlspecialchars( $value1["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" style="width: 100px; height: 100px" alt="Photo">
                     </div>
+                    <?php }else{ ?>
+
+                    <div class="col-md-2"></div>
+                    <?php } ?>
+
                     <div class="col-md-9">
                                 <span class="card-text">Idade <?php echo calculateAge($value1["nascimento"]); ?> anos, natural de <?php echo htmlspecialchars( $value1["naturalidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["uf_naturalidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>, <?php echo htmlspecialchars( $value1["nacionalidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <br>
                                 </span>

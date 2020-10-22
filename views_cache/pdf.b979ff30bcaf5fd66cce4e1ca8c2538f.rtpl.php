@@ -79,7 +79,7 @@
                 <hr>
                 <!-- Endereço -->
                 <div>
-                    <h5><u>Endereço</u> </h5>
+                    <h3><u>Endereço</u> </h3>
                 </div>
                 <div>
                     <label><b>Rua/Av: </b></label><?php echo htmlspecialchars( $curriculum["endereco"], ENT_COMPAT, 'UTF-8', FALSE ); ?>;&nbsp;&nbsp;&nbsp;
@@ -163,6 +163,7 @@
                     <?php } ?>
 
                      <br>
+                    <br>
                     <?php if( $curriculum["nivel_andamento"] != NULL ){ ?>
 
                     <label><b>Formação em Andamento: </b></label><?php echo htmlspecialchars( $curriculum["nivel_andamento"], ENT_COMPAT, 'UTF-8', FALSE ); ?>;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -171,9 +172,9 @@
                     <label><b>Instituição: </b></label><?php echo htmlspecialchars( $curriculum["instituicao_andamento"], ENT_COMPAT, 'UTF-8', FALSE ); ?>;
                     <?php } ?>
 
-                    <br>
                     <?php if( $curriculum["curso"] != NULL ){ ?>
 
+                    <br>
                     <label><b>Curso: </b></label><?php echo htmlspecialchars( $curriculum["curso"], ENT_COMPAT, 'UTF-8', FALSE ); ?>;
                      <br>
                     <label><b>Tipo de Graduação: </b></label><?php echo htmlspecialchars( $curriculum["tipo_graduacao"], ENT_COMPAT, 'UTF-8', FALSE ); ?>;
@@ -199,6 +200,7 @@
                     <label><b>Compentências: </b></label><?php echo htmlspecialchars( $value1["compentencias"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
 
                 </div>
+                <br>
                 <?php } ?>
 
                 <?php } ?>

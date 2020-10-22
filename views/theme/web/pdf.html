@@ -71,7 +71,7 @@
                 <hr>
                 <!-- Endereço -->
                 <div>
-                    <h5><u>Endereço</u> </h5>
+                    <h3><u>Endereço</u> </h3>
                 </div>
                 <div>
                     <label><b>Rua/Av: </b></label>{$curriculum.endereco};&nbsp;&nbsp;&nbsp;
@@ -135,14 +135,15 @@
                     <label><b>Instituição de Conclusão: </b></label>{$curriculum.instituicao_conclusao};
                     {/if}
                      <br>
+                    <br>
                     {if="$curriculum.nivel_andamento != NULL"}
                     <label><b>Formação em Andamento: </b></label>{$curriculum.nivel_andamento};&nbsp;&nbsp;&nbsp;&nbsp;
                     <label><b>Início: </b></label>{$curriculum.ano_inicio_andamento};
                     <br>
                     <label><b>Instituição: </b></label>{$curriculum.instituicao_andamento};
                     {/if}
-                    <br>
                     {if="$curriculum.curso != NULL"}
+                    <br>
                     <label><b>Curso: </b></label>{$curriculum.curso};
                      <br>
                     <label><b>Tipo de Graduação: </b></label>{$curriculum.tipo_graduacao};
@@ -164,6 +165,7 @@
                     <br>
                     <label><b>Compentências: </b></label>{$value.compentencias}
                 </div>
+                <br>
                 {/loop}
                 {/if}
                 <!-- Idiomas -->
