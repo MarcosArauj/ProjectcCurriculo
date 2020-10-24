@@ -1,4 +1,4 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -6,15 +6,15 @@
     <meta http-equiv="Cache-Control" content="No-Cache">
     <meta http-equiv="Pragma" content="No-Cache">
     <meta http-equiv="Expires" content="0">
-    <title><?php echo htmlspecialchars( $title, ENT_COMPAT, 'UTF-8', FALSE ); ?></title>
+    <title>{$title}</title>
     <!--Icone-->
-    <link rel="shortcut icon" href=<?php echo asset("images/wc.ico"); ?> />
+    <link rel="shortcut icon" href={function="asset("images/wc.ico")"} />
     <!-- Bootstrap 4 -->
-    <link rel="stylesheet" href=<?php echo asset("bootstrap4/dist/css/bootstrap.min.css"); ?> />
+    <link rel="stylesheet" href={function="asset("bootstrap4/dist/css/bootstrap.min.css")"} />
     <!-- Style-->
-    <link rel="stylesheet" href=<?php echo asset("css/style.min.css"); ?> />
+    <link rel="stylesheet" href={function="asset("css/style.min.css")"} />
     <!-- Ionicons -->
-    <link rel="stylesheet" href=<?php echo asset("font-awesome-4.7.0/css/font-awesome.min.css"); ?> />
+    <link rel="stylesheet" href={function="asset("font-awesome-4.7.0/css/font-awesome.min.css")"} />
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 

@@ -3,6 +3,7 @@
 
 namespace Source\App;
 
+use Source\App\Pages\PageAdmin;
 use Source\App\Pages\PageCurriculum;
 use Source\App\Pages\PageWeb;
 use Source\Models\Admin;
@@ -13,6 +14,7 @@ use Source\Models\PersonalData;
 use Source\Models\Professional;
 use Source\Models\Contact;
 use Source\Models\Search;
+use Source\Models\Support\RecoverPassword;
 use Source\Models\User;
 
 /**
@@ -24,6 +26,7 @@ class AdminController extends Controller {
     private $user_logado;
     private $data_user;
     private $search_users;
+    private $reset_pass;
 
     /**
      * AppController constructor.
@@ -39,10 +42,15 @@ class AdminController extends Controller {
             $this->router->redirect("web.home");
         } else {
             $this->user_logado = Login::getFromSession();
-            $this->data_user = new User();
-            $this->data_user->getUser($this->user_logado->getid_usuario());
+            if(Login::checkLogin()) {
+                $this->data_user = new User();
+                $this->data_user->getUser($this->user_logado->getid_usuario());
+                $this->reset_pass = new RecoverPassword();
+                $this->search_users = new Search();
 
-            $this->search_users = new Search();
+            } else {
+                $this->router->redirect("web.home");
+            }
         }
 
     }
@@ -51,20 +59,13 @@ class AdminController extends Controller {
      * Carrega tela Area de trabalho do Administrador
      *
      * */
-    public function admin():void {
+    public function dashboardAdmin():void {
 
-        $access = Login::checkLogin();
-
-        if ($access) {
-
-
-        } else {
-            $page = new PageCurriculum();
-            $page->setTpl("dashboard", array(
-                "title" =>"Bem Vindo(a) " . site("name"),
-                "curriculum" => $this->curruculum->getValues()
-            ));
-        }
+        $pageAdmin = new PageAdmin();
+        $pageAdmin->setTpl("dashboard_admin", array(
+            "title" =>"Bem Vindo(a) " . site("name"),
+            "user" =>$this->user_logado->getValues()
+        ));
 
     }
 
@@ -73,8 +74,6 @@ class AdminController extends Controller {
      *
      * */
     public function users():void {
-
-        $access = Login::checkLogin();
 
         $pagination = null;
         $pages = array();
@@ -94,7 +93,7 @@ class AdminController extends Controller {
         } else {
             for ($cont = 0; $cont < $pagination['pages']; $cont++) {
                 array_push($pages, array(
-                    'href' => '/user/users?' . http_build_query(array(
+                    'href' => '/admin/users?' . http_build_query(array(
                             'page' => $cont + 1,
                             'search' => $search
                         )),
@@ -104,11 +103,42 @@ class AdminController extends Controller {
 
         }
 
+        $pageAdmin = new PageAdmin();
 
-        if ($access) {
+        $pageAdmin->setTpl("users", array(
+            "title"=> site("name_complete"),
+            "users" => $pagination['data'],
+            "search" => $search,
+            "pages" => $pages
+        ));
 
-        } else {
-            $this->router->redirect("app.dashboard");
+    }
+
+
+    public function userResetPassword($data):void {
+
+        try{
+
+            $this->reset_pass->getEmailResetPass($data["email"]);
+
+            $this->data_user->getUser($data["id_usuario"]);
+
+            $this->data_user->setsenha("12345678");
+
+            $this->data_user->updatePassword();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("admin.users")
+            ]);
+            flash("success","Sucesso ao resetar senha");
+            return;
+
+        } catch ( \Exception $e){
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
         }
 
     }

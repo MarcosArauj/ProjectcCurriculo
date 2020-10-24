@@ -87,12 +87,19 @@ class AppController extends Controller {
      */
     public function dashboard():void {
 
-        $page = new PageCurriculum();
+        $access = Login::checkLogin();
 
-        $page->setTpl("dashboard", array(
-            "title" =>"Bem Vindo(a) " . site("name"),
-            "curriculum" => $this->curruculum->getValues()
-        ));
+        if ($access) {
+            $this->router->redirect("admin.dashboardAdmin");
+        } else {
+
+            $page = new PageCurriculum();
+            $page->setTpl("dashboard", array(
+                "title" => "Bem Vindo(a) " . site("name"),
+                "curriculum" => $this->curruculum->getValues()
+            ));
+
+        }
 
     }
 

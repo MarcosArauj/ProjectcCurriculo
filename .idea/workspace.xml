@@ -2,19 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/App/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/source/App/Pages/PageAdmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/theme/admin/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/theme/admin/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/theme/admin/navbar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/theme/admin/table_users.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/theme/admin/users.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/theme/email/email_reset.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/WebController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/WebController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/web/pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/pdf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/pdf.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/pdf.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/results_search.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/results_search.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/share_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/share_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Support/RecoverPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Support/RecoverPassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views_cache/header.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/header.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/source/App" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/theme/email" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -91,19 +93,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\web" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\assets\images\user" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\assets\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\web" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\Utilities" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover-password" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\admin" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App\Pages" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\web" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -203,7 +205,8 @@
       <workItem from="1602880952869" duration="3551000" />
       <workItem from="1603316573798" duration="17991000" />
       <workItem from="1603335535498" duration="151000" />
-      <workItem from="1603399101082" duration="6470000" />
+      <workItem from="1603399101082" duration="6767000" />
+      <workItem from="1603485519649" duration="13385000" />
     </task>
     <servers />
   </component>
@@ -211,6 +214,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="437" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603486005768">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="437" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1603486005768" />
     <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1599070020589">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -219,10 +226,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1595966538320" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603330080191">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603497391275">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603330080191" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1603497391275" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1599241215399">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

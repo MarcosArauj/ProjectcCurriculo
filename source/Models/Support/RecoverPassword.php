@@ -111,4 +111,61 @@ class RecoverPassword extends Model {
 
     }
 
+
+    /**
+     * @param $email
+     * @return EmailRecover
+     * @throws \Exception
+     *
+     * Envia E-mail de Reset da senha
+     */
+    public function getEmailResetPass($email): bool {
+
+        $results = $this->conn->select(
+            "SELECT * FROM v_usuario WHERE email = :email", array(
+            ":email"=>$email
+        ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Não foi possivel recuperar a senha");
+            return false;
+        } else {
+            $data = $results[0];
+
+            $results_recovery = $this->conn->select("CALL sp_recupera_senha(:id_usuario,:ip)",array(
+                ":id_usuario"=>$data["id_usuario"],
+                ":ip"=>$_SERVER["REMOTE_ADDR"]
+            ));
+
+            if(count($results_recovery) === 0 ) {
+                throw new \Exception("Não foi possivel recuperar a senha.");
+            } else {
+              //  $this->setData($results_recovery[0]);
+
+                $emailRovever = new EmailRecover();
+
+                $emailRovever->send(
+                    $data["email"],
+                    $data["primeiro_nome"],
+                    "Redefinição de senha - ". site("name_complete"),
+                    "email_reset",
+                    array(
+                        "name"=>$data["primeiro_nome"],
+                        "new_pass" => "12345678",
+                        "link" =>site("root")."/login",
+                        "site"=>site("name_complete")
+                    ));
+
+                if(!$emailRovever->error()) {
+                    return true;
+                } else {
+                    echo $emailRovever->error()->getMessage();
+                    return false;
+                }
+
+            }
+
+        }
+    }
+
 }

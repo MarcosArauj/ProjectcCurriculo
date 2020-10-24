@@ -30,7 +30,6 @@ $router->get("/curriculum/{cod_curriculo}", "WebController:shareCurriculum","web
 $router->get("/curriculum/pdf/{cod_curriculo}", "SearchController:pdfCurriculum","web.pdfCurriculum");
 $router->get("/curriculum/{cod_curriculo}/generate_pdf", "SearchController:generatePdfCurriculum","web.generatePdfCurriculum");
 
-
 /**
  * Auth
  */
@@ -39,6 +38,16 @@ $router->post("/register", "AuthController:register","auth.register");
 $router->post("/login", "AuthController:login","auth.login");
 $router->post("/forgot", "AuthController:forgot","auth.forgot");
 $router->post("/reset", "AuthController:reset","auth.reset");
+
+/**
+ * Admin
+ */
+$router->group("/admin");
+$router->get("", "AdminController:dashboardAdmin","admin.dashboardAdmin");
+$router->get("/users", "AdminController:users","admin.users");
+$router->get("/requests", "AdminController:requests","admin.requests");
+
+$router->post("/userResetPassword/{id_usuario}", "AdminController:userResetPassword","admin.userResetPassword");
 
 /**
  * - ------------------Rotas para Telas Usuarios Logado------------------------------

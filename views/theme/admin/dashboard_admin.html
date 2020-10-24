@@ -1,0 +1,14 @@
+{include="header"}
+{include="navbar"}
+<main role="main">
+    <div class="dashboard-text">
+        <div class="container col-md-8">
+            <span  class="alert_message">  {function="flash()"}</span>
+            <h1>{function="site("desc")"}</h1>
+            <h3>Olá -  {$user.primeiro_nome} {$user.sobrenome}</h3>
+            <br>
+        </div>
+    </div>
+
+</main>
+{include="footer"}

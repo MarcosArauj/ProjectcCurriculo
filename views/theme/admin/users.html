@@ -1,0 +1,28 @@
+{include="header"}
+{include="navbar"}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <section class="container col-md-12">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h4 class="h2">Usuários</h4>
+            <div class="float-right">
+                <form action="/admin/users">
+                    <div class="input-group">
+                        <input  type="text" class="form-control search" name="search" placeholder="Digite sua busca">
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="alert_message">
+            {function="flash()"}
+        </div>
+        {include="table_users"}
+    </section>
+</main>
+{include="footer"}
+
+
+
+
