@@ -52,6 +52,10 @@ class User extends Model {
             ":id_usuario"=>$id_usuario
         ));
 
+        if (count($results) === 0) {
+            throw new \Exception("Usuario não Encontrado!");
+        }
+
         $this->setData($results[0]);
 
     }

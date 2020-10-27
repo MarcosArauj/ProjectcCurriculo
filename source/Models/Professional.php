@@ -11,12 +11,12 @@ namespace Source\Models;
 class Professional extends Model {
 
     /**
-     * @param $id_usuario
+     * @param int $id_usuario
      * @return array
      *
      * Pega Experiência Profissional de Acordo com Usuario
      */
-    public function getExProfessionalUser($id_usuario) {
+    public function getExProfessionalUser(int $id_usuario) {
 
         return  $this->conn->select("SELECT * FROM tb_experiencia_profissional
                 WHERE id_usuario = :id_usuario ORDER BY data_admissao DESC", array(
@@ -26,16 +26,21 @@ class Professional extends Model {
     }
 
     /**
-     * @param $id_profissional
+     * @param int $id_profissional
      * @return void
      * Pega Idiomas
+     * @throws \Exception
      */
-    public function getExProfessional($id_profissional):void {
+    public function getExProfessional(int $id_profissional):void {
 
         $results =   $this->conn->select("SELECT * FROM tb_experiencia_profissional
                 WHERE id_profissional = :id_profissional", array(
             ":id_profissional"=>$id_profissional
         ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Experiência profissional não Encontrado!");
+        }
 
         $this->setData($results[0]);
     }

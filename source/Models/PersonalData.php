@@ -16,7 +16,6 @@ class PersonalData extends Model {
      */
     public function savePersonalData():bool {
 
-
         $results = $this->conn->select(
             "CALL sp_dados_pessoais_salvar(:primeiro_nome,:sobrenome,:nome_social,:nome_social_uso,:genero,:cor_raca,:nascimento,
            :naturalidade,:uf_naturalidade,:nacionalidade,:rg,:cpf,:id_usuario)", array(

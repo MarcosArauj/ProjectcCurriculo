@@ -85,16 +85,21 @@ class Formation extends Model {
     }
 
     /**
-     * @param $id_cursos
+     * @param int $id_cursos
      * @return void
      * Pega Curso
+     * @throws \Exception
      */
-    public function getOtherCourses($id_cursos):void {
+    public function getOtherCourses(int $id_cursos):void {
 
         $results =   $this->conn->select("SELECT * FROM tb_cursos
                 WHERE id_cursos = :id_cursos", array(
             ":id_cursos"=>$id_cursos
         ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Curso não Encontrado!");
+        }
 
         $this->setData($results[0]);
     }
@@ -138,12 +143,12 @@ class Formation extends Model {
     }
 
     /**
-     * @param $id_usuario
+     * @param int $id_usuario
      * @return array
      *
      * Pega Idioma de Acordo com Usuario
      */
-    public function getLanguagesUser($id_usuario) {
+    public function getLanguagesUser(int $id_usuario) {
 
         return  $this->conn->select("SELECT * FROM tb_idioma_curriculo
                 WHERE id_usuario = :id_usuario", array(
@@ -153,28 +158,34 @@ class Formation extends Model {
     }
 
     /**
-     * @param $id_idiomac
+     * @param int $id_idiomac
      * @return void
      * Pega Idiomas
+     * @throws \Exception
      */
-    public function getLanguages($id_idiomac):void {
+
+    public function getLanguages(int $id_idiomac):void {
 
         $results =   $this->conn->select("SELECT * FROM tb_idioma_curriculo
                 WHERE id_idiomac = :id_idiomac", array(
             ":id_idiomac"=>$id_idiomac
         ));
 
+        if (count($results) === 0) {
+            throw new \Exception("Idioma não Encontrado!");
+        }
+
         $this->setData($results[0]);
     }
 
     /**
-     * @param $id_usuario
-     * @param $idioma
+     * @param int $id_usuario
+     * @param string $idioma
      * @return bool
      *
      * Checa se o Usuario já cadastrou o Idioma
      */
-    public function checkLanguage($id_usuario, $idioma):bool {
+    public function checkLanguage(int $id_usuario,string $idioma):bool {
 
         $results =  $this->conn->select("SELECT * FROM tb_idioma_curriculo 
                 WHERE  id_usuario = :id_usuario AND idioma = :idioma", array(
@@ -197,13 +208,12 @@ class Formation extends Model {
     }
 
     /**
-     * @param $id_usuario
-     * @param $idioma
+     * @param string $idioma_pt
      * @return bool
      *
      * Checa  cadastrou o Idioma
      */
-    public function checkLanguageExists($idioma_pt):bool {
+    public function checkLanguageExists(string $idioma_pt):bool {
 
         $results =  $this->conn->select("SELECT * FROM tb_idiomas 
                 WHERE idioma_pt = :idioma_pt", array(

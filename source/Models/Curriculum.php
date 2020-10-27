@@ -11,9 +11,11 @@ class Curriculum extends Model {
 
 
     /**
-     * @return array
+     * @param int $id_usuario
+     * @return void
+     * @throws \Exception
      */
-    public function getCurriculum($id_usuario): void {
+    public function getCurriculum(int $id_usuario): void {
 
         $results = $this->conn->select("SELECT * FROM v_curriculo
             WHERE id_usuario = :id_usuario",array(
@@ -21,10 +23,12 @@ class Curriculum extends Model {
         ));
 
         if (count($results) > 0) {
-
             $data = $results[0];
 
             $this->setData($data);
+
+        } else {
+            throw new \Exception("Curriculo não Encontrado!");
 
         }
 
@@ -33,6 +37,7 @@ class Curriculum extends Model {
     /**
      * @param $cod_curriculo
      * Pegar dados do Curriculo pelo Código
+     * @throws \Exception
      */
     public function getCurriculumCod($cod_curriculo): void {
 
@@ -46,6 +51,9 @@ class Curriculum extends Model {
             $data = $results[0];
 
             $this->setData($data);
+
+        } else {
+            throw new \Exception("Curriculo não Encontrado!");
 
         }
 

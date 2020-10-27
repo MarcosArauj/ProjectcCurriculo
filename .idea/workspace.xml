@@ -2,36 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/source/App/SupportController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/email/email_solicitation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/support/create_solicitation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/support/reset_solicitation.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/Pages/PageRecoverPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/Pages/PageSupport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/WebController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/WebController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Support/EmailRecover.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Support/EmailSupport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Support/RecoverPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Support/Support.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/SupportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/SupportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Curriculum.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Curriculum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Formation.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Formation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/PersonalData.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/PersonalData.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Professional.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Professional.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_personal_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/forgot_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/forgot_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/forgot_sent.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/forgot_sent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/navebar_forgot.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/navebar_forgot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/recover_send.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/recover_send.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/recover_password/reset_success.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/reset_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/web/navebar_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/navebar_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_personal_data.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_personal_data.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/navebar_home.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/navebar_home.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/update_personal_data.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/update_personal_data.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +84,7 @@
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -224,7 +203,8 @@
       <workItem from="1603485519649" duration="13986000" />
       <workItem from="1603745119052" duration="13024000" />
       <workItem from="1603760994444" duration="391000" />
-      <workItem from="1603761439650" duration="554000" />
+      <workItem from="1603761439650" duration="716000" />
+      <workItem from="1603762418873" duration="1210000" />
     </task>
     <servers />
   </component>
@@ -236,10 +216,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="437" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1603486005768" />
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1599070020589">
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1603763787749">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1599070020589" />
+    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1603763787749" />
     <state x="298" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603745466558">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -260,6 +240,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1599243599675" />
+    <state x="0" y="6" key="SettingsEditor" timestamp="1603763738567">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1603763738567" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1600911069301">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

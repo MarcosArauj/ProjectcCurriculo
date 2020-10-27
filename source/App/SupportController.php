@@ -124,7 +124,6 @@ class SupportController extends Controller{
             $this->user_data->getValues();
 
 
-
            if($data["email"] != $this->user_data->getemail()) {
 
                echo $this->ajaxResponse("message", [

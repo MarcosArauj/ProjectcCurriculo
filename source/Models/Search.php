@@ -4,13 +4,21 @@
 namespace Source\Models;
 
 
+/**
+ * Class Search
+ * @package Source\Models
+ */
 class Search extends Model {
 
-
-    /*
+    /**
+     * @param string $search
+     * @param string $filter
+     * @param int $page
+     * @param int $itemsPerPage
+     * @return array
      * Busca de curriculos com filtros
      */
-    public function getPageSearch($search,$filter,$page = 1, $itemsPerPage = 7):array {
+    public function getPageSearch(string $search, string $filter, int $page = 1, int $itemsPerPage = 7):array {
         $start = ($page - 1) * $itemsPerPage;
         $column_search = null;
         $column_search1 = "nivel_andamento";
@@ -58,11 +66,13 @@ class Search extends Model {
         );
     }
 
-
-    /*
-    * Lista usuarios com busca
-    */
-    public function getPageUser($page = 1, $itemsPerPage = 10) {
+    /**
+     * @param int $page
+     * @param int $itemsPerPage
+     * @return array
+     * Lista usuarios com busca
+     */
+    public function getPageUser(int $page = 1, int $itemsPerPage = 10) {
         $start = ($page - 1) * $itemsPerPage;
 
         $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS *  FROM v_curriculo
@@ -79,11 +89,14 @@ class Search extends Model {
 
     }
 
-
-    /*
-    * Busca  de Usuarios
-    */
-    public function getPageSearchUser($search,$page = 1, $itemsPerPage = 10){
+    /**
+     * @param string $search
+     * @param int $page
+     * @param int $itemsPerPage
+     * @return array
+     * Busca  de Usuarios
+     */
+    public function getPageSearchUser(string $search, int $page = 1, int $itemsPerPage = 10){
         $start = ($page - 1) * $itemsPerPage;
 
         $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS *  FROM v_curriculo
