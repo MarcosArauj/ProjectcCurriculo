@@ -4,15 +4,8 @@
 namespace Source\App;
 
 use Source\App\Pages\PageAdmin;
-use Source\App\Pages\PageCurriculum;
-use Source\App\Pages\PageWeb;
 use Source\Models\Admin;
-use Source\Models\Curriculum;
-use Source\Models\Formation;
 use Source\Models\Login;
-use Source\Models\PersonalData;
-use Source\Models\Professional;
-use Source\Models\Contact;
 use Source\Models\Search;
 use Source\Models\Support\Support;
 use Source\Models\User;
@@ -26,11 +19,12 @@ class AdminController extends Controller {
     private $user_logado;
     private $data_user;
     private $search_users;
-    private $reset_pass;
+    private $support;
 
     /**
      * AppController constructor.
      * @param $router
+     * @throws \Exception
      */
     public function __construct($router)
     {
@@ -45,7 +39,7 @@ class AdminController extends Controller {
             if(Login::checkLogin()) {
                 $this->data_user = new User();
                 $this->data_user->getUser($this->user_logado->getid_usuario());
-                $this->reset_pass = new Support();
+                $this->support = new Support();
                 $this->search_users = new Search();
 
             } else {
@@ -119,7 +113,7 @@ class AdminController extends Controller {
 
         try{
 
-            $this->reset_pass->getEmailResetPass($data["email"]);
+            $this->support->getEmailResetPass($data["email"]);
             
             $this->data_user->getUser($data["id_usuario"]);
 
@@ -140,6 +134,40 @@ class AdminController extends Controller {
             ]);
             return;
         }
+
+    }
+
+    public function requests():void {
+
+        $pagination = null;
+        $pages = array();
+
+        $page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+
+        $pagination = $this->support->getPageSolicitation($page);
+
+        if (!$pagination['data']) {
+            flash("error","Nenhum registro encontrado!");
+        } else {
+            for ($cont = 0; $cont < $pagination['pages']; $cont++) {
+                array_push($pages, array(
+                    'href' => '/admin/requests?' . http_build_query(array(
+                            'page' => $cont + 1
+                        )),
+                    'text' => $cont + 1
+                ));
+            }
+
+        }
+
+        $pageAdmin = new PageAdmin();
+
+        $pageAdmin->setTpl("requests", array(
+            "title"=> site("name_complete"),
+            "requests" => $pagination['data'],
+            "pages" => $pages
+        ));
+
 
     }
 }

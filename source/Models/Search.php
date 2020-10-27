@@ -38,7 +38,6 @@ class Search extends Model {
         $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS * FROM v_curriculo      
                     WHERE status_usuario = 'ativo' 
                     AND $column_search LIKE :search OR $column_search1 LIKE :search
-                    GROUP BY id_usuario 
                     ORDER BY primeiro_nome LIMIT  $start, $itemsPerPage;",
             array(
                 ":search" => '%' . $search . '%'
@@ -50,7 +49,6 @@ class Search extends Model {
                     AND curso LIKE :search OR nome_curso LIKE :search OR idioma LIKE :search
                     OR cargo_atual LIKE :search OR cargo_anterior LIKE :search
                     OR atividade LIKE :search OR compentencias LIKE :search
-                    GROUP BY id_usuario 
                     ORDER BY primeiro_nome LIMIT  $start, $itemsPerPage;",
                 array(
                     ":search" => '%' . $search . '%'
@@ -76,7 +74,7 @@ class Search extends Model {
         $start = ($page - 1) * $itemsPerPage;
 
         $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS *  FROM v_curriculo
-                    WHERE acesso = 0 AND status_usuario = 'ativo' GROUP BY id_usuario 
+                    WHERE acesso = 0 AND status_usuario = 'ativo'
                     ORDER BY primeiro_nome LIMIT $start, $itemsPerPage;");
 
         $resultTotal = $this->conn->select("SELECT FOUND_ROWS() AS nrtotal" );
@@ -101,7 +99,7 @@ class Search extends Model {
 
         $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS *  FROM v_curriculo
                     WHERE acesso = 0 AND status_usuario = 'ativo'
-                    AND primeiro_nome LIKE :search 
+                    AND primeiro_nome LIKE :search OR sobrenome LIKE :search 
                     GROUP BY id_usuario ORDER BY primeiro_nome LIMIT $start, $itemsPerPage;",array(
                         ":search"=>'%'.$search.'%'
                     ));

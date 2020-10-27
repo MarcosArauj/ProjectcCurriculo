@@ -1,0 +1,71 @@
+{include="header"}
+{include="navbar"}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+    <section class="container col-md-12">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h4 class="h2">Solicitações</h4>
+        </div>
+        <div class="alert_message">
+            {function="flash()"}
+        </div>
+        {if="$requests"}
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped border-success">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Assunto</th>
+                        <th>Situação</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {loop="$requests"}
+                    <form class="form" action="/admin/userResetPassword/{$value.id_usuario}" method="post" autocomplete="off">
+                        <tr>
+                            <td>{$value.primeiro_nome} {$value.sobrenome}</td>
+                            <td>{$value.assunto}</td>
+                            <td>{$value.situacao}</td>
+                            <td class="float-right">
+                                <button class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Resetar Senha</button>
+                                <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>
+                                <!-- Modal Excluir -->
+                                <div class="modal fade" id="ModalExcluir" role="dialog">
+                                    <div class="modal-dialog modal-sm">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <p><b>Deseja realmente excluir este Idioma?</b></p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="/curriculum/{$value.id_idiomac}/languages/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
+                                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </form>
+                    {/loop}
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+                <ul class="pagination justify-content-end">
+                    {loop="$pages"}
+                    <li  class="page-item"><a class="page-link" href="{$value.href}">{$value.text}</a></li>
+                    {/loop}
+                </ul>
+            </div>
+        </div>
+        {/if}
+    </section>
+</main>
+{include="footer"}
+
+
+
+

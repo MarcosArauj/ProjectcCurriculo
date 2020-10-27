@@ -261,4 +261,27 @@ class Support extends Model {
         return true;
     }
 
+    /**
+     * @param int $page
+     * @param int $itemsPerPage
+     * @return array
+     * Lista usuarios com busca
+     */
+    public function getPageSolicitation(int $page = 1, int $itemsPerPage = 10) {
+        $start = ($page - 1) * $itemsPerPage;
+
+        $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS *  FROM tb_solicitacoes
+                                        INNER JOIN v_usuario USING(id_usuario)
+                                        LIMIT $start, $itemsPerPage;");
+
+        $resultTotal = $this->conn->select("SELECT FOUND_ROWS() AS nrtotal" );
+
+        return array(
+            'data'=>$results,
+            'total'=>(int)$resultTotal[0]["nrtotal"],
+            'pages'=>ceil($resultTotal[0]["nrtotal"] / $itemsPerPage)
+        );
+
+    }
+
 }
