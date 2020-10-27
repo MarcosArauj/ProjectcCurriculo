@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use Exception;
 use Rain\Tpl;
 
-class EmailRecover {
+class EmailSupport {
     /** @var PHPMailer */
     private $mail;
 
@@ -26,10 +26,10 @@ class EmailRecover {
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $this->mail->CharSet = "utf-8";
 
-        $this->mail->Host = MAIL_RECOVER["host"];
-        $this->mail->Port = MAIL_RECOVER["port"];
-        $this->mail->Username = MAIL_RECOVER["user"];
-        $this->mail->Password = MAIL_RECOVER["passwd"];
+        $this->mail->Host = MAIL_SUPPORT["host"];
+        $this->mail->Port = MAIL_SUPPORT["port"];
+        $this->mail->Username = MAIL_SUPPORT["user"];
+        $this->mail->Password = MAIL_SUPPORT["passwd"];
     }
 
 
@@ -56,7 +56,7 @@ class EmailRecover {
             $this->mail->Subject = $subject;
             $this->mail->Body = $html;
             $this->mail->addAddress($toAddress,$toName);
-            $this->mail->setFrom(MAIL_RECOVER["from_email"],MAIL_RECOVER["from_name"]);
+            $this->mail->setFrom(MAIL_SUPPORT["from_email"],MAIL_SUPPORT["from_name"]);
 
             $this->mail->send();
             return true;

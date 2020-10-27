@@ -111,12 +111,14 @@
                         <label  for="city"><strong class="obrigatorio">*</strong><b>RG</b></label>
                         <input type="text" class="form-control form-control-sm" id="rg" name="rg"  value="<?php echo htmlspecialchars( $user["rg"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" maxlength="20" required>
                     </div>
-                    <div id="cpf" class="form-group col-md-4">
+                    <div class="col-md-4">
+                    <div id="cpf" class="form-group">
                         <label  for="cpf"><strong class="obrigatorio">*</strong><b>CPF</b></label>
                         <input type="text" class="form-control form-control-sm" name="cpf" id="camp_cpf" value="<?php echo formatCpf($user["cpf"]); ?>" onkeypress="formatar('###.###.###-##',this)"  maxlength="14" required>
                         <div id="mescpf" class="error-disabled" >
                             CPF inválido!!!
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

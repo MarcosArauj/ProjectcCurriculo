@@ -6,14 +6,14 @@ namespace Source\Models\Support;
 use Source\Models\Model;
 
 /**
- * Class RecoverPassword
+ * Class Support
  * @package Source\Models\Support
  */
-class RecoverPassword extends Model {
+class Support extends Model {
 
     /**
      * @param $email
-     * @return EmailRecover
+     * @return EmailSupport
      * @throws \Exception
      *
      * Envia E-mail para recuperação da Senha
@@ -46,23 +46,23 @@ class RecoverPassword extends Model {
 
                 $link = site("root")."/reset?code=$code";
 
-                $emailRovever = new EmailRecover();
+                $emailRecovery = new EmailSupport();
 
-                $emailRovever->send(
+                $emailRecovery->send(
                     $data["email"],
                     $data["primeiro_nome"],
-                    "Redefinir senha - ". site("name"),
+                    "Redefinir senha - ". site("name_complete"),
                     "email_recover",
                     array(
                         "name"=>$data["primeiro_nome"],
                         "link"=>$link,
-                        "site"=>site("name")
+                        "site"=>site("name_complete")
                     ));
 
-                if(!$emailRovever->error()) {
+                if(!$emailRecovery->error()) {
                    return true;
                 } else {
-                    echo $emailRovever->error()->getMessage();
+                    echo $emailRecovery->error()->getMessage();
                     return false;
                 }
 
@@ -114,7 +114,7 @@ class RecoverPassword extends Model {
 
     /**
      * @param $email
-     * @return EmailRecover
+     * @return EmailSupport
      * @throws \Exception
      *
      * Envia E-mail de Reset da senha
@@ -132,19 +132,19 @@ class RecoverPassword extends Model {
         } else {
             $data = $results[0];
 
-            $results_recovery = $this->conn->select("CALL sp_recupera_senha(:id_usuario,:ip)",array(
+            $results_reset = $this->conn->select("CALL sp_recupera_senha(:id_usuario,:ip)",array(
                 ":id_usuario"=>$data["id_usuario"],
                 ":ip"=>$_SERVER["REMOTE_ADDR"]
             ));
 
-            if(count($results_recovery) === 0 ) {
+            if(count($results_reset) === 0 ) {
                 throw new \Exception("Não foi possivel recuperar a senha.");
             } else {
-              //  $this->setData($results_recovery[0]);
+                $this->setData($results_reset[0]);
 
-                $emailRovever = new EmailRecover();
+                $emailRest = new EmailSupport();
 
-                $emailRovever->send(
+                $emailRest->send(
                     $data["email"],
                     $data["primeiro_nome"],
                     "Redefinição de senha - ". site("name_complete"),
@@ -156,16 +156,109 @@ class RecoverPassword extends Model {
                         "site"=>site("name_complete")
                     ));
 
-                if(!$emailRovever->error()) {
+                if(!$emailRest->error()) {
                     return true;
                 } else {
-                    echo $emailRovever->error()->getMessage();
+                    echo $emailRest->error()->getMessage();
                     return false;
                 }
 
             }
 
         }
+    }
+
+
+    /**
+     * @param $email
+     * @return EmailSupport
+     * @throws \Exception
+     *
+     * Envia E-mail de Solicitações
+     */
+    public function getEmailSupport($email): bool {
+
+        $results = $this->conn->select(
+            "SELECT * FROM v_usuario WHERE email = :email", array(
+            ":email"=>$email
+        ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Enviar sua solicitação");
+            return false;
+        } else {
+            $data = $results[0];
+
+            $emailSupport = new EmailSupport();
+
+            $emailSupport->send(
+                    $data["email"],
+                    $data["primeiro_nome"],
+                    "Suporte - ". site("name_complete"),
+                    "email_solicitation",
+                    array(
+                        "name"=>$data["primeiro_nome"],
+                        "site"=>site("name_complete")
+                    ));
+
+                if(!$emailSupport->error()) {
+                    return true;
+                } else {
+                    echo $emailSupport->error()->getMessage();
+                    return false;
+                }
+
+        }
+    }
+
+    /**
+     * @return bool
+     * @throws \Exception
+     * Salvar Solicitações
+     */
+    public function saveSolicitation():bool {
+
+        $results = $this->conn->select(
+            "CALL sp_solicitacao_salvar(:descricao_solicitacao,:assunto,:situacao,:id_usuario)",
+            array(
+                ":descricao_solicitacao" => $this->getdescricao_solicitacao(),
+                ":assunto" => $this->getassunto(),
+                ":situacao" => $this->getsituacao(),
+                ":id_usuario" => $this->getid_usuario()
+            ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Erro ao Salvar Solicitação!");
+            return false;
+        }
+
+        $this->setData($results[0]);
+
+        return true;
+    }
+
+    /**
+     * @return bool
+     * @throws \Exception
+     * Finalizar Solicitações
+     */
+    public function updateSolicitation():bool {
+
+        $results = $this->conn->select(
+            "CALL sp_solicitacao_atualizar(:id_solicitacoes,:situacao)",
+            array(
+                ":id_solicitacoes" => $this->getid_solicitacoes(),
+                ":situacao" => $this->getsituacao()
+            ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Erro ao Atualizar Solicitação!");
+            return false;
+        }
+
+        $this->setData($results[0]);
+
+        return true;
     }
 
 }

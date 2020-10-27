@@ -63,7 +63,7 @@ class Contact extends Model {
             ));
 
         if (count($results) === 0) {
-            throw new \Exception("Erro ao Atualizar Contato!".  $this->getid_contato());
+            throw new \Exception("Erro ao Atualizar Contato!");
             return false;
         }
 

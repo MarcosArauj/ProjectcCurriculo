@@ -23,6 +23,8 @@ $router->get("/login", "WebController:login","web.login");
 $router->get("/forgot", "WebController:forgot","web.forgot");
 $router->get("/sent", "WebController:sent","web.sent");
 $router->get("/reset", "WebController:reset","web.reset");
+$router->get("/support/solicitation_create","WebController:saveSolicitation","web.saveSolicitation");
+$router->get("/support/solicitation_sent","WebController:sentSolicitation","web.sentSolicitation");
 $router->get("/reset_success","WebController:resetSuccess","web.resetSuccess");
 $router->get("/search/curriculum", "SearchController:searchCurriculum","web.searchCurriculum");
 $router->get("/search/curriculum/error", "SearchController:searchErrorCurriculum","web.searchErrorCurriculum");
@@ -36,8 +38,9 @@ $router->get("/curriculum/{cod_curriculo}/generate_pdf", "SearchController:gener
 $router->group(null);
 $router->post("/register", "AuthController:register","auth.register");
 $router->post("/login", "AuthController:login","auth.login");
-$router->post("/forgot", "AuthController:forgot","auth.forgot");
-$router->post("/reset", "AuthController:reset","auth.reset");
+$router->post("/forgot", "SupportController:forgot","support.forgot");
+$router->post("/reset", "SupportController:reset","support.reset");
+$router->post("/support/solicitation_create","SupportController:saveSolicitation","support.saveSolicitation");
 
 /**
  * Admin

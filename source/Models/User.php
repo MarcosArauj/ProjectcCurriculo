@@ -57,6 +57,25 @@ class User extends Model {
     }
 
     /**
+     * @param string $cpf
+     * @return string
+     */
+    public function getUserCpf(string $cpf): void {
+
+        $results =  $this->conn->select("SELECT * FROM v_usuario
+            WHERE  cpf = :cpf",array(
+            ":cpf"=> removeMaskCpf($cpf)
+        ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Usuario não Encontrado!");
+        }
+
+        $this->setData($results[0]);
+
+    }
+
+    /**
      * @return array
      */
     public function getAllUsers():array {
@@ -203,5 +222,7 @@ class User extends Model {
             ));
 
     }
+
+    
 
 }

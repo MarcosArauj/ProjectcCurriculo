@@ -36,13 +36,13 @@ define("DB", [
 //]);
 
 
-define("MAIL_RECOVER", [
+define("MAIL_SUPPORT", [
     "host" => "smtp.hostinger.com.br",
     "port" => "587",
-    "user" => "webc@cruzm.com.br",
-    "passwd" => "Web@251723",
+    "user" => "support.webcurriculo@cruzm.com.br",
+    "passwd" => "Web@support2517",
     "from_name" => "Web Curriculo",
-    "from_email" => "webc@cruzm.com.br"
+    "from_email" => "support.webcurriculo@cruzm.com.br"
 
 ]);
 

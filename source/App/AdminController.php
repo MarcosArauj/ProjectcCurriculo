@@ -14,7 +14,7 @@ use Source\Models\PersonalData;
 use Source\Models\Professional;
 use Source\Models\Contact;
 use Source\Models\Search;
-use Source\Models\Support\RecoverPassword;
+use Source\Models\Support\Support;
 use Source\Models\User;
 
 /**
@@ -45,7 +45,7 @@ class AdminController extends Controller {
             if(Login::checkLogin()) {
                 $this->data_user = new User();
                 $this->data_user->getUser($this->user_logado->getid_usuario());
-                $this->reset_pass = new RecoverPassword();
+                $this->reset_pass = new Support();
                 $this->search_users = new Search();
 
             } else {
@@ -120,7 +120,7 @@ class AdminController extends Controller {
         try{
 
             $this->reset_pass->getEmailResetPass($data["email"]);
-
+            
             $this->data_user->getUser($data["id_usuario"]);
 
             $this->data_user->setsenha("12345678");
@@ -142,5 +142,4 @@ class AdminController extends Controller {
         }
 
     }
-
 }
