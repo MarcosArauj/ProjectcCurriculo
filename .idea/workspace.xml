@@ -2,7 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/source/Models/Support/EmailSupport.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Support/EmailSupport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/admin/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/admin/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/admin/requests_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/admin/requests_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/check_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/check_curriculum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_deficiency.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_deficiency.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/detail_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/detail_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/detail_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/detail_professional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/ex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/finish_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/finish_curriculum.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/languages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/navebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/professional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_academic_formation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_deficiency.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_deficiency.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_languages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_personal_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_professional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/support/create_solicitation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/create_solicitation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/support/forgot_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/forgot_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/support/navebar_forgot.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/navbar_forgot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/create_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/navebar_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/navbar_home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/navebar_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/navbar_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/navebar_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/navbar_register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/search_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/search_curriculum.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +242,7 @@
       <workItem from="1603900798799" duration="1753000" />
       <workItem from="1603903242236" duration="700000" />
       <workItem from="1603904229804" duration="496000" />
-      <workItem from="1603916774910" duration="1965000" />
+      <workItem from="1603916774910" duration="4330000" />
     </task>
     <servers />
   </component>
