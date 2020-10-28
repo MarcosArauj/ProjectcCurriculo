@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/theme/admin/update_email.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/theme/admin/user_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/CurriculumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/CurriculumController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/SupportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/SupportController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Models/Support/EmailSupport.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Support/EmailSupport.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Support/Support.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Support/Support.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/admin/requests.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/admin/requests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/admin/requests_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/admin/requests_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/admin/table_users.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/admin/table_users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/support/recover_send.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/recover_send.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/requests.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/requests.dde82dd7abee922ef386855e84760d63.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/requests_detail.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/requests_detail.dde82dd7abee922ef386855e84760d63.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/table_users.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/table_users.dde82dd7abee922ef386855e84760d63.rtpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +205,7 @@
       <workItem from="1603900798799" duration="1753000" />
       <workItem from="1603903242236" duration="700000" />
       <workItem from="1603904229804" duration="496000" />
-      <workItem from="1603916774910" duration="1126000" />
+      <workItem from="1603916774910" duration="1965000" />
     </task>
     <servers />
   </component>

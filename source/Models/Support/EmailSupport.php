@@ -5,6 +5,7 @@ namespace Source\Models\Support;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use Exception;
+use PHPMailer\PHPMailer\SMTP;
 use Rain\Tpl;
 
 class EmailSupport {
@@ -18,7 +19,7 @@ class EmailSupport {
 
         $this->mail = new PHPMailer(true);
 
-      //  $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $this->mail->SMTPDebug = SMTP::DEBUG_OFF;
         $this->mail->isSMTP();
         $this->mail->isHTML(true);
         $this->mail->setLanguage("pt_br");
