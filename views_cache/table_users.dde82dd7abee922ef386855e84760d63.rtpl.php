@@ -21,6 +21,7 @@
             <td><?php echo htmlspecialchars( $value1["genero"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td><?php echo htmlspecialchars( $value1["naturalidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $value1["uf_naturalidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td class="float-right">
+                <a href="/admin/<?php echo htmlspecialchars( $value1["id_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/detail" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
                 <button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Resetar Senha</button>
                 <input type="hidden" name="email" value="<?php echo htmlspecialchars( $value1["email"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                 <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>

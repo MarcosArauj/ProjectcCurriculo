@@ -28,9 +28,9 @@
                             <td>{$value.assunto}</td>
                             <td>{$value.situacao}</td>
                             <td>
-                                {if="daysDates('$value.dtregistro') == 0 && $value.situacao == 'pendente'"}
+                                {if="daysDates('$value.dtregistro') == 2 && $value.situacao == 'pendente'"}
                                 <b style="color: orange"> Atenção!! Solicitação vence Hoje!</b>
-                                {elseif="daysDates('$value.dtregistro') < 0 && $value.situacao == 'pendente'"}
+                                {elseif="daysDates('$value.dtregistro') > 2 && $value.situacao == 'pendente'"}
                                    <b style="color: red"> SOLICITAÇÃO VENCIDA A {function="daysDates('$value.dtregistro')"} DIAS!!!</b>
                                 {/if}
                             </td>

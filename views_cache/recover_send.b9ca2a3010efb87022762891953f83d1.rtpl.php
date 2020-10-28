@@ -1,8 +1,10 @@
-{include="header"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
 <main role="main" id="fundo_login">
     <section class="container col-md-4" style="top: 25%">
             <div class="alert_message">
-                {function="flash()"}
+                <?php echo flash(); ?>
+
             </div>
             <div  class="card bg-dark text-white">
                 <div class="card-header">
@@ -13,7 +15,7 @@
                         <div id="cad_senha">
                             <div class="form-group">
                                 <div id="div_senha">
-                                    <input type="hidden" name="code" value="{$code}">
+                                    <input type="hidden" name="code" value="<?php echo htmlspecialchars( $code, ENT_COMPAT, 'UTF-8', FALSE ); ?>">
                                     <strong class="obrigatorio">*</strong><b class="text-white">Senha</b>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -56,5 +58,6 @@
             </div>
         </section>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+
 

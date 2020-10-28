@@ -15,13 +15,13 @@ class CurriculumController extends Controller {
      * Pegar Usuario logado
      */
     private $user_logado;
-
     private $data_user;
     private $curruculum;
 
     /**
      * AppController constructor.
      * @param $router
+     * @throws \Exception
      */
     public function __construct($router)
     {

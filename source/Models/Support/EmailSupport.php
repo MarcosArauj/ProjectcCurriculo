@@ -18,14 +18,14 @@ class EmailSupport {
 
         $this->mail = new PHPMailer(true);
 
-        $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
+      //  $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $this->mail->isSMTP();
         $this->mail->isHTML(true);
-        $this->mail->setLanguage("br");
+        $this->mail->setLanguage("pt_br");
 
         $this->mail->SMTPAuth = true;
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $this->mail->CharSet = "utf-8";
+        $this->mail->CharSet = PHPMailer::CHARSET_UTF8;
 
         $this->mail->Host = MAIL_SUPPORT["host"];
         $this->mail->Port = MAIL_SUPPORT["port"];

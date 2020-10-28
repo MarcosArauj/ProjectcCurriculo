@@ -48,11 +48,14 @@ $router->post("/support/solicitation_create","SupportController:saveSolicitation
 $router->group("/admin");
 $router->get("", "AdminController:dashboardAdmin","admin.dashboardAdmin");
 $router->get("/users", "AdminController:users","admin.users");
+$router->get("/{id_usuario}/detail", "AdminController:detailUser","admin.detailUser");
+$router->get("/{id_usuario}/update_email", "AdminController:updateEmailPage","admin.updateEmailPage");
 $router->get("/requests", "AdminController:requests","admin.requests");
 $router->get("/{id_solicitacoes}/requests/detail", "AdminController:detailRequest","admin.detailRequest");
 
 $router->post("/userResetPassword/{id_usuario}", "AdminController:userResetPassword","admin.userResetPassword");
 $router->post("/{id_solicitacoes}/requests/finish", "AdminController:finishFinish","admin.finishFinish");
+$router->post("/{id_usuario}/update_email", "AdminController:updateEmail","admin.updateEmail");
 
 /**
  * - ------------------Rotas para Telas Usuarios Logado------------------------------

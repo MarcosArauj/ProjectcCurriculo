@@ -13,10 +13,8 @@ class Support extends Model {
 
     /**
      * @param $email
-     * @return EmailSupport
-     * @throws \Exception
-     *
-     * Envia E-mail para recuperação da Senha
+     * @return bool
+     * @throws \Exception Envia E-mail para recuperação da Senha
      */
     public function getEmailRecoverPass($email): bool {
 

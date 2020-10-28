@@ -28,9 +28,9 @@
                             <td><?php echo htmlspecialchars( $value1["assunto"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td><?php echo htmlspecialchars( $value1["situacao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td>
-                                <?php if( daysDates('$value1.dtregistro') == 0 && $value1["situacao"] == 'pendente' ){ ?>
+                                <?php if( daysDates('$value1.dtregistro') == 2 && $value1["situacao"] == 'pendente' ){ ?>
                                 <b style="color: orange"> Atenção!! Solicitação vence Hoje!</b>
-                                <?php }elseif( daysDates('$value1.dtregistro') < 0 && $value1["situacao"] == 'pendente' ){ ?>
+                                <?php }elseif( daysDates('$value1.dtregistro') > 2 && $value1["situacao"] == 'pendente' ){ ?>
                                    <b style="color: red"> SOLICITAÇÃO VENCIDA A <?php echo daysDates('$value1.dtregistro'); ?> DIAS!!!</b>
                                 <?php } ?>
                             </td>

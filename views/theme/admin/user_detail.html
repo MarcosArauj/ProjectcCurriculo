@@ -1,0 +1,79 @@
+{include="header"}
+{include="navbar"}
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+<section class="container col-md-9">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h4 class="h2">Usuário</h4>
+    </div>
+    <div class="alert_message">
+        {function="flash()"}
+    </div>
+    <div class="card" style="color: black;">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-5">
+                    <h5><b>Dados Pessoais</b></h5>
+                    <label><b>Sexo: </b></label>&nbsp;
+                    <span>{$user.genero}</span>
+                    <br>
+                    <label><b>Cor/Raça: </b></label>&nbsp;
+                    <span>{$user.cor_raca}</span>
+                    <br>
+                    <label><b>Data de Nascimento: </b></label>&nbsp;
+                    <span>{function="formatDate($user.nascimento)"}</span>
+                    <br>
+                    <label><b>Naturalidade: </b></label>&nbsp;
+                    <span>{$user.naturalidade}/{$user.uf_naturalidade} </span>
+                    <br>
+                    <label><b>Nacionalidade: </b></label>&nbsp;
+                    <span>{$user.nacionalidade} </span>
+                    <br>
+                </div>
+                <div class="col-6">
+                    <h5><b>Contato</b></h5>
+                    <br>
+                    <label><b>Rua/Av: </b></label>&nbsp;
+                    <span>{$user.endereco}</span>
+                    <span class="offset-1"></span>
+                    <label><b>Nº: </b></label>&nbsp;
+                    <span>{$user.numero}</span>
+                    <br>
+                    <label><b>CEP: </b></label>&nbsp;
+                    <span>{$user.cep}</span>
+                    <br>
+                    <label><b>Bairro: </b></label>&nbsp;
+                    <span>{$user.bairro}</span>
+                    <br>
+                    <label><b>Cidade: </b></label>&nbsp;
+                    <span>{$user.cidade}</span>
+                    <span class="offset-2"></span>
+                    <label><b>Pais: </b></label>&nbsp;
+                    <span>{$user.pais}</span>
+                    <br>
+                    <hr/>
+                    <label><b>Celular: </b></label>&nbsp;
+                    <span>{$user.celular} </span>
+                    <br>
+                    {if="$user.telefone != NULL"}
+                    <label><b>Telefone: </b></label>&nbsp;
+                    <span>{$user.telefone} </span>
+                    {/if}
+                    <br>
+                    <label><b>E-mail: </b></label>&nbsp;
+                    <span>{$user.email} </span>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+                <a class="btn btn-danger float-left" href="/admin/users" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
+            <div class="float-right">
+                <a class="btn btn-primary" href="/admin/{$user.id_usuario}/update_email" title="Editar Perfil"> Atualizar Email <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+</main>
+{include="footer"}
+
+

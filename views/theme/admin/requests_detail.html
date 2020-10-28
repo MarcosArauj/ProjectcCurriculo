@@ -1,67 +1,65 @@
 {include="header"}
 {include="navbar"}
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<section class="container col-md-8">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h4 class="h2">Solicitação</h4>
     </div>
-    <section class="container col-md-8">
-        <div class="alert_message">
-            {function="flash()"}
-        </div>
-        <div class="card" style="color: black;">
-            <div class="card-body">
-                <div class="row">
-                    <!-- Coluna 1 -->
-                    <div class="col">
-                        <div class="row">
-                            <div class="form-inline col-md-7">
-                                <label><b>Usuário solicitante: </b></label>&nbsp;
-                                <span>{$solicitacao.primeiro_nome} {$solicitacao.sobrenome}</span>
-                            </div>
-                            <div class="form-inline col-md-5">
-                                <label><b>Data da Solicitação: </b></label>&nbsp;
-                                <span>{function="formatDate('$solicitacao.dtregistro')"}</span>
-                            </div>
+    <div class="alert_message">
+        {function="flash()"}
+    </div>
+    <div class="card" style="color: black;">
+        <div class="card-body">
+            <div class="row">
+                <!-- Coluna 1 -->
+                <div class="col">
+                    <div class="row">
+                        <div class="form-inline col-md-7">
+                            <label><b>Usuário solicitante: </b></label>&nbsp;
+                            <span>{$solicitacao.primeiro_nome} {$solicitacao.sobrenome}</span>
                         </div>
-                        <div class="row">
-                            <div class="form-inline col-md-7">
-                                <label><b>Assunto: </b></label>&nbsp;
-                                <span>{$solicitacao.assunto}</span>
-                            </div>
-                            <div class="form-inline col-md-5">
-                                <label><b>Situação: </b></label>&nbsp;
-                                <span>{$solicitacao.situacao}</span>
-                            </div>
+                        <div class="form-inline col-md-5">
+                            <label><b>Data da Solicitação: </b></label>&nbsp;
+                            <span>{function="formatDate('$solicitacao.dtregistro')"}</span>
                         </div>
-                        <br>
-                        <div class="row">
-                            <div class="form-group col-md-12">
-                                <label><b>Detalhes da Solicitação: </b></label><br>
-                                <span>{$solicitacao.descricao_solicitacao}</span>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-inline col-md-7">
+                            <label><b>Assunto: </b></label>&nbsp;
+                            <span>{$solicitacao.assunto}</span>
+                        </div>
+                        <div class="form-inline col-md-5">
+                            <label><b>Situação: </b></label>&nbsp;
+                            <span>{$solicitacao.situacao}</span>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label><b>Detalhes da Solicitação: </b></label><br>
+                            <span>{$solicitacao.descricao_solicitacao}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card-footer">
-                <form class="form" action="/admin/{$solicitacao.id_solicitacoes}/requests/finish" method="post" autocomplete="off">
-                <a class="btn btn-danger float-left" href="/admin/requests" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
-                <div class="float-right">
-                    <button class="btn btn-md btn-success">
-                        {if="$solicitacao.situacao == 'pendente'"}
-                        Finalizar Solicitação &nbsp;&nbsp;
-                        {else}
-                        Abrir Solicitação &nbsp;&nbsp;
-                        {/if}
-                        <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-                    </button>
-
-                </div>
-            </form>
-            </div>
-
         </div>
-    </section>
+        <div class="card-footer">
+            <form class="form" action="/admin/{$solicitacao.id_solicitacoes}/requests/finish" method="post" autocomplete="off">
+            <a class="btn btn-danger float-left" href="/admin/requests" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
+            <div class="float-right">
+                <button class="btn btn-md btn-success">
+                    {if="$solicitacao.situacao == 'pendente'"}
+                    Finalizar Solicitação &nbsp;&nbsp;
+                    {else}
+                    Abrir Solicitação &nbsp;&nbsp;
+                    {/if}
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </button>
+            </div>
+        </form>
+        </div>
+    </div>
+</section>
 </main>
 {include="footer"}
 

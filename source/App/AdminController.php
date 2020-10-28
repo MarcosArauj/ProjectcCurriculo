@@ -6,6 +6,7 @@ namespace Source\App;
 use Source\App\Pages\PageAdmin;
 use Source\Models\Admin;
 use Source\Models\Login;
+use Source\Models\PersonalData;
 use Source\Models\Search;
 use Source\Models\Support\Support;
 use Source\Models\User;
@@ -38,7 +39,6 @@ class AdminController extends Controller {
             $this->user_logado = Login::getFromSession();
             if(Login::checkLogin()) {
                 $this->data_user = new User();
-                $this->data_user->getUser($this->user_logado->getid_usuario());
                 $this->support = new Support();
                 $this->search_users = new Search();
 
@@ -108,6 +108,59 @@ class AdminController extends Controller {
 
     }
 
+    public function detailUser($data):void {
+        $page = new PageAdmin();
+
+        $this->data_user->getUser((int)$data["id_usuario"]);
+
+        $page->setTpl("user_detail", array(
+            "title" => site("name"). " | Usuário",
+            "user" => $this->data_user->getValues()
+        ));
+    }
+
+    public function updateEmailPage($data):void{
+
+        $page = new PageAdmin();
+
+        $this->data_user->getUser((int)$data["id_usuario"]);
+
+        $page->setTpl("update_email", array(
+            "title" => site("name"). " | Usuário",
+            "user" => $this->data_user->getValues()
+        ));
+
+    }
+
+    public function updateEmail($data):void{
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            $this->data_user->getUser($data["id_usuario"]);
+            
+            $this->data_user->setData($data);
+
+            $this->data_user->updateEmail();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("admin.detailUser", ["id_usuario" => $data['id_usuario']])
+            ]);
+            flash("success","E-mail Alterado Com Sucesso");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
 
     public function userResetPassword($data):void {
 
@@ -115,7 +168,7 @@ class AdminController extends Controller {
 
             $this->support->getEmailResetPass($data["email"]);
             
-            $this->data_user->getUser($data["id_usuario"]);
+            $this->data_user->getUser((int)$data["id_usuario"]);
 
             $this->data_user->setsenha("12345678");
 

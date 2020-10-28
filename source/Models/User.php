@@ -44,6 +44,7 @@ class User extends Model {
     /**
      * @param int $id_usuario
      * @return string
+     * @throws \Exception
      */
     public function getUser(int $id_usuario): void {
 
@@ -63,6 +64,7 @@ class User extends Model {
     /**
      * @param string $cpf
      * @return string
+     * @throws \Exception
      */
     public function getUserCpf(string $cpf): void {
 
@@ -143,6 +145,29 @@ class User extends Model {
 
     }
 
+
+    /**
+     * Atualizar E_mail
+     */
+    public function updateEmail():bool {
+
+        $results =  $this->conn->select("CALL sp_email_atualizar(:id_contato,:c_email)",array(
+            ":id_contato"=>$this->getid_contato(),
+            ":c_email"=>$this->getc_email()
+        ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Erro ao Atualizar E-mail !".$this->getc_email().$this->getid_contato());
+            return false;
+        }
+
+        $this->setData($results[0]);
+
+        return true;
+
+    }
+
+
     public function getValues() {
 
         $this->checkPhotoUser();
@@ -216,7 +241,6 @@ class User extends Model {
         return true;
 
     }
-
 
     public function deleteCurriculum():void{
 

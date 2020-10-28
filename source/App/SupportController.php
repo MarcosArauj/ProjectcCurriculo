@@ -79,6 +79,14 @@ class SupportController extends Controller{
 
             $recover_pass = $this->support->validRecoverDecrypt($data["code"]);
 
+            if (strlen($data["senha"]) < 8) {
+                echo $this->ajaxResponse("message", [
+                    "type" => "error",
+                    "message" => "Senha precisa ser de no minimo 8 caracteres!"
+                ]);
+                return;
+            }
+
             $this->support->setRecoverUsed($recover_pass["id_recupera"]);
 
         } catch (\Exception $e) {
@@ -134,7 +142,7 @@ class SupportController extends Controller{
 
            }
 
-         //       $this->support->getEmailSupport($this->user_data->getemail());
+                $this->support->getEmailSupport($this->user_data->getemail());
 
                 $this->support->setid_usuario($this->user_data->getid_usuario());
                 $this->support->setsituacao("pendente");
@@ -148,8 +156,6 @@ class SupportController extends Controller{
 
                 ]);
                 return;
-
-
 
         } catch (\Exception $e) {
 
