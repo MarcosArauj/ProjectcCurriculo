@@ -1,5 +1,5 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
-<?php require $this->checkTemplate("navebar_forgot");?>
+<?php require $this->checkTemplate("navbar_forgot");?>
 <main role="main">
     <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-0 mb-3">
         <h2 class="text-center"><u>Criar Solicitação</u></h2>
@@ -8,7 +8,7 @@
         <div class="alert_message">
             <?php echo flash(); ?>
         </div>
-        <form class="form" action="/support/solicitation_create" method="post" autocomplete="on">
+        <form class="form" action="/support/solicitation_create" method="post" autocomplete="off">
         <div  class="card bg-dark" style="color: white">
             <div class="card-header">
                 <h4 class="h2">Criar Solicitação</h4>

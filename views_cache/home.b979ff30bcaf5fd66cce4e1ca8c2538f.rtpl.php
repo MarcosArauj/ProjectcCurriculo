@@ -1,5 +1,7 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
-<?php require $this->checkTemplate("navebar_home");?>
+
+<?php require $this->checkTemplate("navbar_home");?>
+
 <main id="home" role="main">
     <section class="section-banner">
         <img src="/views/assets/images/fundo_home.jpg" class="banner-img" alt="main-banner">
@@ -21,22 +23,22 @@
                 <h2 class="text-center">Facilidade</h2>
                 </a>
                 <p class="text_home">Cadastro rápido! Em poucos cliques<br>
-                    você terá seu currículo pronto<br>
-                    para trabalho</p>
-            </div>
-            <div class="col-lg-4">
-                <a href="" class="link_options">
-                <svg width="140" height="140"><img src="/views/assets/images/list.png"  width="80" height="80"alt="Support"></svg>
-                <h2 class="text-center">Informações</h2>
-                </a>
-                <p class="text_home">As informações do seu currículo todas <br> em um clique</p>
+                    o seu currículo pronto.<br>
+                    Aprenda com Usar</p>
             </div>
             <div class="col-lg-4">
                 <a href="/search/curriculum" class="link_options">
-                <svg width="140" height="140"><img src="/views/assets/images/support.png"  width="80" height="80"alt="Support"></svg>
-                <h2 class="text-center">Buscar Curriculos</h2>
+                    <svg width="140" height="140"><img src="/views/assets/images/search.png"  width="80" height="80"alt="Support"></svg>
+                    <h2 class="text-center">Buscar Curriculos</h2>
                 </a>
                 <p class="text_home">Empresario, encontre seu funcionário <br> aqui. Busque por currículos</p>
+            </div>
+            <div class="col-lg-4">
+                <a href="/support/solicitation_create" class="link_options">
+                <svg width="140" height="140"><img src="/views/assets/images/support.png"  width="80" height="80"alt="Support"></svg>
+                <h2 class="text-center">Suporte</h2>
+                </a>
+                <p class="text_home">Suporte rápido e confiável para <br>resolver problemas e dúvidas <br> sobre o sistema</p>
             </div>
         </div>
     </section>
@@ -79,3 +81,4 @@
     <p class="text-muted"><b>Versão</b> <?php echo site("version"); ?>,  &copy; <?php echo site("name_complete"); ?> <?php echo date('Y'); ?></p>
 </footer>
 <?php require $this->checkTemplate("footer");?>
+
