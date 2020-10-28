@@ -11,44 +11,33 @@
         <?php if( $requests ){ ?>
         <div class="card">
             <div class="card-body">
-                <table class="table table-striped border-success">
+                <table class="table table-striped">
                     <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Assunto</th>
                         <th>Situação</th>
                         <th>&nbsp;</th>
+                        <th>&nbsp;</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php $counter1=-1;  if( isset($requests) && ( is_array($requests) || $requests instanceof Traversable ) && sizeof($requests) ) foreach( $requests as $key1 => $value1 ){ $counter1++; ?>
-                    <form class="form" action="/admin/userResetPassword/<?php echo htmlspecialchars( $value1["id_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" method="post" autocomplete="off">
                         <tr>
                             <td><?php echo htmlspecialchars( $value1["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <?php echo htmlspecialchars( $value1["sobrenome"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td><?php echo htmlspecialchars( $value1["assunto"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                             <td><?php echo htmlspecialchars( $value1["situacao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+                            <td>
+                                <?php if( daysDates('$value1.dtregistro') == 0 && $value1["situacao"] == 'pendente' ){ ?>
+                                <b style="color: orange"> Atenção!! Solicitação vence Hoje!</b>
+                                <?php }elseif( daysDates('$value1.dtregistro') < 0 && $value1["situacao"] == 'pendente' ){ ?>
+                                   <b style="color: red"> SOLICITAÇÃO VENCIDA A <?php echo daysDates('$value1.dtregistro'); ?> DIAS!!!</b>
+                                <?php } ?>
+                            </td>
                             <td class="float-right">
-                                <button class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Resetar Senha</button>
-                                <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>
-                                <!-- Modal Excluir -->
-                                <div class="modal fade" id="ModalExcluir" role="dialog">
-                                    <div class="modal-dialog modal-sm">
-
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                <p><b>Deseja realmente excluir este Idioma?</b></p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a href="/curriculum/<?php echo htmlspecialchars( $value1["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
-                                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <a href="/admin/<?php echo htmlspecialchars( $value1["id_solicitacoes"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/requests/detail" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
                             </td>
                         </tr>
-                    </form>
                     <?php } ?>
                     </tbody>
                 </table>

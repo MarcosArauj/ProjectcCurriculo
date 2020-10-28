@@ -57,13 +57,11 @@
 
             <div class="float-right">
                 <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Curso</button>
+                <a class="btn btn-secondary" href="/user/other_courses" title="Listar"> Listar Cursos <i class="fa fa-list-ul" aria-hidden="true"></i> </a>
                 <a class="btn btn-primary" href="/user/languages/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
             </div>
         </div>
     </div>
-    <br>
-    <?php require $this->checkTemplate("table_other_courses");?>
-
 </section>
 </form>
 </main>

@@ -1,7 +1,7 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><?php if( $courses ){ ?>
 
-<div class="card border-success">
-<table class="table table-striped border-success">
+<div class="card-body">
+<table class="table table-striped">
         <thead>
         <tr>
             <th >Cursos</th>
@@ -27,7 +27,9 @@
                                 <p><b>Deseja realmente excluir este Curso?</b></p>
                             </div>
                             <div class="modal-footer">
-                                <a href="/curriculum/<?php echo htmlspecialchars( $value1["id_cursos"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/other_courses/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
+                                <form class="form" action="/curriculum/<?php echo htmlspecialchars( $value1["id_cursos"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/other_courses/delete" method="post">
+                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</button>
+                                </form>
                                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
                             </div>
                         </div>
@@ -42,8 +44,8 @@
 </div>
 <?php }else{ ?>
 
-<div  class="alert alert-danger">
-    <h5>Nenhum curso cadastrato</h5>
+<div  class="text-center text-danger">
+    <h2>Nenhum curso cadastrato</h2>
 </div>
 <?php } ?>
 

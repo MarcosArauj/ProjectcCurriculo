@@ -380,7 +380,7 @@
            </div>
        </div>
      </div>
-       <div class="card-footer noprint">
+       <div class="card-footer">
            <a class="btn btn-info" data-toggle="modal" data-target="#ModalCompartilha" href="" title="Link de Compartinhamento">
                Link de Compartinhamento <i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
            <a class="btn btn-secondary float-right" href="/curriculum/<?php echo htmlspecialchars( $curriculum["cod_curriculo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/generate_pdf" title="Gerar PDF">Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i> </a>

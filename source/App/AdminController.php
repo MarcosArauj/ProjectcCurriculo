@@ -168,6 +168,48 @@ class AdminController extends Controller {
             "pages" => $pages
         ));
 
+    }
 
+    public function detailRequest($data):void {
+        $page = new PageAdmin();
+
+        $this->support->getRequest((int)$data["id_solicitacoes"]);
+
+        $page->setTpl("requests_detail", array(
+            "title" => site("name"). " | Solicitação",
+            "solicitacao" => $this->support->getValues()
+        ));
+    }
+
+    public function finishFinish($data):void{
+        try {
+
+            $this->support->getRequest((int)$data["id_solicitacoes"]);
+
+            $this->support->setid_solicitacoes($data["id_solicitacoes"]);
+
+            if ($this->support->getsituacao() == "pendente") {
+                $this->support->setsituacao("finalizada");
+                flash("success","Solicitação finalizada com Sucesso");
+            } else {
+                $this->support->setsituacao("pendente");
+                flash("success","Sucesso ao abrir Solicitação");
+            }
+
+            $this->support->updateSolicitation();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("admin.requests")
+            ]);
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
     }
 }

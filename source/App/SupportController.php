@@ -134,7 +134,7 @@ class SupportController extends Controller{
 
            }
 
-                $this->support->getEmailSupport($this->user_data->getemail());
+         //       $this->support->getEmailSupport($this->user_data->getemail());
 
                 $this->support->setid_usuario($this->user_data->getid_usuario());
                 $this->support->setsituacao("pendente");

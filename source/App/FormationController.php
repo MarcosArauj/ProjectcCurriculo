@@ -190,8 +190,12 @@ class FormationController extends Controller {
 
             $this->formation->deleteOtherCourses();
 
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.otherCourses")
+
+            ]);
             flash("success","Curso Excluido com Sucesso!");
-            $this->router->redirect("app.saveOtherCourses");
+            return;
 
         } catch (\Exception $e) {
 
@@ -334,9 +338,11 @@ class FormationController extends Controller {
 
             $this->formation->deleteLanguages();
 
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.languages")
+            ]);
             flash("success","Idioma Excluido com Sucesso!");
-
-            $this->router->redirect("app.saveLanguages");
+            return;
 
         } catch (\Exception $e) {
 

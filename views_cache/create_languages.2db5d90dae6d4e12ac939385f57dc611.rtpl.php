@@ -3,7 +3,7 @@
 <?php require $this->checkTemplate("navebar");?>
 
 <main role="main">
-<section class="container col-md-8 cad">
+<section class="container col-md-8 cad text-white">
     <div class="alert_message">
         <?php echo flash(); ?>
 
@@ -54,7 +54,7 @@
                 </div>
                 <!-- Coluna 2 -->
                 <div class="col">
-                    <div  class="card bg-dark border-secondary">
+                    <div  class="card bg-dark border-secondary ">
                         <div class="form-group col-md-12">
                             <b>Encontrou o idioma ?</b> <br>
                             <div class="custom-control custom-radio custom-control-inline">
@@ -84,14 +84,11 @@
         <div class="card-footer">
             <a class="btn btn-danger float-left" href="/user/other_courses/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
             <div class="float-right">
+                <a class="btn btn-secondary" href="/user/languages" title="Listar"> Listar Idiomas <i class="fa fa-list-ul" aria-hidden="true"></i> </a>
                 <a class="btn btn-primary" href="/user/professional_experience/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
             </div>
         </div>
     </div>
-    <br>
-    <!-- Lista de Cursos -->
-    <?php require $this->checkTemplate("table_languages");?>
-
 </section>
 </main>
 

@@ -92,22 +92,6 @@
         <div class="float-right">
             <a class="btn btn-primary" href="/user/personal_data/update" title="Editar Perfil"> Editar Perfil <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
             <a class="btn btn-danger" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir Cadastro</a>
-            <!-- Modal Excluir -->
-            <div class="modal fade" id="ModalExcluir" role="dialog">
-                <div class="modal-dialog modal-sm">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <p><b>Deseja realmente excluir seu Registro?</b></p>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="/curriculum/curriculum/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
-                            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -115,6 +99,24 @@
 </form>
 </div>
 </main>
+<!-- Modal Excluir -->
+<div class="modal fade" id="ModalExcluir" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <p><b>Deseja realmente excluir seu Registro?</b></p>
+                <p><b>Voce será redirecionado para a Tela Inicial</b></p>
+            </div>
+            <div class="modal-footer">
+                <form class="form" action="/curriculum/curriculum/delete" method="post">
+                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</button>
+                </form>
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Modal Compartilhamento de Link do Curriculo -->
 <div class="modal fade" id="ModalCompartilha" role="dialog">
     <div class="modal-dialog">

@@ -1,6 +1,6 @@
 <!-- Lista de Idiomas -->
 {if="$languages"}
-<div class="card border-success">
+<div class="card-body">
 <table class="table table-striped border-success">
         <thead>
         <tr>
@@ -27,7 +27,9 @@
                                 <p><b>Deseja realmente excluir este Idioma?</b></p>
                             </div>
                             <div class="modal-footer">
-                                <a href="/curriculum/{$value.id_idiomac}/languages/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
+                                <form class="form" action="/curriculum/{$value.id_idiomac}/languages/delete" method="post">
+                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</button>
+                                </form>
                                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
                             </div>
                         </div>
@@ -37,10 +39,10 @@
         </tr>
         {/loop}
         </tbody>
-    </table>
+</table>
 </div>
 {else}
-<div  class="alert alert-danger">
-    <h5>Nenhum idioma cadastrato</h5>
+<div  class="text-center text-danger">
+    <h2>Nenhum idioma cadastrato</h2>
 </div>
 {/if}

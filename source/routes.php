@@ -49,8 +49,10 @@ $router->group("/admin");
 $router->get("", "AdminController:dashboardAdmin","admin.dashboardAdmin");
 $router->get("/users", "AdminController:users","admin.users");
 $router->get("/requests", "AdminController:requests","admin.requests");
+$router->get("/{id_solicitacoes}/requests/detail", "AdminController:detailRequest","admin.detailRequest");
 
 $router->post("/userResetPassword/{id_usuario}", "AdminController:userResetPassword","admin.userResetPassword");
+$router->post("/{id_solicitacoes}/requests/finish", "AdminController:finishFinish","admin.finishFinish");
 
 /**
  * - ------------------Rotas para Telas Usuarios Logado------------------------------
@@ -115,19 +117,19 @@ $router->post("/formation/create", "FormationController:saveAcademicFormation","
 
 $router->post("/other_courses/create", "FormationController:saveOtherCourses","formation.saveOtherCourses");
 $router->post("/{id_cursos}/other_courses/update", "FormationController:updateOtherCourses","formation.updateOtherCourses");
-$router->get("/{id_cursos}/other_courses/delete", "FormationController:deleteOtherCourses","formation.deleteOtherCourses");
+$router->post("/{id_cursos}/other_courses/delete", "FormationController:deleteOtherCourses","formation.deleteOtherCourses");
 
 $router->post("/languages/create", "FormationController:saveLanguages","formation.saveLanguages");
 $router->post("/{id_idiomac}/languages/update", "FormationController:updateLanguages","formation.updateLanguages");
-$router->get("/{id_idiomac}/languages/delete", "FormationController:deleteLanguages","formation.deleteLanguages");
+$router->post("/{id_idiomac}/languages/delete", "FormationController:deleteLanguages","formation.deleteLanguages");
 $router->post("/new_languages", "FormationController:createLanguage","formation.createLanguage");
 
 $router->post("/professional_experience/create", "ProfessionalController:saveProfessional","professional.saveProfessional");
 $router->post("/{id_profissional}/professional_experience/update", "ProfessionalController:updateProfessional","professional.updateProfessional");
-$router->get("/{id_profissional}/professional_experience/delete", "ProfessionalController:deleteProfessional","professional.deleteProfessional");
+$router->post("/{id_profissional}/professional_experience/delete", "ProfessionalController:deleteProfessional","professional.deleteProfessional");
 
 $router->post("/curriculum/create", "CurriculumController:saveCurriculum","curriculum.saveCurriculum");
-$router->get("/curriculum/delete", "CurriculumController:deleteCurriculum","curriculum.deleteCurriculum");
+$router->post("/curriculum/delete", "CurriculumController:deleteCurriculum","curriculum.deleteCurriculum");
 $router->get("/getCitsStates", "HelpersController:getCitsStates","curriculum.getCitsStates");
 
 

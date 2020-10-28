@@ -74,9 +74,9 @@ function getCitsStates() {
 
 }
 
-function formatDate($data){
+function formatDate($date){
 
-    return date('d/m/Y',strtotime($data));
+    return date('d/m/Y',strtotime($date));
 
 }
 
@@ -91,6 +91,23 @@ function formatCpf($cpf){
 
     return $cpf;
 
+}
+
+/**
+ * DIAS ENTRE 02 DATAS
+ * @author Norberto ALcântara
+ * @copyright (c) Célula Nerd, 2019
+ *
+ * @param type $initial_date
+ * @return type
+ */
+function daysDates($initial_date) {
+
+    $final_data = date("d/m/Y'");
+    $difference = strtotime($final_data) - strtotime($initial_date);
+    $days = floor($difference / (60 * 60 * 24));
+
+    return $days;
 }
 
 function existDeficiency():bool {

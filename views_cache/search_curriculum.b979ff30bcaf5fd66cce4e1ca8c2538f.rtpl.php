@@ -26,7 +26,7 @@
         </div>
         <div class="form-group col-md-8">
             <div class="input-group">
-                <input type="text" class="form-control search" name="search" id="busca" placeholder="Digite sua busca" disabled >
+                <input type="text" class="form-control search" name="search" id="busca" placeholder="Digite sua busca" disabled required>
                 <div class="input-group-append">
                     <button class="btn btn-success" type="submit">Buscar &nbsp; <i class="fa fa-search" aria-hidden="true"></i></button>
                 </div>

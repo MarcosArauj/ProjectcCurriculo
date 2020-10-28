@@ -27,9 +27,6 @@ class Curriculum extends Model {
 
             $this->setData($data);
 
-        } else {
-            throw new \Exception("Curriculo não Encontrado!");
-
         }
 
     }

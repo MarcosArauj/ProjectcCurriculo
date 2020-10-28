@@ -105,10 +105,13 @@ class CurriculumController extends Controller {
 
             $this->data_user->deleteCurriculum();
 
-            flash("success","Idioma Excluido com Sucesso!");
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("web.register")
 
+            ]);
             unset($_SESSION[User::SESSION]);
-            $this->router->redirect("web.register");
+            flash("success","Idioma Excluido com Sucesso!");
+            return;
 
         } catch (\Exception $e) {
 

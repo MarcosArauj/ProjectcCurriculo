@@ -1,7 +1,7 @@
 <?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Lista de Idiomas -->
 <?php if( $languages ){ ?>
 
-<div class="card border-success">
+<div class="card-body">
 <table class="table table-striped border-success">
         <thead>
         <tr>
@@ -29,7 +29,9 @@
                                 <p><b>Deseja realmente excluir este Idioma?</b></p>
                             </div>
                             <div class="modal-footer">
-                                <a href="/curriculum/<?php echo htmlspecialchars( $value1["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
+                                <form class="form" action="/curriculum/<?php echo htmlspecialchars( $value1["id_idiomac"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/languages/delete" method="post">
+                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</button>
+                                </form>
                                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
                             </div>
                         </div>
@@ -40,11 +42,12 @@
         <?php } ?>
 
         </tbody>
-    </table>
+</table>
 </div>
 <?php }else{ ?>
 
-<div  class="alert alert-danger">
-    <h5>Nenhum idioma cadastrato</h5>
+<div  class="text-center text-danger">
+    <h2>Nenhum idioma cadastrato</h2>
 </div>
 <?php } ?>
+

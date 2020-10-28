@@ -18,6 +18,7 @@ class EmailSupport {
 
         $this->mail = new PHPMailer(true);
 
+        $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $this->mail->isSMTP();
         $this->mail->isHTML(true);
         $this->mail->setLanguage("br");
@@ -33,7 +34,7 @@ class EmailSupport {
     }
 
 
-    public function send($toAddress, $toName, $subject, $tplName, $data = array()) {
+    public function send($toAddress, $toName, $subject, $tplName, $data = array()):bool {
 
         $config = array(
             "tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/theme/email/",

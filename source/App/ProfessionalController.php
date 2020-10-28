@@ -128,8 +128,11 @@ class ProfessionalController extends Controller {
 
             $this->professional->deleteProfessional();
 
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.professional")
+            ]);
             flash("success","Experiência Profissional Excluido com Sucesso!");
-            $this->router->redirect("app.saveProfessional");
+            return;
 
         } catch (\Exception $e) {
 

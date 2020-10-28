@@ -218,13 +218,16 @@ class Support extends Model {
      */
     public function saveSolicitation():bool {
 
+        $date = date("Y-m-d");
+
         $results = $this->conn->select(
-            "CALL sp_solicitacao_salvar(:descricao_solicitacao,:assunto,:situacao,:id_usuario)",
+            "CALL sp_solicitacao_salvar(:descricao_solicitacao,:assunto,:situacao,:id_usuario,:dtregistro)",
             array(
                 ":descricao_solicitacao" => $this->getdescricao_solicitacao(),
                 ":assunto" => $this->getassunto(),
                 ":situacao" => $this->getsituacao(),
-                ":id_usuario" => $this->getid_usuario()
+                ":id_usuario" => $this->getid_usuario(),
+                ":dtregistro" =>$date
             ));
 
         if (count($results) === 0) {
@@ -271,7 +274,7 @@ class Support extends Model {
         $start = ($page - 1) * $itemsPerPage;
 
         $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS *  FROM tb_solicitacoes
-                                        INNER JOIN v_usuario USING(id_usuario)
+                                        INNER JOIN v_usuario USING(id_usuario) ORDER BY dtregistro ASC
                                         LIMIT $start, $itemsPerPage;");
 
         $resultTotal = $this->conn->select("SELECT FOUND_ROWS() AS nrtotal" );
@@ -282,6 +285,27 @@ class Support extends Model {
             'pages'=>ceil($resultTotal[0]["nrtotal"] / $itemsPerPage)
         );
 
+    }
+
+    /**
+     * @param int $id_solicitacao
+     * @return void
+     * Pega Curso
+     * @throws \Exception
+     */
+    public function getRequest(int $id_solicitacoes):void {
+
+        $results =   $this->conn->select("SELECT * FROM tb_solicitacoes
+            INNER JOIN v_usuario USING(id_usuario) WHERE id_solicitacoes = :id_solicitacoes",
+            array(
+                    ":id_solicitacoes"=>$id_solicitacoes
+                ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Solicitação não Encontrada!");
+        }
+
+        $this->setData($results[0]);
     }
 
 }
