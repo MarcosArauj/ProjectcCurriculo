@@ -82,7 +82,7 @@ class Support extends Model {
         $results = $this->conn->select("SELECT * FROM v_recupera_senha
 	    WHERE id_recupera = :id_recupera AND 
 	    dtrecuperacao IS NULL AND 
-	     DATE_ADD(dtregistro_senha, INTERVAL 1 HOUR) >= NOW()", array(
+	     DATE_ADD(dtregistro_senha, INTERVAL 24 HOUR) >= NOW()", array(
             ":id_recupera"=>$disrecupera
         ));
 

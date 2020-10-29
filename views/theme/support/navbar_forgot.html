@@ -11,6 +11,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Início</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search/curriculum">Buscar Curriculos</a>
+                </li>
             </ul>
             <div class="form-inline my-2 my-lg-0">
                 <a class="btn btn-primary link_btn" href="/login" title="Voltar ao Login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Voltar ao Login&nbsp;&nbsp;</a>

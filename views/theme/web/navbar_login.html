@@ -11,6 +11,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Início</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/search/curriculum">Buscar Curriculos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/support/solicitation_create">Suporte</a>
+                </li>
             </ul>
             <div class="form-inline my-2 my-lg-0">
                 <a  class="btn link_btn link_register" href="/register" title="Registre-se aqui">&nbsp;&nbsp;Registre-se aqui :)&nbsp;&nbsp;</a>

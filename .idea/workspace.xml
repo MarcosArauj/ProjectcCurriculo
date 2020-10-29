@@ -3,83 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/FormationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/FormationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/email_recover.afce575e899651344132a33a89a1e278.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/email_reset.afce575e899651344132a33a89a1e278.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views-cache/email_solicitation.afce575e899651344132a33a89a1e278.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/images/check.png" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/images/check.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/images/support.png" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/images/altofalante.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/admin/table_users.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/admin/table_users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/web/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/web/navbar_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/navbar_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/check_curriculum.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_academic_formation.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_contact.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_deficiency.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_languages.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_other_courses.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_personal_data.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_professional.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_solicitation.b9ca2a3010efb87022762891953f83d1.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/create_solicitation.b9ca2a3010efb87022762891953f83d1.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/create_user.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/dashboard.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/dashboard_admin.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/detail_professional.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/error.745d56ffa2b37acc9a06e13317da82ef.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/error_search.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/finish_curriculum.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/footer.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/footer.520a0ec944c2973f9df3545cfc19d155.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/footer.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/forgot_password.520a0ec944c2973f9df3545cfc19d155.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/forgot_password.b9ca2a3010efb87022762891953f83d1.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/forgot_sent.520a0ec944c2973f9df3545cfc19d155.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/forgot_sent.b9ca2a3010efb87022762891953f83d1.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/header.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/header.520a0ec944c2973f9df3545cfc19d155.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/header.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/home.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/views_cache/home.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/languages.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/login.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/navbar.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/navebar.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/navebar_forgot.520a0ec944c2973f9df3545cfc19d155.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/navebar_forgot.b9ca2a3010efb87022762891953f83d1.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/navebar_home.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/navebar_login.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/navebar_register.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/other_courses.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/pdf.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/professional.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/profile.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/recover_send.520a0ec944c2973f9df3545cfc19d155.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/recover_send.b9ca2a3010efb87022762891953f83d1.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/requests.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/requests_detail.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/reset_solicitation.b9ca2a3010efb87022762891953f83d1.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/reset_success.b9ca2a3010efb87022762891953f83d1.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/results_search.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/search_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/search_deficiency.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/search_formation.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/search_gen.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/search_knowledge.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/search_languages.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/share_curriculum.b979ff30bcaf5fd66cce4e1ca8c2538f.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/start.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/table_languages.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/table_other_courses.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/table_professional.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/table_users.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/update_academic_formation.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/update_contact.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/update_deficiency.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/update_email.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/update_password.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/update_personal_data.2db5d90dae6d4e12ac939385f57dc611.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/update_user.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/user_detail.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views_cache/users.dde82dd7abee922ef386855e84760d63.rtpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Support/EmailSupport.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Support/EmailSupport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/Support/Support.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Support/Support.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Utilities/UsefulFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Utilities/UsefulFunctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/admin/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/admin/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_deficiency.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_deficiency.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/update_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/update_personal_data.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/email/email_recover.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/email/email_recover.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/support/forgot_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/forgot_password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/support/recover_send.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/recover_send.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/create_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/create_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/navbar_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/navbar_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/navbar_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/navbar_register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/search_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/search_curriculum.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +59,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -143,7 +87,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/theme/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/theme/web" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -157,19 +101,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\web" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\admin" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App\Pages" />
+      <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\web" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\curriculum" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\Utilities" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
       <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\recover-password" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\admin" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\email" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App\Pages" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\source\App" />
-      <recent name="C:\xampp\htdocs\ProjectcCurriculo\views\theme\web" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -282,7 +226,8 @@
       <workItem from="1603900798799" duration="1753000" />
       <workItem from="1603903242236" duration="700000" />
       <workItem from="1603904229804" duration="496000" />
-      <workItem from="1603916774910" duration="7800000" />
+      <workItem from="1603916774910" duration="12510000" />
+      <workItem from="1604005246565" duration="5827000" />
     </task>
     <servers />
   </component>

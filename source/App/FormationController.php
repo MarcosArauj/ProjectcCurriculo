@@ -28,6 +28,7 @@ class FormationController extends Controller {
     /**
      * AppController constructor.
      * @param $router
+     * @throws \Exception
      */
     public function __construct($router)
     {
@@ -60,15 +61,19 @@ class FormationController extends Controller {
 
         try {
 
+            $curriculo = new Curriculum();
+            $curriculo->getCurriculum($this->user_logado->getid_usuario());
+            $curriculo->getValues();
+
             $this->formation->setid_formacao($this->data_user->getid_formacao());
 
             $this->formation->setData($data);
 
             $this->formation->saveAcademicFormation();
 
-            if($this->data_user->getid_formacao()) {
+            if($this->data_user->getid_curriculo()) {
                 echo $this->ajaxResponse("redirect", [
-                    "url" => $this->router->route("app.saveAcademicFormation")
+                    "url" => $this->router->route("app.updateAcademicFormation")
                 ]);
                 flash("success", "Dados Altualizados com Sucesso");
                 return;

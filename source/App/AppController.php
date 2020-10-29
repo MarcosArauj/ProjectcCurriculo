@@ -34,6 +34,7 @@ class AppController extends Controller {
     /**
      * AppController constructor.
      * @param $router
+     * @throws \Exception
      */
     public function __construct($router)
     {

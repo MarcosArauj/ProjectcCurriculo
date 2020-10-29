@@ -19,8 +19,8 @@ class EmailSupport {
 
         $this->mail = new PHPMailer(true);
 
-        $this->mail->SMTPDebug = SMTP::DEBUG_OFF;
         $this->mail->isSMTP();
+        $this->mail->SMTPDebug = SMTP::DEBUG_OFF;
         $this->mail->isHTML(true);
         $this->mail->setLanguage("pt_br");
 

@@ -37,7 +37,6 @@ function getPhotoUser() {
 
     $user = Login::getFromSession();
 
-
     $photo_user_m = "/views/assets/images/user/masculino.jpg";
 
     $photo_user_f = "/views/assets/images/user/feminino.jpg";
