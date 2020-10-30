@@ -7,7 +7,7 @@ define("SITE", [
     "name_complete" =>"Web Curriculo",
     "desc" => "Sistema Web Controle de  Curriculo",
      //"domain" => "curriculotcc.com.br",
-    "domain" => "wcurriculo.cruzm.com.br",
+     "domain" => "wcurriculo.cruzm.com.br",
     "locale" => "pt_BR",
     //"root" => "http://curriculotcc.com.br",
     "root" => "https://wcurriculo.cruzm.com.br",
@@ -27,7 +27,7 @@ define("SITE", [
 //    "password" => "",
 //    "dbname" => "db_curriculo"
 //]);
-//
+
 define("DB", [
     "hostname" => "127.0.0.1",
     "username" => "u655389713_wc",
