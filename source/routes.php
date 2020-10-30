@@ -19,6 +19,7 @@ $router->namespace("Source\App");
 $router->group(null);
 $router->get("/", "WebController:home","web.home");
 $router->get("/register", "WebController:register","web.register");
+$router->get("/tutorial", "WebController:tutorial","web.tutorial");
 $router->get("/login", "WebController:login","web.login");
 $router->get("/forgot", "WebController:forgot","web.forgot");
 $router->get("/sent", "WebController:sent","web.sent");

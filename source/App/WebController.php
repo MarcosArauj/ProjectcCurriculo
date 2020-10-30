@@ -32,6 +32,15 @@ class WebController extends Controller {
         ));
     }
 
+    public function tutorial():void{
+
+        $page = new PageWeb();
+
+        $page->setTpl("tutorial", array(
+            "title"=> site("name_complete"),
+        ));
+    }
+
     public function register():void{
 
         $page = new PageWeb();

@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
-                                <button class="btn btn-md btn-success float-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Idioma</button>
+                                <button class="btn btn-md btn-success float-right"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar</button>
                             </div>
                         </form>
                     </div>
@@ -84,7 +84,7 @@
         <div class="card-footer">
             <a class="btn btn-danger float-left" href="/user/other_courses/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
             <div class="float-right">
-                <a class="btn btn-secondary" href="/user/languages" title="Listar"> Listar Idiomas <i class="fa fa-list-ul" aria-hidden="true"></i> </a>
+                <a class="btn btn-secondary" href="/user/languages" title="Listar"> Listar&nbsp;<i class="fa fa-list-ul" aria-hidden="true"></i> </a>
                 <a class="btn btn-primary" href="/user/professional_experience/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
             </div>
         </div>
