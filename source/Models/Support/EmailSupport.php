@@ -4,7 +4,7 @@
 namespace Source\Models\Support;
 
 use PHPMailer\PHPMailer\PHPMailer;
-use Exception;
+use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 use Rain\Tpl;
 

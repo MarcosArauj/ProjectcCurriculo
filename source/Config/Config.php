@@ -6,11 +6,11 @@ define("SITE", [
     "name" => "WC",
     "name_complete" =>"Web Curriculo",
     "desc" => "Sistema Web Controle de  Curriculo",
-     //"domain" => "curriculotcc.com.br",
-     "domain" => "wcurriculo.cruzm.com.br",
+     "domain" => "curriculotcc.com.br",
+     //"domain" => "wcurriculo.cruzm.com.br",
     "locale" => "pt_BR",
-    //"root" => "http://curriculotcc.com.br",
-    "root" => "https://wcurriculo.cruzm.com.br",
+    "root" => "http://curriculotcc.com.br",
+    //"root" => "https://wcurriculo.cruzm.com.br",
     "version"=>"1.0"
 ]);
 
@@ -21,27 +21,27 @@ define("SITE", [
 //    "dbname" => "u655389713_tb_curriculo"
 //]);
 
-//define("DB", [
-//    "hostname" => "localHost",
-//    "username" => "root",
-//    "password" => "",
-//    "dbname" => "db_curriculo"
-//]);
-
 define("DB", [
-    "hostname" => "127.0.0.1",
-    "username" => "u655389713_wc",
-    "password" => "Cruz2517",
-    "dbname" => "u655389713_tb_curriculo"
+    "hostname" => "localHost",
+    "username" => "root",
+    "password" => "",
+    "dbname" => "db_curriculo"
 ]);
 
+//define("DB", [
+//    "hostname" => "127.0.0.1",
+//    "username" => "u655389713_wc",
+//    "password" => "Cruz2517",
+//    "dbname" => "u655389713_tb_curriculo"
+//]);
+
 define("MAIL_SUPPORT", [
-    "host" => "smtp.hostinger.com.br",
+    "host" => "smtp.gmail.com",
     "port" => "587",
-    "user" => "support.webc@cruzm.com.br",
-    "passwd" => "SupportWebc2517",
-    "from_name" => "Support WebCurriculo",
-    "from_email" => "support.webc@cruzm.com.br"
+    "user" => "webcurriculo.web@gmail.com",
+    "passwd" => "WebCurriculo2517",
+    "from_name" => "Web Curriculo",
+    "from_email" => "webcurriculo.web@gmail.com"
 
 ]);
 

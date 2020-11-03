@@ -302,7 +302,7 @@
             <td class="header container" align="center">
                 <div class="content">
                     <a href="http://admin.projecttcc.com.br">
-                        <h3><b><?php echo htmlspecialchars( $site, ENT_COMPAT, 'UTF-8', FALSE ); ?></b></h3>
+                        <h3><b>Suporte <?php echo htmlspecialchars( $site, ENT_COMPAT, 'UTF-8', FALSE ); ?></b></h3>
                     </a>
                 </div>
             </td>
@@ -336,6 +336,8 @@
                                                     <td class="body-text-cell">
                                                         O link é válido por 24 horas. Após esse tempo, você <br>
                                                         precisará reenviar a solicitação de redefinição para a senha.
+                                                        <br>
+                                                        Clique no botão para redefinir a senha.
                                                     </td>
                                                 </tr>
                                                 <tr>
