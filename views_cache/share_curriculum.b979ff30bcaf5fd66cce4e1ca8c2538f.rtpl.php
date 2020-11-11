@@ -1,33 +1,41 @@
-{include="header"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
 <main role="main" style="background-color: #ccdddd;">
 <section class="container">
     <div class="align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 id="titulo_home">
             <a href="/">
-                <b>{#site("name")#} - {#site("desc")#}</b>
+                <b><?php echo site("name"); ?> - <?php echo site("desc"); ?></b>
             </a>
         </h1>
     </div>
 </section>
-{if="$curriculum"}
+<?php if( $curriculum ){ ?>
+
 <section class="container col-md-8" >
    <div class="card border-success" style="color: black;">
      <div class="card-header text-success text-center">
-         {if="$curriculum.nome_social_uso == 'Sim'"}
-         <h1>{$curriculum.nome_social}</h1>
-         {else}
-         <h1>{$curriculum.primeiro_nome} {$curriculum.sobrenome}</h1>
-         {/if}
+         <?php if( $curriculum["nome_social_uso"] == 'Sim' ){ ?>
+
+         <h1><?php echo htmlspecialchars( $curriculum["nome_social"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
+         <?php }else{ ?>
+
+         <h1><?php echo htmlspecialchars( $curriculum["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <?php echo htmlspecialchars( $curriculum["sobrenome"], ENT_COMPAT, 'UTF-8', FALSE ); ?></h1>
+         <?php } ?>
+
      </div>
      <div class="card-body">
        <div class="row">
-           {if="$curriculum.foto_usuario != NULL"}
+           <?php if( $curriculum["foto_usuario"] != NULL ){ ?>
+
            <div class="col-3">
-               <img style="width: 150px;" class="card-img-overlay" src="{$curriculum.foto_usuario}" alt="Photo">
+               <img style="width: 150px;" class="card-img-overlay" src="<?php echo htmlspecialchars( $curriculum["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Photo">
            </div>
-           {else}
+           <?php }else{ ?>
+
            <div class="col-2"></div>
-           {/if}
+           <?php } ?>
+
            <div class="col-9">
                <!-- Dados Pessoais -->
                <div class="row">
@@ -36,24 +44,24 @@
                <div class="col">
                    <div class="row">
                        <label><b>Idade: </b></label>&nbsp;
-                       <span>{function="calculateAge($curriculum.nascimento)"} anos;</span>
+                       <span><?php echo calculateAge($curriculum["nascimento"]); ?> anos;</span>
                        <span class="offset-1"></span>
                        <label><b>Data de Nascimento: </b></label>&nbsp;
-                       <span>{function="formatDate($curriculum.nascimento)"};</span>
+                       <span><?php echo formatDate($curriculum["nascimento"]); ?>;</span>
                    </div>
                    <div class="row">
                        <label><b>Sexo: </b></label>&nbsp;
-                       <span>{$curriculum.genero}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["genero"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-1"></span>
                        <label><b>Cor/Raça: </b></label>&nbsp;
-                       <span>{$curriculum.cor_raca}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["cor_raca"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                    <div class="row">
                        <label><b>Naturalidade: </b></label>&nbsp;
-                       <span>{$curriculum.naturalidade}/{$curriculum.uf_naturalidade} </span>
+                       <span><?php echo htmlspecialchars( $curriculum["naturalidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/<?php echo htmlspecialchars( $curriculum["uf_naturalidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
                        <span class="offset-2"></span>
                        <label><b>Nacionalidade: </b></label>&nbsp;
-                       <span>{$curriculum.nacionalidade} </span>
+                       <span><?php echo htmlspecialchars( $curriculum["nacionalidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
                    </div>
                </div>
                <hr>
@@ -64,16 +72,18 @@
                <div class="col">
                    <div class="row">
                        <label><b>Celular: </b></label>&nbsp;
-                       <span>{$curriculum.celular} </span>
+                       <span><?php echo htmlspecialchars( $curriculum["celular"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
                        <span class="offset-2"></span>
-                       {if="$curriculum.telefone != NULL"}
+                       <?php if( $curriculum["telefone"] != NULL ){ ?>
+
                        <label><b>Telefone: </b></label>&nbsp;
-                       <span>{$curriculum.telefone} </span>
-                       {/if}
+                       <span><?php echo htmlspecialchars( $curriculum["telefone"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
+                       <?php } ?>
+
                    </div>
                    <div class="row">
                        <label><b>E-mail: </b></label>&nbsp;
-                       <span>{$curriculum.email} </span>
+                       <span><?php echo htmlspecialchars( $curriculum["email"], ENT_COMPAT, 'UTF-8', FALSE ); ?> </span>
                    </div>
                </div>
                <hr>
@@ -84,28 +94,29 @@
                <div class="col">
                    <div class="row">
                        <label><b>Rua/Av: </b></label>&nbsp;
-                       <span>{$curriculum.endereco}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["endereco"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-2"></span>
                        <label><b>Nº: </b></label>&nbsp;
-                       <span>{$curriculum.numero}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["numero"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                    <div class="row">
                        <label><b>CEP: </b></label>&nbsp;
-                       <span>{$curriculum.cep}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["cep"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-3"></span>
                        <label><b>Bairro: </b></label>&nbsp;
-                       <span>{$curriculum.bairro}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["bairro"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                    <div class="row">
                        <label><b>Cidade: </b></label>&nbsp;
-                       <span>{$curriculum.cidade} - {$curriculum.estado}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["cidade"], ENT_COMPAT, 'UTF-8', FALSE ); ?> - <?php echo htmlspecialchars( $curriculum["estado"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-2"></span>&nbsp;&nbsp;
                        <label><b>Pais: </b></label>&nbsp;
-                       <span>{$curriculum.pais}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["pais"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                </div>
                <!-- Deficiência -->
-               {if="$curriculum.deficiencia_existe == 'Sim'"}
+               <?php if( $curriculum["deficiencia_existe"] == 'Sim' ){ ?>
+
                <hr>
                <div class="row">
                    <h5><u>Deficiência</u> </h5>
@@ -113,199 +124,235 @@
                <div class="col">
                    <div class="row">
                        <label><b>Tipo: </b></label>&nbsp;
-                       <span>{$curriculum.tipo_deficiencia}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["tipo_deficiencia"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-2"></span>&nbsp;&nbsp;
-                       {if="$curriculum.cid != NULL"}
+                       <?php if( $curriculum["cid"] != NULL ){ ?>
+
                        <label><b>CID: </b></label>&nbsp;
-                       <span>{$curriculum.cid}</span>
-                       {/if}
+                       <span><?php echo htmlspecialchars( $curriculum["cid"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
+                       <?php } ?>
+
                    </div>
                    <div class="row">
                        <label><b>Detalhamento da Deficiência: </b></label>&nbsp;
-                       <span>{$curriculum.especificacao_deficiencia}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["especificacao_deficiencia"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                    <div class="row">
-                       {if="$curriculum.regime_cota == 'Sim'"}
+                       <?php if( $curriculum["regime_cota"] == 'Sim' ){ ?>
+
                        <label><b>* Já trabalhou pelo regime de <a href="https://www2.camara.leg.br/legin/fed/lei/1991/lei-8213-24-julho-1991-363650-publicacaooriginal-1-pl.html" target="_blank">Lei de Cotas 8213/91</a></b></label>
-                       {/if}
+                       <?php } ?>
+
                    </div>
                    <div class="row">
-                       {if="$curriculum.veiculo_adaptado == 'Sim'"}
+                       <?php if( $curriculum["veiculo_adaptado"] == 'Sim' ){ ?>
+
                        <label><b>* Possúi veículo adaptado</b></label>
-                       {/if}
+                       <?php } ?>
+
                    </div>
                    <div class="row">
-                       {if="$curriculum.transporte == 'Sim'"}
+                       <?php if( $curriculum["transporte"] == 'Sim' ){ ?>
+
                        <label><b>* Independente no transporte coletivo</b></label>
-                       {else}
+                       <?php }else{ ?>
+
                        <label><b>* Necessita de ajuda no transporte coletivo</b></label>
-                       {/if}
+                       <?php } ?>
+
                    </div>
                    <div class="row">
-                       {if="$curriculum.acompanhantes == 'Sim'"}
+                       <?php if( $curriculum["acompanhantes"] == 'Sim' ){ ?>
+
                        <label><b>* Necessita de acompanhantes ou cão-guia</b></label>
-                       {/if}
+                       <?php } ?>
+
                    </div>
                    <div class="row">
-                       {if="$curriculum.adaptacoes_trabalho == 'Sim'"}
-                           {if="$curriculum.especificacao_trabalho != NULL"}
+                       <?php if( $curriculum["adaptacoes_trabalho"] == 'Sim' ){ ?>
+
+                           <?php if( $curriculum["especificacao_trabalho"] != NULL ){ ?>
+
                            <label><b>* Detalhamento da Adaptação Necessaria: </b></label>&nbsp;
-                           <span>{$curriculum.especificacao_trabalho}</span>
-                          {/if}
-                       {/if}
+                           <span><?php echo htmlspecialchars( $curriculum["especificacao_trabalho"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
+                          <?php } ?>
+
+                       <?php } ?>
+
                    </div>
                </div>
-               {/if}
+               <?php } ?>
+
                <hr>
                <!-- Formação Acadêmica -->
                <div class="row">
                    <h5><u>Formação Acadêmica</u> </h5>
                </div>
                <div class="col">
-                   {if="$curriculum.nivel_conclusao != NULL"}
+                   <?php if( $curriculum["nivel_conclusao"] != NULL ){ ?>
+
                    <div class="row">
                        <label><b>Formação Concluida: </b></label>&nbsp;
-                       <span>{$curriculum.nivel_conclusao}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["nivel_conclusao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-2"></span>&nbsp;&nbsp;
                        <label><b>Início: </b></label>&nbsp;
-                       <span>{$curriculum.ano_inicio_conclusao}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["ano_inicio_conclusao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-1"></span>
                        <label><b>Conclusão: </b></label>&nbsp;
-                       <span>{$curriculum.ano_conclusao}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["ano_conclusao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                    <div class="row">
                        <label><b>Instituição de Conclusão: </b></label>&nbsp;
-                       <span>{$curriculum.instituicao_conclusao}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["instituicao_conclusao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
-                   {/if}
-                   {if="$curriculum.nivel_andamento != NULL"}
+                   <?php } ?>
+
+                   <?php if( $curriculum["nivel_andamento"] != NULL ){ ?>
+
                    <div class="row">
                        <label><b>Formação em Andamento: </b></label>&nbsp;
-                       <span>{$curriculum.nivel_andamento}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["nivel_andamento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-1"></span>&nbsp;&nbsp;
                        <label><b>Início: </b></label>&nbsp;
-                       <span>{$curriculum.ano_inicio_andamento}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["ano_inicio_andamento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                    <div class="row">
                        <label><b>Instituição: </b></label>&nbsp;
-                       <span>{$curriculum.instituicao_andamento}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["instituicao_andamento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
-                   {/if}
+                   <?php } ?>
+
                    <div class="row">
-                       {if="$curriculum.curso != NULL"}
+                       <?php if( $curriculum["curso"] != NULL ){ ?>
+
                        <label><b>Curso: </b></label>&nbsp;
-                       <span>{$curriculum.curso}</span>
+                       <span><?php echo htmlspecialchars( $curriculum["curso"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-5"></span>
                        <label><b>Tipo de Graduação: </b></label>&nbsp;
-                       <span>{$curriculum.tipo_graduacao}</span>
-                       {/if}
+                       <span><?php echo htmlspecialchars( $curriculum["tipo_graduacao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
+                       <?php } ?>
+
                    </div>
                </div>
                <!-- Outros Cursos -->
-               {if="$courses"}
+               <?php if( $courses ){ ?>
+
                <hr>
                <div class="row">
                    <h6><u>Outros Cursos</u> </h6>
                </div>
-               {loop="$courses"}
+               <?php $counter1=-1;  if( isset($courses) && ( is_array($courses) || $courses instanceof Traversable ) && sizeof($courses) ) foreach( $courses as $key1 => $value1 ){ $counter1++; ?>
+
                <div class="col">
                    <div class="row">
                        <label><b>Curso: </b></label>&nbsp;
-                       <span>{$value.nome_curso}</span>
+                       <span><?php echo htmlspecialchars( $value1["nome_curso"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-2"></span>&nbsp;&nbsp;&nbsp;
                        <label><b>Carga Horária: </b></label>&nbsp;
-                       <span>{$value.carga_horaria} horas</span>
+                       <span><?php echo htmlspecialchars( $value1["carga_horaria"], ENT_COMPAT, 'UTF-8', FALSE ); ?> horas</span>
                    </div>
                    <div class="row">
                        <label><b>Instituicão: </b></label>&nbsp;
-                       <span>{$value.instituicao}</span>
+                       <span><?php echo htmlspecialchars( $value1["instituicao"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        <span class="offset-md-2"></span>
                        <label><b>Conclusão: </b></label>&nbsp;
-                       <span>{function="formatDate($value.termino)"}</span>
+                       <span><?php echo formatDate($value1["termino"]); ?></span>
                    </div>
                    <div class="row">
                        <label><b>Compentências: </b></label>&nbsp;
-                       <span>{$value.compentencias}</span>
+                       <span><?php echo htmlspecialchars( $value1["compentencias"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                </div>
                <br>
-               {/loop}
-               {/if}
+               <?php } ?>
+
+               <?php } ?>
+
                <!-- Idiomas -->
-               {if="$languages"}
+               <?php if( $languages ){ ?>
+
                <hr>
                <div class="row">
                    <h5><u>Idiomas</u> </h5>
                </div>
-               {loop="$languages"}
+               <?php $counter1=-1;  if( isset($languages) && ( is_array($languages) || $languages instanceof Traversable ) && sizeof($languages) ) foreach( $languages as $key1 => $value1 ){ $counter1++; ?>
+
                <div class="row">
                    <div class="col-5">
                        <label><b>* </b></label>&nbsp;
-                       <span>{$value.idioma} {$value.nivel_conhecimento}</span>
+                       <span><?php echo htmlspecialchars( $value1["idioma"], ENT_COMPAT, 'UTF-8', FALSE ); ?> <?php echo htmlspecialchars( $value1["nivel_conhecimento"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                    </div>
                </div>
-               {/loop}
-               {/if}
+               <?php } ?>
+
+               <?php } ?>
+
                <!-- Experiência Profissional -->
-               {if="$professional"}
+               <?php if( $professional ){ ?>
+
                <hr>
                <div class="row">
                    <h5><u>Experiência Profissional</u> </h5>
                </div>
-               {loop="$professional"}
-                   {if="$value.registro == 'inativo' && $value.empresa_anterior != NULL"}
+               <?php $counter1=-1;  if( isset($professional) && ( is_array($professional) || $professional instanceof Traversable ) && sizeof($professional) ) foreach( $professional as $key1 => $value1 ){ $counter1++; ?>
+
+                   <?php if( $value1["registro"] == 'inativo' && $value1["empresa_anterior"] != NULL ){ ?>
+
                    <div class="row">
                        <div class="col-5">
                            <label><b>Empresa: </b></label>&nbsp;
-                           <span>{$value.empresa_anterior}</span>
+                           <span><?php echo htmlspecialchars( $value1["empresa_anterior"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        </div>
                        <div class="col">
                            <label><b>Cargo: </b></label>&nbsp;
-                           <span>{$value.cargo_anterior}</span>
+                           <span><?php echo htmlspecialchars( $value1["cargo_anterior"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        </div>
                    </div>
                    <div class="row">
                        <div class="col-5">
                            <label><b>Admissão: </b></label>&nbsp;
-                           <span>{function="formatDate($value.data_admissao)"}</span>
+                           <span><?php echo formatDate($value1["data_admissao"]); ?></span>
                        </div>
                        <div class="col">
                            <label><b>Demissão: </b></label>&nbsp;
-                           <span>{function="formatDate($value.data_demissao)"}</span>
+                           <span><?php echo formatDate($value1["data_demissao"]); ?></span>
                        </div>
                    </div>
                    <div class="row">
                        <div class="col">
                            <label><b>Atividade Exercida: </b></label>&nbsp;
-                           <span>{$value.atividade}</span>
+                           <span><?php echo htmlspecialchars( $value1["atividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                        </div>
                    </div>
-                    {/if}
-                    {if="$value.registro == 'ativo' && $value.empresa_atual != NULL"}
+                    <?php } ?>
+
+                    <?php if( $value1["registro"] == 'ativo' && $value1["empresa_atual"] != NULL ){ ?>
+
                        <div class="row">
                            <div class="col-5">
                                <label><b>Empresa Atual: </b></label>&nbsp;
-                               <span>{$value.empresa_atual}</span>
+                               <span><?php echo htmlspecialchars( $value1["empresa_atual"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                            </div>
                            <div class="col">
                                <label><b>Cargo: </b></label>&nbsp;
-                               <span>{$value.cargo_atual}</span>
+                               <span><?php echo htmlspecialchars( $value1["cargo_atual"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                            </div>
                        </div>
                        <div class="row">
                            <div class="col-5">
                                <label><b>Admissão: </b></label>&nbsp;
-                               <span>{function="formatDate($value.data_admissao)"}</span>
+                               <span><?php echo formatDate($value1["data_admissao"]); ?></span>
                            </div>
                        </div>
                        <div class="row">
                            <div class="col">
                                <label><b>Atividade Exercida: </b></label>&nbsp;
-                               <span>{$value.atividade}</span>
+                               <span><?php echo htmlspecialchars( $value1["atividade"], ENT_COMPAT, 'UTF-8', FALSE ); ?></span>
                            </div>
                        </div>
                        <br>
-                   {/if}
+                   <?php } ?>
+
                    <!-- Modal Compartilhamento de Link do Curriculo -->
                    <div class="modal fade" id="ModalCompartilha" role="dialog">
                        <div class="modal-dialog">
@@ -313,10 +360,11 @@
                            <div class="modal-content">
                                <div class="modal-body">
                                    <div class="alert_copy ">
-                                       {function="flash()"}
+                                       <?php echo flash(); ?>
+
                                    </div>
                                    <p><b>Link de Compartinhamento do seu Curriculo</b></p>
-                                   <input type="text" id="link" style="color: black" class="form-control" value="{#site('root')#}/curriculum/{$curriculum.cod_curriculo}" readonly>
+                                   <input type="text" id="link" style="color: black" class="form-control" value="<?php echo site('root'); ?>/curriculum/<?php echo htmlspecialchars( $curriculum["cod_curriculo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
                                </div>
                                <div class="modal-footer">
                                    <button id="btncopia"  class="btn btn-info btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
@@ -325,23 +373,28 @@
                            </div>
                        </div>
                    </div>
-               {/loop}
-               {/if}
+               <?php } ?>
+
+               <?php } ?>
+
            </div>
        </div>
      </div>
        <div class="card-footer">
            <a class="btn btn-info" data-toggle="modal" data-target="#ModalCompartilha" href="" title="Link de Compartinhamento">
                Link de Compartinhamento <i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
-           <a class="btn btn-secondary float-right" href="/curriculum/{$curriculum.cod_curriculo}/generate_pdf" title="Gerar PDF">Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i> </a>
+           <a class="btn btn-secondary float-right" href="/curriculum/<?php echo htmlspecialchars( $curriculum["cod_curriculo"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/generate_pdf" title="Gerar PDF">Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i> </a>
        </div>
    </div>
 </section>
-{else}
+<?php }else{ ?>
+
 <div  class="alert alert-danger">
     <h3 class="text-center">Curriculo não Existe</h3>
 </div>
-{/if}
+<?php } ?>
+
 </div>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+

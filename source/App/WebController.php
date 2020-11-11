@@ -112,13 +112,7 @@ class WebController extends Controller {
             $recover_pass = $recover->validRecoverDecrypt($_GET["code"]);
 
         } catch (\Exception $e) {
-
-            echo $this->ajaxResponse("message", [
-                "type" => "error",
-                "message" => $e->getMessage()
-            ]);
-            return;
-
+            flash("error",$e->getMessage());
         }
 
         $page = new PageSupport();

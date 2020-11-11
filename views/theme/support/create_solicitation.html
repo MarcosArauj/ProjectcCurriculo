@@ -48,8 +48,10 @@
                                 <strong class="obrigatorio">*</strong><b>Assunto</b>
                                 <select class="form-control" name="assunto" id="assunto">
                                     <option value="">Selecione</option>
-                                    <option value="Recuperar Senha">Senha</option>
-                                    <option value="Recuperar E-mail">E-mail</option>
+                                    <option value="Dúvidas">Dúvidas</option>
+                                    <option value="Informações">Informações</option>
+                                    <option value="Recuperar Senha">Recuperar Senha</option>
+                                    <option value="Recuperar E-mail">Recuperar E-mail</option>
                                     <option value="Outros">Outros</option>
                                 </select>
                             </div>

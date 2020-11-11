@@ -88,7 +88,7 @@ class Support extends Model {
 
 
         if(count($results) === 0) {
-            throw new \Exception("Não foi possivel recuperar a senha!");
+            throw new \Exception("Erro ao recuperar a senha! Link já Usado ou Expirado");
         } else {
             return $results[0];
         }

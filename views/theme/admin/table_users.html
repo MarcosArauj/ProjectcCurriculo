@@ -23,25 +23,27 @@
                 <button class="btn btn-primary btn-sm"><i class="fa fa-refresh"></i> Resetar Senha</button>
                 <input type="hidden" name="email" value="{$value.email}">
                 <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>
-                <!-- Modal Excluir -->
-                <div class="modal fade" id="ModalExcluir" role="dialog">
-                    <div class="modal-dialog modal-sm">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <p><b>Deseja realmente excluir este Idioma?</b></p>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="/curriculum/{$value.id_idiomac}/languages/delete"  class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</a>
-                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </td>
         </tr>
         </form>
+        <!-- Modal Excluir -->
+        <div class="modal fade" id="ModalExcluir" role="dialog">
+            <div class="modal-dialog modal-sm">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p><b>Deseja realmente excluir este Usuário?</b></p>
+                    </div>
+                    <div class="modal-footer">
+                        <form class="form" action="/admin/{$value.id_usuario}/delete" method="post">
+                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</button>
+                        </form>
+                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         {/loop}
         </tbody>
     </table>

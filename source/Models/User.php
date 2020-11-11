@@ -82,23 +82,10 @@ class User extends Model {
     }
 
     /**
-     * @return array
-     */
-    public function getAllUsers():array {
-
-        $results =  $this->conn->select("SELECT * FROM v_usuario " , array(
-            ":status"=>'ativo'
-        ));
-
-        return (count($results) > 0);
-    }
-
-    /**
      * @param string $email
      * @return bool
      */
     public  function checkEmail(string $email):bool {
-
 
         $results = $this->conn->select("SELECT email FROM v_usuario WHERE email = :email",
             [
@@ -109,20 +96,6 @@ class User extends Model {
         }
         return false;
     }
-
-    /**
-     * @param string $senha
-     * @return bool
-     * @throws \Exception
-     */
-    public static function validatePassword(string $senha):bool {
-        if(strlen($senha) < 8){
-            throw new \Exception("Informe uma sennha com pelo menos 8 caracteres!");
-            return false;
-        }
-        return true;
-    }
-
 
     /**
      * Atualizar Senha
@@ -242,9 +215,9 @@ class User extends Model {
 
     }
 
-    public function deleteCurriculum():void{
+    public function deleteUserCurriculum():void{
 
-        $this->conn->query("DELETE FROM tb_usuario  WHERE id_usuario  = :id_usuario"
+        $this->conn->query("DELETE FROM tb_usuario WHERE id_usuario  = :id_usuario"
             ,array(
                 ":id_usuario"=>$this->getid_usuario()
             ));

@@ -16,23 +16,15 @@ use Source\Models\User;
  */
 class PersonalDataController extends Controller {
 
-    /**
-     * @var \Source\Models\User
-     * Pegar Usuario logado
-     */
     private $user_logado;
-
-    /**
-     * @var User
-     */
     private $data_user;
-
     private $personalData;
     private $contact;
 
     /**
      * AppController constructor.
      * @param $router
+     * @throws \Exception
      */
     public function __construct($router)
     {

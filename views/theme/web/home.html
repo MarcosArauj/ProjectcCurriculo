@@ -43,13 +43,11 @@
     <section>
         <div id="oque" class="jumbotron">
             <div class="container">
-            <h1><u>O que é o {#site("name_complete")#}?</u></h1>
+            <h1><u>O que é o {#site("name_complete")#}?</u></h1><br>
             <p>
-                Mussum Ipsum, cacilds vidis litro abertis. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis.<br>
-                Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. <br>
-                Viva Forevis aptent taciti sociosqu ad litora torquent. Mussum Ipsum, cacilds vidis litro abertis. Nec orci ornare consequat. Praesent<br>
-                lacinia ultrices consectetur. Sed non ipsum felis. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Tá deprimidis, eu conheço <br>
-                uma cachacis que pode alegrar sua vidis. Viva Forevis aptent taciti sociosqu ad litora torquent.
+                Web Curriculo é um sistema de gerenciamento e compartilhamento de curriculos.<br>
+                Para quem buscar se colocar no mercado de trabalho. Terá seu curriculo pronto para compartinhar com quem desejar de forma rápida e fácil.<br>
+                Para que busca um profissional, em poucos clique encontrará o funcionário que deseja.<br>
             </p>
             </div>
         </div>
@@ -72,10 +70,27 @@
     <p>
         <a class="link_footer" href="/">Ínicio</a>
         <span class="offset-1"></span>
-        <a class="link_footer" href="#">Sobre nós</a>
-        <span class="offset-1"></span>
-        <a class="link_footer" href="#">Contato</a>
+        <a class="link_footer"  data-toggle="modal" data-target="#ModalContato" href="">Contato</a>
     </p>
     <p class="text-muted"><b>Versão</b> {#site("version")#},  &copy; {#site("name_complete")#} {function="date('Y')"}</p>
 </footer>
+<!-- Modal Compartilhamento de Link do Curriculo -->
+<div class="modal fade" id="ModalContato" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4><b>Nossos Contatos</b></h4>
+            </div>
+            <div class="modal-body">
+                <p><b>E-mail:</b> webcurriculo.support@cruzm.com.br</p>
+                <p><b>Telefones:</b> (34)98428-9394</p>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 {include="footer"}

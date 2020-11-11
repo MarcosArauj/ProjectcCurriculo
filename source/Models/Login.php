@@ -46,10 +46,9 @@ class Login extends User {
 
     }
 
-    // Pega dados do Usuario Logado
-
     /**
      * @return User
+     * Pega dados do Usuario Logado
      */
     public static function getFromSession(): User{
 
@@ -63,11 +62,11 @@ class Login extends User {
 
     }
 
-    //Verifcar o Usuario logado e Tipo de acesso permitido
 
     /**
      * @param bool $access
      * @return bool
+     *Verifcar o Usuario logado
      */
     public static function checkLogin($access = true): bool {
         if (!isset($_SESSION[User::SESSION])
@@ -92,7 +91,7 @@ class Login extends User {
     }
 
     /**
-     *
+     *Sair do Sistema
      */
     public static function logout():void {
 
@@ -103,6 +102,7 @@ class Login extends User {
     /**
      * @param bool $access
      * @return bool
+     * Verifica do tipo de acesso do usuário
      */
     public static function verifyLogin($access = true):bool{
 

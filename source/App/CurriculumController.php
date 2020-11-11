@@ -103,7 +103,7 @@ class CurriculumController extends Controller {
 
         try {
 
-            $this->data_user->deleteCurriculum();
+            $this->data_user->deleteUserCurriculum();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("web.register")

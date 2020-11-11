@@ -57,6 +57,7 @@ $router->get("/{id_solicitacoes}/requests/detail", "AdminController:detailReques
 $router->post("/userResetPassword/{id_usuario}", "AdminController:userResetPassword","admin.userResetPassword");
 $router->post("/{id_solicitacoes}/requests/finish", "AdminController:finishFinish","admin.finishFinish");
 $router->post("/{id_usuario}/update_email", "AdminController:updateEmail","admin.updateEmail");
+$router->post("/{id_usuario}/delete", "AdminController:deleteUser","admin.deleteUser");
 
 /**
  * - ------------------Rotas para Telas Usuarios Logado------------------------------

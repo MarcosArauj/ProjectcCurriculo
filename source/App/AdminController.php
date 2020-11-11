@@ -6,7 +6,6 @@ namespace Source\App;
 use Source\App\Pages\PageAdmin;
 use Source\Models\Admin;
 use Source\Models\Login;
-use Source\Models\PersonalData;
 use Source\Models\Search;
 use Source\Models\Support\Support;
 use Source\Models\User;
@@ -264,5 +263,31 @@ class AdminController extends Controller {
             ]);
             return;
         }
+    }
+
+    public function deleteUser($data): void{
+
+        try {
+
+            $this->data_user->getUser($data["id_usuario"]);
+
+            $this->data_user->deleteUserCurriculum();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("admin.users")
+
+            ]);
+            flash("success","Usuário Excluido com Sucesso!");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
     }
 }

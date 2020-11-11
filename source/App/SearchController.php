@@ -14,10 +14,23 @@ use Source\Models\User;
 
 class SearchController extends Controller {
 
+    /**
+     * @var Curriculum
+     */
     private $data_curriculum;
+    /**
+     * @var Search
+     */
     private $search_curriculo;
+    /**
+     * @var Formation
+     */
     private $formation;
 
+    /**
+     * SearchController constructor.
+     * @param $router
+     */
     public function __construct($router)
     {
         parent::__construct($router);
@@ -108,8 +121,6 @@ class SearchController extends Controller {
 
         $pdf->Output("curruculo_". strtolower($curriculum->getprimeiro_nome()).".pdf","D");
         return;
-
-      //  $pdf->Output();
 
     }
 

@@ -79,7 +79,7 @@ class SupportController extends Controller{
 
             $recover_pass = $this->support->validRecoverDecrypt($data["code"]);
 
-            if (strlen($data["senha"]) < 8) {
+            if (strlen($data["senha_nova"]) < 8) {
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
                     "message" => "Senha precisa ser de no minimo 8 caracteres!"

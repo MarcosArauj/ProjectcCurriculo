@@ -15,15 +15,9 @@ use Source\Models\User;
  */
 class ProfessionalController extends Controller {
 
-    /**
-     * @var \Source\Models\User
-     * Pegar Usuario logado
-     */
     private $user_logado;
-
     private $data_user;
     private $professional;
-
 
     /**
      * AppController constructor.

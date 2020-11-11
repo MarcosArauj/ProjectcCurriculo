@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -302,7 +302,7 @@
             <td class="header container" align="center">
                 <div class="content">
                     <a href="http://admin.projecttcc.com.br">
-                        <h3><b>Suporte {$site}</b></h3>
+                        <h3><b>Suporte <?php echo htmlspecialchars( $site, ENT_COMPAT, 'UTF-8', FALSE ); ?></b></h3>
                     </a>
                 </div>
             </td>
@@ -325,7 +325,7 @@
                                     <tr>
                                         <td class="body-padding"></td>
                                         <td class="body-padded">
-                                            <div class="body-title">Ol&aacute; {$name},</div>
+                                            <div class="body-title">Ol&aacute; <?php echo htmlspecialchars( $name, ENT_COMPAT, 'UTF-8', FALSE ); ?>,</div>
                                             <table class="body-text">
                                                 <tr>
                                                     <td class="body-text-cell">
@@ -333,10 +333,10 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><b>Senha provisória: </b>{$new_pass}</td>
+                                                    <td><b>Senha provisória: </b><?php echo htmlspecialchars( $new_pass, ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><a id="btn-redefine" href="{$link}" align="center">Ir ao Login</a></td>
+                                                    <td><a id="btn-redefine" href="<?php echo htmlspecialchars( $link, ENT_COMPAT, 'UTF-8', FALSE ); ?>" align="center">Ir ao Login</a></td>
                                                 </tr>
                                             </table>
 
@@ -344,7 +344,7 @@
                                                 <tr>
                                                     <td class="body-signature-cell">
                                                         <p>Obrigado!</p>
-                                                        <p class="body-signature pull-right">Copyright &copy; {function="date('Y')"} </p>
+                                                        <p class="body-signature pull-right">Copyright &copy; <?php echo date('Y'); ?> </p>
                                                     </td>
                                                 </tr>
                                             </table>
