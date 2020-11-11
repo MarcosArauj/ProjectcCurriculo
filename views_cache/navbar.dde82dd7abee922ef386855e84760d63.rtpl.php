@@ -1,0 +1,67 @@
+<?php if(!class_exists('Rain\Tpl')){exit;}?><nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="navbar-nav px-auto">
+        <li class="nav-item">
+            <a class="nav-link active" href="/user/dashboard_admin">
+                <img src="/views/assets/images/logo_brand.png" alt="Brand">
+            </a>
+        </li>
+    </ul>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="btn link_btn btn-danger" data-toggle="modal" data-target="#ModalSair" href="">
+                <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span>&nbsp; <b>Sair</b></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/admin/dashboard_admin">
+                            <i class="fa fa-tachometer fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Area de Trabalho</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/users">
+                            <i class="fa fa-list fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Listar Usuários</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/requests">
+                            <i class="fa fa-life-ring fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Solicitações</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- Modal Sair -->
+<div class="modal fade" id="ModalSair" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="titulo_home"><b><?php echo site("name_complete"); ?></b></h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><b><?php echo getNameUser(); ?>, certeza que deseja sair do Sistema?</b></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <a href="/user/logout" class="btn btn-danger"><i class="fa fa-sign-out" aria-hidden="true"></i><strong> Sair</strong></a>
+            </div>
+        </div>
+    </div>
+</div>

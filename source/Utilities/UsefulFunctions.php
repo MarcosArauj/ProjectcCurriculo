@@ -102,7 +102,7 @@ function formatCpf($cpf){
  */
 function daysDates($initial_date) {
 
-    $final_data = date("d/m/Y'");
+    $final_data = date("d/m/Y");
     $difference = strtotime($final_data) - strtotime($initial_date);
     $days = floor($difference / (60 * 60 * 24));
 
