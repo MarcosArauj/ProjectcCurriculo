@@ -1,18 +1,27 @@
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
-    {if="checkCurriculum()"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
+    <?php if( checkCurriculum() ){ ?>
+
     <a class="brand col-md-3 col-lg-2 mr-0 px-3" href="/user">
-        {if="$user.foto_usuario != NULL"}
-            <img class="img_brand" src="{$user.foto_usuario}" alt="Photo">
-            {else}
-            {if="$user.genero == 'Masculino'"}
+        <?php if( $user["foto_usuario"] != NULL ){ ?>
+
+            <img class="img_brand" src="<?php echo htmlspecialchars( $user["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Photo">
+            <?php }else{ ?>
+
+            <?php if( $user["genero"] == 'Masculino' ){ ?>
+
             <img class="img_brand" src="/views/assets/images/user/masculino.jpg"  alt="Photo">
-            {elseif="$user.genero == 'Feminino'"}
+            <?php }elseif( $user["genero"] == 'Feminino' ){ ?>
+
             <img class="img_brand" src="/views/assets/images/user/feminino.jpg" alt="Photo">
-            {/if}
-        {/if}
-        {function="getNameUser()"}
+            <?php } ?>
+
+        <?php } ?>
+
+        <?php echo getNameUser(); ?>
+
     </a>
-    {/if}
+    <?php } ?>
+
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,7 +40,8 @@
         </li>
     </ul>
 </nav>
-{if="checkCurriculum()"}
+<?php if( checkCurriculum() ){ ?>
+
 <div class="container-fluid">
     <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -53,11 +63,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/user/deficiency/update">
                             <i class="fa fa-wheelchair fa-fw" aria-hidden="true"></i>
-                            {if="$user.deficiencia_existe != NULL"}
+                            <?php if( $user["deficiencia_existe"] != NULL ){ ?>
+
                                <span>&nbsp; Deficiência</span>
-                            {else}
+                            <?php }else{ ?>
+
                                <span>&nbsp;Adicionar Deficiência</span>
-                            {/if}
+                            <?php } ?>
+
                         </a>
                     </li>
                     <li class="nav-item">
@@ -100,7 +113,8 @@
         </nav>
     </div>
 </div>
-{/if}
+<?php } ?>
+
 <!-- Modal Sair -->
 <div class="modal fade" id="ModalSair" role="dialog">
     <div class="modal-dialog">
@@ -108,11 +122,11 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="titulo_home"><b>{#site("name_complete")#}</b></h3>
+                <h3 class="modal-title" id="titulo_home"><b><?php echo site("name_complete"); ?></b></h3>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <p><b>{function="getNameUser()"}, certeza que deseja sair do Sistema?</b></p>
+                <p><b><?php echo getNameUser(); ?>, certeza que deseja sair do Sistema?</b></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

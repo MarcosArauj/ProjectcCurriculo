@@ -59,6 +59,14 @@ class FormationController extends Controller {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
+        if($data["nivel_conclusao"] == "" && $data["nivel_andamento"] == "") {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos para cadastrar!"
+            ]);
+            return;
+        }
+
         try {
 
             $curriculo = new Curriculum();

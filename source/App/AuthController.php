@@ -112,11 +112,20 @@ class AuthController extends Controller
 
             $this->user_login->loginUser($login, $password);
 
-            echo $this->ajaxResponse("redirect", [
-                "url" => $this->router->route("app.dashboard")
+            if(checkCurriculum()) {
+                echo $this->ajaxResponse("redirect", [
+                    "url" => $this->router->route("app.profile")
 
-            ]);
-            return;
+                ]);
+                return;
+            } else {
+
+                echo $this->ajaxResponse("redirect", [
+                    "url" => $this->router->route("app.dashboard")
+
+                ]);
+                return;
+            }
 
         } catch (\Exception $e) {
 

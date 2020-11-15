@@ -33,26 +33,6 @@ function getNameUser() {
 
 }
 
-function getPhotoUser() {
-
-    $user = Login::getFromSession();
-
-    $photo_user_m = "/views/assets/images/user/masculino.jpg";
-
-    $photo_user_f = "/views/assets/images/user/feminino.jpg";
-
-    if($user->getfoto_usuario() == NULL) {
-        if ($user->getgenero() == "Masculino") {
-            return $photo_user_m;
-        } else if($user->getgenero() == "Feminino"){
-            return $photo_user_f;
-        }
-    } else {
-         return $user->getfoto_usuario();
-    }
-}
-
-
 function checkCurriculum() {
 
     $user = Login::getFromSession();
@@ -107,18 +87,6 @@ function daysDates($initial_date) {
     $days = floor($difference / (60 * 60 * 24));
 
     return $days;
-}
-
-function existDeficiency():bool {
-
-    $user = Login::getFromSession();
-
-    $deficiency = $user->getdeficiencia_existe();
-    if($deficiency == 'Sim'){
-        return true;
-    }
-
-    return false;
 }
 
 //--- Calcula Idade

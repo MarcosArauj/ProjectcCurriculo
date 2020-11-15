@@ -31,7 +31,6 @@ class PersonalDataController extends Controller {
         parent::__construct($router);
 
         if(!Login::verifyLogin()) {
-            flash("error","Acesso negado, favor logar-se");
             Login::logout();
             $this->router->redirect("web.home");
         } else {
@@ -243,18 +242,27 @@ class PersonalDataController extends Controller {
             }else {
 
                 if($this->user_logado->getid_formacao() == NULL) {
-
                     echo $this->ajaxResponse("redirect", [
                         "url" => $this->router->route("app.saveAcademicFormation")
                     ]);
                     flash("success", "Sucesso no Registro de sua deficiência");
                     return;
                 } else {
-                    echo $this->ajaxResponse("redirect", [
-                        "url" => $this->router->route("app.updateAcademicFormation")
-                    ]);
-                    flash("success", "Sucesso no Registro de sua deficiência");
-                    return;
+
+                    if (!checkCurriculum()) {
+                        echo $this->ajaxResponse("redirect", [
+                            "url" => $this->router->route("app.updateAcademicFormation")
+                        ]);
+                        flash("success", "Sucesso no Registro de sua deficiência");
+                        return;
+                    } else {
+                        echo $this->ajaxResponse("redirect", [
+                            "url" => $this->router->route("app.updateDeficiency")
+                        ]);
+                        flash("success", "Sucesso no Registro de sua deficiência");
+                        return;
+                    }
+
                 }
             }
 
@@ -271,7 +279,7 @@ class PersonalDataController extends Controller {
 
     /**
      * @param $data
-     * Atualizar de Deficiencia
+     * Atualizar Senha
      */
     public function updatePassword($data):void {
 

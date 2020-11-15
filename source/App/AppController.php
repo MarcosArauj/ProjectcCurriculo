@@ -249,6 +249,7 @@ class AppController extends Controller {
 
         $page->setTpl("other_courses", array(
             "title" => site("name"). " | Outros Cursos",
+            "user" => $this->data_user->getValues(),
             "courses"=>$this->formation->getOtherCoursesUser($this->user_logado->getid_usuario())
         ));
 
@@ -311,6 +312,7 @@ class AppController extends Controller {
 
         $page->setTpl("languages", array(
             "title" => site("name"). " | Idiomas",
+            "user" => $this->data_user->getValues(),
             "languages"=>$this->formation->getLanguagesUser($this->user_logado->getid_usuario())
         ));
     }
@@ -356,6 +358,7 @@ class AppController extends Controller {
 
         $page->setTpl("professional", array(
             "title" => site("name"). " | Experiência Profissional",
+            "user" => $this->data_user->getValues(),
             "professional"=>$this->professional->getExProfessionalUser($this->user_logado->getid_usuario())
         ));
     }
