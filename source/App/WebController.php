@@ -17,10 +17,8 @@ use Source\Models\User;
  */
 class WebController extends Controller {
 
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
-
     }
 
     public function home():void{

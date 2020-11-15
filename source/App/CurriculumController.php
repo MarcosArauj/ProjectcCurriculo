@@ -8,12 +8,12 @@ use Source\Models\Curriculum;
 use Source\Models\Login;
 use Source\Models\User;
 
+/**
+ * Class CurriculumController
+ * @package Source\App
+ */
 class CurriculumController extends Controller {
 
-    /**
-     * @var \Source\Models\User
-     * Pegar Usuario logado
-     */
     private $user_logado;
     private $data_user;
     private $curruculum;
@@ -23,12 +23,10 @@ class CurriculumController extends Controller {
      * @param $router
      * @throws \Exception
      */
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
 
         if(!Login::verifyLogin()) {
-            flash("error","Acesso negado, favor logar-se");
             Login::logout();
             $this->router->redirect("web.home");
         } else {
@@ -41,7 +39,6 @@ class CurriculumController extends Controller {
         }
 
     }
-
 
     /**
      * @param $data

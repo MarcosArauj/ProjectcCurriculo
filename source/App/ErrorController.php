@@ -7,10 +7,13 @@ namespace Source\App;
 use Source\App\Pages\PageError;
 use function MongoDB\BSON\toRelaxedExtendedJSON;
 
+/**
+ * Class ErrorController
+ * @package Source\App
+ */
 class ErrorController extends Controller {
 
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
 
         if (!empty($_SESSION["user"])) {

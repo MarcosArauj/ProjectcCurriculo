@@ -10,8 +10,9 @@ use Source\Models\Search;
 use Source\Models\Support\Support;
 use Source\Models\User;
 
+
 /**
- * Class AppController
+ * Class AdminController
  * @package Source\App
  */
 class AdminController extends Controller {
@@ -26,12 +27,10 @@ class AdminController extends Controller {
      * @param $router
      * @throws \Exception
      */
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
 
         if(!Login::verifyLogin()) {
-            flash("error","Acesso negado, favor logar-se");
             Login::logout();
             $this->router->redirect("web.home");
         } else {

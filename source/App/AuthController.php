@@ -7,12 +7,12 @@ use Source\Models\Login;
 use Source\Models\Support\Support;
 use Source\Models\User;
 
+
 /**
- * Class WebController
+ * Class AuthController
  * @package Source\App
  */
-class AuthController extends Controller
-{
+class AuthController extends Controller {
 
     /**
      * @var User
@@ -24,8 +24,7 @@ class AuthController extends Controller
      * AuthController constructor.
      * @param $router
      */
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
 
         $this->user_login = new Login();
@@ -37,8 +36,7 @@ class AuthController extends Controller
      * @param $data
      * Registro Inicial de Usuario no Sistema
      */
-    public function register($data): void
-    {
+    public function register($data): void{
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
         if (in_array("", $data)) {
@@ -93,8 +91,7 @@ class AuthController extends Controller
      * @param $data
      * Login no Sistema
      */
-    public function login($data): void
-    {
+    public function login($data): void {
 
         $login = filter_var($data["login"], FILTER_SANITIZE_STRIPPED);
         $password = filter_var($data["senha"], FILTER_DEFAULT);
@@ -109,20 +106,17 @@ class AuthController extends Controller
 
         try {
 
-
             $this->user_login->loginUser($login, $password);
 
             if(checkCurriculum()) {
                 echo $this->ajaxResponse("redirect", [
                     "url" => $this->router->route("app.profile")
-
                 ]);
                 return;
             } else {
 
                 echo $this->ajaxResponse("redirect", [
                     "url" => $this->router->route("app.dashboard")
-
                 ]);
                 return;
             }

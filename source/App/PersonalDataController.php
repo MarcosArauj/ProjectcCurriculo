@@ -26,8 +26,7 @@ class PersonalDataController extends Controller {
      * @param $router
      * @throws \Exception
      */
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
 
         if(!Login::verifyLogin()) {
@@ -94,7 +93,6 @@ class PersonalDataController extends Controller {
         }
 
     }
-
 
     /**
      * @param $data

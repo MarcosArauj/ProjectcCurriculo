@@ -19,10 +19,6 @@ use Source\Models\User;
  */
 class AppController extends Controller {
 
-    /**
-     * @var \User
-     * Pegar Usuario logado
-     */
     private $user_logado;
     private $data_user;
     private $personalData;
@@ -36,12 +32,10 @@ class AppController extends Controller {
      * @param $router
      * @throws \Exception
      */
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
 
         if(!Login::verifyLogin()) {
-            flash("error","Acesso negado, favor logar-se");
             Login::logout();
             $this->router->redirect("web.home");
         } else {

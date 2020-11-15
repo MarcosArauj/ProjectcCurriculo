@@ -16,12 +16,7 @@ use Source\Models\User;
  */
 class FormationController extends Controller {
 
-    /**
-     * @var \Source\Models\User
-     * Pegar Usuario logado
-     */
     private $user_logado;
-
     private $data_user;
     private $formation;
 
@@ -30,12 +25,10 @@ class FormationController extends Controller {
      * @param $router
      * @throws \Exception
      */
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
 
         if(!Login::verifyLogin()) {
-            flash("error","Acesso negado, favor logar-se");
             Login::logout();
             $this->router->redirect("web.home");
         } else {
@@ -105,7 +98,6 @@ class FormationController extends Controller {
         }
 
     }
-
 
     /**
      * @param $data

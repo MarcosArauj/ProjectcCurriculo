@@ -12,27 +12,21 @@ use Source\Models\Professional;
 use Source\Models\Search;
 use Source\Models\User;
 
+/**
+ * Class SearchController
+ * @package Source\App
+ */
 class SearchController extends Controller {
 
-    /**
-     * @var Curriculum
-     */
     private $data_curriculum;
-    /**
-     * @var Search
-     */
     private $search_curriculo;
-    /**
-     * @var Formation
-     */
     private $formation;
 
     /**
      * SearchController constructor.
      * @param $router
      */
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
 
         $this->data_curriculum = new Curriculum();

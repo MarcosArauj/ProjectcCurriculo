@@ -8,6 +8,10 @@ use CoffeeCode\Router\Router;
 use CoffeeCode\Optimizer\Optimizer;
 
 
+/**
+ * Class Controller
+ * @package Source\App
+ */
 abstract class Controller {
 
     /* @var Router */

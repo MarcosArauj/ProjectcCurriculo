@@ -7,6 +7,10 @@ namespace Source\App;
 use Source\Models\Support\Support;
 use Source\Models\User;
 
+/**
+ * Class SupportController
+ * @package Source\App
+ */
 class SupportController extends Controller{
 
     private $support;
@@ -16,13 +20,11 @@ class SupportController extends Controller{
      * AuthController constructor.
      * @param $router
      */
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
 
         $this->support = new Support();
         $this->user_data = new User();
-
     }
 
     /**

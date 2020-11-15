@@ -22,13 +22,12 @@ class ProfessionalController extends Controller {
     /**
      * AppController constructor.
      * @param $router
+     * @throws \Exception
      */
-    public function __construct($router)
-    {
+    public function __construct($router) {
         parent::__construct($router);
 
         if(!Login::verifyLogin()) {
-            flash("error","Acesso negado, favor logar-se");
             Login::logout();
             $this->router->redirect("web.home");
         } else {
