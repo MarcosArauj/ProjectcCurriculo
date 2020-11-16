@@ -67,10 +67,27 @@
     <p>
         <a class="link_footer" href="/">Ínicio</a>
         <span class="offset-1"></span>
-        <a class="link_footer" href="#">Sobre nós</a>
-        <span class="offset-1"></span>
-        <a class="link_footer" href="#">Contato</a>
+        <a class="link_footer"  data-toggle="modal" data-target="#ModalContato" href="">Contato</a>
     </p>
     <p class="text-muted"><b>Versão</b> {#site("version")#},  &copy; {#site("name_complete")#} {function="date('Y')"}</p>
 </footer>
+<!-- Modal Compartilhamento de Link do Curriculo -->
+<div class="modal fade" id="ModalContato" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4><b>Nossos Contatos</b></h4>
+            </div>
+            <div class="modal-body">
+                <p><b>E-mail:</b> webcurriculo.support@cruzm.com.br</p>
+                <p><b>Telefones:</b> (34)98428-9394</p>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 {include="footer"}

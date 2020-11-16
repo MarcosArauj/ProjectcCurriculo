@@ -48,14 +48,6 @@
                     <label><b>Nacionalidade: </b></label>&nbsp;
                     <span>{$user.nacionalidade} </span>
                 <br>
-                   <p>
-                   <a class="btn btn-info btn-sm" data-toggle="modal" data-target="#ModalCompartilha" href="" title="Link de Compartinhamento">
-                   Link de Compartinhamento <i class="fa fa-share-alt-square" aria-hidden="true"></i></a>
-                   </p>
-                   <p>
-                   <a class="btn btn-secondary btn-sm" href="/curriculum/{$curriculum}/generate_pdf" title="Gerar PDF">
-                    Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i></a>
-                   </p>
             </div>
             <!-- Coluna 3 -->
             <div class="col-5">
@@ -121,25 +113,6 @@
                     <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</button>
                 </form>
                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal Compartilhamento de Link do Curriculo -->
-<div class="modal fade" id="ModalCompartilha" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="alert_copy ">
-                    {function="flash()"}
-                </div>
-                <p><b>Link de Compartinhamento do seu Curriculo</b></p>
-                <input type="text" id="link" style="color: black" class="form-control" value="{#site('root')#}/curriculum/{$curriculum}" readonly>
-            </div>
-            <div class="modal-footer">
-                <button id="btncopia"  class="btn btn-info btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar</button>
-                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
     </div>
