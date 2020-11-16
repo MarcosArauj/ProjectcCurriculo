@@ -31,7 +31,7 @@
                                 {if="daysDates($value.dtregistro) == 2 && $value.situacao == 'pendente'"}
                                 <b style="color: orange"> Atenção!! Solicitação vence Hoje!</b>
                                 {elseif="daysDates($value.dtregistro) > 2 && $value.situacao == 'pendente'"}
-                                   <b style="color: red"> SOLICITAÇÃO VENCIDA A {function="daysDates($value.dtregistro)"} DIAS!!!</b>
+                                   <b style="color: red"> SOLICITAÇÃO VENCIDA A {function="lateDays($value.dtregistro)"} DIAS!!!</b>
                                 {/if}
                             </td>
                             <td class="float-right">

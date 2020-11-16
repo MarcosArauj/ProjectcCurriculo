@@ -90,6 +90,11 @@ function daysDates($initial_date) {
     return $days;
 }
 
+function lateDays($initial_date){
+
+    return daysDates($initial_date) -2;
+}
+
 //--- Calcula Idade
 function calculateAge($birth_date){
 
