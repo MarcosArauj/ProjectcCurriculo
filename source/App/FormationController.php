@@ -33,6 +33,7 @@ class FormationController extends Controller {
         parent::__construct($router);
 
         if(!Login::verifyLogin()) {
+            flash("error","Acesso negado, favor logar-se");
             Login::logout();
             $this->router->redirect("web.home");
         } else {
