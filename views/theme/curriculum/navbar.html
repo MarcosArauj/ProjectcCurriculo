@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
     {if="checkCurriculum()"}
     <a class="brand col-md-3 col-lg-2 mr-0 px-3" href="/user">
-        {if="$user.foto_usuario != NULL"}
+        {if="$user.foto_usuario == NULL"}
             <img class="img_brand" src="{$user.foto_usuario}" alt="Photo">
             {else}
             {if="$user.genero == 'Masculino'"}
@@ -10,7 +10,7 @@
             <img class="img_brand" src="/views/assets/images/user/feminino.jpg" alt="Photo">
             {/if}
         {/if}
-        {function="getNameUser()"}
+        {$user.primeiro_nome}
     </a>
     {/if}
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">

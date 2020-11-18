@@ -85,21 +85,16 @@ class Formation extends Model {
     }
 
     /**
-     * @param int $id_cursos
+     * @param $id_cursos
      * @return void
      * Pega Curso
-     * @throws \Exception
      */
-    public function getOtherCourses(int $id_cursos):void {
+    public function getOtherCourses($id_cursos):void {
 
         $results =   $this->conn->select("SELECT * FROM tb_cursos
                 WHERE id_cursos = :id_cursos", array(
             ":id_cursos"=>$id_cursos
         ));
-
-        if (count($results) === 0) {
-            throw new \Exception("Curso não Encontrado!");
-        }
 
         $this->setData($results[0]);
     }
@@ -158,22 +153,17 @@ class Formation extends Model {
     }
 
     /**
-     * @param int $id_idiomac
+     * @param $id_idiomac
      * @return void
      * Pega Idiomas
-     * @throws \Exception
      */
 
-    public function getLanguages(int $id_idiomac):void {
+    public function getLanguages($id_idiomac):void {
 
         $results =   $this->conn->select("SELECT * FROM tb_idioma_curriculo
                 WHERE id_idiomac = :id_idiomac", array(
             ":id_idiomac"=>$id_idiomac
         ));
-
-        if (count($results) === 0) {
-            throw new \Exception("Idioma não Encontrado!");
-        }
 
         $this->setData($results[0]);
     }

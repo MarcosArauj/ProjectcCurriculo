@@ -16,6 +16,10 @@ use Source\Models\User;
  */
 class FormationController extends Controller {
 
+    /**
+     * @var \Source\Models\User
+     * Pegar Usuario logado
+     */
     private $user_logado;
     private $data_user;
     private $formation;
@@ -72,7 +76,7 @@ class FormationController extends Controller {
 
             $this->formation->saveAcademicFormation();
 
-            if($this->data_user->getid_curriculo()) {
+            if($curriculo->getid_curriculo()) {
                 echo $this->ajaxResponse("redirect", [
                     "url" => $this->router->route("app.updateAcademicFormation")
                 ]);
@@ -165,7 +169,7 @@ class FormationController extends Controller {
             $this->formation->saveOtherCourses();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.updateOtherCourses")
+                "url" =>$this->router->route("app.updateOtherCourses", ["id_cursos" => $data['id_cursos']])
 
             ]);
             flash("success","Dados do Curso Atualizado");
@@ -272,7 +276,7 @@ class FormationController extends Controller {
             $this->formation->saveLanguages();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.updateLanguages")
+                "url" =>$this->router->route("app.updateLanguages", ["id_idiomac" => $data['id_idiomac']])
 
             ]);
             flash("success","Idioma Atualizado com Sucesso");

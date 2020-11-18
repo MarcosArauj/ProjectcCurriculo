@@ -26,21 +26,16 @@ class Professional extends Model {
     }
 
     /**
-     * @param int $id_profissional
+     * @param $id_profissional
      * @return void
      * Pega Idiomas
-     * @throws \Exception
      */
-    public function getExProfessional(int $id_profissional):void {
+    public function getExProfessional($id_profissional):void {
 
         $results =   $this->conn->select("SELECT * FROM tb_experiencia_profissional
                 WHERE id_profissional = :id_profissional", array(
             ":id_profissional"=>$id_profissional
         ));
-
-        if (count($results) === 0) {
-            throw new \Exception("Experiência profissional não Encontrado!");
-        }
 
         $this->setData($results[0]);
     }

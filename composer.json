@@ -22,7 +22,6 @@
       "source/Config/Helpers.php",
       "source/Config/Minify.php",
       "source/Utilities/UsefulFunctions.php"
-
     ]
   },
 
