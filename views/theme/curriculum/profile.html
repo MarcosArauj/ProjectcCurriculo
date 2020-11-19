@@ -1,21 +1,21 @@
 {include="header"}
 {include="navbar"}
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-    <div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        {if="$user.nome_social_uso == 'Sim'"}
-        <h2>{$user.nome_social}</h2>
-        {else}
-        <h2>{$user.primeiro_nome} {$user.sobrenome}</h2>
-        {/if}
-    </div>
-
 <form action="/curriculum/personal_data/photo" method="post" enctype="multipart/form-data">
-<section class="container col-md-10">
+<section class="container col-md-10 cad">
 <div class="alert_message">
     {function="flash()"}
 </div>
-<div  class="card" style="color: black;">
+<div  class="card text-dark">
     <div class="card-body">
+        <div class="text-center">
+            {if="$user.nome_social_uso == 'Sim'"}
+            <h2>{$user.nome_social}</h2>
+            {else}
+            <h2>{$user.primeiro_nome} {$user.sobrenome}</h2>
+            {/if}
+        </div>
+        <hr>
         <div class="row">
             <div class="col-3">
                 <label for="foto_usuario" class="user_photo" data-toggle="tooltip" data-placement="bottom" title="Clique aqui e escolha sua Foto. Gentileza usar foto com fundo Branco">
@@ -33,6 +33,7 @@
             </div>
             <div class="col-4">
                 <h5><b>Dados Pessoais</b></h5>
+
                     <label><b>Sexo: </b></label>&nbsp;
                     <span>{$user.genero}</span>
                 <br>

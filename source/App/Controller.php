@@ -5,8 +5,6 @@ namespace Source\App;
 
 
 use CoffeeCode\Router\Router;
-use CoffeeCode\Optimizer\Optimizer;
-
 
 /**
  * Class Controller
@@ -16,9 +14,6 @@ abstract class Controller {
 
     /* @var Router */
     protected $router;
-
-    /* @var Optimizer */
-    protected $seo;
 
     /**
      * Controller constructor.

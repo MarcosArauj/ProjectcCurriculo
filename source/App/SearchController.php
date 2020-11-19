@@ -103,10 +103,12 @@ class SearchController extends Controller {
 
     public function generatePdfCurriculum($data):void {
 
+        // Carrega Classe Mpdf com a orientação da pagina a ser gerada configurada
         $pdf = new \Mpdf\Mpdf(["orientation" => "P"]);
 
+        // Chadada da Classe de modelo para carregamento dos dados a serem impressos no PDF
         $curriculum = new Curriculum();
-
+        
         $curriculum->getCurriculumCod($data['cod_curriculo']);
 
         $html = file_get_contents($this->router->route("web.pdfCurriculum" , ["cod_curriculo" => $data['cod_curriculo']]));

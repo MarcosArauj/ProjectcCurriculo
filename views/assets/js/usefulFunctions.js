@@ -293,32 +293,6 @@ $(document).ready(function () {
 });
 
 
-$('#uf').on('change', function () {
-    var idUf = $('#uf').val();
-
-    var url = "<?php echo getCitsStates(); ?>";
-
-    console.log(idUf);
-    $.ajax({
-        url: url,
-        type: 'POST',
-        data: "id_estado=" + idUf,
-        beforeSend: function () {
-
-            $('#city').html('carregando...');
-        },
-        success: function (data) {
-
-            console.log(data);
-            $('#city').html(data);
-        },
-        error: function (data) {
-            $('#city').html('Erro ao carregar!');
-        }
-    });
-});
-
-
 // ------------ Copiar link para compartilhamento do Curriculo -------------//
 $(document).ready(function () {
     $(function(){
@@ -330,12 +304,12 @@ $(document).ready(function () {
             var copy = document.execCommand('copy');
             // Verifica se foi copia e retona mensagem
             if(copy){
-                var view = '<div class="message success"> Sucesso ao Copiar Link </div>';
+                var view = '<h6 class="message success"> Sucesso ao Copiar Link </h6>';
                 $(".alert_copy").html(view);
                 $(".message").effect("bounce");
                 return;
             } else {
-                var view = '<div class="message error"> Erro ao copiar, seu navegador pode não ter suporte a essa função.</div>';
+                var view = '<h6 class="message error"> Erro ao copiar, seu navegador pode não ter suporte a essa função.</h6>';
                 $(".alert_copy").html(view);
                 $(".message").effect("bounce");
             }
