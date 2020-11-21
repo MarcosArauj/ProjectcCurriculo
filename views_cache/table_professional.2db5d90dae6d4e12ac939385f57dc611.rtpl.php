@@ -1,4 +1,5 @@
-{if="$professional"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php if( $professional ){ ?>
+
 <div class="card-body">
 <table class="table table-striped border-success">
         <thead>
@@ -10,20 +11,24 @@
         </tr>
         </thead>
         <tbody>
-        {loop="$professional"}
+        <?php $counter1=-1;  if( isset($professional) && ( is_array($professional) || $professional instanceof Traversable ) && sizeof($professional) ) foreach( $professional as $key1 => $value1 ){ $counter1++; ?>
+
         <tr>
-            {if="$value.registro == 'ativo'"}
-            <td>{$value.cargo_atual}</td>
-            <td>{$value.empresa_atual}</td>
+            <?php if( $value1["registro"] == 'ativo' ){ ?>
+
+            <td><?php echo htmlspecialchars( $value1["cargo_atual"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+            <td><?php echo htmlspecialchars( $value1["empresa_atual"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td style="color: #00cc00;"> <b>Emprego Atual</b> </td>
-            {else}
-            <td>{$value.cargo_anterior}</td>
-            <td>{$value.empresa_anterior}</td>
+            <?php }else{ ?>
+
+            <td><?php echo htmlspecialchars( $value1["cargo_anterior"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
+            <td><?php echo htmlspecialchars( $value1["empresa_anterior"], ENT_COMPAT, 'UTF-8', FALSE ); ?></td>
             <td></td>
-            {/if}
+            <?php } ?>
+
             <td class="float-right">
-                <a href="/user/{$value.id_profissional}/professional_experience/detail" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
-                <a href="/user/{$value.id_profissional}/professional_experience/update" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                <a href="/user/<?php echo htmlspecialchars( $value1["id_profissional"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/professional_experience/detail" class="btn btn-secondary btn-sm"><i class="fa fa-edit"></i> Detalhar</a>
+                <a href="/user/<?php echo htmlspecialchars( $value1["id_profissional"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/professional_experience/update" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
                 <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir</a>
                 <!-- Modal Excluir -->
                 <div class="modal fade" id="ModalExcluir" role="dialog">
@@ -35,7 +40,7 @@
                                 <p><b>Deseja realmente excluir esta Experiência Profissional?</b></p>
                             </div>
                             <div class="modal-footer">
-                                <form class="form" action="/curriculum/{$value.id_profissional}/professional_experience/delete" method="post">
+                                <form class="form" action="/curriculum/<?php echo htmlspecialchars( $value1["id_profissional"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/professional_experience/delete" method="post">
                                     <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Sim</button>
                                 </form>
                                 <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancelar</button>
@@ -45,12 +50,14 @@
                 </div>
             </td>
         </tr>
-        {/loop}
+        <?php } ?>
+
         </tbody>
     </table>
 </div>
-{else}
+<?php }else{ ?>
+
 <div  class="text-center text-danger">
     <h2>Nenhum Experiência Profissional cadastrada</h2>
 </div>
-{/if}
+<?php } ?>

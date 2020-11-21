@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/SearchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_languages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_other_courses.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_professional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/table_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/table_professional.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +228,8 @@
       <workItem from="1605660543829" duration="200000" />
       <workItem from="1605733077768" duration="6809000" />
       <workItem from="1605753252592" duration="1082000" />
-      <workItem from="1605819119089" duration="3570000" />
+      <workItem from="1605819119089" duration="3821000" />
+      <workItem from="1605920895231" duration="580000" />
     </task>
     <servers />
   </component>

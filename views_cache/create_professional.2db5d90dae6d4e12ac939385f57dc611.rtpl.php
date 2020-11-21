@@ -1,10 +1,13 @@
-{include="header"}
-{include="navbar"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navbar");?>
+
 <main role="main">
 <form class="form" action="/curriculum/professional_experience/create" method="post" autocomplete="off">
     <section class="container col-md-8 cad">
         <div class="alert_message">
-            {function="flash()"}
+            <?php echo flash(); ?>
+
         </div>
         <div  class="card bg-dark">
             <div class="card-header">
@@ -64,19 +67,24 @@
                 </div>
             </div>
             <div class="card-footer">
-                {if="!checkCurriculum()"}
+                <?php if( !checkCurriculum() ){ ?>
+
                 <a class="btn btn-danger float-left" href="/user/languages/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
-                {/if}
+                <?php } ?>
+
                 <div class="float-right">
                     <button class="btn btn-md btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar</button>
                     <a class="btn btn-secondary" href="/user/professional_experience" title="Listar"> Listar&nbsp; <i class="fa fa-list-ul" aria-hidden="true"></i> </a>
-                    {if="!checkCurriculum()"}
+                    <?php if( !checkCurriculum() ){ ?>
+
                     <a class="btn btn-primary" href="/user/curriculum/create" title="Próximo"> Finalizar <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
-                    {/if}
+                    <?php } ?>
+
                 </div>
             </div>
         </div>
     </section>
 </form>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+

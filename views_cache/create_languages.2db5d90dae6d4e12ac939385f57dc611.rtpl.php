@@ -1,9 +1,12 @@
-{include="header"}
-{include="navbar"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navbar");?>
+
 <main role="main">
 <section class="container col-md-8 cad text-white">
     <div class="alert_message">
-        {function="flash()"}
+        <?php echo flash(); ?>
+
     </div>
     <div  class="card bg-dark">
         <div class="card-header">
@@ -19,9 +22,11 @@
                                 <label for="idioma"><strong class="obrigatorio">*</strong><b>Idioma</b></label>
                                 <select class="form-control form-control-sm" name="idioma" id="idioma" autofocus>
                                     <option value="">Selecione</option>
-                                    {loop="$lang_cad"}
-                                    <option value="{$value.idioma_pt}">{$value.idioma_pt}</option>
-                                    {/loop}
+                                    <?php $counter1=-1;  if( isset($lang_cad) && ( is_array($lang_cad) || $lang_cad instanceof Traversable ) && sizeof($lang_cad) ) foreach( $lang_cad as $key1 => $value1 ){ $counter1++; ?>
+
+                                    <option value="<?php echo htmlspecialchars( $value1["idioma_pt"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"><?php echo htmlspecialchars( $value1["idioma_pt"], ENT_COMPAT, 'UTF-8', FALSE ); ?></option>
+                                    <?php } ?>
+
                                 </select>
                             </div>
                             <div class="form-group col-md-7">
@@ -77,14 +82,18 @@
             </div>
         </div>
         <div class="card-footer">
-            {if="!checkCurriculum()"}
+            <?php if( !checkCurriculum() ){ ?>
+
             <a class="btn btn-danger float-left" href="/user/other_courses/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Anterior </a>
-            {/if}
+            <?php } ?>
+
             <div class="float-right">
                 <a class="btn btn-secondary" href="/user/languages" title="Listar"> Listar&nbsp;<i class="fa fa-list-ul" aria-hidden="true"></i> </a>
-                {if="!checkCurriculum()"}
+                <?php if( !checkCurriculum() ){ ?>
+
                 <a class="btn btn-primary" href="/user/professional_experience/create" title="Próximo"> Próximo <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
-                {/if}
+                <?php } ?>
+
             </div>
         </div>
     </div>
@@ -92,4 +101,4 @@
 </main>
 
 
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
