@@ -14,7 +14,11 @@
         <div class="col">
             {include="table_professional"}
             <div class="card-footer">
-                <a class="btn btn-danger" href="/user" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Início </a>
+                {if="checkCurriculum()"}
+                <a class="btn btn-danger" href="/user" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
+                {else}
+                <a class="btn btn-danger" href="/user/professional_experience/create" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
+                {/if}
                 <div class="float-right">
                     <a class="btn btn-primary" href="/user/professional_experience/create" title="Adicionar"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar</a>
                 </div>

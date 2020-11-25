@@ -14,7 +14,11 @@
         <div class="col">
             {include="table_other_courses"}
             <div class="card-footer">
-                <a class="btn btn-danger" href="/user" title="Anterior"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Início </a>
+                {if="checkCurriculum()"}
+                <a class="btn btn-danger" href="/user" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
+                {else}
+                <a class="btn btn-danger" href="/other_courses/create" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
+                {/if}
                 <div class="float-right">
                     <a class="btn btn-primary" href="/user/other_courses/create" title="Adicionar Curso"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Novo Curso </a>
                 </div>
