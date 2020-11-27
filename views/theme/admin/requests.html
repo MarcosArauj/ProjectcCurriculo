@@ -14,7 +14,7 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>Nome</th>
+                        <th>Usuário Solicitante</th>
                         <th>Assunto</th>
                         <th>Situação</th>
                         <th>&nbsp;</th>
@@ -29,7 +29,7 @@
                             <td>{$value.situacao}</td>
                             <td>
                                 {if="daysDates($value.dtregistro) == 2 && $value.situacao == 'pendente'"}
-                                <b style="color: orange"> Atenção!! Solicitação vence Hoje!</b>
+                                <b style="color: orange"> Atenção!! Solicitação vence hoje!</b>
                                 {elseif="daysDates($value.dtregistro) > 2 && $value.situacao == 'pendente'"}
                                    <b style="color: red"> SOLICITAÇÃO VENCIDA A {function="lateDays($value.dtregistro)"} DIAS!!!</b>
                                 {/if}
