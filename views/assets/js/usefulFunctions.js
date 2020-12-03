@@ -47,6 +47,34 @@ function pesquisarCEP(endereco) {
     });
 }
 
+//-------------------- Carrega cidades de acordo com estado selecionado----------------------------///
+$(function(){
+    $('#estado').change(function(){
+        if( $(this).val() ) {
+            //  $('#cidade').hide();
+            $('.carregando').show();
+            $.getJSON(
+                '/user/personal_data/search_uf_city?search=',
+                {
+                    uf: $(this).val(),
+                    ajax: 'true'
+                }, function(j){
+                    var options = '<option value=""></option>';
+                    for (var i = 0; i < j.length; i++) {
+                        options += '<option value="' +
+                            j[i].id_cidade + '">' +
+                            j[i].nome_cidade + '</option>';
+                    }
+                    $('#cidade').focus();
+                    $('#cidade').html(options).show();
+                    $('.carregando').hide();
+                });
+        } else {
+            $('#cidade').html('<option value="">Selecione um estado...</option>');
+        }
+    });
+});
+
 
 // ------------------- Mostrar e ocultar senhas --------------- ///
 jQuery(document).ready(function($) {
@@ -94,28 +122,6 @@ jQuery(document).ready(function($) {
     });
 
 });
-
-// $('#uf').on("change", function (e) {
-//     console.log($(this).val());
-//     var idUf = $(this).val();
-//
-//     $.ajax({
-//         type:"GET",
-//         data: "id_estado=" + idUf,
-//         url: "/getCitsStates",
-//         async:false
-//     }).done(function (data) {
-//         // console.log($.parseJSON(data));
-//         var citys  = "";
-//         $.each($.parseJSON(data), function (chave, valor) {
-//             citys += '<option value="' + valor.id_cidade + '">' +
-//                 valor.nome_cidade + '</option>';
-//         });
-//         $("#citys").html(citys);
-//     }).fail(function () {
-//
-//     })
-// });
 
 // ------------------ Verificação Check Box-------------------------- //
 $(document).ready(function () {

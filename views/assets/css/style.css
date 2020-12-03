@@ -11,6 +11,11 @@ main#home {
 
 }
 
+.carregando{
+    color:#666;
+    display:none;
+}
+
 .cad {
     top: 30px;
 }

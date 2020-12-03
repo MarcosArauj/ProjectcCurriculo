@@ -77,6 +77,7 @@ $router->get("/logout", "AppController:logout","app.logout");
 //------ Cadastro Usuario/Curriculo -----------------//
 $router->get("/personal_data/create", "AppController:savePersonalData","app.savePersonalData");
 $router->get("/personal_data/update", "AppController:updatePersonalData","app.updatePersonalData");
+$router->get("/personal_data/search_uf_city", "AppController:getCitsStates","app.getCitsStates");
 
 $router->get("/contact/create", "AppController:saveContact","app.saveContact");
 $router->get("/contact/update", "AppController:updateContact","app.updateContact");
@@ -135,7 +136,6 @@ $router->post("/{id_profissional}/professional_experience/delete", "Professional
 
 $router->post("/curriculum/create", "CurriculumController:saveCurriculum","curriculum.saveCurriculum");
 $router->post("/curriculum/delete", "CurriculumController:deleteCurriculum","curriculum.deleteCurriculum");
-$router->get("/getCitsStates", "HelpersController:getCitsStates","curriculum.getCitsStates");
 
 
 /**

@@ -92,11 +92,18 @@ class Contact extends Model {
 
     }
 
-    public function listCitys(int $id_estado): array {
+    /**
+     * @param string $uf
+     * @return array
+     * Lista cidades de acordo o estado
+     */
+    public function listCitys(string $uf): array {
 
-        return  $this->conn->select(" SELECT * FROM tb_cidades WHERE id_estado = :id_estado",array(
-            ":id_estado" => $id_estado
+        $results =  $this->conn->select(" SELECT * FROM tb_cidades WHERE uf = :uf",array(
+            ":uf" => $uf
         ));
+
+        return array('data'=>$results);
 
     }
 

@@ -168,6 +168,16 @@ class AppController extends Controller {
     }
 
     /**
+     * Carrega cidades de acordo o estado
+     */
+    public function getCitsStates(): void{
+
+        $city = $this->contact->listCitys($_REQUEST['uf']);
+
+        echo (json_encode($city['data']));
+    }
+
+    /**
      * Carrega Tela de Atualizar dos Contato e Endereço
      */
     public function updateContact():void {

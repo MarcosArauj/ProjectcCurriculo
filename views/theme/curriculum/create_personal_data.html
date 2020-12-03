@@ -65,18 +65,21 @@
                     </div>
                     <!-- Linha 3 -->
                     <div class="row">
-                        <div class="form-group col-md-2">
-                            <label  for="uf"><strong class="obrigatorio">*</strong><b>Estado</b></label>
-                            <select class="form-control form-control-sm" name="uf_naturalidade" id="uf" required>
+                        <div class="form-group col-md-3">
+                            <label  for="estado"><strong class="obrigatorio">*</strong><b>Estado</b></label>
+                            <select class="form-control form-control-sm" name="uf_naturalidade" id="estado" required>
                                 <option value="">Selecione</option>
                                 {loop="$uf"}
-                                <option value="{$value.uf}">{$value.uf}</option>
+                                <option value="{$value.uf}">{$value.nome_estado}</option>
                                 {/loop}
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label  for="city"><strong class="obrigatorio">*</strong><b>Naturalidade</b></label>
-                            <input type="text" class="form-control form-control-sm" id="city" name="naturalidade" required>
+                            <label  for="cidade"><strong class="obrigatorio">*</strong><b>Naturalidade</b></label>&nbsp;&nbsp;
+                            <span class="carregando">Aguarde, carregando...</span>
+                            <select class="form-control form-control-sm" id="cidade" name="naturalidade"  required>
+                                <option value="">-- Escolha um estado --</option>
+                            </select>
                         </div>
                         <div class="form-group col-md-3">
                             <label for="nacionalidade"><strong class="obrigatorio">*</strong><b>País de Nacionalidade</b></label>
@@ -87,7 +90,7 @@
                                 {/loop}
                             </select>
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
                             <label  for="cor"><strong class="obrigatorio">*</strong><b>Cor ou Raça</b></label>
                             <select class="form-control form-control-sm" name="cor_raca" id="cor" required>
                                 <option value="">Selecione</option>
@@ -101,7 +104,7 @@
                     <hr>
                     <div class="row">
                         <div class="form-group col-md-4">
-                            <label  for="city"><strong class="obrigatorio">*</strong><b>RG</b></label>
+                            <label  for="rg"><strong class="obrigatorio">*</strong><b>RG</b></label>
                             <input type="text" class="form-control form-control-sm" id="rg" name="rg"  placeholder="Carteira de Identidade" maxlength="20" required>
                         </div>
                         <div class="col-md-4">
@@ -130,5 +133,4 @@
 </form>
 </main>
 {include="footer"}
-
 
