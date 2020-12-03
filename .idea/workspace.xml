@@ -3,17 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/Contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/css/style.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/images/user/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/images/user/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +235,7 @@
       <workItem from="1606345202347" duration="1412000" />
       <workItem from="1606510987515" duration="484000" />
       <workItem from="1606945043495" duration="4022000" />
-      <workItem from="1607028926834" duration="6737000" />
+      <workItem from="1607028926834" duration="7834000" />
     </task>
     <servers />
   </component>

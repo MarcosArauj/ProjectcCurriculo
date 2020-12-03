@@ -51,7 +51,6 @@ function pesquisarCEP(endereco) {
 $(function(){
     $('#estado').change(function(){
         if( $(this).val() ) {
-            //  $('#cidade').hide();
             $('.carregando').show();
             $.getJSON(
                 '/user/personal_data/search_uf_city?search=',
