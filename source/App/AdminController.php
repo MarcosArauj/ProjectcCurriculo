@@ -4,7 +4,6 @@
 namespace Source\App;
 
 use Source\App\Pages\PageAdmin;
-use Source\Models\Admin;
 use Source\Models\Login;
 use Source\Models\Search;
 use Source\Models\Support\Support;

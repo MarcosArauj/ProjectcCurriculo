@@ -2,21 +2,18 @@
 // ---------- Remover Mascara ---------------------- ///
 function removeMascara(str, sub) {
 
-    var i = str.indexOf(sub);
-    var r = "";
+    let i = str.indexOf(sub);
+    let r = "";
 
-    if (i == -1) return str;
+    if (i === -1) return str;
     {
         r += str.substring(0,i) + removeMascara(str.substring(i + sub.length), sub);
     }
 
     return r;
 }
-
 //---------- Carregar endereço buscando pelo CEP --------------------//
-$('#cep').blur(function (e) {
-
-    // console.log("saiu");
+$('#cep').blur(function () {
 
     var cep = $('#cep').val();
 
@@ -48,28 +45,25 @@ function pesquisarCEP(endereco) {
 }
 
 //-------------------- Carrega cidades de acordo com estado selecionado----------------------------///
-$(function(){
-    $('#estado').change(function(){
+
+jQuery(document).ready(function($) {
+
+    $('#estado').on('change',function(){
         if( $(this).val() ) {
             $('.carregando').show();
             $.getJSON(
-                '/user/personal_data/search_uf_city?search=',
-                {
-                    uf: $(this).val(),
-                    ajax: 'true'
-                }, function(j){
-                    var options = '<option value=""></option>';
+                '/user/personal_data/search_uf_city?search=', {uf: $(this).val(), ajax: 'true'}, function(j){
+                    var options = '<option value="">Selecione uma cidade</option>';
+
                     for (var i = 0; i < j.length; i++) {
-                        options += '<option value="' +
-                            j[i].id_cidade + '">' +
-                            j[i].nome_cidade + '</option>';
+                        options += '<option value="' + j[i].id_cidade + '">' + j[i].nome_cidade + '</option>';
                     }
                     $('#cidade').focus();
                     $('#cidade').html(options).show();
                     $('.carregando').hide();
                 });
         } else {
-            $('#cidade').html('<option value="">Selecione um estado...</option>');
+            $('#cidade').html('<option value="">-- Selecione um estado --</option>');
         }
     });
 });
@@ -218,25 +212,25 @@ $(document).ready(function () {
         let nivel = $('#nivel').val();
         var view;
 
-        if(nivel == "Iniciante") {
+        if(nivel === "Iniciante") {
              view = '<div>*Iniciante:</br>Você não tem conhecimento algum do idioma, mas em breve você poderá dar os primeiros passos rumo ao progresso.</div>';
 
-        } else if (nivel == "Basico") {
+        } else if (nivel === "Basico") {
              view = '<div>*Básico:</br>Você já poderá formar e entender questões simples.</div>';
 
-        } else if (nivel == "Elementar") {
+        } else if (nivel === "Elementar") {
             view = '<div>*Elementar:</br>Você poderá entender simples artigos de jornal. Escrever cartas e fazer declarações espontâneas não são problemas.</div>';
 
-        } else if (nivel == "Intermediario") {
+        } else if (nivel === "Intermediario") {
            view = '<div>*Intermediário:</br>Você já terá conhecimento prévio detalhado de gramática e vocabulário.</div>';
 
-        } else if (nivel == "Avancado") {
+        } else if (nivel === "Avancado") {
             view = '<div>*Avançado:</br>Você tem um conhecimento grande do idioma. Você poderá apresentar tópicos específicos e conversar em quase quaisquer assuntos.</div>';
 
-        } else if (nivel == "Fluente") {
+        } else if (nivel === "Fluente") {
             view = '<div>*Fluente:</br>Você terá técnicas especiais de vocabulário e gramática. Você poderá se comunicar em alto nível.</div>';
 
-        } else if (nivel == "Academico") {
+        } else if (nivel === "Academico") {
             view = '<div>*Acadêmico:</br>Você terá o perfeito conhecimento de vocabulário e gramática. Você poderá se comunicar quase como um falante nativo.</div>';
 
         } else {
@@ -253,38 +247,38 @@ $(document).ready(function () {
         let tipo_deficiencia = $('#tipo_deficiencia').val();
         var view;
 
-        if(tipo_deficiencia == "Auditiva") {
+        if(tipo_deficiencia === "Auditiva") {
             view = '<div>*Deficiência Auditiva:</br>' +
                 'Deficiência auditiva (perda auditiva) é quando a habilidade auditiva da pessoa é reduzida. Deficiência auditiva faz com que a ' +
                 'pessoa tenha dificuldade de ouvir diálogos e outros sons.  As causas mais comuns de deficiência auditiva (perda auditiva) são ruídos e envelhecimento.' +
                 '</div>';
 
-        } else if (tipo_deficiencia == "Fisica") {
+        } else if (tipo_deficiencia === "Fisica") {
             view = '<div>*Deficiência Fisica:</br>' +
                 'São complicações que levam à limitação da mobilidade e da coordenação geral, podendo também afetar a fala, em diferentes graus. As causas são variadas - desde lesões neurológicas e neuromusculares' +
                 ' até má-formação congênita - ou condições adquiridas, como hidrocefalia (acúmulo de líquido na caixa craniana) ou paralisia cerebral.' +
                 '</div>';
 
-        } else if (tipo_deficiencia == "Mental") {
+        } else if (tipo_deficiencia === "Mental") {
             view = '<div>*Deficiência Mental:</br>' +
                 'Segundo a AAMR (Associação Americana de Deficiência Mental) e DSM-IV (Manual Diagnóstico e Estatístico de Transtornos Mentais), pode-se definir deficiência mental como o estado de redução notável do ' +
                 'funcionamento intelectual inferior à média, associado a limitações pelo menos em dois aspectos do funcionamento adaptativo: comunicação, cuidados pessoais, competência domésticas, ' +
                 'habilidades sociais, utilização dos recursos comunitários, autonomia, saúde e segurança, aptidões escolares, lazer e trabalho.</div>';
 
-        } else if (tipo_deficiencia == "Multipla") {
+        } else if (tipo_deficiencia === "Multipla") {
             view = '<div>*Deficiência Multipla:</br>' +
                 'A associação de duas ou mais deficiências caracteriza uma pessoa com essa condição. A deficiência múltipla pode ser tanto mental, ' +
                 'física ou sensorial, que combinadas acarretam em atrasos na capacidade adaptativa e no desenvolvimento global do indivíduo. Essa definição ' +
                 'é da Política Nacional de Educação Especial do Ministério da Educação, que está cada vez mais engajado para fazer valer os direitos das pessoas com deficiência..</div>';
 
-        } else if (tipo_deficiencia == "Visual") {
+        } else if (tipo_deficiencia === "Visual") {
             view = '<div>*Deficiência Visual:</br>' +
                 'É o comprometimento parcial (de 40 a 60%) ou total da visão. Não são deficientes visuais pessoas com doenças como miopia, astigmatismo ou hipermetropia, ' +
                 'que podem ser corrigidas com o uso de lentes ou em cirurgias.Segundo critérios estabelecidos pela Organização Mundial da Saúde (OMS)' +
                 ' os diferentes graus de deficiência visual podem ser classificados em: Baixa visão (leve, moderada ou profunda), Próximo à cegueira e Cegueira' +
                 '</div>';
 
-        } else if (tipo_deficiencia == "Outros") {
+        } else if (tipo_deficiencia === "Outros") {
             view = '<div>*Outros:</br>Autismo ou Reabilitado do INSS</div>';
 
         } else {
@@ -309,12 +303,12 @@ $(document).ready(function () {
             var copy = document.execCommand('copy');
             // Verifica se foi copia e retona mensagem
             if(copy){
-                var view = '<h6 class="message success"> Sucesso ao Copiar Link </h6>';
+                view = '<h6 class="message success"> Sucesso ao Copiar Link </h6>';
                 $(".alert_copy").html(view);
                 $(".message").effect("bounce");
                 return;
             } else {
-                var view = '<h6 class="message error"> Erro ao copiar, seu navegador pode não ter suporte a essa função.</h6>';
+                 view = '<h6 class="message error"> Erro ao copiar, seu navegador pode não ter suporte a essa função.</h6>';
                 $(".alert_copy").html(view);
                 $(".message").effect("bounce");
             }
@@ -331,26 +325,27 @@ $(document).ready(function () {
     $('#filtro').on("change", function () {
         let filtro = $('#filtro').val();
 
-        if (filtro == "Formação") {
+        if (filtro === "Formação") {
             $('#busca').attr('placeholder','Digite a formação acadêmica desejada');
             $('#busca').attr('disabled', false);
-        } else if (filtro == "Sexo") {
+
+        } else if (filtro === "Sexo") {
             $('#busca').attr('placeholder','Digite um Sexo');
             $('#busca').attr('disabled', false);
 
-        } else if (filtro == "PCD") {
+        } else if (filtro === "PCD") {
             $('#busca').attr('placeholder','Digite o tipo de deficiência desejado');
             $('#busca').attr('disabled', false);
 
-        } else if (filtro == "Conhecimento") {
+        } else if (filtro === "Conhecimento") {
             $('#busca').attr('placeholder','Digite area de conhecimento desejada');
             $('#busca').attr('disabled', false);
 
-        } else if (filtro == "Idioma") {
+        } else if (filtro === "Idioma") {
             $('#busca').attr('placeholder','Digite um Idioma');
             $('#busca').attr('disabled', false);
 
-        } else if (filtro == "") {
+        } else if (filtro === "") {
             $('#busca').val('');
             $('#busca').attr('disabled', true);
 

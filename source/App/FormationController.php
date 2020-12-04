@@ -3,8 +3,6 @@
 
 namespace Source\App;
 
-
-use Source\Config\Conection;
 use Source\Models\Curriculum;
 use Source\Models\Formation;
 use Source\Models\Login;
@@ -226,6 +224,14 @@ class FormationController extends Controller {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
+        if(in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos para cadastrar!"
+            ]);
+            return;
+        }
+
         try {
 
             if($this->formation->checkLanguage((INT)$this->user_logado->getid_usuario(),$data["idioma"]) == true) {
@@ -268,6 +274,14 @@ class FormationController extends Controller {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
+        if(in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos para atualizar!"
+            ]);
+            return;
+        }
+
         try {
 
             $this->formation->setid_idiomac($this->data_user->getid_idiomac());
@@ -301,6 +315,13 @@ class FormationController extends Controller {
     public function createLanguage($data):void {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+        if(in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos para cadastrar!"
+            ]);
+            return;
+        }
 
         try {
 
