@@ -1,23 +1,30 @@
-{include="header"}
-{include="navbar"}
-<main role="main"  {if="checkCurriculum()"} class="col-md-9 ml-sm-auto col-lg-10 px-md-4" {/if}>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><?php require $this->checkTemplate("header");?>
+
+<?php require $this->checkTemplate("navbar");?>
+
+<main role="main"  <?php if( checkCurriculum() ){ ?> class="col-md-9 ml-sm-auto col-lg-10 px-md-4" <?php } ?>>
 <section class="container col-md-8">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h4 class="h2">Idiomas</h4>
     </div>
 <div class="alert_message">
-    {function="flash()"}
+    <?php echo flash(); ?>
+
 </div>
 <div  class="card border-success">
     <div class="row">
         <div class="col">
-            {include="table_languages"}
+            <?php require $this->checkTemplate("table_languages");?>
+
             <div class="card-footer">
-                {if="checkCurriculum()"}
+                <?php if( checkCurriculum() ){ ?>
+
                 <a class="btn btn-danger" href="/user" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
-                {else}
+                <?php }else{ ?>
+
                 <a class="btn btn-danger" href="/user/languages/create" title="Voltar"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Voltar </a>
-                {/if}
+                <?php } ?>
+
                 <div class="float-right">
                     <a class="btn btn-primary" href="/user/languages/create" title="Adicionar"><i class="fa fa-plus-circle" aria-hidden="true"></i> Adicionar Novo Idioma </a>
                 </div>
@@ -27,7 +34,8 @@
 </div>
 </section>
 </main>
-{include="footer"}
+<?php require $this->checkTemplate("footer");?>
+
 
 
 
