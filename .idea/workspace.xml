@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/FormationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/FormationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/detail_other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/detail_other_courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/detail_professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/detail_professional.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/languages.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/languages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/other_courses.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/other_courses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/professional.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/professional.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_academic_formation.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,6 +248,8 @@
       <workItem from="1609242373230" duration="595000" />
       <workItem from="1609800287907" duration="63000" />
       <workItem from="1609806196921" duration="3579000" />
+      <workItem from="1609813538874" duration="80000" />
+      <workItem from="1609888468693" duration="1404000" />
     </task>
     <servers />
   </component>

@@ -75,11 +75,11 @@ class FormationController extends Controller {
 
             $this->formation->saveAcademicFormation();
 
-            if($curriculo->getid_curriculo()) {
+            if(checkCurriculum()) {
                 echo $this->ajaxResponse("redirect", [
                     "url" => $this->router->route("app.updateAcademicFormation")
                 ]);
-                flash("success", "Dados Altualizados com Sucesso");
+                flash("success", "Dados Atualizados com Sucesso");
                 return;
 
             } else {
