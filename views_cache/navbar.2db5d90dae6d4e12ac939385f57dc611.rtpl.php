@@ -1,0 +1,157 @@
+<?php if(!class_exists('Rain\Tpl')){exit;}?><nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
+    <?php if( checkCurriculum() ){ ?>
+
+    <a class="brand col-md-3 col-lg-2 mr-0 px-3" href="/user">
+        <?php if( $user["foto_usuario"] == NULL ){ ?>
+
+            <img class="img_brand" src="<?php echo htmlspecialchars( $user["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Photo">
+            <?php }else{ ?>
+
+            <?php if( $user["genero"] == 'Masculino' ){ ?>
+
+            <img class="img_brand" src="/views/assets/images/user/masculino.jpg"  alt="Photo">
+            <?php }elseif( $user["genero"] == 'Feminino' ){ ?>
+
+            <img class="img_brand" src="/views/assets/images/user/feminino.jpg" alt="Photo">
+            <?php } ?>
+
+        <?php } ?>
+
+        <?php echo htmlspecialchars( $user["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
+
+    </a>
+    <?php } ?>
+
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <ul class="navbar-nav px-auto">
+        <li class="nav-item">
+            <a class="nav-link active" href="/user">
+                <img src="/views/assets/images/logo_brand.png" alt="Brand">
+            </a>
+        </li>
+    </ul>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="btn link_btn btn-danger" data-toggle="modal" data-target="#ModalSair" href="">
+                <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i><span>&nbsp; <b>Sair</b></span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<?php if( checkCurriculum() ){ ?>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/user">
+                            <i class="fa fa-user-circle fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Perfil</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target="#ModalCompartilha" href="" title="Link de Compartinhamento">
+                            <i class="fa fa-share-alt fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Compartilhar Curriculo</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/contact/update">
+                            <i class="fa fa-compress fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Contato</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/deficiency/update">
+                            <i class="fa fa-wheelchair fa-fw" aria-hidden="true"></i>
+                            <?php if( $user["deficiencia_existe"] != NULL ){ ?>
+
+                               <span>&nbsp; Deficiência</span>
+                            <?php }else{ ?>
+
+                               <span>&nbsp;Adicionar Deficiência</span>
+                            <?php } ?>
+
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/formation/update">
+                            <i class="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Formação Acadêmica</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/other_courses">
+                            <i class="fa fa-book fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Outros Cursos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/languages">
+                            <i class="fa fa-language fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Idiomas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/professional_experience">
+                            <i class="fa fa-id-card-o fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Experiencia Profissional</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/password/update">
+                            <i class="fa fa-unlock fa-fw" aria-hidden="true"></i>
+                            <span>&nbsp; Alterar Senha</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<?php } ?>
+
+<!-- Modal Compartilhamento de Link do Curriculo -->
+<div class="modal fade" id="ModalCompartilha" role="dialog">
+    <div class="modal-dialog">
+        <div class="alert_copy"></div>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <label><b>Link de Compartinhamento do seu Curriculo</b></label>
+                <input type="text" id="link" style="color: black" class="form-control" value="<?php echo site('root'); ?>/curriculum/<?php echo htmlspecialchars( $curriculum, ENT_COMPAT, 'UTF-8', FALSE ); ?>" readonly>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-secondary btn-sm" href="/curriculum/<?php echo htmlspecialchars( $curriculum, ENT_COMPAT, 'UTF-8', FALSE ); ?>/generate_pdf" title="Gerar PDF">
+                    Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i></a>
+                <button id="btncopia"  class="btn btn-info btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar Link</button>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Sair -->
+<div class="modal fade" id="ModalSair" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="titulo_home"><b><?php echo site("name_complete"); ?></b></h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><b><?php echo getNameUser(); ?>, certeza que deseja sair do Sistema?</b></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <a href="/user/logout" class="btn btn-danger"><i class="fa fa-sign-out" aria-hidden="true"></i><strong> Sair</strong></a>
+            </div>
+        </div>
+    </div>
+</div>

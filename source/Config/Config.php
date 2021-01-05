@@ -6,20 +6,20 @@ define("SITE", [
     "name" => "WC",
     "name_complete" =>"Web Curriculo",
     "desc" => "Sistema Web Controle de  Curriculo",
-    //"domain" => "curriculotcc.com.br",
-     "domain" => "wcurriculo.cruzm.com.br",
+    "domain" => "curriculotcc.com.br",
+   //  "domain" => "wcurriculo.cruzm.com.br",
     "locale" => "pt_BR",
-    //"root" => "http://curriculotcc.com.br",
-    "root" => "https://wcurriculo.cruzm.com.br",
+    "root" => "http://curriculotcc.com.br",
+    //"root" => "https://wcurriculo.cruzm.com.br",
     "version"=>"1.0"
 ]);
 
-//define("DB", [
-//    "hostname" => "185.201.11.230",
-//    "username" => "u655389713_wc",
-//    "password" => "Cruz2517",
-//    "dbname" => "u655389713_tb_curriculo"
-//]);
+define("DB", [
+    "hostname" => "185.201.11.230",
+    "username" => "u655389713_wc",
+    "password" => "Cruz2517",
+    "dbname" => "u655389713_tb_curriculo"
+]);
 
 //define("DB", [
 //    "hostname" => "localHost",
@@ -28,12 +28,12 @@ define("SITE", [
 //    "dbname" => "db_curriculo"
 //]);
 
-define("DB", [
-    "hostname" => "127.0.0.1",
-    "username" => "u655389713_wc",
-    "password" => "Cruz2517",
-    "dbname" => "u655389713_tb_curriculo"
-]);
+//define("DB", [
+//    "hostname" => "127.0.0.1",
+//    "username" => "u655389713_wc",
+//    "password" => "Cruz2517",
+//    "dbname" => "u655389713_tb_curriculo"
+//]);
 
 define("MAIL_SUPPORT", [
     "host" => "smtp.gmail.com",

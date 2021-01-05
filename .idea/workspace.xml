@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/FormationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/FormationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/scripts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/scripts.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/assets/js/usefulFunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/create_personal_data.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +68,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/theme/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -242,7 +237,15 @@
       <workItem from="1607028926834" duration="7959000" />
       <workItem from="1607076763610" duration="146000" />
       <workItem from="1607116240285" duration="37000" />
-      <workItem from="1607116289532" duration="3933000" />
+      <workItem from="1607116289532" duration="4497000" />
+      <workItem from="1607464430408" duration="50000" />
+      <workItem from="1608156272392" duration="215000" />
+      <workItem from="1608157314412" duration="28000" />
+      <workItem from="1608399415556" duration="75000" />
+      <workItem from="1608400867200" duration="878000" />
+      <workItem from="1608670279449" duration="746000" />
+      <workItem from="1609242373230" duration="595000" />
+      <workItem from="1609800287907" duration="63000" />
     </task>
     <servers />
   </component>
