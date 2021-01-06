@@ -49,7 +49,7 @@ class FormationController extends Controller {
 
     /**
      * @param $data
-     * Cadastro e Atulização de Formação Academica
+     * Cadastro de Formação Academica
      */
     public function saveAcademicFormation($data):void {
 
@@ -65,21 +65,15 @@ class FormationController extends Controller {
 
         try {
 
-            $curriculo = new Curriculum();
-            $curriculo->getCurriculum($this->user_logado->getid_usuario());
-            $curriculo->getValues();
-
-            $this->formation->setid_formacao($this->data_user->getid_formacao());
-
             $this->formation->setData($data);
 
             $this->formation->saveAcademicFormation();
 
             if(checkCurriculum()) {
                 echo $this->ajaxResponse("redirect", [
-                    "url" => $this->router->route("app.updateAcademicFormation")
+                    "url" => $this->router->route("app.profile")
                 ]);
-                flash("success", "Dados Atualizados com Sucesso");
+                flash("success", "Currículo finalizado com sucesso");
                 return;
 
             } else {
@@ -90,6 +84,47 @@ class FormationController extends Controller {
                 return;
 
             }
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
+     * Atualização de Formação Academica
+     */
+    public function updateAcademicFormation($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        if($data["nivel_conclusao"] == "" && $data["nivel_andamento"] == "") {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos para cadastrar!"
+            ]);
+            return;
+        }
+
+        try {
+
+            $this->formation->setid_formacao($this->data_user->getid_formacao());
+
+            $this->formation->setData($data);
+
+            $this->formation->saveAcademicFormation();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" => $this->router->route("app.updateAcademicFormation")
+            ]);
+            flash("success", "Dados Atualizados com Sucesso");
+            return;
 
         } catch (\Exception $e) {
 

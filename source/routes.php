@@ -120,6 +120,7 @@ $router->post("/contact/update", "PersonalDataController:updateContact","persona
 $router->post("/deficiency/create", "PersonalDataController:saveDeficiency","personal.saveDeficiency");
 
 $router->post("/formation/create", "FormationController:saveAcademicFormation","formation.saveAcademicFormation");
+$router->post("/formation/update", "FormationController:updateAcademicFormation","formation.updateAcademicFormation");
 
 $router->post("/other_courses/create", "FormationController:saveOtherCourses","formation.saveOtherCourses");
 $router->post("/{id_cursos}/other_courses/update", "FormationController:updateOtherCourses","formation.updateOtherCourses");
