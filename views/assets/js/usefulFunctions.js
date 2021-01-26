@@ -58,6 +58,8 @@ jQuery(document).ready(function($) {
                     for (var i = 0; i < j.length; i++) {
                         options += '<option value="' + j[i].id_cidade + '">' + j[i].nome_cidade + '</option>';
                     }
+                    $('#cidade').attr('disabled', false);
+                    $('#cidade').css('background-color' ,'#1C1F27')
                     $('#cidade').focus();
                     $('#cidade').html(options).show();
                     $('.carregando').hide();
