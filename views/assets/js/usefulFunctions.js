@@ -70,7 +70,6 @@ jQuery(document).ready(function($) {
     });
 });
 
-
 // ------------------- Mostrar e ocultar senhas --------------- ///
 jQuery(document).ready(function($) {
 

@@ -68,7 +68,6 @@
                         <div class="form-group col-md-3">
                             <label  for="estado"><strong class="obrigatorio">*</strong><b>Estado</b></label>
                             <select class="form-control form-control-sm" name="uf_naturalidade" id="estado" required>
-                                <option value="">Selecione</option>
                                 {loop="$uf"}
                                 <option value="{$value.uf}">{$value.nome_estado}</option>
                                 {/loop}
@@ -133,4 +132,9 @@
 </form>
 </main>
 {include="footer"}
+<!--<script>-->
+<!--    $(document).ready(function() {-->
+<!--        $('#estado').select2();-->
+<!--    });-->
+<!--</script>-->
 
