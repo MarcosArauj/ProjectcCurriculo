@@ -98,9 +98,10 @@ class Curriculum extends Model {
      */
     public function saveCurriculum(): bool {
 
-        $results = $this->conn->select("CALL sp_curriculo_salvar(:id_usuario,:cod_curriculo)", array(
+        $results = $this->conn->select("CALL sp_curriculo_salvar(:id_usuario,:cod_curriculo,:divulgacao)", array(
             ":id_usuario"=>$this->getid_usuario(),
-            ":cod_curriculo"=>$this->getcod_curriculo()
+            ":cod_curriculo"=>$this->getcod_curriculo(),
+            ":divulgacao"=>$this->getdivulgacao()
         ));
 
         if (count($results) === 0) {

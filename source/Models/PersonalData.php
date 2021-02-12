@@ -18,7 +18,7 @@ class PersonalData extends Model {
 
         $results = $this->conn->select(
             "CALL sp_dados_pessoais_salvar(:primeiro_nome,:sobrenome,:nome_social,:nome_social_uso,:genero,:cor_raca,:nascimento,
-           :naturalidade,:uf_naturalidade,:nacionalidade,:rg,:cpf,:id_usuario)", array(
+           :naturalidade,:uf_naturalidade,:nacionalidade,:id_usuario)", array(
             ":primeiro_nome" => $this->getprimeiro_nome(),
             ":sobrenome" => $this->getsobrenome(),
             ":nome_social" =>$this->getnome_social(),
@@ -29,8 +29,6 @@ class PersonalData extends Model {
             ":naturalidade" => $this->getnaturalidade(),
             ":uf_naturalidade" => $this->getuf_naturalidade(),
             ":nacionalidade" => $this->getnacionalidade(),
-            ":rg" => $this->getrg(),
-            ":cpf" => removeMaskCpf($this->getcpf()),
             ":id_usuario" => $this->getid_usuario()
 
         ));
@@ -56,7 +54,7 @@ class PersonalData extends Model {
 
         $results = $this->conn->select(
             "CALL sp_dados_pessoais_atualizar(:id_pessoa,:primeiro_nome,:sobrenome,:nome_social,:nome_social_uso,:genero,:cor_raca,:nascimento,
-           :naturalidade,:uf_naturalidade,:nacionalidade,:rg,:cpf)", array(
+           :naturalidade,:uf_naturalidade,:nacionalidade)", array(
             ":id_pessoa"=>$this->getid_pessoa(),
             ":primeiro_nome" => $this->getprimeiro_nome(),
             ":sobrenome" => $this->getsobrenome(),
@@ -67,9 +65,7 @@ class PersonalData extends Model {
             ":nascimento" => $this->getnascimento(),
             ":naturalidade" => $this->getnaturalidade(),
             ":uf_naturalidade" => $this->getuf_naturalidade(),
-            ":nacionalidade" => $this->getnacionalidade(),
-            ":rg" => $this->getrg(),
-            ":cpf" => removeMaskCpf($this->getcpf())
+            ":nacionalidade" => $this->getnacionalidade()
 
         ));
 
@@ -82,23 +78,6 @@ class PersonalData extends Model {
 
         return true;
 
-    }
-
-    /**
-     * @param string $cpf
-     * @return bool
-     * Checar CPF já cadastrado
-     */
-    public function checkCpf(string $cpf):bool {
-
-        $results = $this->conn->select("SELECT cpf FROM v_usuario WHERE cpf = :cpf",
-            [
-                ":cpf"=> removeMaskCpf($cpf)
-            ]);
-        if(count($results) > 0){
-            return true;
-        }
-        return false;
     }
 
 

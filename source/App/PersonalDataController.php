@@ -55,15 +55,15 @@ class PersonalDataController extends Controller {
 
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
-        try {
+        if(in_array("", $data)) {
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" => "Preencha todos os campos para cadastrar!"
+            ]);
+            return;
+        }
 
-            if($this->personalData->checkCpf($data["cpf"]) === true) {
-                echo $this->ajaxResponse("message", [
-                    "type" => "error",
-                    "message" => "CPF informado já está em uso!"
-                ]);
-                return;
-            }
+        try {
 
             $this->personalData->setData($data);
 
@@ -103,14 +103,6 @@ class PersonalDataController extends Controller {
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
 
         try {
-
-            if(($this->personalData->checkCpf($data["cpf"]) === true) && (!$this->user_logado->getid_usuario()) ) {
-                echo $this->ajaxResponse("message", [
-                    "type" => "error",
-                    "message" => "CPF informado já está em uso!"
-                ]);
-                return;
-            }
 
             $this->personalData->setid_pessoa($this->data_user->getid_pessoa());
 

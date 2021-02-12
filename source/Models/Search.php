@@ -36,7 +36,7 @@ class Search extends Model {
             $column_search = "tipo_deficiencia";
         }
         $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS * FROM v_curriculo      
-                    WHERE status_usuario = 'ativo' 
+                    WHERE status_usuario = 'ativo' AND divulgacao = 'Sim'
                     AND $column_search LIKE :search OR $column_search1 LIKE :search
                     ORDER BY primeiro_nome LIMIT  $start, $itemsPerPage;",
             array(
@@ -45,7 +45,7 @@ class Search extends Model {
 
         if($filter == "Conhecimento") {
             $results = $this->conn->select("SELECT SQL_CALC_FOUND_ROWS * FROM v_curriculo      
-                    WHERE status_usuario = 'ativo' 
+                    WHERE status_usuario = 'ativo' AND divulgacao = 'Sim'
                     AND curso LIKE :search OR nome_curso LIKE :search OR idioma LIKE :search
                     OR cargo_atual LIKE :search OR cargo_anterior LIKE :search
                     OR atividade LIKE :search OR compentencias LIKE :search

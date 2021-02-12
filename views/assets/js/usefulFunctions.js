@@ -56,7 +56,7 @@ jQuery(document).ready(function($) {
                     var options = '<option value="">Selecione uma cidade</option>';
 
                     for (var i = 0; i < j.length; i++) {
-                        options += '<option value="' + j[i].id_cidade + '">' + j[i].nome_cidade + '</option>';
+                        options += '<option value="' + j[i].nome_cidade + '">' + j[i].nome_cidade + '</option>';
                     }
                     $('#cidade').attr('disabled', false);
                     $('#cidade').css('background-color' ,'#1C1F27')

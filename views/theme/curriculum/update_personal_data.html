@@ -90,27 +90,14 @@
                         <label  for="cor"><strong class="obrigatorio">*</strong><b>Cor ou Raça</b></label>
                         <select class="form-control form-control-sm" name="cor_raca" id="cor" required>
                             <option style="color:blue" value="{$user.cor_raca}">{$user.cor_raca}</option>
-                            <option value="Branco">Branco</option>
-                            <option value="Negro">Negro</option>
+                            <option value="">Selecione</option>
+                            <option value="Branca">Branca</option>
+                            <option value="Preta">Preta</option>
                             <option value="Parda">Parda</option>
+                            <option value="Indígena">Indígena</option>
+                            <option value="Amarela">Amarela</option>
+                            <option value="Não desejo declarar">Não desejo declarar</option>
                         </select>
-                    </div>
-                </div>
-                <!-- Linha 4 -->
-                <hr>
-                <div class="row">
-                    <div class="form-group col-md-4">
-                        <label  for="city"><strong class="obrigatorio">*</strong><b>RG</b></label>
-                        <input type="text" class="form-control form-control-sm" id="rg" name="rg"  value="{$user.rg}" maxlength="20" required>
-                    </div>
-                    <div class="col-md-4">
-                    <div id="cpf" class="form-group">
-                        <label  for="cpf"><strong class="obrigatorio">*</strong><b>CPF</b></label>
-                        <input type="text" class="form-control form-control-sm" name="cpf" id="camp_cpf" value="{function="formatCpf($user.cpf)"}" onkeypress="formatar('###.###.###-##',this)"  maxlength="14" required>
-                        <div id="mescpf" class="error-disabled" >
-                            <h6>CPF inválido!!!</h6>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>

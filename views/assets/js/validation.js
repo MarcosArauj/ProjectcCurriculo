@@ -1,59 +1,5 @@
-//------------------ Verifica Validade do CPF --------------- ///
-function verifica_cpf(cpf){
-
-    var numeros, soma, digitos, i, resultado, digitos_iguais;
-    digitos_iguais = 1;
-
-    cpf = removeMascara(cpf,".");
-    cpf = removeMascara(cpf, "-");
-
-    if (cpf.length < 11)
-        return false;
-    for (i = 0; i < cpf.length - 1; i++)
-        if (cpf.charAt(i) != cpf.charAt(i + 1)) {
-            digitos_iguais = 0;
-            break;
-        }
-    if (!digitos_iguais) {
-
-        numeros = cpf.substring(0,9);
-        digitos = cpf.substring(9);
-
-
-        soma = 0;
-        for (i = 10; i > 1; i--)
-            soma += numeros.charAt(10 - i) * i;
-        resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-        if (resultado != digitos.charAt(0))
-            return false;
-        numeros = cpf.substring(0,10);
-        soma = 0;
-        for (i = 11; i > 1; i--)
-            soma += numeros.charAt(11 - i) * i;
-        resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-        if (resultado != digitos.charAt(1))
-            return false;
-        return true;
-    }
-    else
-        return false;
-}
 
 jQuery(document).ready(function($) {
-
-    //---------- Valida CPF no Formulario ------------------ ///
-    $('#camp_cpf').on("input", function (e) {
-        e.preventDefault();
-        let cpf = $('#camp_cpf').val();
-
-        if(verifica_cpf(cpf)) {
-            $('#cpf').attr("class"," has-success");
-            $('#mescpf').attr("class", "error-disabled");
-        } else {
-            $('#cpf').attr("class","has-error");
-            $('#mescpf').attr("class", "error-enabled");
-        }
-    });
 
 //------------------ Valida Email no Formulário ------------------- ///
     $('#campo_email').on("input", function (e) {

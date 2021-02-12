@@ -14,7 +14,7 @@ class Login extends User {
     public function loginUser($login, $password): User {
 
         $results = $this->conn->select("SELECT * FROM v_usuario
-                    WHERE email = :login OR cpf = :login AND status_usuario = :status",
+                    WHERE email = :login AND status_usuario = :status",
             array(
                 ":login"=>$login,
                 ":status"=>"ativo",
