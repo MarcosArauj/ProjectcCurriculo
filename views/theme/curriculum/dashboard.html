@@ -11,6 +11,15 @@
             <h4>Finalize seu Curriculo!</h4>
             <br>
              <form class="form" action="/curriculum/curriculum/create" method="post" autocomplete="off">
+                 <div class="custom-control custom-switch" style="color: black">
+                     <input type="checkbox" class="custom-control-input" name="divulgacao" id="divulgacao" value="Não">
+                     <label class="custom-control-label" for="divulgacao"><b>Autoriza a divulgação do seus dados,para fins de contratação?
+                         <br><a href="https://www.gov.br/defesa/pt-br/acesso-a-informacao/lei-geral-de-protecao-de-dados-pessoais-lgpd" target="_blank">
+                             Lei LGPD(Lei Geral de Proteção de Dados)</a>
+                     </b></label>
+                 </div>
+                 <br>
+                 <p>
                  <button class="btn btn-lg btn-success hover"><i class="fa fa-check" aria-hidden="true"></i>  Finalizar Curriculo</button>
              </form>
             {/if}

@@ -109,7 +109,7 @@ class AppController extends Controller {
         $page->setTpl("profile", array(
             "title" => site("name"). " | " . getNameUser(),
             "user" => $this->data_user->getValues(),
-            "curriculum"=>$this->curruculum->getcod_curriculo()
+            "curriculum"=>$this->curruculum->getValues()
         ));
 
     }

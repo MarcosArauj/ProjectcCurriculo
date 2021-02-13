@@ -35,7 +35,9 @@ class CurriculumController extends Controller {
             $this->data_user = new User();
             $this->data_user->getUser($this->user_logado->getid_usuario());
             $this->data_user->getValues();
-            $this->curruculum = new Curriculum();
+            $this->curriculum = new Curriculum();
+            $this->curriculum->getCurriculum($this->user_logado->getid_usuario());
+            $this->curriculum->getValues();
         }
 
     }
@@ -50,7 +52,7 @@ class CurriculumController extends Controller {
 
         try {
 
-            if($this->curruculum->checkCurriculum((INT)$this->user_logado->getid_usuario())) {
+            if($this->curriculum->checkCurriculum((INT)$this->user_logado->getid_usuario())) {
 
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
@@ -59,7 +61,7 @@ class CurriculumController extends Controller {
                 return;
             }
 
-            if($this->curruculum->checkCurriculumData((INT)$this->user_logado->getid_usuario()) == false) {
+            if($this->curriculum->checkCurriculumData((INT)$this->user_logado->getid_usuario()) == false) {
 
                 echo $this->ajaxResponse("redirect", [
                     "url" =>$this->router->route("app.checkCurriculum")
@@ -68,24 +70,61 @@ class CurriculumController extends Controller {
                 return;
             }
 
-            $this->curruculum->setid_usuario((INT)$this->user_logado->getid_usuario());
+            $this->curriculum->setid_usuario((INT)$this->user_logado->getid_usuario());
 
 
             $cod_curriculo = str_pad(mt_Rand((INT)$this->user_logado->getid_usuario(), 9999999999), 10, '0', STR_PAD_LEFT);
 
-            $this->curruculum->setcod_curriculo($cod_curriculo);
+            $this->curriculum->setcod_curriculo($cod_curriculo);
 
             $data["divulgacao"] = (isset($data["divulgacao"]))? "Sim": "Não";
 
-            $this->curruculum->setData($data);
+            $this->curriculum->setData($data);
 
-            $this->curruculum->saveCurriculum();
+            $this->curriculum->saveCurriculum();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("app.profile")
 
             ]);
             flash("success","Sucesso no Registro do Seu Curriculo!");
+            return;
+
+        } catch (\Exception $e) {
+
+            echo $this->ajaxResponse("message", [
+                "type" => "error",
+                "message" =>$e->getMessage()
+            ]);
+            return;
+        }
+
+    }
+
+    /**
+     * @param $data
+     * Atualiza da divuldação dos dados do curriculo
+     */
+    public function updateCurriculum($data):void {
+
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        try {
+
+            if($this->curriculum->getdivulgacao() == 'Sim') {
+                $this->curriculum->setdivulgacao('Não');
+            } else {
+                $this->curriculum->setdivulgacao('Sim');
+            }
+            $this->curriculum->setData($data);
+
+            $this->curriculum->updateCurriculum();
+
+            echo $this->ajaxResponse("redirect", [
+                "url" =>$this->router->route("app.profile")
+
+            ]);
+            flash("success","Dados Alterados Com Sucesso");
             return;
 
         } catch (\Exception $e) {

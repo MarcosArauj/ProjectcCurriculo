@@ -43,16 +43,14 @@ class Curriculum extends Model {
             ":cod_curriculo" =>$cod_curriculo
         ));
 
-        if (count($results) > 0) {
 
+        if (count($results) > 0) {
             $data = $results[0];
 
             $this->setData($data);
 
-        } else {
-            throw new \Exception("Curriculo não Encontrado!");
-
         }
+
 
     }
 
@@ -106,6 +104,27 @@ class Curriculum extends Model {
 
         if (count($results) === 0) {
             throw new \Exception("Erro ao Salvar Cadastro Curriculo!");
+            return false;
+        }
+
+        $this->setData($results[0]);
+
+        return true;
+
+    }
+
+    /**
+     * Atualizar Divulgação dos dados do curriculo
+     */
+    public function updateCurriculum():bool {
+
+        $results =  $this->conn->select("CALL sp_curriculo_atualizar(:id_curriculo,:divulgacao)",array(
+            ":id_curriculo"=>$this->getid_curriculo(),
+            ":divulgacao"=>$this->getdivulgacao()
+        ));
+
+        if (count($results) === 0) {
+            throw new \Exception("Erro ao Atualizar Divulgação do Curriculo !");
             return false;
         }
 

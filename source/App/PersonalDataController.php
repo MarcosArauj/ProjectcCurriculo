@@ -40,9 +40,7 @@ class PersonalDataController extends Controller {
             $this->data_user->getValues();
 
             $this->personalData =  new PersonalData();
-            $this->personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
             $this->contact = new Contact();
-            $this->contact->setid_usuario((INT)$this->user_logado->getid_usuario());
         }
 
     }

@@ -42,7 +42,6 @@ class FormationController extends Controller {
             $this->data_user->getValues();
 
             $this->formation = new Formation();
-            $this->formation->setid_usuario((INT)$this->user_logado->getid_usuario());
         }
 
     }

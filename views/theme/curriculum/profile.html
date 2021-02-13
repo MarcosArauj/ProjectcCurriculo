@@ -1,7 +1,6 @@
 {include="header"}
 {include="navbar"}
 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-<form  action="/curriculum/personal_data/photo" method="post" enctype="multipart/form-data">
 <section class="container col-md-10 cad">
 <div class="alert_message">
     {function="flash()"}
@@ -16,6 +15,7 @@
             {/if}
         </div>
         <hr>
+        <form  action="/curriculum/personal_data/photo" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-3">
                 <label for="foto_usuario" class="user_photo" data-toggle="tooltip" data-placement="bottom" title="Clique aqui e escolha sua Foto. Gentileza usar foto com fundo Branco">
@@ -33,7 +33,6 @@
             </div>
             <div class="col-4">
                 <h5><b>Dados Pessoais</b></h5>
-
                     <label><b>Sexo: </b></label>&nbsp;
                     <span>{$user.genero}</span>
                 <br>
@@ -52,8 +51,7 @@
             </div>
             <!-- Coluna 3 -->
             <div class="col-5">
-                <h5><b>Contato</b></h5>
-                <br>
+                <h5><b>Endereço/Contato</b></h5>
                     <label><b>Rua/Av: </b></label>&nbsp;
                     <span>{$user.endereco}</span>
                     <span class="offset-1"></span>
@@ -71,7 +69,6 @@
                     <span class="offset-2"></span>
                     <label><b>Pais: </b></label>&nbsp;
                     <span>{$user.pais}</span>
-                <br>
                 <hr/>
                     <label><b>Celular: </b></label>&nbsp;
                     <span>{$user.celular} </span>
@@ -79,17 +76,38 @@
                     {if="$user.telefone != NULL"}
                     <label><b>Telefone: </b></label>&nbsp;
                     <span>{$user.telefone} </span>
-                    {/if}
                 <br>
+                    {/if}
                     <label><b>E-mail: </b></label>&nbsp;
                     <span>{$user.email} </span>
              </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-md btn-success" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Foto</button>
+            </div>
+        </div>
+        </form>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form" action="/curriculum/curriculum/disclosure_update" method="post" autocomplete="off">
+                    <input type="hidden" name="id_curriculo" value="{$curriculum.id_curriculo}">
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" name="divulgacao" id="divulgacao" value="Não" {if="$curriculum.divulgacao == 'Sim'"} checked {/if} disabled>
+                        <label class="custom-control-label" for="divulgacao"><b>
+                            Você{if="$curriculum.divulgacao == 'Não'"} não {/if} autorizou a divulgação do seus dados.
+                            <br> <a href="https://www.gov.br/defesa/pt-br/acesso-a-informacao/lei-geral-de-protecao-de-dados-pessoais-lgpd" target="_blank">
+                            Lei LGPD(Lei Geral de Proteção de Dados)</a>
+                        </b></label>
+                        <button class="btn btn-primary btn-sm"><i class="fa fa-arrow-circle-right"></i>
+                            {if="$curriculum.divulgacao == 'Sim'"} Não {/if} Autorizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="card-footer">
-        <div class="float-left">
-            <button class="btn btn-md btn-success" type="submit"><i class="fa fa-plus-circle" aria-hidden="true"></i> Registrar Foto</button>
-        </div>
         <div class="float-right">
             <a class="btn btn-primary" href="/user/personal_data/update" title="Editar Perfil"> Editar Perfil <i class="fa fa-arrow-circle-right" aria-hidden="true"></i> </a>
             <a class="btn btn-danger" data-toggle="modal" data-target="#ModalExcluir" href=""><i class="fa fa-trash"></i> Excluir Cadastro</a>
@@ -97,7 +115,6 @@
     </div>
 </div>
 </section>
-</form>
 </div>
 </main>
 <!-- Modal Excluir -->

@@ -38,7 +38,6 @@ class ProfessionalController extends Controller {
             $this->data_user->getValues();
 
             $this->professional = new Professional();
-            $this->professional->setid_usuario((INT)$this->user_logado->getid_usuario());
         }
 
     }

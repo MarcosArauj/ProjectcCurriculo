@@ -136,6 +136,7 @@ $router->post("/{id_profissional}/professional_experience/update", "Professional
 $router->post("/{id_profissional}/professional_experience/delete", "ProfessionalController:deleteProfessional","professional.deleteProfessional");
 
 $router->post("/curriculum/create", "CurriculumController:saveCurriculum","curriculum.saveCurriculum");
+$router->post("/curriculum/disclosure_update", "CurriculumController:updateCurriculum","curriculum.updateCurriculum");
 $router->post("/curriculum/delete", "CurriculumController:deleteCurriculum","curriculum.deleteCurriculum");
 
 
