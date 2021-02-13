@@ -6,17 +6,17 @@ define("SITE", [
     "name" => "WC",
     "name_complete" =>"Web Curriculo",
     "desc" => "Sistema Web Controle de  Curriculo",
-    //"domain" => "curriculotcc.com.br",
-    "domain" => "wcurriculo.cruzm.com.br",
+    "domain" => "curriculotcc.com.br",
+    //"domain" => "wcurriculo.cruzm.com.br",
     "locale" => "pt_BR",
-    //"root" => "http://curriculotcc.com.br",
-   "root" => "https://wcurriculo.cruzm.com.br",
+    "root" => "http://curriculotcc.com.br",
+   //"root" => "https://wcurriculo.cruzm.com.br",
     "version"=>"1.0"
 ]);
 
 define("DB", [
-   // "hostname" => "92.249.44.54",
-    "hostname" => "127.0.0.1",
+    "hostname" => "92.249.44.54",
+   // "hostname" => "127.0.0.1",
     "username" => "u299923371_web",
     "password" => "Cruz2517",
     "dbname" => "u299923371_db_curriculo"
