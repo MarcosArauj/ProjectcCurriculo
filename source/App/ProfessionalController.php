@@ -97,7 +97,7 @@ class ProfessionalController extends Controller {
             $this->professional->saveProfessional();
 
             echo $this->ajaxResponse("redirect", [
-                "url" =>$this->router->route("app.updateProfessional",["id_cursos" => $data['id_cursos']])
+                "url" =>$this->router->route("app.updateProfessional",["id_profissional" => $data['id_profissional']])
 
             ]);
             flash("success","Experiência Profissional Atualizada com Sucesso");
