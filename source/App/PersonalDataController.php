@@ -40,7 +40,9 @@ class PersonalDataController extends Controller {
             $this->data_user->getValues();
 
             $this->personalData =  new PersonalData();
+            $this->personalData->setid_usuario((INT)$this->user_logado->getid_usuario());
             $this->contact = new Contact();
+            $this->contact->setid_usuario((INT)$this->user_logado->getid_usuario());
         }
 
     }
@@ -296,7 +298,6 @@ class PersonalDataController extends Controller {
                     "message" => "Digite uma Senha diferente Atual!!!"
                 ]);
                 return;
-
             } else if(strlen($data["nova_senha"]) < 8) {
                 echo $this->ajaxResponse("message", [
                     "type" => "error",

@@ -47,13 +47,12 @@
                 </div>
                 <div>
                     <label><b>Idade: </b></label>{function="calculateAge($curriculum.nascimento)"} anos;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <label><b>Data de Nascimento: </b></label>{function="formatDate($curriculum.nascimento)"};
-                    <br>
                     <label><b>Sexo: </b></label>{$curriculum.genero};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br>
                     <label><b>Cor/Raça: </b></label>{$curriculum.cor_raca};
                     <br>
                     <label><b>Naturalidade: </b></label>{$curriculum.naturalidade}/{$curriculum.uf_naturalidade};&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <label><b>Nacionalidade: </b></label>{$curriculum.nacionalidade};
+                    <label><b>País de Nascimento: </b></label>{$curriculum.nacionalidade};
                 </div>
                 <hr>
                 <!-- Contato -->
@@ -74,12 +73,12 @@
                     <h3><u>Endereço</u> </h3>
                 </div>
                 <div>
-                    <label><b>Rua/Av: </b></label>{$curriculum.endereco};&nbsp;&nbsp;&nbsp;
-                    <label><b>Nº: </b></label>{$curriculum.numero};
+                    <label><b>Rua/Av: </b></label>{$curriculum.endereco}, Nº {$curriculum.numero}&nbsp;&nbsp;&nbsp;
                     <label><b>CEP: </b></label>{$curriculum.cep};
                     <br>
-                    <label><b>Bairro: </b></label>{$curriculum.bairro};&nbsp;&nbsp;&nbsp;
-                    <label><b>Cidade: </b></label>{$curriculum.cidade} - {$curriculum.estado};&nbsp;&nbsp;&nbsp;
+                    <label><b>Bairro: </b></label>{$curriculum.bairro};
+                    <label><b>Cidade: </b></label>{$curriculum.cidade} - {$curriculum.estado};
+                    <br>
                     <label><b>Pais: </b></label>{$curriculum.pais};
                 </div>
                 <!-- Deficiência -->
@@ -133,9 +132,9 @@
                     <label><b>Conclusão: </b></label>{$curriculum.ano_conclusao};&nbsp;&nbsp;
                      <br>
                     <label><b>Instituição de Conclusão: </b></label>{$curriculum.instituicao_conclusao};
-                    {/if}
-                     <br>
                     <br>
+                    <br>
+                    {/if}
                     {if="$curriculum.nivel_andamento != NULL"}
                     <label><b>Formação em Andamento: </b></label>{$curriculum.nivel_andamento};&nbsp;&nbsp;&nbsp;&nbsp;
                     <label><b>Início: </b></label>{$curriculum.ano_inicio_andamento};
@@ -148,6 +147,7 @@
                      <br>
                     <label><b>Tipo de Graduação: </b></label>{$curriculum.tipo_graduacao};
                     {/if}
+
                 </div>
                 <!-- Outros Cursos -->
                 {if="$courses"}
@@ -196,6 +196,8 @@
                 <label><b>Demissão: </b></label>{function="formatDate($value.data_demissao)"};
                 <br>
                 <label><b>Atividade Exercida: </b></label>{$value.atividade}
+               <br>
+               <br>
             {/if}
             {if="$value.registro == 'ativo' && $value.empresa_atual != NULL"}
                 <label><b>Empresa Atual: </b></label>{$value.empresa_atual};&nbsp;&nbsp;&nbsp;

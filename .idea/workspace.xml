@@ -3,7 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/FormationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/FormationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/App/PersonalDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/PersonalDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/ProfessionalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/ProfessionalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Utilities/UsefulFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Utilities/UsefulFunctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/admin/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/admin/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/pdf.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/share_curriculum.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,7 +289,8 @@
       <workItem from="1613213591651" duration="5018000" />
       <workItem from="1613219630339" duration="6148000" />
       <workItem from="1613227557805" duration="623000" />
-      <workItem from="1613391896281" duration="4821000" />
+      <workItem from="1613391896281" duration="5185000" />
+      <workItem from="1613402848286" duration="7041000" />
     </task>
     <servers />
   </component>

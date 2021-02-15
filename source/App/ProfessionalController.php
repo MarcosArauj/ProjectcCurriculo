@@ -38,6 +38,7 @@ class ProfessionalController extends Controller {
             $this->data_user->getValues();
 
             $this->professional = new Professional();
+            $this->professional->setid_usuario((INT)$this->user_logado->getid_usuario());
         }
 
     }
@@ -60,7 +61,12 @@ class ProfessionalController extends Controller {
                 "url" =>$this->router->route("app.saveProfessional")
 
             ]);
-            flash("success","Sucesso no Registro! Clique em Próximo ou Adicione + Experiência Porfissional");
+            if(checkCurriculum()) {
+                flash("success","Sucesso no Registro!");
+            } else {
+                flash("success","Sucesso no Registro! Clique em Próximo ou Adicione + Experiência Porfissional");
+            }
+
             return;
 
         } catch (\Exception $e) {

@@ -53,9 +53,13 @@ class AdminController extends Controller {
     public function dashboardAdmin():void {
 
         $pageAdmin = new PageAdmin();
+
+        $this->data_user->getUser($this->user_logado->getid_usuario());
+        $user_admin = $this->data_user->getValues();
+
         $pageAdmin->setTpl("dashboard_admin", array(
             "title" =>"Bem Vindo(a) " . site("name"),
-            "user" =>$this->user_logado->getValues()
+            "user" =>$user_admin
         ));
 
     }

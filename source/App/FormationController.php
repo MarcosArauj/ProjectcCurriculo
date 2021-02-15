@@ -42,6 +42,7 @@ class FormationController extends Controller {
             $this->data_user->getValues();
 
             $this->formation = new Formation();
+            $this->formation->setid_usuario((INT)$this->user_logado->getid_usuario());
         }
 
     }
@@ -162,7 +163,11 @@ class FormationController extends Controller {
                 "url" =>$this->router->route("app.saveOtherCourses")
 
             ]);
-            flash("success","Sucesso no Registro! Clique em Próximo para Idiomas ou Adicione + Cursos");
+            if (checkCurriculum()) {
+                flash("success", "Sucesso no Registro!");
+            } else {
+                flash("success", "Sucesso no Registro! Clique em Próximo para Idiomas ou Adicione + Cursos");
+            }
             return;
 
 
@@ -286,7 +291,11 @@ class FormationController extends Controller {
                 "url" =>$this->router->route("app.saveLanguages")
 
             ]);
-            flash("success","Sucesso no Registro! Clique em Próximo para Experiência Profissional ou Adicione + Idiomas");
+            if (checkCurriculum()) {
+                flash("success", "Sucesso no Registro!");
+            } else {
+                flash("success", "Sucesso no Registro! Clique em Próximo para Experiência Profissional ou Adicione + Idiomas");
+            }
             return;
 
         } catch (\Exception $e) {

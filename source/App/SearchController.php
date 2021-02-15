@@ -115,7 +115,8 @@ class SearchController extends Controller {
 
         $pdf->WriteHTML($html);
 
-        $pdf->Output("curruculo_". strtolower($curriculum->getprimeiro_nome()).".pdf","D");
+       // $pdf->Output("curruculo_". strtolower($curriculum->getprimeiro_nome()).".pdf","D");
+        $pdf->Output();
         return;
 
     }

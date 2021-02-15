@@ -38,21 +38,18 @@
                        <label><b>Idade: </b></label>&nbsp;
                        <span>{function="calculateAge($curriculum.nascimento)"} anos;</span>
                        <span class="offset-1"></span>
-                       <label><b>Data de Nascimento: </b></label>&nbsp;
-                       <span>{function="formatDate($curriculum.nascimento)"};</span>
-                   </div>
-                   <div class="row">
                        <label><b>Sexo: </b></label>&nbsp;
                        <span>{$curriculum.genero}</span>
-                       <span class="offset-1"></span>
+                   </div>
+                   <div class="row">
                        <label><b>Cor/Raça: </b></label>&nbsp;
                        <span>{$curriculum.cor_raca}</span>
                    </div>
                    <div class="row">
                        <label><b>Naturalidade: </b></label>&nbsp;
                        <span>{$curriculum.naturalidade}/{$curriculum.uf_naturalidade} </span>
-                       <span class="offset-2"></span>
-                       <label><b>Nacionalidade: </b></label>&nbsp;
+                       <span class="offset-1"></span>
+                       <label><b>País de Nascimento: </b></label>&nbsp;
                        <span>{$curriculum.nacionalidade} </span>
                    </div>
                </div>
@@ -84,22 +81,19 @@
                <div class="col">
                    <div class="row">
                        <label><b>Rua/Av: </b></label>&nbsp;
-                       <span>{$curriculum.endereco}</span>
-                       <span class="offset-2"></span>
-                       <label><b>Nº: </b></label>&nbsp;
-                       <span>{$curriculum.numero}</span>
-                   </div>
-                   <div class="row">
+                       <span>{$curriculum.endereco}, Nº {$curriculum.numero}</span>
+                       <span class="offset-1"></span>
                        <label><b>CEP: </b></label>&nbsp;
                        <span>{$curriculum.cep}</span>
-                       <span class="offset-3"></span>
-                       <label><b>Bairro: </b></label>&nbsp;
-                       <span>{$curriculum.bairro}</span>
                    </div>
                    <div class="row">
+                       <label><b>Bairro: </b></label>&nbsp;
+                       <span>{$curriculum.bairro}</span>
+                       <span class="offset-1"></span>
                        <label><b>Cidade: </b></label>&nbsp;
                        <span>{$curriculum.cidade} - {$curriculum.estado}</span>
-                       <span class="offset-2"></span>&nbsp;&nbsp;
+                   </div>
+                   <div class="row">
                        <label><b>Pais: </b></label>&nbsp;
                        <span>{$curriculum.pais}</span>
                    </div>
@@ -114,7 +108,7 @@
                    <div class="row">
                        <label><b>Tipo: </b></label>&nbsp;
                        <span>{$curriculum.tipo_deficiencia}</span>
-                       <span class="offset-2"></span>&nbsp;&nbsp;
+                       <span class="offset-1"></span>
                        {if="$curriculum.cid != NULL"}
                        <label><b>CID: </b></label>&nbsp;
                        <span>{$curriculum.cid}</span>
@@ -126,7 +120,7 @@
                    </div>
                    <div class="row">
                        {if="$curriculum.regime_cota == 'Sim'"}
-                       <label><b>* Já trabalhou pelo regime de <a href="https://www2.camara.leg.br/legin/fed/lei/1991/lei-8213-24-julho-1991-363650-publicacaooriginal-1-pl.html" target="_blank">Lei de Cotas 8213/91</a></b></label>
+                       <label><b>* Já trabalhou pelo regime de <a href="https://www2.camara.leg.br/legin/fed/lei/1991/lei-8213-24-julho-1991-363650-publicacaooriginal-1-pl.html" target="_blank">Lei de Cotas 8213/91</a></b></label>&nbsp;
                        {/if}
                    </div>
                    <div class="row">
@@ -136,7 +130,7 @@
                    </div>
                    <div class="row">
                        {if="$curriculum.transporte == 'Sim'"}
-                       <label><b>* Independente no transporte coletivo</b></label>
+                       <label><b>* Independente no transporte coletivo</b></label>;
                        {else}
                        <label><b>* Necessita de ajuda no transporte coletivo</b></label>
                        {/if}
@@ -161,73 +155,91 @@
                <div class="row">
                    <h5><u>Formação Acadêmica</u> </h5>
                </div>
-               <div class="col">
                    {if="$curriculum.nivel_conclusao != NULL"}
                    <div class="row">
-                       <label><b>Formação Concluida: </b></label>&nbsp;
-                       <span>{$curriculum.nivel_conclusao}</span>
-                       <span class="offset-2"></span>&nbsp;&nbsp;
-                       <label><b>Início: </b></label>&nbsp;
-                       <span>{$curriculum.ano_inicio_conclusao}</span>
-                       <span class="offset-1"></span>
-                       <label><b>Conclusão: </b></label>&nbsp;
-                       <span>{$curriculum.ano_conclusao}</span>
+                       <div class="col-5">
+                           <label><b>Formação Concluida: </b></label>&nbsp;
+                           <span>{$curriculum.nivel_conclusao}</span>
+                       </div>
+                       <div class="col">
+                           <label><b>Início: </b></label>&nbsp;
+                           <span>{$curriculum.ano_inicio_conclusao}</span>
+                           <span class="offset-1"></span>
+                           <label><b>Conclusão: </b></label>&nbsp;
+                           <span>{$curriculum.ano_conclusao}</span>
+                       </div>
                    </div>
                    <div class="row">
-                       <label><b>Instituição de Conclusão: </b></label>&nbsp;
-                       <span>{$curriculum.instituicao_conclusao}</span>
+                       <div class="col-5">
+                           <label><b>Instituição de Conclusão: </b></label>&nbsp;
+                           <span>{$curriculum.instituicao_conclusao}</span>
+                       </div>
                    </div>
                    {/if}
                    {if="$curriculum.nivel_andamento != NULL"}
+                   <br>
                    <div class="row">
-                       <label><b>Formação em Andamento: </b></label>&nbsp;
-                       <span>{$curriculum.nivel_andamento}</span>
-                       <span class="offset-1"></span>&nbsp;&nbsp;
-                       <label><b>Início: </b></label>&nbsp;
-                       <span>{$curriculum.ano_inicio_andamento}</span>
+                       <div class="col-5">
+                           <label><b>Formação em Andamento: </b></label>&nbsp;
+                           <span>{$curriculum.nivel_andamento}</span>
+                       </div>
+                       <div class="col">
+                           <label><b>Início: </b></label>&nbsp;
+                           <span>{$curriculum.ano_inicio_andamento}</span>
+                       </div>
                    </div>
                    <div class="row">
-                       <label><b>Instituição: </b></label>&nbsp;
-                       <span>{$curriculum.instituicao_andamento}</span>
+                       <div class="col-5">
+                           <label><b>Instituição: </b></label>&nbsp;
+                           <span>{$curriculum.instituicao_andamento}</span>
+                       </div>
                    </div>
                    {/if}
                    <div class="row">
                        {if="$curriculum.curso != NULL"}
-                       <label><b>Curso: </b></label>&nbsp;
-                       <span>{$curriculum.curso}</span>
-                       <span class="offset-5"></span>
-                       <label><b>Tipo de Graduação: </b></label>&nbsp;
-                       <span>{$curriculum.tipo_graduacao}</span>
+                       <div class="col-5">
+                           <label><b>Curso: </b></label>&nbsp;
+                           <span>{$curriculum.curso}</span>
+                       </div>
+                       <div class="col">
+                           <label><b>Tipo de Graduação: </b></label>&nbsp;
+                           <span>{$curriculum.tipo_graduacao}</span>
+                       </div>
                        {/if}
                    </div>
-               </div>
                <!-- Outros Cursos -->
                {if="$courses"}
                <hr>
                <div class="row">
-                   <h6><u>Outros Cursos</u> </h6>
+                   <h5><u>Outros Cursos</u> </h5>
                </div>
                {loop="$courses"}
-               <div class="col">
                    <div class="row">
-                       <label><b>Curso: </b></label>&nbsp;
-                       <span>{$value.nome_curso}</span>
-                       <span class="offset-2"></span>&nbsp;&nbsp;&nbsp;
-                       <label><b>Carga Horária: </b></label>&nbsp;
-                       <span>{$value.carga_horaria} horas</span>
+                       <div class="col-5">
+                           <label><b>Curso: </b></label>&nbsp;
+                           <span>{$value.nome_curso}</span>
+                       </div>
+                       <div class="col">
+                           <label><b>Carga Horária: </b></label>&nbsp;
+                           <span>{$value.carga_horaria} horas</span>
+                       </div>
                    </div>
                    <div class="row">
-                       <label><b>Instituicão: </b></label>&nbsp;
-                       <span>{$value.instituicao}</span>
-                       <span class="offset-md-2"></span>
-                       <label><b>Conclusão: </b></label>&nbsp;
-                       <span>{function="formatDate($value.termino)"}</span>
+                       <div class="col-5">
+                           <label><b>Instituicão: </b></label>&nbsp;
+                           <span>{$value.instituicao}</span>
+                       </div>
+                       <div class="col">
+                           <label><b>Conclusão: </b></label>&nbsp;
+                           <span>{function="formatDate($value.termino)"}</span>
+                       </div>
                    </div>
                    <div class="row">
-                       <label><b>Compentências: </b></label>&nbsp;
-                       <span>{$value.compentencias}</span>
+                       <div class="col-5">
+                           <label><b>Compentências: </b></label>&nbsp;
+                           <span>{$value.compentencias}</span>
+                       </div>
                    </div>
-               </div>
                <br>
                {/loop}
                {/if}
@@ -280,6 +292,7 @@
                            <span>{$value.atividade}</span>
                        </div>
                    </div>
+                   <br>
                     {/if}
                     {if="$value.registro == 'ativo' && $value.empresa_atual != NULL"}
                        <div class="row">

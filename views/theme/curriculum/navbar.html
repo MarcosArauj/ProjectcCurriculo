@@ -110,10 +110,10 @@
         <div class="modal-content">
             <div class="modal-body">
                 <label><b>Link de Compartinhamento do seu Curriculo</b></label>
-                <input type="text" id="link" style="color: black" class="form-control" value="{#site('root')#}/curriculum/{$curriculum.cod_curriculo}" readonly>
+                <input type="text" id="link" style="color: black" class="form-control" value="{#site('root')#}/curriculum/{function="getCodCurriculum()"}" readonly>
             </div>
             <div class="modal-footer">
-                <a class="btn btn-secondary btn-sm" href="/curriculum/{$curriculum.cod_curriculo}/generate_pdf" title="Gerar PDF">
+                <a class="btn btn-secondary btn-sm" href="/curriculum/{function="getCodCurriculum()"}/generate_pdf" title="Gerar PDF">
                     Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i></a>
                 <button id="btncopia"  class="btn btn-info btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar Link</button>
                 <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
@@ -132,7 +132,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <p><b>{function="getNameUser()"}, certeza que deseja sair do Sistema?</b></p>
+                <p><b>{$user.primeiro_nome}, certeza que deseja sair do Sistema?</b></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
