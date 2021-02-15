@@ -11,6 +11,7 @@ main#home {
 
 }
 
+
 .carregando{
     color: whitesmoke;
     display:none;
@@ -275,6 +276,11 @@ a.link_forgot {
     border-radius: 50%;
     max-width: 100%;
     padding: 0.80rem 1.35rem
+}
+
+.image {
+    height: 200px;
+    width: auto;
 }
 
 .img_brand {
