@@ -22,7 +22,6 @@ function getNameUser() {
         return $name_user;
     }
 
-
 }
 
 function checkCurriculum() {

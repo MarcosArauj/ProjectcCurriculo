@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/App/PersonalDataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/PersonalDataController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/AppController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/App/SupportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/SupportController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/Config/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Config/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/Utilities/UsefulFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/Utilities/UsefulFunctions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/admin/dashboard_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/admin/dashboard_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/admin/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/admin/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/support/create_solicitation.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/support/create_solicitation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/theme/web/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/web/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +286,8 @@
       <workItem from="1613165141826" duration="8220000" />
       <workItem from="1613213591651" duration="5018000" />
       <workItem from="1613219630339" duration="6148000" />
-      <workItem from="1613227557805" duration="440000" />
+      <workItem from="1613227557805" duration="623000" />
+      <workItem from="1613391896281" duration="4119000" />
     </task>
     <servers />
   </component>

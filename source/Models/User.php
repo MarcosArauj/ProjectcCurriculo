@@ -62,19 +62,19 @@ class User extends Model {
     }
 
     /**
-     * @param string $cpf
+     * @param string $email
      * @return string
      * @throws \Exception
      */
-    public function getUserCpf(string $cpf): void {
+    public function getUserEmail(string $email): void {
 
         $results =  $this->conn->select("SELECT * FROM v_usuario
-            WHERE  cpf = :cpf",array(
-            ":cpf"=> removeMaskCpf($cpf)
+            WHERE  email = :email",array(
+            ":email"=> $email
         ));
 
         if (count($results) === 0) {
-            throw new \Exception("Usuario não Encontrado!");
+            throw new \Exception("Dados Não Conferem! Verifique e Tente Novamente!");
         }
 
         $this->setData($results[0]);

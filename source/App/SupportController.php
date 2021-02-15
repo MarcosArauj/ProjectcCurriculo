@@ -130,19 +130,9 @@ class SupportController extends Controller{
 
         try {
 
-            $this->user_data->getUserCpf($data["cpf"]);
+            $this->user_data->getUserEmail($data["email"]);
             $this->user_data->getValues();
 
-
-           if($data["email"] != $this->user_data->getemail()) {
-
-               echo $this->ajaxResponse("message", [
-                   "type" => "error",
-                   "message" =>"Dados Não Conferem! Verifique e Tente Novamente!"
-               ]);
-               return;
-
-           }
 
                 $this->support->getEmailSupport($this->user_data->getemail());
 

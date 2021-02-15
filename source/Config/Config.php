@@ -1,7 +1,5 @@
 <?php
 
-date_default_timezone_set('America/Sao_Paulo');
-
 define("SITE", [
     "name" => "WC",
     "name_complete" =>"Web Curriculo",
@@ -11,11 +9,11 @@ define("SITE", [
     "locale" => "pt_BR",
     //"root" => "http://curriculotcc.com.br",
    "root" => "https://wcurriculo.cruzm.com.br",
-    "version"=>"1.0"
+    "version"=>"2.0"
 ]);
 
 define("DB", [
-   // "hostname" => "92.249.44.54",
+    //"hostname" => "92.249.44.54",
     "hostname" => "127.0.0.1",
     "username" => "u299923371_web",
     "password" => "Cruz2517",

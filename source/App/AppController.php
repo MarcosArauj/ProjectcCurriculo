@@ -107,7 +107,7 @@ class AppController extends Controller {
         $page = new PageCurriculum();
 
         $page->setTpl("profile", array(
-            "title" => site("name"). " | " . getNameUser(),
+            "title" => site("name"). " | " . $this->data_user->getprimeiro_nome(),
             "user" => $this->data_user->getValues(),
             "curriculum"=>$this->curruculum->getValues()
         ));
