@@ -3,12 +3,6 @@
     <a class="brand col-md-3 col-lg-2 mr-0 px-3" href="/user">
         {if="$user.foto_usuario != NULL"}
             <img class="img_brand" src="{$user.foto_usuario}" alt="Photo">
-            {else}
-            {if="$user.genero == 'Masculino'"}
-            <img class="img_brand" src="/views/assets/images/user/masculino.jpg"  alt="Photo">
-            {elseif="$user.genero == 'Feminino'"}
-            <img class="img_brand" src="/views/assets/images/user/feminino.jpg" alt="Photo">
-            {/if}
         {/if}
         {$user.primeiro_nome}
     </a>

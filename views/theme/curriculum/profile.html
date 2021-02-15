@@ -22,11 +22,7 @@
                     {if="$user.foto_usuario != NULL"}
                       <img class="img-circle card-img-overlay" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">
                      {else}
-                        {if="$user.genero == 'Masculino'"}
-                        <img class="img-circle card-img-overlay" src="/views/assets/images/user/masculino.jpg" id="nova_imagem" alt="Photo">
-                        {elseif="$user.genero == 'Feminino'"}
-                        <img class="img-circle card-img-overlay" src="/views/assets/images/user/feminino.jpg"  id="nova_imagem" alt="Photo">
-                        {/if}
+                        <img class="img-circle card-img-overlay" src="/views/assets/images/user/placeholder-3x4.jpg" id="nova_imagem" alt="Photo">
                     {/if}
                 </label>
                 <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)" required/>
