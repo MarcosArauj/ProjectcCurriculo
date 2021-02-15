@@ -283,13 +283,20 @@ class PersonalDataController extends Controller {
 
         try {
 
-            if (!password_verify($data['senha_atual'], $this->data_user->getsenha())){
+            if (!password_verify($data['senha_atual'], $this->data_user->getsenha())) {
 
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
                     "message" => "Senha Atual Inválida, Gentileza verificar!!"
                 ]);
                 return;
+            } else if(password_verify($data['senha_atual']) == $data['nova_senha']){
+                echo $this->ajaxResponse("message", [
+                    "type" => "error",
+                    "message" => "Digite uma Senha diferente Atual!!!"
+                ]);
+                return;
+
             } else if(strlen($data["nova_senha"]) < 8) {
                 echo $this->ajaxResponse("message", [
                     "type" => "error",
