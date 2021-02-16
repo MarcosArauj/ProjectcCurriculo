@@ -143,6 +143,16 @@ class User extends Model {
     }
 
 
+    public function getValues() {
+
+        $this->checkPhotoUser();
+
+        $values =  parent::getValues();
+
+        return $values;
+
+    }
+
     public function checkPhotoUser(){
         if (file_exists($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR. "views". DIRECTORY_SEPARATOR. "assets". DIRECTORY_SEPARATOR .
             "images". DIRECTORY_SEPARATOR. "user". DIRECTORY_SEPARATOR . $this->getid_usuario() . ".jpg")){
@@ -150,7 +160,7 @@ class User extends Model {
             $url = "/views/assets/images/user/" . $this->getid_usuario() . ".jpg";
 
         } else {
-            $url = "/views/assets/images/user/" . $this->getid_usuario() . ".jpg";
+            $url =  "/views/assets/images/user/user";
         }
 
         return $this->setfoto_usuario($url);
