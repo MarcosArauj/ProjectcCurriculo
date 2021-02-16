@@ -180,8 +180,7 @@ class User extends Model {
 
         imagedestroy($image);
 
-        return $this->setfoto_usuario($dist);
-
+        $this->checkPhotoUser();
     }
 
     /**

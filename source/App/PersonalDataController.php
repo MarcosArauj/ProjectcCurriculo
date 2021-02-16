@@ -347,6 +347,8 @@ class PersonalDataController extends Controller {
 
             $this->data_user->setData($data);
 
+            $this->data_user->checkPhotoUser();
+
             $this->data_user->savePhoto();
 
             $this->data_user->setPhotoUser($_FILES["foto_usuario"]);
