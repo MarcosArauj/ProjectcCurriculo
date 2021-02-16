@@ -134,5 +134,14 @@ class Curriculum extends Model {
 
     }
 
+    public function deleteUserCurriculum():void{
+
+        $this->conn->query("DELETE FROM tb_usuario WHERE id_usuario  = :id_usuario"
+            ,array(
+                ":id_usuario"=>$this->getid_usuario()
+            ));
+
+    }
+
 }
 
