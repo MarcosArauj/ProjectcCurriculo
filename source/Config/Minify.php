@@ -11,8 +11,8 @@ $minCSS->add(dirname(__DIR__,2).'/views/assets/css/dashboard.css');
 $minCSS->minify(dirname(__DIR__,2).'/views/assets/css/style.min.css');
 
 $minJS = new \MatthiasMullie\Minify\JS();
-$minJS->add(dirname(__DIR__,2)."/views/assets/js/jquery.js");
-$minJS->add(dirname(__DIR__,2)."/views/assets/js/jquery-ui.js");
+$minJS->add(dirname(__DIR__,2).'/views/assets/js/jquery.js');
+$minJS->add(dirname(__DIR__,2).'/views/assets/js/jquery-ui.js');
 $minJS->add(dirname(__DIR__,2).'/views/assets/js/usefulFunctions.js');
 $minJS->add(dirname(__DIR__,2).'/views/assets/js/validation.js');
 $minJS->add(dirname(__DIR__,2).'/views/assets/js/mask.js');
