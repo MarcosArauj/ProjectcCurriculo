@@ -48,7 +48,7 @@ function pesquisarCEP(endereco) {
 
 jQuery(document).ready(function($) {
 
-    $('#estado').on('change',function(){
+    $('#uf_naturalidade').on('change',function(){
         if( $(this).val() ) {
             $('.carregando').show();
             $.getJSON(
@@ -58,14 +58,14 @@ jQuery(document).ready(function($) {
                     for (var i = 0; i < j.length; i++) {
                         options += '<option value="' + j[i].nome_cidade + '">' + j[i].nome_cidade + '</option>';
                     }
-                    $('#cidade').attr('disabled', false);
-                    $('#cidade').css('background-color' ,'#1C1F27')
-                    $('#cidade').focus();
-                    $('#cidade').html(options).show();
+                    $('#naturalidade').attr('disabled', false);
+                    $('#naturalidade').css('background-color' ,'#1C1F27')
+                    $('#naturalidade').focus();
+                    $('#naturalidade').html(options).show();
                     $('.carregando').hide();
                 });
         } else {
-            $('#cidade').html('<option value="">-- Selecione um estado --</option>');
+            $('#naturalidade').html('<option value="">-- Selecione um estado --</option>');
         }
     });
 });

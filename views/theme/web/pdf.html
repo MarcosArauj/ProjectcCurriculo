@@ -33,7 +33,7 @@
 <main role="main">
     {if="$curriculum"}
     <section>
-        {if="$curriculum.foto_usuario != NULL"}
+        {if="$curriculum.foto_usuario != 'photo_user'"}
         <img  src="{$curriculum.foto_usuario}" alt="Photo">
         {/if}
             {if="$curriculum.nome_social_uso == 'Sim'"}

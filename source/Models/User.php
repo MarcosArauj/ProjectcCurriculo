@@ -11,6 +11,7 @@ class User extends Model {
     const ACESSO = 0;
     const STATUS_USUARIO = "ativo";
     const SESSION = "user";
+    const PHOTO_USER = "photo_user";
 
     /**
      * @return array
@@ -21,9 +22,10 @@ class User extends Model {
     public function saveUser():bool {
 
         $results = $this->conn->select(
-            "CALL sp_usuario_salvar(:email,:senha,:status_usuario,:acesso)", array(
+            "CALL sp_usuario_salvar(:email,:senha,:foto_usuario,:status_usuario,:acesso)", array(
             ":email" => $this->getemail(),
             ":senha" => password_hash($this->getsenha(), PASSWORD_DEFAULT, ["cost" => 12]),
+            ":foto_usuario"=>User::PHOTO_USER,
             ":status_usuario" => User::STATUS_USUARIO,
             ":acesso" => User::ACESSO
 
@@ -158,7 +160,7 @@ class User extends Model {
             $url = "/views/assets/images/user/" . $this->getid_usuario() . ".jpg";
 
         } else {
-            $url =  $this->getid_usuario();
+            $url =  "/views/assets/images/user/user";
         }
 
         return $this->setfoto_usuario($url);

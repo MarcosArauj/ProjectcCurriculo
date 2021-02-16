@@ -75,8 +75,8 @@
                             </select>
                         </div>
                         <div class="form-group col-md-3">
-                            <label  for="estado"><strong class="obrigatorio">*</strong><b>Estado</b></label>
-                            <select class="form-control form-control-sm" name="uf_naturalidade" id="estado">
+                            <label  for="uf_naturalidade"><strong class="obrigatorio">*</strong><b>Estado</b></label>
+                            <select class="form-control form-control-sm" name="uf_naturalidade" id="uf_naturalidade">
                                 <option value="">Selecione</option>
                                 {loop="$uf"}
                                 <option value="{$value.uf}">{$value.nome_estado}</option>
@@ -84,9 +84,9 @@
                             </select>
                         </div>
                         <div class="form-group col-md-4">
-                            <label  for="cidade"><strong class="obrigatorio">*</strong><b>Naturalidade</b></label>&nbsp;&nbsp;
+                            <label  for="naturalidade"><strong class="obrigatorio">*</strong><b>Naturalidade</b></label>&nbsp;&nbsp;
                             <span class="carregando">Aguarde, carregando...</span>
-                            <select class="form-control form-control-sm cidade" id="cidade" name="naturalidade" disabled>
+                            <select class="form-control form-control-sm" id="naturalidade" name="naturalidade" disabled>
                                 <option value="">-- Selecione um estado --</option>
                             </select>
                         </div>

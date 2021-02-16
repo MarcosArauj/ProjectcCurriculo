@@ -142,8 +142,6 @@ class CurriculumController extends Controller {
 
         try {
 
-            $this->curriculum->getCurriculum($data['id_usuario']);
-
             $this->curriculum->deleteUserCurriculum();
 
             echo $this->ajaxResponse("redirect", [
@@ -151,7 +149,7 @@ class CurriculumController extends Controller {
 
             ]);
             unset($_SESSION[User::SESSION]);
-            flash("success","Idioma Excluido com Sucesso!");
+            flash("success","Curriculo Excluido com Sucesso!");
             return;
 
         } catch (\Exception $e) {
