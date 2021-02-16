@@ -1,12 +1,12 @@
-<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
-    {if="checkCurriculum()"}
+<?php if(!class_exists('Rain\Tpl')){exit;}?><nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-2 shadow">
+    <?php if( checkCurriculum() ){ ?>
     <a class="brand col-md-3 col-lg-2 mr-0 px-3" href="/user">
-        {if="$user.foto_usuario != '/views/assets/images/user/user'"}
-            <img class="img_brand" src="{$user.foto_usuario}" alt="Photo">
-        {/if}
-        {$user.primeiro_nome}
+        <?php if( $user["foto_usuario"] != '/views/assets/images/user/user' ){ ?>
+            <img class="img_brand" src="<?php echo htmlspecialchars( $user["foto_usuario"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Photo">
+        <?php } ?>
+        <?php echo htmlspecialchars( $user["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>
     </a>
-    {/if}
+    <?php } ?>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,7 +25,7 @@
         </li>
     </ul>
 </nav>
-{if="checkCurriculum()"}
+<?php if( checkCurriculum() ){ ?>
 <div class="container-fluid">
     <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -53,11 +53,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/user/deficiency/update">
                             <i class="fa fa-wheelchair fa-fw" aria-hidden="true"></i>
-                            {if="$user.deficiencia_existe != NULL"}
+                            <?php if( $user["deficiencia_existe"] != NULL ){ ?>
                                <span>&nbsp; Deficiência</span>
-                            {else}
+                            <?php }else{ ?>
                                <span>&nbsp;Adicionar Deficiência</span>
-                            {/if}
+                            <?php } ?>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -95,7 +95,7 @@
         </nav>
     </div>
 </div>
-{/if}
+<?php } ?>
 <!-- Modal Compartilhamento de Link do Curriculo -->
 <div class="modal fade" id="ModalCompartilha" role="dialog">
     <div class="modal-dialog">
@@ -104,10 +104,10 @@
         <div class="modal-content">
             <div class="modal-body">
                 <label><b>Link de Compartinhamento do seu Curriculo</b></label>
-                <input type="text" id="link" style="color: black" class="form-control" value="{#site('root')#}/curriculum/{function="getCodCurriculum()"}" readonly>
+                <input type="text" id="link" style="color: black" class="form-control" value="<?php echo site('root'); ?>/curriculum/<?php echo getCodCurriculum(); ?>" readonly>
             </div>
             <div class="modal-footer">
-                <a class="btn btn-secondary btn-sm" href="/curriculum/{function="getCodCurriculum()"}/generate_pdf" title="Gerar PDF">
+                <a class="btn btn-secondary btn-sm" href="/curriculum/<?php echo getCodCurriculum(); ?>/generate_pdf" title="Gerar PDF">
                     Gerar PDF <i class="fa fa-clipboard" aria-hidden="true"></i></a>
                 <button id="btncopia"  class="btn btn-info btn-sm"><i class="fa fa-clone" aria-hidden="true"></i> Copiar Link</button>
                 <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancelar</button>
@@ -122,11 +122,11 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="titulo_home"><b>{#site("name_complete")#}</b></h3>
+                <h3 class="modal-title" id="titulo_home"><b><?php echo site("name_complete"); ?></b></h3>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <p><b>{$user.primeiro_nome}, certeza que deseja sair do Sistema?</b></p>
+                <p><b><?php echo htmlspecialchars( $user["primeiro_nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>, certeza que deseja sair do Sistema?</b></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
