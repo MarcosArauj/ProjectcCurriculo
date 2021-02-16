@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-3">
                 <label for="foto_usuario" class="user_photo" data-toggle="tooltip" data-placement="bottom" title="Clique aqui e escolha sua Foto. Gentileza usar foto com fundo Branco">
-                    {if="$user.foto_usuario == '/views/assets/images/user/user'"}
+                    {if="$user.foto_usuario == 'photo_user'"}
                       <img class="image card-img-overlay" src="/views/assets/images/user/placeholder-3x4.png"  id="nova_imagem" alt="Photo">
                     {else}
                        <img class="img-circle card-img-overlay" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">

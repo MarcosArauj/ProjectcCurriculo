@@ -141,7 +141,7 @@ class User extends Model {
         return true;
 
     }
-    
+
     public function setPhotoUser($foto_usuario) {
 
         $extension = explode('.',$foto_usuario['name']);
