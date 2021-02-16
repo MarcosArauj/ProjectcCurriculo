@@ -143,15 +143,6 @@ class User extends Model {
     }
 
 
-    public function getValues() {
-
-        $this->checkPhotoUser();
-
-        $values =  parent::getValues();
-
-        return $values;
-
-    }
 
     public function checkPhotoUser(){
         if (file_exists($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR. "views". DIRECTORY_SEPARATOR. "assets". DIRECTORY_SEPARATOR .
@@ -201,7 +192,7 @@ class User extends Model {
 
         $results =  $this->conn->select("CALL sp_foto_salvar(:id_usuario,:foto_usuario)",array(
             ":id_usuario"=>$this->getid_usuario(),
-            ":foto_usuario"=>$this->getfoto_usuario()
+            ":foto_usuario"=>$this->checkPhotoUser()
         ));
 
         if (count($results) === 0) {
