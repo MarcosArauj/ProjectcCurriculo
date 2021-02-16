@@ -272,9 +272,9 @@ class AdminController extends Controller {
 
         try {
 
-            $this->data_user->getUser($data["id_usuario"]);
-
             $curriculum = new Curriculum();
+
+            $curriculum->getCurriculum($data["id_usuario"]);
 
             $curriculum->deleteUserCurriculum();
 
