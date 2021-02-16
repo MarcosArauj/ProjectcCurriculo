@@ -160,7 +160,7 @@ class User extends Model {
             $url = "/views/assets/images/user/" . $this->getid_usuario() . ".jpg";
 
         } else {
-            $url =  "/views/assets/images/user/user";
+            $url = "/views/assets/images/user/" . $this->getid_usuario() . ".jpg";
         }
 
         return $this->setfoto_usuario($url);
