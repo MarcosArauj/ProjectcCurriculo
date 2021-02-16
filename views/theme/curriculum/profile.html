@@ -19,11 +19,11 @@
         <div class="row">
             <div class="col-3">
                 <label for="foto_usuario" class="user_photo" data-toggle="tooltip" data-placement="bottom" title="Clique aqui e escolha sua Foto. Gentileza usar foto com fundo Branco">
-                    {if="$user.foto_usuario != NULL"}
-                      <img class="img-circle card-img-overlay" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">
-                    {else}
+<!--                    {if="$user.foto_usuario != NULL"}-->
+<!--                      <img class="img-circle card-img-overlay" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">-->
+<!--                    {else}-->
                         <img class="image card-img-overlay" src="/views/assets/images/user/placeholder-3x4.png"  id="nova_imagem" alt="Photo">
-                    {/if}
+<!--                    {/if}-->
                 </label>
                 <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)" required/>
             </div>
