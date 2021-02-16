@@ -13,7 +13,7 @@ define("SITE", [
 ]);
 
 define("DB", [
-   // "hostname" => "92.249.44.54",
+    //"hostname" => "92.249.44.54",
     "hostname" => "127.0.0.1",
     "username" => "u299923371_web",
     "password" => "Cruz2517",

@@ -25,7 +25,7 @@
                        <img class="img-circle card-img-overlay" src="{$user.foto_usuario}" id="nova_imagem" alt="Photo">
                     {/if}
                 </label>
-                <input type="file" name="foto_usuario" id="foto_usuario" onchange="carregarImagem(event)" required/>
+                <input type="file" name="foto_usuario" id="foto_usuario"  accept="image/*" onchange="carregarImagem(event)" required/>
             </div>
             <div class="col-4">
                 <h5><b>Dados Pessoais</b></h5>

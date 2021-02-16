@@ -160,7 +160,7 @@ class User extends Model {
             $url = "/views/assets/images/user/" . $this->getid_usuario() . ".jpg";
 
         } else {
-            $url =  "/views/assets/images/user/user";
+            $url = "/views/assets/images/user/" . $this->getid_usuario() . ".jpg";
         }
 
         return $this->setfoto_usuario($url);
@@ -173,7 +173,6 @@ class User extends Model {
         $extension = end($extension);
 
         switch ($extension) {
-
             case "jpg":case "jpeg":
             $image = imagecreatefromjpeg($foto_usuario["tmp_name"]);
             break;
@@ -185,7 +184,6 @@ class User extends Model {
                 break;
 
         }
-
         $dist = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR. "views". DIRECTORY_SEPARATOR. "assets". DIRECTORY_SEPARATOR .
             "images". DIRECTORY_SEPARATOR. "user". DIRECTORY_SEPARATOR . $this->getid_usuario() . ".jpg";
 
@@ -193,7 +191,7 @@ class User extends Model {
 
         imagedestroy($image);
 
-        $this->checkPhotoUser();
+        return $this->setfoto_usuario();
     }
 
     /**
