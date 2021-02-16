@@ -31,7 +31,7 @@
                 <h5><b>Dados Pessoais</b></h5>
                     <label><b>Sexo: </b></label>&nbsp;
                     <span>{$user.genero}</span>
-                <br>
+                    <span class="offset-1"></span>
                     <label><b>Cor/Raça: </b></label>&nbsp;
                     <span>{$user.cor_raca}</span>
                 <br>
@@ -49,20 +49,17 @@
             <div class="col-5">
                 <h5><b>Endereço/Contato</b></h5>
                     <label><b>Rua/Av: </b></label>&nbsp;
-                    <span>{$user.endereco}</span>
-                    <span class="offset-1"></span>
-                    <label><b>Nº: </b></label>&nbsp;
-                    <span>{$user.numero}</span>
+                    <span>{$user.endereco}, Nº {$user.numero}</span>
                 <br>
                     <label><b>CEP: </b></label>&nbsp;
                     <span>{$user.cep}</span>
-                <br>
+                    <span class="offset-1"></span>
                     <label><b>Bairro: </b></label>&nbsp;
                     <span>{$user.bairro}</span>
                 <br>
                     <label><b>Cidade: </b></label>&nbsp;
                     <span>{$user.cidade}</span>
-                    <span class="offset-2"></span>
+                    <span class="offset-1"></span>
                     <label><b>Pais: </b></label>&nbsp;
                     <span>{$user.pais}</span>
                 <hr/>
