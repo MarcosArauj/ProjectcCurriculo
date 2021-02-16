@@ -4,6 +4,7 @@
 namespace Source\App;
 
 use Source\App\Pages\PageAdmin;
+use Source\Models\Curriculum;
 use Source\Models\Login;
 use Source\Models\Search;
 use Source\Models\Support\Support;
@@ -273,7 +274,9 @@ class AdminController extends Controller {
 
             $this->data_user->getUser($data["id_usuario"]);
 
-            $this->data_user->deleteUserCurriculum();
+            $curriculum = new Curriculum();
+
+            $curriculum->deleteUserCurriculum();
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("admin.users")
