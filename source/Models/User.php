@@ -142,6 +142,21 @@ class User extends Model {
 
     }
 
+
+    public function checkPhotoUser(){
+        if (file_exists($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR. "views". DIRECTORY_SEPARATOR. "assets". DIRECTORY_SEPARATOR .
+            "images". DIRECTORY_SEPARATOR. "user". DIRECTORY_SEPARATOR . $this->getid_usuario() . ".jpg")){
+
+            $url = "/views/assets/images/user/" . $this->getid_usuario() . ".jpg";
+
+        } else {
+            $url = "/views/assets/images/user/" . $this->getid_usuario() . ".jpg";
+        }
+
+        return $this->setfoto_usuario($url);
+
+    }
+
     public function setPhotoUser($foto_usuario) {
 
         $extension = explode('.',$foto_usuario['name']);
@@ -166,7 +181,7 @@ class User extends Model {
 
         imagedestroy($image);
 
-        return $this->setfoto_usuario($dist);
+        $this->checkPhotoUser();
     }
 
     /**
