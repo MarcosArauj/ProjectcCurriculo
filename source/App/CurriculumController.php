@@ -138,14 +138,13 @@ class CurriculumController extends Controller {
 
     }
 
-    public function deleteCurriculum(): void{
+    public function deleteCurriculum($data): void{
 
         try {
 
-            $this->curriculum->getCurriculum($this->user_logado->getid_usuario());
+            $this->curriculum->getCurriculum($data['id_usuario']);
 
             $this->curriculum->deleteUserCurriculum();
-
 
             echo $this->ajaxResponse("redirect", [
                 "url" =>$this->router->route("web.register")

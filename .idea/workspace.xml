@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1192ff24-1916-4a18-9826-1c1db365027d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/source/App/CurriculumController.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/App/CurriculumController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/theme/curriculum/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/theme/curriculum/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -282,7 +283,7 @@
       <workItem from="1613412081750" duration="1221000" />
       <workItem from="1613419853945" duration="2788000" />
       <workItem from="1613423402918" duration="193000" />
-      <workItem from="1613475834650" duration="3388000" />
+      <workItem from="1613475834650" duration="3990000" />
     </task>
     <servers />
   </component>
