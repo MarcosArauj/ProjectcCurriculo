@@ -1,47 +1,77 @@
+$(document).ready(function() {
+
+    function limpa_formulário_cep() {
+        // Limpa valores do formulário de cep.
+        $("#endereco").val('').attr('placeholder','Rua/Avenida');
+        $("#bairro").val('').attr('placeholder','Bairro');
+        $("#cidade").val('').attr('placeholder','Cidade');
+        $("#estado").val('').attr('placeholder','Estado');
+    }
+
+    //Quando o campo cep perde o foco.
+    $('#cep').blur(function() {
+
+        //Nova variável "cep" somente com dígitos.
+        var cep = $(this).val();
+        cep = removeMask(cep, '.');
+        cep = removeMask(cep, '-');
+
+        //Verifica se campo cep possui valor informado.
+        if (cep != '') {
+            //Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{8}$/;
+            //Valida o formato do CEP.
+            if(validacep.test(cep)) {
+                //Preenche os campos com "..." enquanto consulta webservice.
+                $('#endereco').val('Aguarde...');
+                $('#bairro').val('Aguarde...');
+                $('#cidade').val('Aguarde...');
+                $('#estado').val('Aguarde...');
+                //Consulta o webservice viacep.com.br/
+                $.getJSON('https://viacep.com.br/ws/'+ cep +'/json/?callback=?', function(dados) {
+
+                    if (!('erro' in dados)) {
+                        //Atualiza os campos com os valores da consulta.
+                        $('#endereco').val(dados.logradouro);
+                        $('#bairro').val(dados.bairro);
+                        $('#cidade').val(dados.localidade);
+                        $('#estado').val(dados.uf);
+                    } //end if.
+                    else {
+                        limpa_formulário_cep();
+                        let view = '<div class="message error"> CEP não encontrado.</div>';
+                        $('.alert_message').html(view);
+                        $('.message').effect('bounce');
+                    }
+                });
+            } //end if.
+            else {
+                limpa_formulário_cep();
+                let view = '<div class="message error"> Formato de CEP inválido.</div>';
+                $('.alert_message').html(view);
+                $('.message').effect('bounce');
+            }
+        } //end if.
+        else {
+            limpa_formulário_cep();
+        }
+    });
+});
+
+
 
 // ---------- Remover Mascara ---------------------- ///
-function removeMascara(str, sub) {
+function removeMask(str, sub) {
 
     let i = str.indexOf(sub);
     let r = "";
 
     if (i === -1) return str;
     {
-        r += str.substring(0,i) + removeMascara(str.substring(i + sub.length), sub);
+        r += str.substring(0,i) + removeMask(str.substring(i + sub.length), sub);
     }
 
     return r;
-}
-//---------- Carregar endereço buscando pelo CEP --------------------//
-$('#cep').blur(function () {
-
-    var cep = $('#cep').val();
-
-    cep = removeMascara(cep, ".");
-    cep = removeMascara(cep, "-");
-
-    // console.log(cep);
-    var url = "http://viacep.com.br/ws/" + cep + "/json"
-
-    pesquisarCEP(url);
-
-});
-
-function pesquisarCEP(endereco) {
-    $.ajax({
-        type:"GET",
-        url:endereco,
-        async:false
-
-    }).done(function (data) {
-        console.log(data);
-        $('#bairro').val(data.bairro);
-        $('#endereco').val(data.logradouro);
-        $('#cidade').val(data.localidade);
-        $('#estado').val(data.uf);
-    }).fail(function () {
-        console.log("Erro");
-    });
 }
 
 //-------------------- Carrega cidades de acordo com estado selecionado----------------------------///
